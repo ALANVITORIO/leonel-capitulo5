@@ -1,0 +1,663 @@
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap');
+
+        /* Variáveis de Design System - Cores Originais */
+        :root {
+            --color-primary: #00522E;
+            --color-primary-light: #007542;
+            --color-secondary: #009B48;
+            --color-accent: #FFC72C;
+            --color-blue: #002776;
+            --color-blue-light: #003A9E;
+            --color-text-dark: #1A202C;
+            --color-text-medium: #2D3748;
+            --color-text-light: #4A5568;
+            --color-bg: #F7FAFC;
+            --color-card-bg: #FFFFFF;
+            --color-border: #E2E8F0;
+            --shadow-sm: 0 2px 8px rgba(0, 82, 46, 0.1);
+            --shadow-md: 0 8px 16px rgba(0, 82, 46, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 16px 32px rgba(0, 82, 46, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 24px 48px rgba(0, 82, 46, 0.25), 0 12px 24px rgba(0, 0, 0, 0.2);
+            --shadow-2xl: 0 32px 64px rgba(0, 82, 46, 0.3), 0 16px 32px rgba(0, 0, 0, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8edf3 100%);
+            line-height: 1.8;
+            color: var(--color-text-dark);
+            padding: 2rem 0;
+            min-height: 100vh;
+        }
+
+        /* Animações CSS - DESABILITADAS PARA CONTEÚDO ESTÁTICO */
+        @keyframes fadeInUp {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes progressBar {
+            from {
+                width: var(--progress-width);
+            }
+
+            to {
+                width: var(--progress-width);
+            }
+        }
+
+        /* Slide Container - Profissional com Glassmorphism */
+        .slide {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(247, 250, 252, 0.95));
+            backdrop-filter: blur(10px);
+            padding: 3.5rem;
+            margin: 2rem auto;
+            border-radius: 1.5rem;
+            box-shadow: 0 0 40px rgba(0, 82, 46, 0.15), 0 0 80px rgba(0, 82, 46, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            width: 1280px;
+            min-height: 720px;
+            max-width: 90vw;
+            border: 1px solid var(--color-border);
+            display: flex;
+            flex-direction: column;
+            overflow: visible;
+            position: relative;
+            animation: none;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+        }
+
+        /* Responsividade */
+        @media (max-width: 1320px) {
+            .slide {
+                width: 95vw;
+                min-height: auto;
+                padding: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 1.5rem;
+                width: 100vw;
+            }
+        }
+
+        /* Tipografia Aprimorada - Cores Originais */
+        .slide-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            animation: slideInLeft 0.6s ease-out 0.2s backwards;
+        }
+
+        .slide-subtitle {
+            font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+            color: var(--color-text-light);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            font-weight: 400;
+            animation: fadeIn 0.6s ease-out 0.4s backwards;
+        }
+
+        /* Cards Melhorados - Glassmorphism com cores originais */
+        .card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(247, 250, 252, 0.95));
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 1.75rem;
+            box-shadow: 0 8px 24px rgba(0, 82, 46, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 1px solid var(--color-border);
+            transition: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 82, 46, 0.05), rgba(0, 155, 72, 0.03));
+            opacity: 0;
+            transition: none;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0, 82, 46, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        /* Card com Bordas Coloridas */
+        .card-bordered {
+            border-left: 4px solid;
+            padding-left: 1.5rem;
+        }
+
+        .card-bordered.border-blue {
+            border-left-color: var(--color-blue);
+        }
+
+        .card-bordered.border-green {
+            border-left-color: var(--color-secondary);
+        }
+
+        .card-bordered.border-yellow {
+            border-left-color: var(--color-accent);
+        }
+
+        .card-bordered.border-red {
+            border-left-color: #EF4444;
+        }
+
+        .card-bordered.border-purple {
+            border-left-color: #8B5CF6;
+        }
+
+        .card-bordered.border-orange {
+            border-left-color: #F97316;
+        }
+
+        /* Ícones SVG Aprimorados */
+        .icon-container {
+            width: 3rem;
+            height: 3rem;
+            min-width: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.75rem;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+            box-shadow: var(--shadow-md);
+        }
+
+        .icon-container svg {
+            width: 1.75rem;
+            height: 1.75rem;
+            color: white;
+        }
+
+        /* Badges e Status */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: none;
+        }
+
+        .badge-success {
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+        }
+
+        .badge-warning {
+            background: linear-gradient(135deg, #F59E0B, #D97706);
+            color: white;
+        }
+
+        .badge-danger {
+            background: linear-gradient(135deg, #EF4444, #DC2626);
+            color: white;
+        }
+
+        /* Indicador de Status (Semáforo) */
+        .status-indicator {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .status-success {
+            background: #10B981;
+        }
+
+        .status-warning {
+            background: #F59E0B;
+        }
+
+        .status-danger {
+            background: #EF4444;
+        }
+
+        /* Fluxograma Vertical Melhorado */
+        .flow-container {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .flow-step {
+            position: relative;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .flow-step:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .flow-step:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .flow-step:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .flow-step:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .flow-line {
+            position: absolute;
+            left: 1.5rem;
+            top: 3rem;
+            bottom: -2rem;
+            width: 2px;
+            background: linear-gradient(180deg, var(--color-border), transparent);
+        }
+
+        .flow-step:last-child .flow-line {
+            display: none;
+        }
+
+        .flow-number {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: white;
+            box-shadow: var(--shadow-lg);
+            position: absolute;
+            left: 0;
+            z-index: 10;
+            background: linear-gradient(135deg, var(--color-blue), var(--color-blue-light));
+        }
+
+        /* Barra de Progresso Animada */
+        .progress-bar {
+            height: 2.5rem;
+            background: #E5E7EB;
+            border-radius: 9999px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 1rem;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+            box-shadow: 0 2px 8px rgba(0, 155, 72, 0.4);
+            animation: progressBar 1.5s ease-out forwards;
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Grid Melhorado */
+        .grid-auto {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        /* Lista com Ícones */
+        .list-icon {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 0.4s ease-out backwards;
+        }
+
+        .list-icon:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .list-icon:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .list-icon:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .list-icon:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .list-icon:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .list-icon-bullet {
+            width: 0.5rem;
+            height: 0.5rem;
+            min-width: 0.5rem;
+            border-radius: 50%;
+            margin-top: 0.5rem;
+            background: var(--color-secondary);
+            box-shadow: 0 0 0 3px rgba(0, 155, 72, 0.2);
+        }
+
+        /* Seção de Destaque */
+        .highlight-section {
+            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+            border: 2px solid var(--color-accent);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            animation: scaleIn 0.5s ease-out 0.6s backwards;
+        }
+
+        /* KPI Cards */
+        .kpi-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--color-border);
+            transition: none;
+            animation: none;
+        }
+
+        .kpi-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .kpi-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .kpi-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .kpi-value {
+            font-size: 3.5rem;
+            font-weight: 900;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--color-blue), var(--color-blue-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin: 0.5rem 0;
+        }
+
+        .kpi-label {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--color-text-medium);
+            margin-bottom: 0.5rem;
+        }
+
+        .kpi-description {
+            font-size: 0.875rem;
+            color: var(--color-text-light);
+        }
+
+        /* Governança Flow */
+        .governance-item {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 3px solid;
+            box-shadow: var(--shadow-xl);
+            transition: none;
+            animation: none;
+        }
+
+        .governance-item:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .governance-item:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .governance-item:nth-child(5) {
+            animation-delay: 0.3s;
+        }
+
+        .governance-item:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .arrow-down {
+            width: 3rem;
+            height: 3rem;
+            margin: -1rem auto;
+            color: var(--color-border);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Título Principal Aprimorado */
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 2vw, 1.75rem);
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        /* Status Bars */
+        .status-bar-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--color-border);
+            animation: none;
+        }
+
+        .status-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        .status-count {
+            font-size: 1.25rem;
+            font-weight: 800;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+        }
+
+        /* Melhorias de Acessibilidade */
+        :focus-visible {
+            outline: 3px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .slide {
+                box-shadow: none;
+                border: 1px solid #000;
+                page-break-after: always;
+            }
+        }
+
+        /* Utilitários */
+        .text-gradient {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+        }
+
+        .bg-gradient-blue {
+            background: linear-gradient(135deg, var(--color-blue), var(--color-blue-light));
+        }

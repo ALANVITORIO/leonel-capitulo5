@@ -10,671 +10,9 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap');
+    <!-- Estilos Customizados -->
+    <link rel="stylesheet" href="css/styles.css" />
 
-        /* Variáveis de Design System - Cores Originais */
-        :root {
-            --color-primary: #00522E;
-            --color-primary-light: #007542;
-            --color-secondary: #009B48;
-            --color-accent: #FFC72C;
-            --color-blue: #002776;
-            --color-blue-light: #003A9E;
-            --color-text-dark: #1A202C;
-            --color-text-medium: #2D3748;
-            --color-text-light: #4A5568;
-            --color-bg: #F7FAFC;
-            --color-card-bg: #FFFFFF;
-            --color-border: #E2E8F0;
-            --shadow-sm: 0 2px 8px rgba(0, 82, 46, 0.1);
-            --shadow-md: 0 8px 16px rgba(0, 82, 46, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 16px 32px rgba(0, 82, 46, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15);
-            --shadow-xl: 0 24px 48px rgba(0, 82, 46, 0.25), 0 12px 24px rgba(0, 0, 0, 0.2);
-            --shadow-2xl: 0 32px 64px rgba(0, 82, 46, 0.3), 0 16px 32px rgba(0, 0, 0, 0.25);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8edf3 100%);
-            line-height: 1.8;
-            color: var(--color-text-dark);
-            padding: 2rem 0;
-            min-height: 100vh;
-        }
-
-        /* Animações CSS - DESABILITADAS PARA CONTEÚDO ESTÁTICO */
-        @keyframes fadeInUp {
-            from {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 1;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 1;
-                transform: translateX(0);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 1;
-                transform: translateX(0);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes scaleIn {
-            from {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes progressBar {
-            from {
-                width: var(--progress-width);
-            }
-
-            to {
-                width: var(--progress-width);
-            }
-        }
-
-        /* Slide Container - Profissional com Glassmorphism */
-        .slide {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(247, 250, 252, 0.95));
-            backdrop-filter: blur(10px);
-            padding: 3.5rem;
-            margin: 2rem auto;
-            border-radius: 1.5rem;
-            box-shadow: 0 0 40px rgba(0, 82, 46, 0.15), 0 0 80px rgba(0, 82, 46, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
-            width: 1280px;
-            min-height: 720px;
-            max-width: 90vw;
-            border: 1px solid var(--color-border);
-            display: flex;
-            flex-direction: column;
-            overflow: visible;
-            position: relative;
-            animation: none;
-        }
-
-        .slide::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
-        }
-
-        /* Responsividade */
-        @media (max-width: 1320px) {
-            .slide {
-                width: 95vw;
-                min-height: auto;
-                padding: 2.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .slide {
-                padding: 1.5rem;
-                width: 100vw;
-            }
-        }
-
-        /* Tipografia Aprimorada - Cores Originais */
-        .slide-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 900;
-            color: var(--color-primary);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            letter-spacing: -0.04em;
-            line-height: 1.1;
-            animation: slideInLeft 0.6s ease-out 0.2s backwards;
-        }
-
-        .slide-subtitle {
-            font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-            color: var(--color-text-light);
-            margin-bottom: 3rem;
-            line-height: 1.8;
-            font-weight: 400;
-            animation: fadeIn 0.6s ease-out 0.4s backwards;
-        }
-
-        /* Cards Melhorados - Glassmorphism com cores originais */
-        .card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(247, 250, 252, 0.95));
-            backdrop-filter: blur(10px);
-            border-radius: 1rem;
-            padding: 1.75rem;
-            box-shadow: 0 8px 24px rgba(0, 82, 46, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
-            border: 1px solid var(--color-border);
-            transition: none;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0, 82, 46, 0.05), rgba(0, 155, 72, 0.03));
-            opacity: 0;
-            transition: none;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 40px rgba(0, 82, 46, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.9);
-        }
-
-        .card:hover::before {
-            opacity: 1;
-        }
-
-        /* Card com Bordas Coloridas */
-        .card-bordered {
-            border-left: 4px solid;
-            padding-left: 1.5rem;
-        }
-
-        .card-bordered.border-blue {
-            border-left-color: var(--color-blue);
-        }
-
-        .card-bordered.border-green {
-            border-left-color: var(--color-secondary);
-        }
-
-        .card-bordered.border-yellow {
-            border-left-color: var(--color-accent);
-        }
-
-        .card-bordered.border-red {
-            border-left-color: #EF4444;
-        }
-
-        .card-bordered.border-purple {
-            border-left-color: #8B5CF6;
-        }
-
-        .card-bordered.border-orange {
-            border-left-color: #F97316;
-        }
-
-        /* Ícones SVG Aprimorados */
-        .icon-container {
-            width: 3rem;
-            height: 3rem;
-            min-width: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0.75rem;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-            box-shadow: var(--shadow-md);
-        }
-
-        .icon-container svg {
-            width: 1.75rem;
-            height: 1.75rem;
-            color: white;
-        }
-
-        /* Badges e Status */
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            transition: none;
-        }
-
-        .badge-success {
-            background: linear-gradient(135deg, #10B981, #059669);
-            color: white;
-        }
-
-        .badge-warning {
-            background: linear-gradient(135deg, #F59E0B, #D97706);
-            color: white;
-        }
-
-        .badge-danger {
-            background: linear-gradient(135deg, #EF4444, #DC2626);
-            color: white;
-        }
-
-        /* Indicador de Status (Semáforo) */
-        .status-indicator {
-            width: 0.75rem;
-            height: 0.75rem;
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 1;
-            }
-        }
-
-        .status-success {
-            background: #10B981;
-        }
-
-        .status-warning {
-            background: #F59E0B;
-        }
-
-        .status-danger {
-            background: #EF4444;
-        }
-
-        /* Fluxograma Vertical Melhorado */
-        .flow-container {
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .flow-step {
-            position: relative;
-            animation: fadeInUp 0.6s ease-out backwards;
-        }
-
-        .flow-step:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .flow-step:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .flow-step:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        .flow-step:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-
-        .flow-line {
-            position: absolute;
-            left: 1.5rem;
-            top: 3rem;
-            bottom: -2rem;
-            width: 2px;
-            background: linear-gradient(180deg, var(--color-border), transparent);
-        }
-
-        .flow-step:last-child .flow-line {
-            display: none;
-        }
-
-        .flow-number {
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.25rem;
-            color: white;
-            box-shadow: var(--shadow-lg);
-            position: absolute;
-            left: 0;
-            z-index: 10;
-            background: linear-gradient(135deg, var(--color-blue), var(--color-blue-light));
-        }
-
-        /* Barra de Progresso Animada */
-        .progress-bar {
-            height: 2.5rem;
-            background: #E5E7EB;
-            border-radius: 9999px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .progress-fill {
-            height: 100%;
-            border-radius: 9999px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 1rem;
-            color: white;
-            font-weight: 700;
-            font-size: 1rem;
-            background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
-            box-shadow: 0 2px 8px rgba(0, 155, 72, 0.4);
-            animation: progressBar 1.5s ease-out forwards;
-            position: relative;
-        }
-
-        .progress-fill::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: shimmer 2s infinite;
-        }
-
-        @keyframes shimmer {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        /* Grid Melhorado */
-        .grid-auto {
-            display: grid;
-            gap: 1.5rem;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
-
-        /* Lista com Ícones */
-        .list-icon {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            animation: fadeIn 0.4s ease-out backwards;
-        }
-
-        .list-icon:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .list-icon:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .list-icon:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        .list-icon:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-
-        .list-icon:nth-child(5) {
-            animation-delay: 0.5s;
-        }
-
-        .list-icon-bullet {
-            width: 0.5rem;
-            height: 0.5rem;
-            min-width: 0.5rem;
-            border-radius: 50%;
-            margin-top: 0.5rem;
-            background: var(--color-secondary);
-            box-shadow: 0 0 0 3px rgba(0, 155, 72, 0.2);
-        }
-
-        /* Seção de Destaque */
-        .highlight-section {
-            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
-            border: 2px solid var(--color-accent);
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: var(--shadow-lg);
-            animation: scaleIn 0.5s ease-out 0.6s backwards;
-        }
-
-        /* KPI Cards */
-        .kpi-card {
-            background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--color-border);
-            transition: none;
-            animation: none;
-        }
-
-        .kpi-card:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .kpi-card:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .kpi-card:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        .kpi-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-2xl);
-        }
-
-        .kpi-value {
-            font-size: 3.5rem;
-            font-weight: 900;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, var(--color-blue), var(--color-blue-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-            margin: 0.5rem 0;
-        }
-
-        .kpi-label {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--color-text-medium);
-            margin-bottom: 0.5rem;
-        }
-
-        .kpi-description {
-            font-size: 0.875rem;
-            color: var(--color-text-light);
-        }
-
-        /* Governança Flow */
-        .governance-item {
-            background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            border: 3px solid;
-            box-shadow: var(--shadow-xl);
-            transition: none;
-            animation: none;
-        }
-
-        .governance-item:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .governance-item:nth-child(3) {
-            animation-delay: 0.2s;
-        }
-
-        .governance-item:nth-child(5) {
-            animation-delay: 0.3s;
-        }
-
-        .governance-item:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-2xl);
-        }
-
-        .arrow-down {
-            width: 3rem;
-            height: 3rem;
-            margin: -1rem auto;
-            color: var(--color-border);
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        @keyframes bounce {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(0);
-            }
-        }
-
-        /* Título Principal Aprimorado */
-        .hero-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(3rem, 6vw, 4.5rem);
-            font-weight: 900;
-            letter-spacing: -0.04em;
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.25rem, 2vw, 1.75rem);
-            font-weight: 300;
-            animation: fadeInUp 0.8s ease-out 0.2s backwards;
-        }
-
-        /* Status Bars */
-        .status-bar-container {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 1rem;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .status-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--color-border);
-            animation: none;
-        }
-
-        .status-label {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-weight: 600;
-            font-size: 1.125rem;
-        }
-
-        .status-count {
-            font-size: 1.25rem;
-            font-weight: 800;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-        }
-
-        /* Melhorias de Acessibilidade */
-        :focus-visible {
-            outline: 3px solid var(--color-accent);
-            outline-offset: 2px;
-        }
-
-        /* Print Styles */
-        @media print {
-            body {
-                background: white;
-            }
-
-            .slide {
-                box-shadow: none;
-                border: 1px solid #000;
-                page-break-after: always;
-            }
-        }
-
-        /* Utilitários */
-        .text-gradient {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .bg-gradient-primary {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-        }
-
-        .bg-gradient-blue {
-            background: linear-gradient(135deg, var(--color-blue), var(--color-blue-light));
-        }
-    </style>
 </head>
 
 <body>
@@ -692,7 +30,130 @@
         </div>
     </div>
 
-    <!-- Slide 2: Governança -->
+    <!-- Slide 2: Sumário Visual -->
+    <div class="slide">
+        <h2 class="slide-title" style="justify-content: center;">
+            <div class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </div>
+            Sumário do Capítulo 5
+        </h2>
+        <p class="slide-subtitle text-center">Estrutura completa do sistema de Monitoramento, Avaliação e Revisão</p>
+
+        <div style="margin-top: 3rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+            <!-- Seção 5.1 -->
+            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 39, 118, 0.08), white); border-radius: 1rem; border-left: 4px solid var(--color-blue); display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, var(--color-blue), var(--color-blue-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 21a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-sm font-bold text-gray-800" style="color: var(--color-blue);">5.1 Sistema de Governança</p>
+                    <p class="text-xs text-gray-600">CNPE, FONTE e DIEE</p>
+                </div>
+            </div>
+
+            <!-- Seção 5.2 -->
+            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.08), white); border-radius: 1rem; border-left: 4px solid var(--color-secondary); display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, var(--color-secondary), var(--color-primary)); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-sm font-bold text-gray-800" style="color: var(--color-secondary);">5.2 Quatro Eixos</p>
+                    <p class="text-xs text-gray-600">Objetivos, Atributos, Produtos e Fluxo</p>
+                </div>
+            </div>
+
+            <!-- Seção 5.3 -->
+            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(255, 199, 44, 0.08), white); border-radius: 1rem; border-left: 4px solid var(--color-accent); display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, var(--color-accent), #F59E0B); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg class="w-6 h-6 text-gray-800" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-sm font-bold text-gray-800" style="color: #D97706;">5.3 Monitoramento</p>
+                    <p class="text-xs text-gray-600">Anual | Semáforo | Indicadores | PLANTE ABERTO</p>
+                </div>
+            </div>
+
+            <!-- Seção 5.4 -->
+            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(168, 85, 247, 0.08), white); border-radius: 1rem; border-left: 4px solid #A855F7; display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #A855F7, #9333EA); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75z" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-sm font-bold text-gray-800" style="color: #A855F7;">5.4 Avaliação</p>
+                    <p class="text-xs text-gray-600">Bienal | Políticas Públicas | Autoavaliação</p>
+                </div>
+            </div>
+
+            <!-- Seção 5.5 -->
+            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), white); border-radius: 1rem; border-left: 4px solid #EF4444; display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #EF4444, #DC2626); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-sm font-bold text-gray-800" style="color: #EF4444;">5.5 Revisão</p>
+                    <p class="text-xs text-gray-600">Quadrienal | Ordinária | Extraordinária</p>
+                </div>
+            </div>
+
+            <!-- Seção 5.6 -->
+            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), white); border-radius: 1rem; border-left: 4px solid #22C55E; display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #22C55E, #16A34A); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-sm font-bold text-gray-800" style="color: #22C55E;">5.6 Grupo MAR</p>
+                    <p class="text-xs text-gray-600">Monitoramento, Avaliação e Revisão</p>
+                </div>
+            </div>
+
+            <!-- Seção 5.7 -->
+            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), white); border-radius: 1rem; border-left: 4px solid #3B82F6; display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #3B82F6, #2563EB); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-sm font-bold text-gray-800" style="color: #3B82F6;">5.7 Pilar 4</p>
+                    <p class="text-xs text-gray-600">Disposições Específicas</p>
+                </div>
+            </div>
+
+            <!-- Seção 5.8 -->
+            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(249, 115, 22, 0.08), white); border-radius: 1rem; border-left: 4px solid #F97316; display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #F97316, #EA580C); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-sm font-bold text-gray-800" style="color: #F97316;">5.8 Metodologia</p>
+                    <p class="text-xs text-gray-600">Seleção de Indicadores | Exemplo Prático</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 3rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.08), white); border-radius: 1rem; border-left: 4px solid var(--color-primary); text-align: center;">
+            <p class="text-sm text-gray-700"><strong>📊 Total:</strong> 34 slides apresentando o sistema completo de Monitoramento, Avaliação e Revisão do PLANTE</p>
+        </div>
+    </div>
+
+    <!-- Slide 3: Governança -->
     <div class="slide">
         <h2 class="slide-title">
             <div class="icon-container">
@@ -1176,6 +637,19 @@
         </h2>
         <p class="slide-subtitle">Ciclo contínuo articulando as três funções fundamentais de governança</p>
 
+        <!-- BANNER DE DESTAQUE -->
+        <div style="margin-top: 2rem; padding: 1.5rem 2rem; background: linear-gradient(135deg, #EF4444, #DC2626); border-radius: 1rem; box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4); border: 3px solid #FCA5A5; display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 60px; height: 60px; min-width: 60px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <svg class="w-8 h-8" style="color: #EF4444;" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                </svg>
+            </div>
+            <div style="flex: 1;">
+                <p class="text-white text-xl font-black mb-1">⭐ PRIORIDADE #1 DO E-MAIL DA CHEFIA</p>
+                <p class="text-white text-sm opacity-95 font-semibold">Fluxo proposto de monitoramento: Etapas, periodicidade, responsáveis e conexão com GT/CNPE</p>
+            </div>
+        </div>
+
         <div style="margin-top: 3rem; display: flex; flex-direction: column; gap: 3rem; align-items: center; justify-content: center;">
             <!-- Etapa 1: Monitoramento Anual -->
             <div style="width: 100%; display: flex; align-items: center; gap: 3rem;">
@@ -1279,6 +753,19 @@
         </h2>
         <p class="slide-subtitle">Classificação tripartida do status de ações e indicadores para visibilidade clara do progresso</p>
 
+        <!-- BANNER DE DESTAQUE -->
+        <div style="margin-top: 2rem; padding: 1.5rem 2rem; background: linear-gradient(135deg, #EF4444, #DC2626); border-radius: 1rem; box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4); border: 3px solid #FCA5A5; display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 60px; height: 60px; min-width: 60px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <svg class="w-8 h-8" style="color: #EF4444;" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                </svg>
+            </div>
+            <div style="flex: 1;">
+                <p class="text-white text-xl font-black mb-1">⭐ PRIORIDADE #2 DO E-MAIL DA CHEFIA</p>
+                <p class="text-white text-sm opacity-95 font-semibold">Como será feito o monitoramento "semafórico" das ações: Critérios e exemplos práticos</p>
+            </div>
+        </div>
+
         <div style="margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem;">
             <!-- Status 1: ATENDE -->
             <div style="padding: 2rem; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), white); border-radius: 1.5rem; border: 3px solid #10B981; display: flex; flex-direction: column; align-items: center; text-align: center;">
@@ -1368,6 +855,19 @@
             Pilar 1: Segurança e Resiliência
         </h2>
         <p class="slide-subtitle">Indicadores prioritários que medem a robustez e diversidade do sistema energético</p>
+
+        <!-- BANNER DE DESTAQUE -->
+        <div style="margin-top: 2rem; padding: 1.5rem 2rem; background: linear-gradient(135deg, #EF4444, #DC2626); border-radius: 1rem; box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4); border: 3px solid #FCA5A5; display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 60px; height: 60px; min-width: 60px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <svg class="w-8 h-8" style="color: #EF4444;" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                </svg>
+            </div>
+            <div style="flex: 1;">
+                <p class="text-white text-xl font-black mb-1">⭐ PRIORIDADE #3 DO E-MAIL DA CHEFIA</p>
+                <p class="text-white text-sm opacity-95 font-semibold">Indicadores-chave propostos pela CGII considerando referências FEM e OBEPE (3 slides: Pilares 1, 2 e 3)</p>
+            </div>
+        </div>
 
         <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: stretch;">
             <!-- Indicador 1: FEM-04 -->
@@ -1573,6 +1073,19 @@
         </h2>
         <p class="slide-subtitle">Revisões ordinárias quadrienais e extraordinárias baseadas em gatilhos estratégicos</p>
 
+        <!-- BANNER DE DESTAQUE -->
+        <div style="margin-top: 2rem; padding: 1.5rem 2rem; background: linear-gradient(135deg, #EF4444, #DC2626); border-radius: 1rem; box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4); border: 3px solid #FCA5A5; display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 60px; height: 60px; min-width: 60px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <svg class="w-8 h-8" style="color: #EF4444;" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                </svg>
+            </div>
+            <div style="flex: 1;">
+                <p class="text-white text-xl font-black mb-1">⭐ PRIORIDADE #4 DO E-MAIL DA CHEFIA</p>
+                <p class="text-white text-sm opacity-95 font-semibold">Revisões ordinárias (quando) e gatilhos para revisões extraordinárias (correção de rumo)</p>
+            </div>
+        </div>
+
         <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: start;">
             <!-- Timeline Esquerda -->
             <div style="background: linear-gradient(135deg, rgba(0, 82, 46, 0.08), white); padding: 2rem; border-radius: 1.5rem; border: 2px solid var(--color-primary);">
@@ -1754,848 +1267,999 @@
     });
 </script>
 
-    <!-- ========== FASE 2: BLOCO A - COMPLEMENTAR SEÇÃO 5.3 ========== -->
+<!-- ========== FASE 2: BLOCO A - COMPLEMENTAR SEÇÃO 5.3 ========== -->
 
-    <!-- Slide 14: Monitoramento Plano Clima -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                </svg>
-            </div>
-            5.3.5 Monitoramento do Plano Clima
-        </h2>
-        <p class="slide-subtitle">Acompanhamento das contribuições do PLANTE aos compromissos climáticos nacionais (NDCs)</p>
+<!-- Slide 14: Monitoramento Plano Clima -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+        </div>
+        5.3.5 Monitoramento do Plano Clima
+    </h2>
+    <p class="slide-subtitle">Acompanhamento das contribuições do PLANTE aos compromissos climáticos nacionais (NDCs)</p>
 
-        <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-            <!-- Coluna 1: NDCs -->
-            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1.25rem; border-left: 4px solid #22C55E;">
-                <h3 class="text-lg font-bold mb-3" style="color: #22C55E;">🌍 Compromissos Climáticos</h3>
-                <div style="display: flex; flex-direction: column; gap: 1rem;">
-                    <div style="padding: 1rem; background: white; border-radius: 0.75rem; border-left: 3px solid #22C55E;">
-                        <p class="text-sm font-bold text-gray-800">NDCs Brasileiras</p>
-                        <p class="text-xs text-gray-600 mt-1">Metas de redução de emissões comprometidas</p>
-                    </div>
-                    <div style="padding: 1rem; background: white; border-radius: 0.75rem; border-left: 3px solid #22C55E;">
-                        <p class="text-sm font-bold text-gray-800">Acordo de Paris</p>
-                        <p class="text-xs text-gray-600 mt-1">Limitação de aquecimento global</p>
-                    </div>
-                    <div style="padding: 1rem; background: white; border-radius: 0.75rem; border-left: 3px solid #22C55E;">
-                        <p class="text-sm font-bold text-gray-800">Descarbonização Setorial</p>
-                        <p class="text-xs text-gray-600 mt-1">Transição energética alinhada</p>
-                    </div>
+    <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <!-- Coluna 1: NDCs -->
+        <div style="padding: 2rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1.25rem; border-left: 4px solid #22C55E;">
+            <h3 class="text-lg font-bold mb-3" style="color: #22C55E;">🌍 Compromissos Climáticos</h3>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="padding: 1rem; background: white; border-radius: 0.75rem; border-left: 3px solid #22C55E;">
+                    <p class="text-sm font-bold text-gray-800">NDCs Brasileiras</p>
+                    <p class="text-xs text-gray-600 mt-1">Metas de redução de emissões comprometidas</p>
                 </div>
-            </div>
-
-            <!-- Coluna 2: Processo -->
-            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), white); border-radius: 1.25rem; border-left: 4px solid #3B82F6;">
-                <h3 class="text-lg font-bold mb-3" style="color: #3B82F6;">📊 Processo de Monitoramento</h3>
-                <div style="display: flex; flex-direction: column; gap: 1rem;">
-                    <div style="padding: 1rem; background: white; border-radius: 0.75rem; border-left: 3px solid #3B82F6;">
-                        <p class="text-sm font-bold text-gray-800">1. Análise de Emissões</p>
-                        <p class="text-xs text-gray-600 mt-1">Redução de GEE na matriz</p>
-                    </div>
-                    <div style="padding: 1rem; background: white; border-radius: 0.75rem; border-left: 3px solid #3B82F6;">
-                        <p class="text-sm font-bold text-gray-800">2. Progresso Setorial</p>
-                        <p class="text-xs text-gray-600 mt-1">Avanço em direção às metas</p>
-                    </div>
-                    <div style="padding: 1rem; background: white; border-radius: 0.75rem; border-left: 3px solid #3B82F6;">
-                        <p class="text-sm font-bold text-gray-800">3. Integração de Sistemas</p>
-                        <p class="text-xs text-gray-600 mt-1">Sincronização com monitoramento climático nacional e internacional</p>
-                    </div>
+                <div style="padding: 1rem; background: white; border-radius: 0.75rem; border-left: 3px solid #22C55E;">
+                    <p class="text-sm font-bold text-gray-800">Acordo de Paris</p>
+                    <p class="text-xs text-gray-600 mt-1">Limitação de aquecimento global</p>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 15: Acompanhamento Orçamentário e Financeiro -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 3.071-.879 4.242 0M9.75 17.25c0 .552-.448 1-1 1s-1-.448-1-1m0-7c0 .552-.448 1-1 1s-1-.448-1-1m0-7c0 .552-.448 1-1 1s-1-.448-1-1" />
-                </svg>
-            </div>
-            5.3.6 Acompanhamento Orçamentário e Financeiro
-        </h2>
-        <p class="slide-subtitle">Análise estratégica de alocação e eficiência de recursos do PLANTE</p>
-
-        <div style="margin-top: 2.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-            <div style="padding: 1.75rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), white); border-radius: 1rem; border-top: 3px solid #3B82F6; text-align: center;">
-                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3B82F6, #1E40AF); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);">
-                    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 6v12m0-12l3 3m-3-3L9 9"/></svg>
-                </div>
-                <p class="text-sm font-bold text-gray-800">Coleta de Dados</p>
-                <p class="text-xs text-gray-600 mt-2">Execução orçamentária dos órgãos</p>
-            </div>
-
-            <div style="padding: 1.75rem; background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), white); border-radius: 1rem; border-top: 3px solid #A855F7; text-align: center;">
-                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #A855F7, #7E22CE); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2);">
-                    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/></svg>
-                </div>
-                <p class="text-sm font-bold text-gray-800">Análise Estratégica</p>
-                <p class="text-xs text-gray-600 mt-2">Custo-benefício das ações</p>
-            </div>
-
-            <div style="padding: 1.75rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1rem; border-top: 3px solid #22C55E; text-align: center;">
-                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #22C55E, #15803D); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);">
-                    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                </div>
-                <p class="text-sm font-bold text-gray-800">Mobilização</p>
-                <p class="text-xs text-gray-600 mt-2">BNDES e organismos multilaterais</p>
-            </div>
-        </div>
-
-        <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), white); border-radius: 1rem; border-left: 4px solid #FBBF24;">
-            <p class="text-sm text-gray-700"><strong>💡 Nota:</strong> Análise estratégica de recursos, <strong>não é monitoramento operacional pontual</strong>. Foco em eficiência e sustentabilidade financeira dos componentes.</p>
-        </div>
-    </div>
-
-    <!-- Slide 16: Monitoramento Estratégico Nacional -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.598 6.361L16.5 3.97m0 0l3.752 6.465m-3.752-6.465L21.75 19.5m-3.752-6.465l6.745 7.046m0 0l-3.72-3.72m3.72 3.72H2.25m9.285-7.932l-5.922 9.702m-2.006-2.207l.584-.585m0 0h-.969a2.004 2.004 0 00-1.416.587L2.25 12m0 0l3.75-3.75" />
-                </svg>
-            </div>
-            5.3.7 Monitoramento Estratégico Nacional
-        </h2>
-        <p class="slide-subtitle">Acompanhamento de indicadores estratégicos nacionais com visão de tendências de longo prazo</p>
-
-        <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), white); border-radius: 1rem; border: 2px solid #3B82F6;">
-                <h3 class="text-base font-bold mb-2" style="color: #3B82F6;">Indicadores-Chave</h3>
-                <p class="text-xs text-gray-700">Acompanhamento sistemático de métricas estratégicas nacionais de transição energética</p>
-                <p class="text-xs text-gray-600 mt-2 font-semibold">📊 Atualização: Trimestral</p>
-            </div>
-
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(249, 115, 22, 0.08), white); border-radius: 1rem; border: 2px solid #F97316;">
-                <h3 class="text-base font-bold mb-2" style="color: #F97316;">Benchmarks Internacionais</h3>
-                <p class="text-xs text-gray-700">Análise comparativa com melhores práticas globais e países referenciais</p>
-                <p class="text-xs text-gray-600 mt-2 font-semibold">🌐 Publicado no Painel</p>
-            </div>
-
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(168, 85, 247, 0.08), white); border-radius: 1rem; border: 2px solid #A855F7;">
-                <h3 class="text-base font-bold mb-2" style="color: #A855F7;">Oportunidades e Desafios</h3>
-                <p class="text-xs text-gray-700">Identificação de tendências emergentes no setor energético global</p>
-                <p class="text-xs text-gray-600 mt-2 font-semibold">🔮 Projeções 2030-2050</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- ========== FASE 2: BLOCO B - SEÇÃO 5.4 AVALIAÇÃO ========== -->
-
-    <!-- Slide 17: Introdução à Avaliação -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-            </div>
-            5.4 Avaliação: Segundo Pilar da Governança
-        </h2>
-        <p class="slide-subtitle">Análises específicas e aprofundadas dos aspectos qualitativos das políticas implementadas</p>
-
-        <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-            <!-- Monitoramento vs Avaliação -->
-            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.08), white); border-radius: 1rem; border: 2px solid var(--color-primary);">
-                <h3 class="text-lg font-bold mb-3" style="color: var(--color-primary);">Monitoramento</h3>
-                <ul style="text-align: left; font-size: 0.875rem; color: #4A5568; line-height: 2;">
-                    <li>✓ Contínuo (cotidiano)</li>
-                    <li>✓ Quantitativo</li>
-                    <li>✓ Indicadores numéricos</li>
-                    <li>✓ Status de progresso</li>
-                    <li>✓ Corretivo (curto prazo)</li>
-                </ul>
-            </div>
-
-            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(255, 199, 44, 0.08), white); border-radius: 1rem; border: 2px solid var(--color-accent);">
-                <h3 class="text-lg font-bold mb-3" style="color: #D97706;">Avaliação</h3>
-                <ul style="text-align: left; font-size: 0.875rem; color: #4A5568; line-height: 2;">
-                    <li>✓ Periódica (bienal)</li>
-                    <li>✓ Qualitativa</li>
-                    <li>✓ Análise aprofundada</li>
-                    <li>✓ Impactos e resultados</li>
-                    <li>✓ Estratégico (longo prazo)</li>
-                </ul>
-            </div>
-        </div>
-
-        <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), white); border-radius: 1rem; border-left: 4px solid #3B82F6;">
-            <p class="text-sm text-gray-700"><strong>📌 Coordenação:</strong> SNTEP/DIEE com periodicidade <strong>bienal</strong>. Pode envolver colaboração de organizações parceiras. Resultados apresentados ao FONTE e integrados no processo de revisão.</p>
-        </div>
-    </div>
-
-    <!-- Slide 18: Avaliação de Políticas Públicas -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-            </div>
-            5.4.1 Avaliação de Políticas Públicas do PLANTE
-        </h2>
-
-        <div style="margin-top: 2.5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 39, 118, 0.1), white); border-radius: 1rem; border-left: 4px solid var(--color-blue); text-align: center;">
-                <p class="text-sm font-bold text-gray-800" style="color: var(--color-blue);">Periodicidade</p>
-                <p class="text-xs text-gray-600 mt-2">Estudos avaliativos a cada <strong>2 anos</strong></p>
-            </div>
-
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(255, 199, 44, 0.1), white); border-radius: 1rem; border-left: 4px solid var(--color-accent); text-align: center;">
-                <p class="text-sm font-bold text-gray-800" style="color: #D97706;">Coordenação</p>
-                <p class="text-xs text-gray-600 mt-2"><strong>DIEE/SNTEP</strong> + Órgãos setoriais</p>
-            </div>
-
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1rem; border-left: 4px solid #22C55E; text-align: center;">
-                <p class="text-sm font-bold text-gray-800" style="color: #22C55E;">Análise Multidimensional</p>
-                <p class="text-xs text-gray-600 mt-2">Relevância • Eficiência • Efetividade<br/>Impactos • Sustentabilidade</p>
-            </div>
-
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), white); border-radius: 1rem; border-left: 4px solid #A855F7; text-align: center;">
-                <p class="text-sm font-bold text-gray-800" style="color: #A855F7;">Retroalimentação</p>
-                <p class="text-xs text-gray-600 mt-2">Resultados alimentam a <strong>Revisão</strong></p>
-            </div>
-        </div>
-
-        <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.08), white); border-radius: 1rem; border-left: 4px solid var(--color-secondary);">
-            <p class="text-sm text-gray-700"><strong>🎯 Objetivo:</strong> Fornecer subsídios qualitativos e evidências aprofundadas para a tomada de decisão estratégica no CNPE.</p>
-        </div>
-    </div>
-
-    <!-- Slide 19: Produtos da Avaliação -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
-                </svg>
-            </div>
-            5.4.1.1 Produtos da Avaliação
-        </h2>
-
-        <div style="margin-top: 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;">
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 39, 118, 0.1), white); border-radius: 1rem; border-top: 3px solid var(--color-blue); text-align: center;">
-                <p class="text-sm font-bold text-gray-800">Estudos Avaliativos</p>
-                <p class="text-xs text-gray-600 mt-2">Análises aprofundadas bienais sobre efetividade e eficiência</p>
-            </div>
-
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1rem; border-top: 3px solid #22C55E; text-align: center;">
-                <p class="text-sm font-bold text-gray-800">Relatórios de Impacto</p>
-                <p class="text-xs text-gray-600 mt-2">Avaliação de resultados socioambientais e econômicos</p>
-            </div>
-
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), white); border-radius: 1rem; border-top: 3px solid #FBBF24; text-align: center;">
-                <p class="text-sm font-bold text-gray-800">Análises de Relevância</p>
-                <p class="text-xs text-gray-600 mt-2">Verificação de adequação aos objetivos estratégicos</p>
-            </div>
-
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), white); border-radius: 1rem; border-top: 3px solid #A855F7; text-align: center;">
-                <p class="text-sm font-bold text-gray-800">Sustentabilidade</p>
-                <p class="text-xs text-gray-600 mt-2">Avaliação de viabilidade de longo prazo</p>
-            </div>
-
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-top: 3px solid #EF4444; text-align: center;">
-                <p class="text-sm font-bold text-gray-800">Recomendações</p>
-                <p class="text-xs text-gray-600 mt-2">Propostas para aprimoramento e correção de rumo</p>
-            </div>
-
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), white); border-radius: 1rem; border-top: 3px solid #3B82F6; text-align: center;">
-                <p class="text-sm font-bold text-gray-800">Benchmarking</p>
-                <p class="text-xs text-gray-600 mt-2">Comparações com boas práticas globais</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 20: Autoavaliação dos Componentes -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-            </div>
-            5.4.2 Autoavaliação dos Componentes
-        </h2>
-        <p class="slide-subtitle">Processo complementar conduzido pelos gestores dos componentes do PLANTE</p>
-
-        <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.1), white); border-radius: 1rem; border: 2px solid var(--color-secondary);">
-                <h3 class="text-sm font-bold mb-2" style="color: var(--color-secondary);">Responsabilidade Setorial</h3>
-                <p class="text-xs text-gray-700">Conduzida pelos órgãos executores de cada componente</p>
-            </div>
-
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), white); border-radius: 1rem; border: 2px solid #FBBF24;">
-                <h3 class="text-sm font-bold mb-2" style="color: #D97706;">Periodicidade Flexível</h3>
-                <p class="text-xs text-gray-700">Realizada conforme necessidades específicas de cada componente</p>
-            </div>
-
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), white); border-radius: 1rem; border: 2px solid #3B82F6;">
-                <h3 class="text-sm font-bold mb-2" style="color: #3B82F6;">Foco Operacional</h3>
-                <p class="text-xs text-gray-700">Análise detalhada de aspectos de implementação e gestão</p>
-            </div>
-        </div>
-
-        <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1rem; border-left: 4px solid #22C55E;">
-            <p class="text-sm text-gray-700"><strong>🔗 Integração:</strong> Articulação com os dados do sistema de monitoramento contínuo para contextualização dos resultados.</p>
-        </div>
-    </div>
-
-    <!-- Slide 21: Fluxo da Autoavaliação -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                </svg>
-            </div>
-            5.4.2.2 Fluxo do Processo de Autoavaliação
-        </h2>
-
-        <div class="flow-container mt-8">
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number bg-gradient-blue" style="background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));">1</div>
-                <div><p class="text-lg font-bold mb-1" style="color: var(--color-secondary);">Planejamento</p><p class="text-sm text-gray-700">Definição de escopo e metodologia pelos gestores setoriais</p></div>
-            </div>
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number" style="background: linear-gradient(135deg, #F59E0B, #D97706);">2</div>
-                <div><p class="text-lg font-bold mb-1" style="color: #D97706;">Coleta de Dados</p><p class="text-sm text-gray-700">Levantamento de informações primárias e secundárias</p></div>
-            </div>
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number" style="background: linear-gradient(135deg, #3B82F6, #1E40AF);">3</div>
-                <div><p class="text-lg font-bold mb-1" style="color: #3B82F6;">Análise Qualitativa</p><p class="text-sm text-gray-700">Interpretação de dados coletados</p></div>
-            </div>
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number" style="background: linear-gradient(135deg, #22C55E, #15803D);">4</div>
-                <div><p class="text-lg font-bold mb-1" style="color: #22C55E;">Elaboração de Relatórios</p><p class="text-sm text-gray-700">Diagnósticos e recomendações setoriais</p></div>
-            </div>
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number" style="background: linear-gradient(135deg, #A855F7, #7E22CE);">5</div>
-                <div><p class="text-lg font-bold mb-1" style="color: #A855F7;">Discussão Interna</p><p class="text-sm text-gray-700">Validação com equipes técnicas</p></div>
-            </div>
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number" style="background: linear-gradient(135deg, #EC4899, #DB2777);">6</div>
-                <div><p class="text-lg font-bold mb-1" style="color: #DB2777;">Consolidação</p><p class="text-sm text-gray-700">Propostas de ajustes e melhorias</p></div>
-            </div>
-            <div class="flow-step flex items-start gap-4">
-                <div class="flow-number" style="background: linear-gradient(135deg, var(--color-blue), var(--color-blue-light));">7</div>
-                <div><p class="text-lg font-bold mb-1" style="color: var(--color-blue);">Submissão</p><p class="text-sm text-gray-700">Integração com processo geral de avaliação da SNTEP/DIEE</p></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ========== FASE 2: BLOCO C - SEÇÃO 5.5 REVISÃO ========== -->
-
-    <!-- Slide 22: Introdução à Revisão -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-5.337c0-1.052.845-2.082 2.292-2.244l7.223-.918m5.331 5.499H8.5A2.25 2.25 0 006.25 20.625v.338A2.25 2.25 0 008.5 23h5m0-23h4.822c1.674 0 3.07.56 4.078 1.978C20.563 4.881 21.75 6.92 21.75 9.798v1.129A3.393 3.393 0 0018.357 14.5H7.643A3.393 3.393 0 004.25 11.927v-1.129c0-2.878 1.186-4.917 2.342-6.444 1.007-1.418 2.403-1.978 4.078-1.978z" />
-                </svg>
-            </div>
-            5.5 Revisão: Terceiro Pilar da Governança
-        </h2>
-        <p class="slide-subtitle">Ajustes estruturais com base em evidências de monitoramento e avaliação</p>
-
-        <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.1), white); border-radius: 1rem; border-left: 4px solid var(--color-secondary);">
-                <h3 class="text-lg font-bold mb-3" style="color: var(--color-secondary);">Objetivo</h3>
-                <p class="text-sm text-gray-700 mb-2">Proporcionar <strong>alinhamento às evidências</strong> oriundas do monitoramento e da avaliação</p>
-                <p class="text-sm text-gray-700">Buscar <strong>aderência à realidade</strong> de implementação da transição energética</p>
-            </div>
-
-            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), white); border-radius: 1rem; border-left: 4px solid #3B82F6;">
-                <h3 class="text-lg font-bold mb-3" style="color: #3B82F6;">Resultado</h3>
-                <p class="text-sm text-gray-700 mb-2">Atualização de <strong>ações, metas e indicadores</strong></p>
-                <p class="text-sm text-gray-700">Inclusão de novas metas e <strong>exclusão de elementos ineficazes</strong></p>
-            </div>
-        </div>
-
-        <div style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: stretch;">
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), white); border-radius: 1rem; border: 2px solid #FBBF24; text-align: center;">
-                <p class="text-xl font-bold" style="color: #D97706;">Ordinária</p>
-                <p class="text-sm text-gray-700 mt-2">Quadrienal</p>
-                <p class="text-xs text-gray-600 mt-1">(A cada 4 anos)</p>
-            </div>
-
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border: 2px solid #EF4444; text-align: center;">
-                <p class="text-xl font-bold" style="color: #EF4444;">Extraordinária</p>
-                <p class="text-sm text-gray-700 mt-2">Conforme Demanda</p>
-                <p class="text-xs text-gray-600 mt-1">(Em situações especiais)</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 23: Revisão Ordinária -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-6-9v2.25m-6.364.386l1.591 1.591M5.25 19.5H3.75A2.25 2.25 0 011.5 17.25v-5.25a2.25 2.25 0 012.25-2.25h.75a9.004 9.004 0 018.671-5.093c.36 0 .713.029 1.065.084m0 0a8.967 8.967 0 015.18 2.897m-12 .333A9.980 9.980 0 0112 3c4.478 0 8.268 2.943 9.542 7" />
-                </svg>
-            </div>
-            5.5.1 Revisão Ordinária - Ciclo Quadrienal
-        </h2>
-
-        <div style="margin-top: 2rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;">
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.1), white); border-radius: 1rem; border-top: 3px solid var(--color-secondary); text-align: center;">
-                <p class="text-sm font-bold text-gray-800">Periodicidade</p>
-                <p class="text-2xl font-bold" style="color: var(--color-secondary); margin: 0.5rem 0;">4 anos</p>
-                <p class="text-xs text-gray-600">Ordinária e formal</p>
-            </div>
-
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), white); border-radius: 1rem; border-top: 3px solid #FBBF24; text-align: center;">
-                <p class="text-sm font-bold text-gray-800">Atualização</p>
-                <p class="text-sm font-bold" style="color: #D97706; margin: 0.5rem 0;">Estrutural</p>
-                <p class="text-xs text-gray-600">Ações, metas, indicadores</p>
-            </div>
-
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1rem; border-top: 3px solid #22C55E; text-align: center;">
-                <p class="text-sm font-bold text-gray-800">Base Empírica</p>
-                <p class="text-sm font-bold" style="color: #22C55E; margin: 0.5rem 0;">Evidências</p>
-                <p class="text-xs text-gray-600">Monitoramento + Avaliação</p>
-            </div>
-
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), white); border-radius: 1rem; border-top: 3px solid #3B82F6; text-align: center;">
-                <p class="text-sm font-bold text-gray-800">Abrangência</p>
-                <p class="text-sm font-bold" style="color: #3B82F6; margin: 0.5rem 0;">Reformulação</p>
-                <p class="text-xs text-gray-600">De estratégias completas</p>
-            </div>
-        </div>
-
-        <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.08), white); border-radius: 1rem; border-left: 4px solid var(--color-primary);">
-            <p class="text-sm text-gray-700"><strong>📋 Transparência Obrigatória:</strong> Publicação em sítio eletrônico do PLANTE com <strong>justificativas técnicas detalhadas</strong> de cada alteração.</p>
-        </div>
-    </div>
-
-    <!-- Slide 24: Fluxo da Revisão Ordinária -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 3.071-.879 4.242 0M9.75 17.25c0 .552-.448 1-1 1s-1-.448-1-1m0-7c0 .552-.448 1-1 1s-1-.448-1-1m0-7c0 .552-.448 1-1 1s-1-.448-1-1" />
-                </svg>
-            </div>
-            5.5.1.1 Fluxo da Revisão Ordinária
-        </h2>
-
-        <div class="flow-container mt-8">
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number bg-gradient-blue">1</div>
-                <div><p class="text-lg font-bold mb-1" style="color: var(--color-blue);">Identificação de Demandas</p><p class="text-sm text-gray-700">DIEE inclui demandas no FONTE; Ministérios sinalizam atributos para revisão</p></div>
-            </div>
-
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number" style="background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));">2</div>
-                <div><p class="text-lg font-bold mb-1" style="color: var(--color-secondary);">Análise Técnica</p><p class="text-sm text-gray-700">DIEE analisa pedidos; identifica alterações e propõe ajustes</p></div>
-            </div>
-
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number" style="background: linear-gradient(135deg, #F59E0B, #D97706);">3</div>
-                <div><p class="text-lg font-bold mb-1" style="color: #D97706;">Consolidação</p><p class="text-sm text-gray-700">Articulação com órgãos responsáveis pelos atributos</p></div>
-            </div>
-
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number" style="background: linear-gradient(135deg, #3B82F6, #1E40AF);">4</div>
-                <div><p class="text-lg font-bold mb-1" style="color: #3B82F6;">Elaboração de Proposta</p><p class="text-sm text-gray-700">Desenvolvimento com justificativas técnicas detalhadas</p></div>
-            </div>
-
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number" style="background: linear-gradient(135deg, #22C55E, #15803D);">5</div>
-                <div><p class="text-lg font-bold mb-1" style="color: #22C55E;">Aprovação</p><p class="text-sm text-gray-700">Ministério de Minas e Energia (via SNTEP) aprova alterações</p></div>
-            </div>
-
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number" style="background: linear-gradient(135deg, #A855F7, #7E22CE);">6</div>
-                <div><p class="text-lg font-bold mb-1" style="color: #A855F7;">Publicação</p><p class="text-sm text-gray-700">Divulgação em sítio eletrônico com justificativas de cada modificação</p></div>
-            </div>
-
-            <div class="flow-step flex items-start gap-4">
-                <div class="flow-number" style="background: linear-gradient(135deg, #EC4899, #DB2777);">7</div>
-                <div><p class="text-lg font-bold mb-1" style="color: #DB2777;">Implementação</p><p class="text-sm text-gray-700">Efetivação das mudanças estruturais aprovadas</p></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 25: Revisão de Indicadores Não Apurados -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-                </svg>
-            </div>
-            5.5.2 Revisão de Indicadores Não Apurados
-        </h2>
-        <p class="slide-subtitle">Orientações para tratamento de indicadores com problemas de mensuração</p>
-
-        <div style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 39, 118, 0.1), white); border-radius: 1rem; border-left: 4px solid var(--color-blue);">
-                <h3 class="text-base font-bold mb-3" style="color: var(--color-blue);">Diagnóstico</h3>
-                <p class="text-sm text-gray-700 mb-2">Identificar motivos da impossibilidade de apuração</p>
-                <p class="text-sm text-gray-700 mb-2">Avaliar relevância para objetivos estratégicos</p>
-                <p class="text-sm text-gray-700">Considerar viabilidade metodológica e técnica</p>
-            </div>
-
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), white); border-radius: 1rem; border-left: 4px solid #FBBF24;">
-                <h3 class="text-base font-bold mb-3" style="color: #D97706;">Ação</h3>
-                <p class="text-sm text-gray-700 mb-2">✓ Reformulação metodológica</p>
-                <p class="text-sm text-gray-700 mb-2">✓ Garantir apuração futura</p>
-                <p class="text-sm text-gray-700">✓ Ou exclusão justificada se inviável</p>
-            </div>
-        </div>
-
-        <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-left: 4px solid #EF4444;">
-            <p class="text-sm text-gray-700"><strong>⚠️ Importante:</strong> Apresentação antecipada de todas as opções de revisão aos órgãos durante <strong>controle de qualidade realizado pelo DIEE</strong>.</p>
-        </div>
-    </div>
-
-    <!-- Slide 26: Revisão de Atributos Sobrepostos -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12M8 11h12M8 15h12M3 7h.01M3 11h.01M3 15h.01" />
-                </svg>
-            </div>
-            5.5.3 Revisão de Atributos Sobrepostos
-        </h2>
-        <p class="slide-subtitle">Identificação e consolidação de ações e indicadores duplicados ou sobrepostos</p>
-
-        <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-left: 4px solid #EF4444;">
-                <h3 class="text-lg font-bold mb-3" style="color: #EF4444;">Problema</h3>
-                <ul style="text-align: left; font-size: 0.875rem; color: #4A5568; line-height: 2;">
-                    <li>⚠ Sobreposição de ações</li>
-                    <li>⚠ Indicadores duplicados</li>
-                    <li>⚠ Ineficiência de recursos</li>
-                    <li>⚠ Lacunas de cobertura</li>
-                </ul>
-            </div>
-
-            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1rem; border-left: 4px solid #22C55E;">
-                <h3 class="text-lg font-bold mb-3" style="color: #22C55E;">Solução</h3>
-                <ul style="text-align: left; font-size: 0.875rem; color: #4A5568; line-height: 2;">
-                    <li>✓ Análise de complementaridade</li>
-                    <li>✓ Consolidação de similares</li>
-                    <li>✓ Redistribuição de responsabilidades</li>
-                    <li>✓ Integração de esforços</li>
-                </ul>
-            </div>
-        </div>
-
-        <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.1), white); border-radius: 1rem; border-left: 4px solid var(--color-secondary);">
-            <p class="text-sm text-gray-700"><strong>🎯 Objetivo:</strong> Manter <strong>cobertura completa</strong> de todos os aspectos estratégicos, eliminando redundâncias e otimizando recursos.</p>
-        </div>
-    </div>
-
-    <!-- Slide 27: Revisão Extraordinária -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-7.5h-2.25A2.25 2.25 0 0 0 16.5 2.25h-5.25A2.25 2.25 0 0 0 9 4.5H6.75" />
-                </svg>
-            </div>
-            5.5.4 Revisão Extraordinária
-        </h2>
-        <p class="slide-subtitle">Ajustes urgentes acionados por situações especiais e gatilhos estratégicos</p>
-
-        <div style="margin-top: 2rem; display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;">
-            <div style="padding: 1.25rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-top: 3px solid #EF4444; text-align: center;">
-                <p class="text-sm font-bold text-gray-800">Mudanças Energéticas</p>
-                <p class="text-xs text-gray-600 mt-2">Cenário nacional/internacional significativo</p>
-            </div>
-
-            <div style="padding: 1.25rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-top: 3px solid #EF4444; text-align: center;">
-                <p class="text-sm font-bold text-gray-800">Legislativas</p>
-                <p class="text-xs text-gray-600 mt-2">Alteração em leis que impactam objetivos</p>
-            </div>
-
-            <div style="padding: 1.25rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-top: 3px solid #EF4444; text-align: center;">
-                <p class="text-sm font-bold text-gray-800">Emergências</p>
-                <p class="text-xs text-gray-600 mt-2">Crises que demandem adaptação urgente</p>
-            </div>
-
-            <div style="padding: 1.25rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-top: 3px solid #EF4444; text-align: center;">
-                <p class="text-sm font-bold text-gray-800">Oportunidades</p>
-                <p class="text-xs text-gray-600 mt-2">Modificação rápida necessária</p>
-            </div>
-
-            <div style="padding: 1.25rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-top: 3px solid #EF4444; text-align: center;">
-                <p class="text-sm font-bold text-gray-800">Desvios Críticos</p>
-                <p class="text-xs text-gray-600 mt-2">Monitoramento indica urgência</p>
-            </div>
-        </div>
-
-        <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-left: 4px solid #EF4444;">
-            <p class="text-sm text-gray-700"><strong>⚡ Fluxo Acelerado:</strong> Processo expedito que <strong>não aguarda ciclo quadrienal</strong>. Análise técnica urgente → Consulta expedita → Deliberação em caráter urgente → Implementação imediata.</p>
-        </div>
-    </div>
-
-    <!-- Slide 28: Fluxo da Revisão Extraordinária -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-            </div>
-            5.5.4.1 Fluxo Acelerado da Revisão Extraordinária
-        </h2>
-
-        <div class="flow-container mt-8">
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number" style="background: linear-gradient(135deg, #EF4444, #DC2626);">1</div>
-                <div><p class="text-lg font-bold mb-1" style="color: #EF4444;">Identificação</p><p class="text-sm text-gray-700">Gatilho identificado por qualquer órgão competente ou SNTEP/DIEE</p></div>
-            </div>
-
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number" style="background: linear-gradient(135deg, #F97316, #EA580C);">2</div>
-                <div><p class="text-lg font-bold mb-1" style="color: #F97316;">Análise Urgente</p><p class="text-sm text-gray-700">Avaliação técnica rápida da situação e alternativas</p></div>
-            </div>
-
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number" style="background: linear-gradient(135deg, #FBBF24, #F59E0B);">3</div>
-                <div><p class="text-lg font-bold mb-1" style="color: #D97706;">Proposta de Alteração</p><p class="text-sm text-gray-700">Com justificativa técnica detalhada</p></div>
-            </div>
-
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number" style="background: linear-gradient(135deg, #84CC16, #65A30D);">4</div>
-                <div><p class="text-lg font-bold mb-1" style="color: #65A30D;">Consulta Expedita</p><p class="text-sm text-gray-700">Aos órgãos diretamente afetados</p></div>
-            </div>
-
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number" style="background: linear-gradient(135deg, #3B82F6, #1E40AF);">5</div>
-                <div><p class="text-lg font-bold mb-1" style="color: #3B82F6;">Deliberação Urgente</p><p class="text-sm text-gray-700">Ministério de Minas e Energia aprova em caráter urgente</p></div>
-            </div>
-
-            <div class="flow-step flex items-start gap-4 mb-8">
-                <div class="flow-line"></div>
-                <div class="flow-number" style="background: linear-gradient(135deg, #22C55E, #15803D);">6</div>
-                <div><p class="text-lg font-bold mb-1" style="color: #22C55E;">Implementação Imediata</p><p class="text-sm text-gray-700">Efetivação das medidas aprovadas sem demoras</p></div>
-            </div>
-
-            <div class="flow-step flex items-start gap-4">
-                <div class="flow-number" style="background: linear-gradient(135deg, #A855F7, #7E22CE);">7</div>
-                <div><p class="text-lg font-bold mb-1" style="color: #A855F7;">Avaliação Posterior</p><p class="text-sm text-gray-700">Análise dos impactos das alterações realizadas</p></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ========== FASE 2: BLOCO D - DISPOSIÇÕES FINAIS ========== -->
-
-    <!-- Slide 29: Grupo de Monitoramento, Avaliação e Revisão -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-                </svg>
-            </div>
-            5.6 Grupo de Monitoramento, Avaliação e Revisão
-        </h2>
-        <p class="slide-subtitle">Estrutura de apoio para viabilizar a implementação desta metodologia integrada</p>
-
-        <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.1), white); border-radius: 1.25rem; border: 2px solid var(--color-secondary);">
-                <h3 class="text-lg font-bold mb-4" style="color: var(--color-secondary);">Responsabilidades</h3>
-                <div style="display: flex; flex-direction: column; gap: 1rem;">
-                    <div style="padding: 0.75rem; background: white; border-radius: 0.5rem; border-left: 3px solid var(--color-secondary);">
-                        <p class="text-sm font-bold text-gray-800">1. Padronização</p>
-                        <p class="text-xs text-gray-600">De procedimentos e consolidação de dados</p>
-                    </div>
-                    <div style="padding: 0.75rem; background: white; border-radius: 0.5rem; border-left: 3px solid var(--color-secondary);">
-                        <p class="text-sm font-bold text-gray-800">2. Articulação</p>
-                        <p class="text-xs text-gray-600">Entre órgãos setoriais e ações</p>
-                    </div>
-                    <div style="padding: 0.75rem; background: white; border-radius: 0.5rem; border-left: 3px solid var(--color-secondary);">
-                        <p class="text-sm font-bold text-gray-800">3. Análise</p>
-                        <p class="text-xs text-gray-600">De resultados preliminares e encaminhamentos</p>
-                    </div>
-                    <div style="padding: 0.75rem; background: white; border-radius: 0.5rem; border-left: 3px solid var(--color-secondary);">
-                        <p class="text-sm font-bold text-gray-800">4. Efetividade</p>
-                        <p class="text-xs text-gray-600">Do ciclo de gestão como um todo</p>
-                    </div>
-                </div>
-            </div>
-
-            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), white); border-radius: 1.25rem; border: 2px solid #3B82F6;">
-                <h3 class="text-lg font-bold mb-4" style="color: #3B82F6;">Apoio à SNTEP/DIEE</h3>
-                <div style="display: flex; flex-direction: column; gap: 1rem;">
-                    <div style="padding: 1rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.2), white); border-radius: 0.5rem; border-left: 3px solid var(--color-secondary);">
-                        <p class="text-sm font-bold text-gray-800" style="color: var(--color-secondary);">🔄 Ciclo Monitoramento</p>
-                        <p class="text-xs text-gray-600">Contínuo e coordenado</p>
-                    </div>
-                    <div style="padding: 1rem; background: linear-gradient(135deg, rgba(255, 199, 44, 0.2), white); border-radius: 0.5rem; border-left: 3px solid #FBBF24;">
-                        <p class="text-sm font-bold text-gray-800" style="color: #D97706;">📊 Estudos Avaliativos</p>
-                        <p class="text-xs text-gray-600">Bienais e temáticos</p>
-                    </div>
-                    <div style="padding: 1rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), white); border-radius: 0.5rem; border-left: 3px solid #22C55E;">
-                        <p class="text-sm font-bold text-gray-800" style="color: #22C55E;">🔧 Revisões Ordenadas</p>
-                        <p class="text-xs text-gray-600">Ordinárias e extraordinárias</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 30: Disposições Específicas - Pilar 4 -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-            </div>
-            5.7 Disposições Específicas: Pilar 4
-        </h2>
-        <p class="slide-subtitle">Tratamento diferenciado do Pilar 4 - Articulação de Políticas e Meios de Implementação</p>
-
-        <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), white); border-radius: 1.5rem; border: 3px solid #A855F7; text-align: center;">
-            <div style="margin-bottom: 2rem;">
-                <svg class="w-16 h-16 mx-auto text-purple-600" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            </div>
-            <h3 class="text-2xl font-bold mb-3" style="color: #A855F7;">Natureza Transversal</h3>
-            <p class="text-lg text-gray-700 mb-4">O Pilar 4 <strong>não é monitorado como os demais</strong> por ações e indicadores específicos</p>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
-                <div style="padding: 1.5rem; background: white; border-radius: 1rem; border-left: 4px solid #EF4444;">
-                    <p class="text-sm font-bold text-gray-800 mb-2">❌ NÃO Aplicado:</p>
-                    <p class="text-sm text-gray-700">Monitoramento por ações e indicadores específicos</p>
-                </div>
-
-                <div style="padding: 1.5rem; background: white; border-radius: 1rem; border-left: 4px solid #22C55E;">
-                    <p class="text-sm font-bold text-gray-800 mb-2">✅ Aplicado:</p>
-                    <p class="text-sm text-gray-700">Avaliação de efetividade de mecanismos de articulação e mobilização de recursos</p>
+                <div style="padding: 1rem; background: white; border-radius: 0.75rem; border-left: 3px solid #22C55E;">
+                    <p class="text-sm font-bold text-gray-800">Descarbonização Setorial</p>
+                    <p class="text-xs text-gray-600 mt-1">Transição energética alinhada</p>
                 </div>
             </div>
         </div>
 
-        <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.08), white); border-radius: 1rem; border-left: 4px solid var(--color-primary);">
-            <p class="text-sm text-gray-700"><strong>📌 Nota:</strong> Fluxos específicos de acompanhamento do Pilar 4 serão detalhados em capítulos complementares desta proposta.</p>
+        <!-- Coluna 2: Processo -->
+        <div style="padding: 2rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), white); border-radius: 1.25rem; border-left: 4px solid #3B82F6;">
+            <h3 class="text-lg font-bold mb-3" style="color: #3B82F6;">📊 Processo de Monitoramento</h3>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="padding: 1rem; background: white; border-radius: 0.75rem; border-left: 3px solid #3B82F6;">
+                    <p class="text-sm font-bold text-gray-800">1. Análise de Emissões</p>
+                    <p class="text-xs text-gray-600 mt-1">Redução de GEE na matriz</p>
+                </div>
+                <div style="padding: 1rem; background: white; border-radius: 0.75rem; border-left: 3px solid #3B82F6;">
+                    <p class="text-sm font-bold text-gray-800">2. Progresso Setorial</p>
+                    <p class="text-xs text-gray-600 mt-1">Avanço em direção às metas</p>
+                </div>
+                <div style="padding: 1rem; background: white; border-radius: 0.75rem; border-left: 3px solid #3B82F6;">
+                    <p class="text-sm font-bold text-gray-800">3. Integração de Sistemas</p>
+                    <p class="text-xs text-gray-600 mt-1">Sincronização com monitoramento climático nacional e internacional</p>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
-    <!-- Slide 31: Metodologia de Seleção de Indicadores -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+<!-- Slide 15: Acompanhamento Orçamentário e Financeiro -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 3.071-.879 4.242 0M9.75 17.25c0 .552-.448 1-1 1s-1-.448-1-1m0-7c0 .552-.448 1-1 1s-1-.448-1-1m0-7c0 .552-.448 1-1 1s-1-.448-1-1" />
+            </svg>
+        </div>
+        5.3.6 Acompanhamento Orçamentário e Financeiro
+    </h2>
+    <p class="slide-subtitle">Análise estratégica de alocação e eficiência de recursos do PLANTE</p>
+
+    <div style="margin-top: 2.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+        <div style="padding: 1.75rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), white); border-radius: 1rem; border-top: 3px solid #3B82F6; text-align: center;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3B82F6, #1E40AF); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);">
+                <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 6v12m0-12l3 3m-3-3L9 9" />
                 </svg>
             </div>
-            5.8 Metodologia de Seleção de Indicadores
-        </h2>
-        <p class="slide-subtitle">Processo criterioso que garante avaliação objetiva e eficaz do progresso de cada iniciativa</p>
-
-        <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
-            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(0, 39, 118, 0.1), white); border-radius: 1.25rem; border: 2px solid var(--color-blue); text-align: center;">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--color-blue), var(--color-blue-light)); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 39, 118, 0.2);">
-                    <span class="text-2xl font-bold text-white">1</span>
-                </div>
-                <h3 class="text-base font-bold mb-2" style="color: var(--color-blue);">Relevância Direta</h3>
-                <p class="text-sm text-gray-700">Capacidade de medir diretamente resultado e progresso da ação</p>
-                <p class="text-xs text-gray-600 mt-2">Pergunta: <strong>"Como medir o sucesso?"</strong></p>
-            </div>
-
-            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.1), white); border-radius: 1.25rem; border: 2px solid var(--color-secondary); text-align: center;">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--color-secondary), var(--color-primary)); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 155, 72, 0.2);">
-                    <span class="text-2xl font-bold text-white">2</span>
-                </div>
-                <h3 class="text-base font-bold mb-2" style="color: var(--color-secondary);">Multidimensionalidade</h3>
-                <p class="text-sm text-gray-700">Cobertura de diversas dimensões impactadas pela ação</p>
-                <p class="text-xs text-gray-600 mt-2">Segurança • Sustentabilidade • Desenvolvimento • Justiça</p>
-            </div>
-
-            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(255, 199, 44, 0.1), white); border-radius: 1.25rem; border: 2px solid var(--color-accent); text-align: center;">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--color-accent), #F59E0B); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(255, 199, 44, 0.2);">
-                    <span class="text-2xl font-bold text-gray-800">3</span>
-                </div>
-                <h3 class="text-base font-bold mb-2" style="color: #D97706;">Complementaridade</h3>
-                <p class="text-sm text-gray-700">Agrupamento de indicadores que se complementam</p>
-                <p class="text-xs text-gray-600 mt-2">Impacto • Processo • Produto</p>
-            </div>
+            <p class="text-sm font-bold text-gray-800">Coleta de Dados</p>
+            <p class="text-xs text-gray-600 mt-2">Execução orçamentária dos órgãos</p>
         </div>
 
-        <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1rem; border-left: 4px solid #22C55E;">
-            <p class="text-sm text-gray-700"><strong>📊 Resultado:</strong> Conjunto coeso de indicadores que, juntos, fornecem uma <strong>avaliação robusta e multidimensional</strong> do avanço das políticas energéticas.</p>
-        </div>
-    </div>
-
-    <!-- Slide 32: Exemplo Prático - Pilar 1 -->
-    <div class="slide">
-        <h2 class="slide-title">
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+        <div style="padding: 1.75rem; background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), white); border-radius: 1rem; border-top: 3px solid #A855F7; text-align: center;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #A855F7, #7E22CE); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2);">
+                <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M3 3h18v18H3z" />
                 </svg>
             </div>
-            5.8.1 Exemplo Prático - Pilar 1
-        </h2>
-        <p class="slide-subtitle">Como a metodologia foi aplicada na prática para uma ação real</p>
-
-        <div style="margin-top: 2rem; padding: 2rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.08), white); border-radius: 1.25rem; border: 2px solid var(--color-primary); margin-bottom: 2rem;">
-            <p class="text-base font-bold text-gray-800 mb-2">📌 Ação Exemplo:</p>
-            <p class="text-lg text-gray-700" style="color: var(--color-primary);"><strong>Expandir a oferta de geração renovável centralizada</strong></p>
-            <p class="text-sm text-gray-600 mt-2">(considerando a efetiva necessidade de nova capacidade)</p>
+            <p class="text-sm font-bold text-gray-800">Análise Estratégica</p>
+            <p class="text-xs text-gray-600 mt-2">Custo-benefício das ações</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
-            <!-- Indicador 1 -->
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 39, 118, 0.1), white); border-radius: 1rem; border-left: 4px solid var(--color-blue);">
-                <p class="text-sm font-bold text-gray-800" style="color: var(--color-blue);">FEM-04</p>
-                <p class="text-sm font-bold text-gray-700 mt-1">Diversidade da Geração Elétrica</p>
-                <p class="text-xs text-gray-600 mt-2"><strong>Por quê?</strong> Mede como a expansão de nova fonte altera a matriz de geração</p>
+        <div style="padding: 1.75rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1rem; border-top: 3px solid #22C55E; text-align: center;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #22C55E, #15803D); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);">
+                <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
             </div>
-
-            <!-- Indicador 2 -->
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.1), white); border-radius: 1rem; border-left: 4px solid var(--color-secondary);">
-                <p class="text-sm font-bold text-gray-800" style="color: var(--color-secondary);">FEM-23</p>
-                <p class="text-sm font-bold text-gray-700 mt-1">Participação das Energias Renováveis</p>
-                <p class="text-xs text-gray-600 mt-2"><strong>Por quê?</strong> Impacto direto no perfil de consumo energético</p>
-            </div>
-
-            <!-- Indicador 3 -->
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1rem; border-left: 4px solid #22C55E;">
-                <p class="text-sm font-bold text-gray-800" style="color: #22C55E;">ECO-11</p>
-                <p class="text-sm font-bold text-gray-700 mt-1">Participação na Matriz Energética</p>
-                <p class="text-xs text-gray-600 mt-2"><strong>Por quê?</strong> Avalia limpeza da matriz primária</p>
-            </div>
-
-            <!-- Indicador 4 -->
-            <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(255, 199, 44, 0.1), white); border-radius: 1rem; border-left: 4px solid #FBBF24;">
-                <p class="text-sm font-bold text-gray-800" style="color: #D97706;">IEUK-19</p>
-                <p class="text-sm font-bold text-gray-700 mt-1">Diversidade de Combustíveis</p>
-                <p class="text-xs text-gray-600 mt-2"><strong>Por quê?</strong> Complementa diversidade, focando em insumos</p>
-            </div>
-        </div>
-
-        <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.08), white); border-radius: 1rem; border-left: 4px solid var(--color-primary);">
-            <p class="text-sm text-gray-700"><strong>✨ Resultado:</strong> 4 indicadores que, juntos, fornecem avaliação <strong>robusta e multidimensional</strong> do sucesso da ação de expansão de renováveis.</p>
+            <p class="text-sm font-bold text-gray-800">Mobilização</p>
+            <p class="text-xs text-gray-600 mt-2">BNDES e organismos multilaterais</p>
         </div>
     </div>
 
+    <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), white); border-radius: 1rem; border-left: 4px solid #FBBF24;">
+        <p class="text-sm text-gray-700"><strong>💡 Nota:</strong> Análise estratégica de recursos, <strong>não é monitoramento operacional pontual</strong>. Foco em eficiência e sustentabilidade financeira dos componentes.</p>
+    </div>
+</div>
+
+<!-- Slide 16: Monitoramento Estratégico Nacional -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.598 6.361L16.5 3.97m0 0l3.752 6.465m-3.752-6.465L21.75 19.5m-3.752-6.465l6.745 7.046m0 0l-3.72-3.72m3.72 3.72H2.25m9.285-7.932l-5.922 9.702m-2.006-2.207l.584-.585m0 0h-.969a2.004 2.004 0 00-1.416.587L2.25 12m0 0l3.75-3.75" />
+            </svg>
+        </div>
+        5.3.7 Monitoramento Estratégico Nacional
+    </h2>
+    <p class="slide-subtitle">Acompanhamento de indicadores estratégicos nacionais com visão de tendências de longo prazo</p>
+
+    <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), white); border-radius: 1rem; border: 2px solid #3B82F6;">
+            <h3 class="text-base font-bold mb-2" style="color: #3B82F6;">Indicadores-Chave</h3>
+            <p class="text-xs text-gray-700">Acompanhamento sistemático de métricas estratégicas nacionais de transição energética</p>
+            <p class="text-xs text-gray-600 mt-2 font-semibold">📊 Atualização: Trimestral</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(249, 115, 22, 0.08), white); border-radius: 1rem; border: 2px solid #F97316;">
+            <h3 class="text-base font-bold mb-2" style="color: #F97316;">Benchmarks Internacionais</h3>
+            <p class="text-xs text-gray-700">Análise comparativa com melhores práticas globais e países referenciais</p>
+            <p class="text-xs text-gray-600 mt-2 font-semibold">🌐 Publicado no Painel</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(168, 85, 247, 0.08), white); border-radius: 1rem; border: 2px solid #A855F7;">
+            <h3 class="text-base font-bold mb-2" style="color: #A855F7;">Oportunidades e Desafios</h3>
+            <p class="text-xs text-gray-700">Identificação de tendências emergentes no setor energético global</p>
+            <p class="text-xs text-gray-600 mt-2 font-semibold">🔮 Projeções 2030-2050</p>
+        </div>
+    </div>
+</div>
+
+<!-- ========== FASE 2: BLOCO B - SEÇÃO 5.4 AVALIAÇÃO ========== -->
+
+<!-- Slide 17: Introdução à Avaliação -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </div>
+        5.4 Avaliação: Segundo Pilar da Governança
+    </h2>
+    <p class="slide-subtitle">Análises específicas e aprofundadas dos aspectos qualitativos das políticas implementadas</p>
+
+    <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <!-- Monitoramento vs Avaliação -->
+        <div style="padding: 2rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.08), white); border-radius: 1rem; border: 2px solid var(--color-primary);">
+            <h3 class="text-lg font-bold mb-3" style="color: var(--color-primary);">Monitoramento</h3>
+            <ul style="text-align: left; font-size: 0.875rem; color: #4A5568; line-height: 2;">
+                <li>✓ Contínuo (cotidiano)</li>
+                <li>✓ Quantitativo</li>
+                <li>✓ Indicadores numéricos</li>
+                <li>✓ Status de progresso</li>
+                <li>✓ Corretivo (curto prazo)</li>
+            </ul>
+        </div>
+
+        <div style="padding: 2rem; background: linear-gradient(135deg, rgba(255, 199, 44, 0.08), white); border-radius: 1rem; border: 2px solid var(--color-accent);">
+            <h3 class="text-lg font-bold mb-3" style="color: #D97706;">Avaliação</h3>
+            <ul style="text-align: left; font-size: 0.875rem; color: #4A5568; line-height: 2;">
+                <li>✓ Periódica (bienal)</li>
+                <li>✓ Qualitativa</li>
+                <li>✓ Análise aprofundada</li>
+                <li>✓ Impactos e resultados</li>
+                <li>✓ Estratégico (longo prazo)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), white); border-radius: 1rem; border-left: 4px solid #3B82F6;">
+        <p class="text-sm text-gray-700"><strong>📌 Coordenação:</strong> SNTEP/DIEE com periodicidade <strong>bienal</strong>. Pode envolver colaboração de organizações parceiras. Resultados apresentados ao FONTE e integrados no processo de revisão.</p>
+    </div>
+</div>
+
+<!-- Slide 18: Avaliação de Políticas Públicas -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </div>
+        5.4.1 Avaliação de Políticas Públicas do PLANTE
+    </h2>
+
+    <div style="margin-top: 2.5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 39, 118, 0.1), white); border-radius: 1rem; border-left: 4px solid var(--color-blue); text-align: center;">
+            <p class="text-sm font-bold text-gray-800" style="color: var(--color-blue);">Periodicidade</p>
+            <p class="text-xs text-gray-600 mt-2">Estudos avaliativos a cada <strong>2 anos</strong></p>
+        </div>
+
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(255, 199, 44, 0.1), white); border-radius: 1rem; border-left: 4px solid var(--color-accent); text-align: center;">
+            <p class="text-sm font-bold text-gray-800" style="color: #D97706;">Coordenação</p>
+            <p class="text-xs text-gray-600 mt-2"><strong>DIEE/SNTEP</strong> + Órgãos setoriais</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1rem; border-left: 4px solid #22C55E; text-align: center;">
+            <p class="text-sm font-bold text-gray-800" style="color: #22C55E;">Análise Multidimensional</p>
+            <p class="text-xs text-gray-600 mt-2">Relevância • Eficiência • Efetividade<br />Impactos • Sustentabilidade</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), white); border-radius: 1rem; border-left: 4px solid #A855F7; text-align: center;">
+            <p class="text-sm font-bold text-gray-800" style="color: #A855F7;">Retroalimentação</p>
+            <p class="text-xs text-gray-600 mt-2">Resultados alimentam a <strong>Revisão</strong></p>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.08), white); border-radius: 1rem; border-left: 4px solid var(--color-secondary);">
+        <p class="text-sm text-gray-700"><strong>🎯 Objetivo:</strong> Fornecer subsídios qualitativos e evidências aprofundadas para a tomada de decisão estratégica no CNPE.</p>
+    </div>
+</div>
+
+<!-- Slide 19: Produtos da Avaliação -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+            </svg>
+        </div>
+        5.4.1.1 Produtos da Avaliação
+    </h2>
+
+    <div style="margin-top: 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;">
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 39, 118, 0.1), white); border-radius: 1rem; border-top: 3px solid var(--color-blue); text-align: center;">
+            <p class="text-sm font-bold text-gray-800">Estudos Avaliativos</p>
+            <p class="text-xs text-gray-600 mt-2">Análises aprofundadas bienais sobre efetividade e eficiência</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1rem; border-top: 3px solid #22C55E; text-align: center;">
+            <p class="text-sm font-bold text-gray-800">Relatórios de Impacto</p>
+            <p class="text-xs text-gray-600 mt-2">Avaliação de resultados socioambientais e econômicos</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), white); border-radius: 1rem; border-top: 3px solid #FBBF24; text-align: center;">
+            <p class="text-sm font-bold text-gray-800">Análises de Relevância</p>
+            <p class="text-xs text-gray-600 mt-2">Verificação de adequação aos objetivos estratégicos</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), white); border-radius: 1rem; border-top: 3px solid #A855F7; text-align: center;">
+            <p class="text-sm font-bold text-gray-800">Sustentabilidade</p>
+            <p class="text-xs text-gray-600 mt-2">Avaliação de viabilidade de longo prazo</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-top: 3px solid #EF4444; text-align: center;">
+            <p class="text-sm font-bold text-gray-800">Recomendações</p>
+            <p class="text-xs text-gray-600 mt-2">Propostas para aprimoramento e correção de rumo</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), white); border-radius: 1rem; border-top: 3px solid #3B82F6; text-align: center;">
+            <p class="text-sm font-bold text-gray-800">Benchmarking</p>
+            <p class="text-xs text-gray-600 mt-2">Comparações com boas práticas globais</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 20: Autoavaliação dos Componentes -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </div>
+        5.4.2 Autoavaliação dos Componentes
+    </h2>
+    <p class="slide-subtitle">Processo complementar conduzido pelos gestores dos componentes do PLANTE</p>
+
+    <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.1), white); border-radius: 1rem; border: 2px solid var(--color-secondary);">
+            <h3 class="text-sm font-bold mb-2" style="color: var(--color-secondary);">Responsabilidade Setorial</h3>
+            <p class="text-xs text-gray-700">Conduzida pelos órgãos executores de cada componente</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), white); border-radius: 1rem; border: 2px solid #FBBF24;">
+            <h3 class="text-sm font-bold mb-2" style="color: #D97706;">Periodicidade Flexível</h3>
+            <p class="text-xs text-gray-700">Realizada conforme necessidades específicas de cada componente</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), white); border-radius: 1rem; border: 2px solid #3B82F6;">
+            <h3 class="text-sm font-bold mb-2" style="color: #3B82F6;">Foco Operacional</h3>
+            <p class="text-xs text-gray-700">Análise detalhada de aspectos de implementação e gestão</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1rem; border-left: 4px solid #22C55E;">
+        <p class="text-sm text-gray-700"><strong>🔗 Integração:</strong> Articulação com os dados do sistema de monitoramento contínuo para contextualização dos resultados.</p>
+    </div>
+</div>
+
+<!-- Slide 21: Fluxo da Autoavaliação -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+        </div>
+        5.4.2.2 Fluxo do Processo de Autoavaliação
+    </h2>
+
+    <div class="flow-container mt-8">
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number bg-gradient-blue" style="background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));">1</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: var(--color-secondary);">Planejamento</p>
+                <p class="text-sm text-gray-700">Definição de escopo e metodologia pelos gestores setoriais</p>
+            </div>
+        </div>
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number" style="background: linear-gradient(135deg, #F59E0B, #D97706);">2</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: #D97706;">Coleta de Dados</p>
+                <p class="text-sm text-gray-700">Levantamento de informações primárias e secundárias</p>
+            </div>
+        </div>
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number" style="background: linear-gradient(135deg, #3B82F6, #1E40AF);">3</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: #3B82F6;">Análise Qualitativa</p>
+                <p class="text-sm text-gray-700">Interpretação de dados coletados</p>
+            </div>
+        </div>
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number" style="background: linear-gradient(135deg, #22C55E, #15803D);">4</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: #22C55E;">Elaboração de Relatórios</p>
+                <p class="text-sm text-gray-700">Diagnósticos e recomendações setoriais</p>
+            </div>
+        </div>
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number" style="background: linear-gradient(135deg, #A855F7, #7E22CE);">5</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: #A855F7;">Discussão Interna</p>
+                <p class="text-sm text-gray-700">Validação com equipes técnicas</p>
+            </div>
+        </div>
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number" style="background: linear-gradient(135deg, #EC4899, #DB2777);">6</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: #DB2777;">Consolidação</p>
+                <p class="text-sm text-gray-700">Propostas de ajustes e melhorias</p>
+            </div>
+        </div>
+        <div class="flow-step flex items-start gap-4">
+            <div class="flow-number" style="background: linear-gradient(135deg, var(--color-blue), var(--color-blue-light));">7</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: var(--color-blue);">Submissão</p>
+                <p class="text-sm text-gray-700">Integração com processo geral de avaliação da SNTEP/DIEE</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========== FASE 2: BLOCO C - SEÇÃO 5.5 REVISÃO ========== -->
+
+<!-- Slide 22: Introdução à Revisão -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-5.337c0-1.052.845-2.082 2.292-2.244l7.223-.918m5.331 5.499H8.5A2.25 2.25 0 006.25 20.625v.338A2.25 2.25 0 008.5 23h5m0-23h4.822c1.674 0 3.07.56 4.078 1.978C20.563 4.881 21.75 6.92 21.75 9.798v1.129A3.393 3.393 0 0018.357 14.5H7.643A3.393 3.393 0 004.25 11.927v-1.129c0-2.878 1.186-4.917 2.342-6.444 1.007-1.418 2.403-1.978 4.078-1.978z" />
+            </svg>
+        </div>
+        5.5 Revisão: Terceiro Pilar da Governança
+    </h2>
+    <p class="slide-subtitle">Ajustes estruturais com base em evidências de monitoramento e avaliação</p>
+
+    <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div style="padding: 2rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.1), white); border-radius: 1rem; border-left: 4px solid var(--color-secondary);">
+            <h3 class="text-lg font-bold mb-3" style="color: var(--color-secondary);">Objetivo</h3>
+            <p class="text-sm text-gray-700 mb-2">Proporcionar <strong>alinhamento às evidências</strong> oriundas do monitoramento e da avaliação</p>
+            <p class="text-sm text-gray-700">Buscar <strong>aderência à realidade</strong> de implementação da transição energética</p>
+        </div>
+
+        <div style="padding: 2rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), white); border-radius: 1rem; border-left: 4px solid #3B82F6;">
+            <h3 class="text-lg font-bold mb-3" style="color: #3B82F6;">Resultado</h3>
+            <p class="text-sm text-gray-700 mb-2">Atualização de <strong>ações, metas e indicadores</strong></p>
+            <p class="text-sm text-gray-700">Inclusão de novas metas e <strong>exclusão de elementos ineficazes</strong></p>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: stretch;">
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), white); border-radius: 1rem; border: 2px solid #FBBF24; text-align: center;">
+            <p class="text-xl font-bold" style="color: #D97706;">Ordinária</p>
+            <p class="text-sm text-gray-700 mt-2">Quadrienal</p>
+            <p class="text-xs text-gray-600 mt-1">(A cada 4 anos)</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border: 2px solid #EF4444; text-align: center;">
+            <p class="text-xl font-bold" style="color: #EF4444;">Extraordinária</p>
+            <p class="text-sm text-gray-700 mt-2">Conforme Demanda</p>
+            <p class="text-xs text-gray-600 mt-1">(Em situações especiais)</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 23: Revisão Ordinária -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-6-9v2.25m-6.364.386l1.591 1.591M5.25 19.5H3.75A2.25 2.25 0 011.5 17.25v-5.25a2.25 2.25 0 012.25-2.25h.75a9.004 9.004 0 018.671-5.093c.36 0 .713.029 1.065.084m0 0a8.967 8.967 0 015.18 2.897m-12 .333A9.980 9.980 0 0112 3c4.478 0 8.268 2.943 9.542 7" />
+            </svg>
+        </div>
+        5.5.1 Revisão Ordinária - Ciclo Quadrienal
+    </h2>
+
+    <div style="margin-top: 2rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;">
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.1), white); border-radius: 1rem; border-top: 3px solid var(--color-secondary); text-align: center;">
+            <p class="text-sm font-bold text-gray-800">Periodicidade</p>
+            <p class="text-2xl font-bold" style="color: var(--color-secondary); margin: 0.5rem 0;">4 anos</p>
+            <p class="text-xs text-gray-600">Ordinária e formal</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), white); border-radius: 1rem; border-top: 3px solid #FBBF24; text-align: center;">
+            <p class="text-sm font-bold text-gray-800">Atualização</p>
+            <p class="text-sm font-bold" style="color: #D97706; margin: 0.5rem 0;">Estrutural</p>
+            <p class="text-xs text-gray-600">Ações, metas, indicadores</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1rem; border-top: 3px solid #22C55E; text-align: center;">
+            <p class="text-sm font-bold text-gray-800">Base Empírica</p>
+            <p class="text-sm font-bold" style="color: #22C55E; margin: 0.5rem 0;">Evidências</p>
+            <p class="text-xs text-gray-600">Monitoramento + Avaliação</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), white); border-radius: 1rem; border-top: 3px solid #3B82F6; text-align: center;">
+            <p class="text-sm font-bold text-gray-800">Abrangência</p>
+            <p class="text-sm font-bold" style="color: #3B82F6; margin: 0.5rem 0;">Reformulação</p>
+            <p class="text-xs text-gray-600">De estratégias completas</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.08), white); border-radius: 1rem; border-left: 4px solid var(--color-primary);">
+        <p class="text-sm text-gray-700"><strong>📋 Transparência Obrigatória:</strong> Publicação em sítio eletrônico do PLANTE com <strong>justificativas técnicas detalhadas</strong> de cada alteração.</p>
+    </div>
+</div>
+
+<!-- Slide 24: Fluxo da Revisão Ordinária -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 3.071-.879 4.242 0M9.75 17.25c0 .552-.448 1-1 1s-1-.448-1-1m0-7c0 .552-.448 1-1 1s-1-.448-1-1m0-7c0 .552-.448 1-1 1s-1-.448-1-1" />
+            </svg>
+        </div>
+        5.5.1.1 Fluxo da Revisão Ordinária
+    </h2>
+
+    <div class="flow-container mt-8">
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number bg-gradient-blue">1</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: var(--color-blue);">Identificação de Demandas</p>
+                <p class="text-sm text-gray-700">DIEE inclui demandas no FONTE; Ministérios sinalizam atributos para revisão</p>
+            </div>
+        </div>
+
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number" style="background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));">2</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: var(--color-secondary);">Análise Técnica</p>
+                <p class="text-sm text-gray-700">DIEE analisa pedidos; identifica alterações e propõe ajustes</p>
+            </div>
+        </div>
+
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number" style="background: linear-gradient(135deg, #F59E0B, #D97706);">3</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: #D97706;">Consolidação</p>
+                <p class="text-sm text-gray-700">Articulação com órgãos responsáveis pelos atributos</p>
+            </div>
+        </div>
+
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number" style="background: linear-gradient(135deg, #3B82F6, #1E40AF);">4</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: #3B82F6;">Elaboração de Proposta</p>
+                <p class="text-sm text-gray-700">Desenvolvimento com justificativas técnicas detalhadas</p>
+            </div>
+        </div>
+
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number" style="background: linear-gradient(135deg, #22C55E, #15803D);">5</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: #22C55E;">Aprovação</p>
+                <p class="text-sm text-gray-700">Ministério de Minas e Energia (via SNTEP) aprova alterações</p>
+            </div>
+        </div>
+
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number" style="background: linear-gradient(135deg, #A855F7, #7E22CE);">6</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: #A855F7;">Publicação</p>
+                <p class="text-sm text-gray-700">Divulgação em sítio eletrônico com justificativas de cada modificação</p>
+            </div>
+        </div>
+
+        <div class="flow-step flex items-start gap-4">
+            <div class="flow-number" style="background: linear-gradient(135deg, #EC4899, #DB2777);">7</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: #DB2777;">Implementação</p>
+                <p class="text-sm text-gray-700">Efetivação das mudanças estruturais aprovadas</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 25: Revisão de Indicadores Não Apurados -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+            </svg>
+        </div>
+        5.5.2 Revisão de Indicadores Não Apurados
+    </h2>
+    <p class="slide-subtitle">Orientações para tratamento de indicadores com problemas de mensuração</p>
+
+    <div style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 39, 118, 0.1), white); border-radius: 1rem; border-left: 4px solid var(--color-blue);">
+            <h3 class="text-base font-bold mb-3" style="color: var(--color-blue);">Diagnóstico</h3>
+            <p class="text-sm text-gray-700 mb-2">Identificar motivos da impossibilidade de apuração</p>
+            <p class="text-sm text-gray-700 mb-2">Avaliar relevância para objetivos estratégicos</p>
+            <p class="text-sm text-gray-700">Considerar viabilidade metodológica e técnica</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), white); border-radius: 1rem; border-left: 4px solid #FBBF24;">
+            <h3 class="text-base font-bold mb-3" style="color: #D97706;">Ação</h3>
+            <p class="text-sm text-gray-700 mb-2">✓ Reformulação metodológica</p>
+            <p class="text-sm text-gray-700 mb-2">✓ Garantir apuração futura</p>
+            <p class="text-sm text-gray-700">✓ Ou exclusão justificada se inviável</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-left: 4px solid #EF4444;">
+        <p class="text-sm text-gray-700"><strong>⚠️ Importante:</strong> Apresentação antecipada de todas as opções de revisão aos órgãos durante <strong>controle de qualidade realizado pelo DIEE</strong>.</p>
+    </div>
+</div>
+
+<!-- Slide 26: Revisão de Atributos Sobrepostos -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12M8 11h12M8 15h12M3 7h.01M3 11h.01M3 15h.01" />
+            </svg>
+        </div>
+        5.5.3 Revisão de Atributos Sobrepostos
+    </h2>
+    <p class="slide-subtitle">Identificação e consolidação de ações e indicadores duplicados ou sobrepostos</p>
+
+    <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div style="padding: 2rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-left: 4px solid #EF4444;">
+            <h3 class="text-lg font-bold mb-3" style="color: #EF4444;">Problema</h3>
+            <ul style="text-align: left; font-size: 0.875rem; color: #4A5568; line-height: 2;">
+                <li>⚠ Sobreposição de ações</li>
+                <li>⚠ Indicadores duplicados</li>
+                <li>⚠ Ineficiência de recursos</li>
+                <li>⚠ Lacunas de cobertura</li>
+            </ul>
+        </div>
+
+        <div style="padding: 2rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1rem; border-left: 4px solid #22C55E;">
+            <h3 class="text-lg font-bold mb-3" style="color: #22C55E;">Solução</h3>
+            <ul style="text-align: left; font-size: 0.875rem; color: #4A5568; line-height: 2;">
+                <li>✓ Análise de complementaridade</li>
+                <li>✓ Consolidação de similares</li>
+                <li>✓ Redistribuição de responsabilidades</li>
+                <li>✓ Integração de esforços</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.1), white); border-radius: 1rem; border-left: 4px solid var(--color-secondary);">
+        <p class="text-sm text-gray-700"><strong>🎯 Objetivo:</strong> Manter <strong>cobertura completa</strong> de todos os aspectos estratégicos, eliminando redundâncias e otimizando recursos.</p>
+    </div>
+</div>
+
+<!-- Slide 27: Revisão Extraordinária -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-7.5h-2.25A2.25 2.25 0 0 0 16.5 2.25h-5.25A2.25 2.25 0 0 0 9 4.5H6.75" />
+            </svg>
+        </div>
+        5.5.4 Revisão Extraordinária
+    </h2>
+    <p class="slide-subtitle">Ajustes urgentes acionados por situações especiais e gatilhos estratégicos</p>
+
+    <div style="margin-top: 2rem; display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;">
+        <div style="padding: 1.25rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-top: 3px solid #EF4444; text-align: center;">
+            <p class="text-sm font-bold text-gray-800">Mudanças Energéticas</p>
+            <p class="text-xs text-gray-600 mt-2">Cenário nacional/internacional significativo</p>
+        </div>
+
+        <div style="padding: 1.25rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-top: 3px solid #EF4444; text-align: center;">
+            <p class="text-sm font-bold text-gray-800">Legislativas</p>
+            <p class="text-xs text-gray-600 mt-2">Alteração em leis que impactam objetivos</p>
+        </div>
+
+        <div style="padding: 1.25rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-top: 3px solid #EF4444; text-align: center;">
+            <p class="text-sm font-bold text-gray-800">Emergências</p>
+            <p class="text-xs text-gray-600 mt-2">Crises que demandem adaptação urgente</p>
+        </div>
+
+        <div style="padding: 1.25rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-top: 3px solid #EF4444; text-align: center;">
+            <p class="text-sm font-bold text-gray-800">Oportunidades</p>
+            <p class="text-xs text-gray-600 mt-2">Modificação rápida necessária</p>
+        </div>
+
+        <div style="padding: 1.25rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-top: 3px solid #EF4444; text-align: center;">
+            <p class="text-sm font-bold text-gray-800">Desvios Críticos</p>
+            <p class="text-xs text-gray-600 mt-2">Monitoramento indica urgência</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1rem; border-left: 4px solid #EF4444;">
+        <p class="text-sm text-gray-700"><strong>⚡ Fluxo Acelerado:</strong> Processo expedito que <strong>não aguarda ciclo quadrienal</strong>. Análise técnica urgente → Consulta expedita → Deliberação em caráter urgente → Implementação imediata.</p>
+    </div>
+</div>
+
+<!-- Slide 28: Fluxo da Revisão Extraordinária -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+        </div>
+        5.5.4.1 Fluxo Acelerado da Revisão Extraordinária
+    </h2>
+
+    <div class="flow-container mt-8">
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number" style="background: linear-gradient(135deg, #EF4444, #DC2626);">1</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: #EF4444;">Identificação</p>
+                <p class="text-sm text-gray-700">Gatilho identificado por qualquer órgão competente ou SNTEP/DIEE</p>
+            </div>
+        </div>
+
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number" style="background: linear-gradient(135deg, #F97316, #EA580C);">2</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: #F97316;">Análise Urgente</p>
+                <p class="text-sm text-gray-700">Avaliação técnica rápida da situação e alternativas</p>
+            </div>
+        </div>
+
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number" style="background: linear-gradient(135deg, #FBBF24, #F59E0B);">3</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: #D97706;">Proposta de Alteração</p>
+                <p class="text-sm text-gray-700">Com justificativa técnica detalhada</p>
+            </div>
+        </div>
+
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number" style="background: linear-gradient(135deg, #84CC16, #65A30D);">4</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: #65A30D;">Consulta Expedita</p>
+                <p class="text-sm text-gray-700">Aos órgãos diretamente afetados</p>
+            </div>
+        </div>
+
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number" style="background: linear-gradient(135deg, #3B82F6, #1E40AF);">5</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: #3B82F6;">Deliberação Urgente</p>
+                <p class="text-sm text-gray-700">Ministério de Minas e Energia aprova em caráter urgente</p>
+            </div>
+        </div>
+
+        <div class="flow-step flex items-start gap-4 mb-8">
+            <div class="flow-line"></div>
+            <div class="flow-number" style="background: linear-gradient(135deg, #22C55E, #15803D);">6</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: #22C55E;">Implementação Imediata</p>
+                <p class="text-sm text-gray-700">Efetivação das medidas aprovadas sem demoras</p>
+            </div>
+        </div>
+
+        <div class="flow-step flex items-start gap-4">
+            <div class="flow-number" style="background: linear-gradient(135deg, #A855F7, #7E22CE);">7</div>
+            <div>
+                <p class="text-lg font-bold mb-1" style="color: #A855F7;">Avaliação Posterior</p>
+                <p class="text-sm text-gray-700">Análise dos impactos das alterações realizadas</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========== FASE 2: BLOCO D - DISPOSIÇÕES FINAIS ========== -->
+
+<!-- Slide 29: Grupo de Monitoramento, Avaliação e Revisão -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+            </svg>
+        </div>
+        5.6 Grupo de Monitoramento, Avaliação e Revisão
+    </h2>
+    <p class="slide-subtitle">Grupo instituído que opera a implementação integrada do sistema de Monitoramento, Avaliação e Revisão</p>
+
+    <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div style="padding: 2rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.1), white); border-radius: 1.25rem; border: 2px solid var(--color-secondary);">
+            <h3 class="text-lg font-bold mb-4" style="color: var(--color-secondary);">Responsabilidades</h3>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="padding: 0.75rem; background: white; border-radius: 0.5rem; border-left: 3px solid var(--color-secondary);">
+                    <p class="text-sm font-bold text-gray-800">1. Padronização</p>
+                    <p class="text-xs text-gray-600">De procedimentos e consolidação de dados</p>
+                </div>
+                <div style="padding: 0.75rem; background: white; border-radius: 0.5rem; border-left: 3px solid var(--color-secondary);">
+                    <p class="text-sm font-bold text-gray-800">2. Articulação</p>
+                    <p class="text-xs text-gray-600">Entre órgãos setoriais e ações</p>
+                </div>
+                <div style="padding: 0.75rem; background: white; border-radius: 0.5rem; border-left: 3px solid var(--color-secondary);">
+                    <p class="text-sm font-bold text-gray-800">3. Análise</p>
+                    <p class="text-xs text-gray-600">De resultados preliminares e encaminhamentos</p>
+                </div>
+                <div style="padding: 0.75rem; background: white; border-radius: 0.5rem; border-left: 3px solid var(--color-secondary);">
+                    <p class="text-sm font-bold text-gray-800">4. Efetividade</p>
+                    <p class="text-xs text-gray-600">Do ciclo de gestão como um todo</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="padding: 2rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), white); border-radius: 1.25rem; border: 2px solid #3B82F6;">
+            <h3 class="text-lg font-bold mb-4" style="color: #3B82F6;">Apoio à SNTEP/DIEE</h3>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="padding: 1rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.2), white); border-radius: 0.5rem; border-left: 3px solid var(--color-secondary);">
+                    <p class="text-sm font-bold text-gray-800" style="color: var(--color-secondary);">🔄 Ciclo Monitoramento</p>
+                    <p class="text-xs text-gray-600">Contínuo e coordenado</p>
+                </div>
+                <div style="padding: 1rem; background: linear-gradient(135deg, rgba(255, 199, 44, 0.2), white); border-radius: 0.5rem; border-left: 3px solid #FBBF24;">
+                    <p class="text-sm font-bold text-gray-800" style="color: #D97706;">📊 Estudos Avaliativos</p>
+                    <p class="text-xs text-gray-600">Bienais e temáticos</p>
+                </div>
+                <div style="padding: 1rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), white); border-radius: 0.5rem; border-left: 3px solid #22C55E;">
+                    <p class="text-sm font-bold text-gray-800" style="color: #22C55E;">🔧 Revisões Ordenadas</p>
+                    <p class="text-xs text-gray-600">Ordinárias e extraordinárias</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 30: Disposições Específicas - Pilar 4 -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+        </div>
+        5.7 Disposições Específicas: Pilar 4
+    </h2>
+    <p class="slide-subtitle">Tratamento diferenciado do Pilar 4 - Articulação de Políticas e Meios de Implementação</p>
+
+    <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), white); border-radius: 1.5rem; border: 3px solid #A855F7; text-align: center;">
+        <div style="margin-bottom: 2rem;">
+            <svg class="w-16 h-16 mx-auto text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-3" style="color: #A855F7;">Natureza Transversal</h3>
+        <p class="text-lg text-gray-700 mb-4">O Pilar 4 <strong>não é monitorado como os demais</strong> por ações e indicadores específicos</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+            <div style="padding: 1.5rem; background: white; border-radius: 1rem; border-left: 4px solid #EF4444;">
+                <p class="text-sm font-bold text-gray-800 mb-2">❌ NÃO Aplicado:</p>
+                <p class="text-sm text-gray-700">Monitoramento por ações e indicadores específicos</p>
+            </div>
+
+            <div style="padding: 1.5rem; background: white; border-radius: 1rem; border-left: 4px solid #22C55E;">
+                <p class="text-sm font-bold text-gray-800 mb-2">✅ Aplicado:</p>
+                <p class="text-sm text-gray-700">Avaliação de efetividade de mecanismos de articulação e mobilização de recursos</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.08), white); border-radius: 1rem; border-left: 4px solid var(--color-primary);">
+        <p class="text-sm text-gray-700"><strong>📌 Nota:</strong> Fluxos específicos de acompanhamento do Pilar 4 estão sendo detalhados em capítulos complementares do PLANTE.</p>
+    </div>
+</div>
+
+<!-- Slide 31: Metodologia de Seleção de Indicadores -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+            </svg>
+        </div>
+        5.8 Metodologia de Seleção de Indicadores
+    </h2>
+    <p class="slide-subtitle">Processo criterioso que garante avaliação objetiva e eficaz do progresso de cada iniciativa</p>
+
+    <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
+        <div style="padding: 2rem; background: linear-gradient(135deg, rgba(0, 39, 118, 0.1), white); border-radius: 1.25rem; border: 2px solid var(--color-blue); text-align: center;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--color-blue), var(--color-blue-light)); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 39, 118, 0.2);">
+                <span class="text-2xl font-bold text-white">1</span>
+            </div>
+            <h3 class="text-base font-bold mb-2" style="color: var(--color-blue);">Relevância Direta</h3>
+            <p class="text-sm text-gray-700">Capacidade de medir diretamente resultado e progresso da ação</p>
+            <p class="text-xs text-gray-600 mt-2">Pergunta: <strong>"Como medir o sucesso?"</strong></p>
+        </div>
+
+        <div style="padding: 2rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.1), white); border-radius: 1.25rem; border: 2px solid var(--color-secondary); text-align: center;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--color-secondary), var(--color-primary)); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 155, 72, 0.2);">
+                <span class="text-2xl font-bold text-white">2</span>
+            </div>
+            <h3 class="text-base font-bold mb-2" style="color: var(--color-secondary);">Multidimensionalidade</h3>
+            <p class="text-sm text-gray-700">Cobertura de diversas dimensões impactadas pela ação</p>
+            <p class="text-xs text-gray-600 mt-2">Segurança • Sustentabilidade • Desenvolvimento • Justiça</p>
+        </div>
+
+        <div style="padding: 2rem; background: linear-gradient(135deg, rgba(255, 199, 44, 0.1), white); border-radius: 1.25rem; border: 2px solid var(--color-accent); text-align: center;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--color-accent), #F59E0B); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(255, 199, 44, 0.2);">
+                <span class="text-2xl font-bold text-gray-800">3</span>
+            </div>
+            <h3 class="text-base font-bold mb-2" style="color: #D97706;">Complementaridade</h3>
+            <p class="text-sm text-gray-700">Agrupamento de indicadores que se complementam</p>
+            <p class="text-xs text-gray-600 mt-2">Impacto • Processo • Produto</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1rem; border-left: 4px solid #22C55E;">
+        <p class="text-sm text-gray-700"><strong>📊 Resultado:</strong> Conjunto coeso de indicadores que, juntos, fornecem uma <strong>avaliação robusta e multidimensional</strong> do avanço das políticas energéticas.</p>
+    </div>
+</div>
+
+<!-- Slide 32: Exemplo Prático - Pilar 1 -->
+<div class="slide">
+    <h2 class="slide-title">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+        </div>
+        5.8.1 Exemplo Prático - Pilar 1
+    </h2>
+    <p class="slide-subtitle">Como a metodologia foi aplicada na prática para uma ação real</p>
+
+    <div style="margin-top: 2rem; padding: 2rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.08), white); border-radius: 1.25rem; border: 2px solid var(--color-primary); margin-bottom: 2rem;">
+        <p class="text-base font-bold text-gray-800 mb-2">📌 Ação Exemplo:</p>
+        <p class="text-lg text-gray-700" style="color: var(--color-primary);"><strong>Expandir a oferta de geração renovável centralizada</strong></p>
+        <p class="text-sm text-gray-600 mt-2">(considerando a efetiva necessidade de nova capacidade)</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+        <!-- Indicador 1 -->
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 39, 118, 0.1), white); border-radius: 1rem; border-left: 4px solid var(--color-blue);">
+            <p class="text-sm font-bold text-gray-800" style="color: var(--color-blue);">FEM-04</p>
+            <p class="text-sm font-bold text-gray-700 mt-1">Diversidade da Geração Elétrica</p>
+            <p class="text-xs text-gray-600 mt-2"><strong>Por quê?</strong> Mede como a expansão de nova fonte altera a matriz de geração</p>
+        </div>
+
+        <!-- Indicador 2 -->
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.1), white); border-radius: 1rem; border-left: 4px solid var(--color-secondary);">
+            <p class="text-sm font-bold text-gray-800" style="color: var(--color-secondary);">FEM-23</p>
+            <p class="text-sm font-bold text-gray-700 mt-1">Participação das Energias Renováveis</p>
+            <p class="text-xs text-gray-600 mt-2"><strong>Por quê?</strong> Impacto direto no perfil de consumo energético</p>
+        </div>
+
+        <!-- Indicador 3 -->
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), white); border-radius: 1rem; border-left: 4px solid #22C55E;">
+            <p class="text-sm font-bold text-gray-800" style="color: #22C55E;">ECO-11</p>
+            <p class="text-sm font-bold text-gray-700 mt-1">Participação na Matriz Energética</p>
+            <p class="text-xs text-gray-600 mt-2"><strong>Por quê?</strong> Avalia limpeza da matriz primária</p>
+        </div>
+
+        <!-- Indicador 4 -->
+        <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(255, 199, 44, 0.1), white); border-radius: 1rem; border-left: 4px solid #FBBF24;">
+            <p class="text-sm font-bold text-gray-800" style="color: #D97706;">IEUK-19</p>
+            <p class="text-sm font-bold text-gray-700 mt-1">Diversidade de Combustíveis</p>
+            <p class="text-xs text-gray-600 mt-2"><strong>Por quê?</strong> Complementa diversidade, focando em insumos</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.08), white); border-radius: 1rem; border-left: 4px solid var(--color-primary);">
+        <p class="text-sm text-gray-700"><strong>✨ Resultado:</strong> 4 indicadores que, juntos, fornecem avaliação <strong>robusta e multidimensional</strong> do sucesso da ação de expansão de renováveis.</p>
+    </div>
+</div>
+
+<!-- Slide 34: Conclusão -->
+<div class="slide" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-blue) 100%); justify-content: center;">
+    <div style="text-align: center; color: white;">
+        <div style="margin-bottom: 3rem;">
+            <div style="width: 120px; height: 120px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); border-radius: 50%; margin: 0 auto 2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);">
+                <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+            <h1 class="hero-title text-white mb-6">Sistema Integrado de Governança</h1>
+            <p class="hero-subtitle text-white opacity-95 mb-12">Monitoramento, Avaliação e Revisão do PLANTE</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0;">
+            <!-- KPI 1 -->
+            <div style="padding: 2rem; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border-radius: 1.5rem; border: 2px solid rgba(255, 255, 255, 0.3);">
+                <p class="text-6xl font-black mb-2">3</p>
+                <p class="text-lg font-bold">Pilares de Governança</p>
+                <p class="text-sm opacity-90 mt-2">Monitoramento • Avaliação • Revisão</p>
+            </div>
+
+            <!-- KPI 2 -->
+            <div style="padding: 2rem; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border-radius: 1.5rem; border: 2px solid rgba(255, 255, 255, 0.3);">
+                <p class="text-6xl font-black mb-2">3</p>
+                <p class="text-lg font-bold">Periodicidades</p>
+                <p class="text-sm opacity-90 mt-2">Anual • Bienal • Quadrienal</p>
+            </div>
+
+            <!-- KPI 3 -->
+            <div style="padding: 2rem; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border-radius: 1.5rem; border: 2px solid rgba(255, 255, 255, 0.3);">
+                <p class="text-6xl font-black mb-2">3</p>
+                <p class="text-lg font-bold">Pilares Monitorados</p>
+                <p class="text-sm opacity-90 mt-2">Segurança • Justiça • Baixo Carbono</p>
+            </div>
+        </div>
+
+        <div style="margin: 3rem auto; padding: 2.5rem; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 1.5rem; border: 2px solid rgba(255, 255, 255, 0.3); max-width: 900px;">
+            <h3 class="text-2xl font-bold mb-4">Sistema Operacional e Baseado em Evidências</h3>
+            <div style="display: flex; flex-direction: column; gap: 1rem; text-align: left; margin-top: 2rem;">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 40px; height: 40px; min-width: 40px; background: rgba(255, 255, 255, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <span class="text-xl font-bold">✓</span>
+                    </div>
+                    <p class="text-base"><strong>Sistema Semafórico:</strong> Classificação visual de 100% das ações do PLANTE</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 40px; height: 40px; min-width: 40px; background: rgba(255, 255, 255, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <span class="text-xl font-bold">✓</span>
+                    </div>
+                    <p class="text-base"><strong>Indicadores FEM e OBEPE:</strong> Referências internacionais priorizadas</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 40px; height: 40px; min-width: 40px; background: rgba(255, 255, 255, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <span class="text-xl font-bold">✓</span>
+                    </div>
+                    <p class="text-base"><strong>Transparência Total:</strong> Painel PLANTE ABERTO com atualizações contínuas</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 40px; height: 40px; min-width: 40px; background: rgba(255, 255, 255, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <span class="text-xl font-bold">✓</span>
+                    </div>
+                    <p class="text-base"><strong>Gatilhos de Revisão:</strong> Ajustes extraordinários baseados em critérios objetivos</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid rgba(255, 255, 255, 0.3);">
+            <p class="text-xl font-bold opacity-95">Ministério de Minas e Energia</p>
+            <p class="text-base opacity-80 mt-2">Secretaria Nacional de Transição Energética e Planejamento (SNTEP)</p>
+            <p class="text-base opacity-80">Departamento de Informações Estratégicas da Energia (DIEE)</p>
+            <p class="text-sm opacity-70 mt-4">Capítulo 5 • PLANTE 2025-2034</p>
+        </div>
+    </div>
+</div>
+
+<!-- Sistema de Navegação -->
+<script src="js/app.js"></script>
+
+</body>
 </html>
