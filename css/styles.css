@@ -429,6 +429,38 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
 
+        /* Responsividade para Grid 2x3 do Slide 8 */
+        @media (max-width: 1024px) {
+            /* Tablet: 2 colunas */
+            .slide div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            /* Mobile: 1 coluna */
+            .slide div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+
+            /* Ajustar ícones e números nos blocos do grid em mobile */
+            .slide div[style*="grid-template-columns: repeat(3, 1fr)"] > div {
+                padding: 1.5rem !important;
+            }
+
+            /* Ajustar tamanho dos ícones circulares */
+            .slide div[style*="grid-template-columns: repeat(3, 1fr)"] div[style*="width: 70px"] {
+                width: 60px !important;
+                height: 60px !important;
+            }
+
+            /* Ajustar tamanho dos números grandes no canto */
+            .slide div[style*="grid-template-columns: repeat(3, 1fr)"] div[style*="font-size: 4rem"] {
+                font-size: 3rem !important;
+            }
+        }
+
         /* Lista com Ícones */
         .list-icon {
             display: flex;

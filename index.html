@@ -650,197 +650,315 @@
             </div>
         </div>
 
-        <div style="margin-top: 3rem; display: flex; flex-direction: column; gap: 3rem; align-items: center; justify-content: center;">
-            <!-- Etapa 1: Monitoramento Anual -->
-            <div style="width: 100%; display: flex; align-items: center; gap: 3rem;">
-                <div style="flex: 0 0 120px; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
-                    <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--color-blue), var(--color-blue-light)); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0, 39, 118, 0.3); flex-shrink: 0;">
-                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <div style="text-align: center;">
-                        <p class="text-lg font-bold" style="color: var(--color-blue);">MONITORAMENTO</p>
-                        <p class="text-sm font-semibold text-gray-600">Anual</p>
-                    </div>
-                </div>
-                <div style="flex: 1; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 39, 118, 0.08), white); border-radius: 1rem; border-left: 4px solid var(--color-blue);">
-                    <h3 class="text-lg font-bold mb-2" style="color: var(--color-blue);">Coleta e Análise Contínua</h3>
-                    <p class="text-sm text-gray-700"><strong>Responsável:</strong> DIEE/SNTEP</p>
-                    <p class="text-sm text-gray-700 mt-1"><strong>O quê:</strong> Resultados de indicadores, status semáforo, dados financeiros</p>
-                    <p class="text-sm text-gray-700 mt-1"><strong>Produto:</strong> Painel PLANTE ABERTO (tempo real)</p>
-                </div>
-            </div>
+        <!-- FLUXO EM "S" COM CONECTORES VISUAIS -->
+        <div style="margin-top: 2.5rem;">
 
-            <!-- Conector 1 -->
-            <div style="height: 50px; width: 3px; background: linear-gradient(180deg, var(--color-blue), var(--color-accent)); position: relative;">
-                <div style="position: absolute; top: -8px; right: -8px; width: 18px; height: 18px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M7 16.5V7.5m9.75 0L12 3.75 4.25 7.5M4.25 16.5L12 20.25l7.75-3.75" />
+            <!-- LINHA 1: ETAPAS 1 → 2 → 3 (Esquerda para Direita) -->
+            <div style="display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 1rem; align-items: center; margin-bottom: 1.5rem;">
+
+                <!-- BLOCO 1: Coleta de Dados -->
+                <div style="position: relative; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.1), white); border-radius: 1rem; border: 3px solid #00522E; box-shadow: 0 6px 20px rgba(0, 82, 46, 0.2); overflow: hidden;">
+                    <!-- Ícone de fundo -->
+                    <i class="fas fa-database" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); font-size: 70px; color: rgba(0, 82, 46, 0.1); z-index: 0;"></i>
+
+                    <div style="position: relative; z-index: 1;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                            <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #00522E, #009B48); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 82, 46, 0.4);">
+                                <span style="font-size: 1.5rem; font-weight: 900; color: white;">1</span>
+                            </div>
+                            <h3 style="font-size: 1rem; font-weight: 800; color: #00522E; margin: 0;">COLETA DE DADOS</h3>
+                        </div>
+                        <p style="font-size: 0.8rem; color: #4A5568; margin-bottom: 0.75rem;">Levantamento anual de informações</p>
+                        <div style="background: rgba(0, 82, 46, 0.08); padding: 0.5rem; border-radius: 0.5rem; font-size: 0.7rem; color: #2D3748;">
+                            <p style="margin: 0;"><strong>DIEE/SNTEP</strong> | Anual</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SETA 1→2 -->
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <svg style="width: 50px; height: 50px; color: #4A5568;" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                     </svg>
                 </div>
-            </div>
 
-            <!-- Etapa 2: Avaliação Bienal -->
-            <div style="width: 100%; display: flex; align-items: center; gap: 3rem; flex-direction: row-reverse;">
-                <div style="flex: 0 0 120px; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
-                    <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--color-accent), #F59E0B); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(255, 199, 44, 0.3); flex-shrink: 0;">
-                        <svg class="w-12 h-12 text-gray-800" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M9 12.75L11.25 15 15 9.75m-3-6.75v13.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <div style="text-align: center;">
-                        <p class="text-lg font-bold" style="color: #D97706;">AVALIAÇÃO</p>
-                        <p class="text-sm font-semibold text-gray-600">Bienal</p>
+                <!-- BLOCO 2: Análise Semafórica -->
+                <div style="position: relative; padding: 1.5rem; background: linear-gradient(135deg, rgba(255, 199, 44, 0.1), white); border-radius: 1rem; border: 3px solid #FFC72C; box-shadow: 0 6px 20px rgba(255, 199, 44, 0.2); overflow: hidden;">
+                    <!-- Ícone de fundo -->
+                    <i class="fas fa-traffic-light" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); font-size: 70px; color: rgba(255, 199, 44, 0.15); z-index: 0;"></i>
+
+                    <div style="position: relative; z-index: 1;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                            <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #FFC72C, #F59E0B); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(255, 199, 44, 0.4);">
+                                <span style="font-size: 1.5rem; font-weight: 900; color: #1A202C;">2</span>
+                            </div>
+                            <h3 style="font-size: 1rem; font-weight: 800; color: #D97706; margin: 0;">ANÁLISE SEMAFÓRICA</h3>
+                        </div>
+                        <p style="font-size: 0.8rem; color: #4A5568; margin-bottom: 0.75rem;">Classificação 🟢🟡🔴</p>
+                        <div style="background: rgba(255, 199, 44, 0.08); padding: 0.5rem; border-radius: 0.5rem; font-size: 0.7rem; color: #2D3748;">
+                            <p style="margin: 0;"><strong>DIEE/SNTEP</strong> | Anual</p>
+                        </div>
                     </div>
                 </div>
-                <div style="flex: 1; padding: 1.5rem; background: linear-gradient(135deg, rgba(255, 199, 44, 0.08), white); border-radius: 1rem; border-left: 4px solid var(--color-accent);">
-                    <h3 class="text-lg font-bold mb-2" style="color: #D97706;">Análises Aprofundadas</h3>
-                    <p class="text-sm text-gray-700"><strong>Responsável:</strong> SNTEP/DIEE + Órgãos setoriais</p>
-                    <p class="text-sm text-gray-700 mt-1"><strong>O quê:</strong> Relevância, eficiência, efetividade, impactos</p>
-                    <p class="text-sm text-gray-700 mt-1"><strong>Produto:</strong> Relatórios de avaliação bienal (apresentados ao FONTE)</p>
-                </div>
-            </div>
 
-            <!-- Conector 2 -->
-            <div style="height: 50px; width: 3px; background: linear-gradient(180deg, var(--color-accent), var(--color-secondary)); position: relative;">
-                <div style="position: absolute; top: -8px; right: -8px; width: 18px; height: 18px; background: var(--color-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M7 16.5V7.5m9.75 0L12 3.75 4.25 7.5M4.25 16.5L12 20.25l7.75-3.75" />
+                <!-- SETA 2→3 -->
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <svg style="width: 50px; height: 50px; color: #4A5568;" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                     </svg>
                 </div>
-            </div>
 
-            <!-- Etapa 3: Revisão Quadrienal -->
-            <div style="width: 100%; display: flex; align-items: center; gap: 3rem;">
-                <div style="flex: 0 0 120px; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
-                    <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--color-secondary), var(--color-primary)); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0, 155, 72, 0.3); flex-shrink: 0;">
-                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M16.023 9.348h4.992v-.001M2.985 19.644v-5.337c0-1.052.845-2.082 2.292-2.244l7.223-.918m5.331 5.499H8.5A2.25 2.25 0 006.25 20.625v.338A2.25 2.25 0 008.5 23h5m0-23h4.822c1.674 0 3.07.56 4.078 1.978C20.563 4.881 21.75 6.92 21.75 9.798v1.129A3.393 3.393 0 0018.357 14.5H7.643A3.393 3.393 0 004.25 11.927v-1.129c0-2.878 1.186-4.917 2.342-6.444 1.007-1.418 2.403-1.978 4.078-1.978z" />
-                        </svg>
-                    </div>
-                    <div style="text-align: center;">
-                        <p class="text-lg font-bold" style="color: var(--color-secondary);">REVISÃO</p>
-                        <p class="text-sm font-semibold text-gray-600">Quadrienal</p>
+                <!-- BLOCO 3: Painel PLANTE ABERTO -->
+                <div style="position: relative; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 39, 118, 0.1), white); border-radius: 1rem; border: 3px solid #002776; box-shadow: 0 6px 20px rgba(0, 39, 118, 0.2); overflow: hidden;">
+                    <!-- Ícone de fundo -->
+                    <i class="fas fa-chart-line" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); font-size: 70px; color: rgba(0, 39, 118, 0.1); z-index: 0;"></i>
+
+                    <div style="position: relative; z-index: 1;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                            <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #002776, #003A9E); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 39, 118, 0.4);">
+                                <span style="font-size: 1.5rem; font-weight: 900; color: white;">3</span>
+                            </div>
+                            <h3 style="font-size: 1rem; font-weight: 800; color: #002776; margin: 0;">PAINEL ABERTO</h3>
+                        </div>
+                        <p style="font-size: 0.8rem; color: #4A5568; margin-bottom: 0.75rem;">Publicação tempo real</p>
+                        <div style="background: rgba(0, 39, 118, 0.08); padding: 0.5rem; border-radius: 0.5rem; font-size: 0.7rem; color: #2D3748;">
+                            <p style="margin: 0;"><strong>SNTEP</strong> | Contínuo</p>
+                        </div>
                     </div>
                 </div>
-                <div style="flex: 1; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 155, 72, 0.08), white); border-radius: 1rem; border-left: 4px solid var(--color-secondary);">
-                    <h3 class="text-lg font-bold mb-2" style="color: var(--color-secondary);">Ajustes Estruturais</h3>
-                    <p class="text-sm text-gray-700"><strong>Responsável:</strong> SNTEP/MME</p>
-                    <p class="text-sm text-gray-700 mt-1"><strong>O quê:</strong> Atualização de ações, metas e indicadores baseada em evidências</p>
-                    <p class="text-sm text-gray-700 mt-1"><strong>Produto:</strong> Revisão ordinária publicada com justificativas</p>
+
+            </div>
+
+            <!-- SETA VERTICAL 3→4 (Descida) -->
+            <div style="display: flex; justify-content: flex-end; margin-right: 12%; margin-bottom: 1rem;">
+                <svg style="width: 50px; height: 50px; color: #4A5568;" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                </svg>
+            </div>
+
+            <!-- LINHA 2: ETAPAS 6 ← 5 ← 4 (Direita para Esquerda) -->
+            <div style="display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 1rem; align-items: center; margin-bottom: 1.5rem;">
+
+                <!-- BLOCO 6: Ciclo Contínuo -->
+                <div style="position: relative; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 39, 118, 0.1), white); border-radius: 1rem; border: 3px solid #002776; box-shadow: 0 6px 20px rgba(0, 39, 118, 0.2); overflow: hidden;">
+                    <!-- Ícone de fundo -->
+                    <i class="fas fa-arrows-spin" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); font-size: 70px; color: rgba(0, 39, 118, 0.1); z-index: 0;"></i>
+
+                    <div style="position: relative; z-index: 1;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                            <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #002776, #003A9E); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 39, 118, 0.4);">
+                                <span style="font-size: 1.5rem; font-weight: 900; color: white;">6</span>
+                            </div>
+                            <h3 style="font-size: 1rem; font-weight: 800; color: #002776; margin: 0;">CICLO CONTÍNUO</h3>
+                        </div>
+                        <p style="font-size: 0.8rem; color: #4A5568; margin-bottom: 0.75rem;">Feedback loop M&A&R</p>
+                        <div style="background: rgba(0, 39, 118, 0.08); padding: 0.5rem; border-radius: 0.5rem; font-size: 0.7rem; color: #2D3748;">
+                            <p style="margin: 0;"><strong>FONTE/CNPE</strong> | Contínuo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SETA 6←5 -->
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <svg style="width: 50px; height: 50px; color: #4A5568;" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                    </svg>
+                </div>
+
+                <!-- BLOCO 5: Revisão Quadrienal -->
+                <div style="position: relative; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.1), white); border-radius: 1rem; border: 3px solid #00522E; box-shadow: 0 6px 20px rgba(0, 82, 46, 0.2); overflow: hidden;">
+                    <!-- Ícone de fundo -->
+                    <i class="fas fa-rotate" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); font-size: 70px; color: rgba(0, 82, 46, 0.1); z-index: 0;"></i>
+
+                    <div style="position: relative; z-index: 1;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                            <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #00522E, #009B48); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 82, 46, 0.4);">
+                                <span style="font-size: 1.5rem; font-weight: 900; color: white;">5</span>
+                            </div>
+                            <h3 style="font-size: 1rem; font-weight: 800; color: #00522E; margin: 0;">REVISÃO</h3>
+                        </div>
+                        <p style="font-size: 0.8rem; color: #4A5568; margin-bottom: 0.75rem;">Atualização quadrienal</p>
+                        <div style="background: rgba(0, 82, 46, 0.08); padding: 0.5rem; border-radius: 0.5rem; font-size: 0.7rem; color: #2D3748;">
+                            <p style="margin: 0;"><strong>SNTEP/MME/CNPE</strong> | 4 anos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SETA 5←4 -->
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <svg style="width: 50px; height: 50px; color: #4A5568;" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                    </svg>
+                </div>
+
+                <!-- BLOCO 4: Avaliação Bienal -->
+                <div style="position: relative; padding: 1.5rem; background: linear-gradient(135deg, rgba(255, 199, 44, 0.1), white); border-radius: 1rem; border: 3px solid #FFC72C; box-shadow: 0 6px 20px rgba(255, 199, 44, 0.2); overflow: hidden;">
+                    <!-- Ícone de fundo -->
+                    <i class="fas fa-magnifying-glass-chart" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); font-size: 70px; color: rgba(255, 199, 44, 0.15); z-index: 0;"></i>
+
+                    <div style="position: relative; z-index: 1;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                            <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #FFC72C, #F59E0B); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(255, 199, 44, 0.4);">
+                                <span style="font-size: 1.5rem; font-weight: 900; color: #1A202C;">4</span>
+                            </div>
+                            <h3 style="font-size: 1rem; font-weight: 800; color: #D97706; margin: 0;">AVALIAÇÃO</h3>
+                        </div>
+                        <p style="font-size: 0.8rem; color: #4A5568; margin-bottom: 0.75rem;">Análise bienal profunda</p>
+                        <div style="background: rgba(255, 199, 44, 0.08); padding: 0.5rem; border-radius: 0.5rem; font-size: 0.7rem; color: #2D3748;">
+                            <p style="margin: 0;"><strong>SNTEP/DIEE</strong> | 2 anos</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SETA VERTICAL DE RETORNO 6→1 (Feedback Loop) -->
+            <div style="display: flex; justify-content: flex-start; margin-left: 12%; margin-top: 1rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #EF4444, #DC2626); border-radius: 2rem; box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3);">
+                    <svg style="width: 35px; height: 35px; color: white;" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                    </svg>
+                    <span style="color: white; font-weight: 800; font-size: 0.95rem;">FEEDBACK LOOP CONTÍNUO</span>
                 </div>
             </div>
 
-            <!-- Feedback Loop -->
-            <div style="width: 100%; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.08), white); border-radius: 1rem; border: 2px dashed var(--color-primary); text-align: center;">
-                <p class="text-sm font-semibold text-gray-700">
-                    <strong>🔄 Ciclo Contínuo:</strong> O processo se repete anualmente, alimentando o próximo ciclo de avaliação e revisão com dados precisos
-                </p>
-            </div>
+        </div>
+
+        <!-- BARRA COLORIDA INFERIOR (4 cores: Verde | Azul | Amarelo | Vermelho) -->
+        <div style="margin-top: 2.5rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; height: 10px; border-radius: 0.5rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
+            <div style="background: #00522E;"></div>
+            <div style="background: #002776;"></div>
+            <div style="background: #FFC72C;"></div>
+            <div style="background: #EF4444;"></div>
+        </div>
+
+        <!-- Nota Explicativa -->
+        <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.05), white); border-radius: 1rem; border-left: 4px solid var(--color-primary);">
+            <p class="text-sm text-gray-700 text-center">
+                <strong>🔄 O ciclo de governança do PLANTE:</strong> Sistema integrado de 6 etapas que garantem monitoramento contínuo, avaliações aprofundadas e revisões baseadas em evidências, alinhado com GT/CNPE e FONTE.
+            </p>
         </div>
     </div>
 
-    <!-- Slide 9: Monitoramento Semafórico -->
+    <!-- Slide 9: Monitoramento Semafórico (MUITO MAIS VISUAL - ESPAÇOS GIGANTES PARA FOTOS) -->
     <div class="slide">
         <h2 class="slide-title">
             <div class="icon-container">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-6-9v2.25m-6.364.386l1.591 1.591M5.25 19.5H3.75A2.25 2.25 0 011.5 17.25v-5.25a2.25 2.25 0 012.25-2.25h.75a9.004 9.004 0 018.671-5.093c.36 0 .713.029 1.065.084m0 0a8.967 8.967 0 015.18 2.897m-12 .333A9.980 9.980 0 0112 3c4.478 0 8.268 2.943 9.542 7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 3.03v.568c0 .334.148.65.407.864l1.07.855c.26.195.579.3.906.3H19.5a3 3 0 013 3v7.5a3 3 0 01-3 3h-15a3 3 0 01-3-3V8.25c0-1.08.768-2.135 1.845-2.54m9.905 2.54l-3.1 1.545a3 3 0 01-2.712 0l-3.1-1.545M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
             </div>
             Sistema Semafórico de Monitoramento
         </h2>
-        <p class="slide-subtitle">Classificação tripartida do status de ações e indicadores para visibilidade clara do progresso</p>
+        <p class="slide-subtitle">Três cores, três status: 🟢 ATENDE | 🟡 ATENÇÃO | 🔴 NÃO ATENDE</p>
 
-        <!-- BANNER DE DESTAQUE -->
-        <div style="margin-top: 2rem; padding: 1.5rem 2rem; background: linear-gradient(135deg, #EF4444, #DC2626); border-radius: 1rem; box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4); border: 3px solid #FCA5A5; display: flex; align-items: center; gap: 1rem;">
-            <div style="width: 60px; height: 60px; min-width: 60px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                <svg class="w-8 h-8" style="color: #EF4444;" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
-                </svg>
-            </div>
-            <div style="flex: 1;">
-                <p class="text-white text-xl font-black mb-1">⭐ PRIORIDADE #2 DO E-MAIL DA CHEFIA</p>
-                <p class="text-white text-sm opacity-95 font-semibold">Como será feito o monitoramento "semafórico" das ações: Critérios e exemplos práticos</p>
+        <!-- BANNER PRIORIDADE #2 - VERMELHO BEM DESTACADO -->
+        <div style="margin-top: 1.5rem; padding: 1.25rem 1.75rem; background: linear-gradient(135deg, #DC2626, #991B1B); border-radius: 1rem; box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4); border: 3px solid #FCA5A5; display: flex; align-items: center; gap: 1.25rem;">
+            <div style="width: 60px; height: 60px; min-width: 60px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #DC2626; font-size: 1.5rem;">⭐</div>
+            <div style="flex: 1; color: white;">
+                <p class="text-sm font-black mb-1" style="margin: 0; font-size: 1rem;">⭐ PRIORIDADE #2 DO E-MAIL DA CHEFIA</p>
+                <p class="text-xs opacity-95" style="margin: 0; line-height: 1.5;">Como será feito o monitoramento "semafórico" das ações: Critérios e exemplos práticos</p>
             </div>
         </div>
 
-        <div style="margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem;">
-            <!-- Status 1: ATENDE -->
-            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), white); border-radius: 1.5rem; border: 3px solid #10B981; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #10B981, #059669); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);">
-                    <svg class="w-14 h-14 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <!-- LAYOUT PRINCIPAL: 3 COLUNAS COM FOTOS GRANDES -->
+        <div style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; height: 100%;">
+
+            <!-- COLUNA 1: VERDE - ATENDE -->
+            <div style="display: flex; flex-direction: column;">
+                <!-- ESPAÇO GIGANTE PARA FOTO VERDE (PLACEHOLDER MUITO VISÍVEL) -->
+                <div style="flex: 1; background: linear-gradient(135deg, #D1FAE5, #A7F3D0); border-radius: 1.5rem; border: 4px dashed #10B981; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 1rem; overflow: hidden; position: relative; min-height: 300px; box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.2);">
+                    <!-- ÍCONE PLACEHOLDER GRANDE -->
+                    <svg style="width: 100px; height: 100px; color: #10B981; opacity: 0.3; margin-bottom: 1rem;" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                     </svg>
+                    <p style="font-size: 1.2rem; font-weight: 800; color: #10B981; text-align: center; line-height: 1.4;">📸<br>COLE AQUI<br>SEMÁFORO<br>VERDE</p>
                 </div>
-                <h3 class="text-2xl font-bold mb-1" style="color: #10B981;">ATENDE</h3>
-                <p class="text-xs font-semibold text-gray-600 mb-3">🟢 META ALCANÇADA</p>
-                <div style="text-align: left; width: 100%;">
-                    <p class="text-sm text-gray-700 mb-2"><strong>Critérios:</strong></p>
-                    <ul style="text-align: left; font-size: 0.875rem; color: #4A5568; line-height: 1.6;">
-                        <li>✓ Indicador atinge ou supera meta</li>
-                        <li>✓ Ação executada conforme cronograma</li>
-                        <li>✓ Metas intermediárias cumpridas</li>
-                    </ul>
-                </div>
-                <div style="margin-top: 1.5rem; padding: 1rem; background: white; border-radius: 0.75rem; width: 100%; border: 1px solid #10B981;">
-                    <p class="text-xs font-semibold text-gray-600">Exemplo:</p>
-                    <p class="text-sm text-gray-700 mt-1">FEM-04: Diversidade chegou a 0.78</p>
+
+                <!-- INFO DO STATUS -->
+                <div style="padding: 1.5rem; background: linear-gradient(135deg, #F0FDF4, white); border-radius: 1rem; border: 3px solid #10B981; box-shadow: 0 8px 24px rgba(16, 185, 129, 0.15);">
+                    <h3 class="text-2xl font-black mb-0.5" style="color: #10B981; margin: 0;">🟢 ATENDE</h3>
+                    <p class="text-xs font-bold text-gray-600 mb-2" style="margin: 0;">META ALCANÇADA</p>
+
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 2px solid #10B981;">
+                        <p class="text-xs font-bold text-gray-700 mb-2" style="margin: 0;">✅ Critérios:</p>
+                        <ul style="font-size: 0.8rem; color: #4A5568; line-height: 1.5; list-style: none; padding: 0; margin: 0;">
+                            <li>✓ Indicador ≥ meta</li>
+                            <li>✓ Cronograma cumprido</li>
+                            <li>✓ No rumo certo</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 1rem; padding: 0.75rem; background: #ECFDF5; border-radius: 0.5rem; border-left: 3px solid #10B981;">
+                        <p class="text-xs font-bold text-gray-700" style="margin: 0;">📊 Ex: FEM-04</p>
+                        <p class="text-xs text-gray-600" style="margin: 0;">Diversidade 0.78 (97,5% ✓)</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Status 2: EM ATENÇÃO -->
-            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), white); border-radius: 1.5rem; border: 3px solid #F59E0B; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #F59E0B, #D97706); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);">
-                    <svg class="w-14 h-14 text-gray-800" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+            <!-- COLUNA 2: AMARELO - ATENÇÃO -->
+            <div style="display: flex; flex-direction: column;">
+                <!-- ESPAÇO GIGANTE PARA FOTO AMARELA (PLACEHOLDER MUITO VISÍVEL) -->
+                <div style="flex: 1; background: linear-gradient(135deg, #FEF3C7, #FCD34D); border-radius: 1.5rem; border: 4px dashed #F59E0B; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 1rem; overflow: hidden; position: relative; min-height: 300px; box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.2);">
+                    <!-- ÍCONE PLACEHOLDER GRANDE -->
+                    <svg style="width: 100px; height: 100px; color: #F59E0B; opacity: 0.3; margin-bottom: 1rem;" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
                     </svg>
+                    <p style="font-size: 1.2rem; font-weight: 800; color: #F59E0B; text-align: center; line-height: 1.4;">📸<br>COLE AQUI<br>SEMÁFORO<br>AMARELO</p>
                 </div>
-                <h3 class="text-2xl font-bold mb-1" style="color: #D97706;">EM ATENÇÃO</h3>
-                <p class="text-xs font-semibold text-gray-600 mb-3">🟡 REQUER AJUSTES</p>
-                <div style="text-align: left; width: 100%;">
-                    <p class="text-sm text-gray-700 mb-2"><strong>Critérios:</strong></p>
-                    <ul style="text-align: left; font-size: 0.875rem; color: #4A5568; line-height: 1.6;">
-                        <li>⚠ Indicador entre 50-99% da meta</li>
-                        <li>⚠ Atrasos no cronograma</li>
-                        <li>⚠ Necessidade de intervenção corretiva</li>
-                    </ul>
-                </div>
-                <div style="margin-top: 1.5rem; padding: 1rem; background: white; border-radius: 0.75rem; width: 100%; border: 1px solid #F59E0B;">
-                    <p class="text-xs font-semibold text-gray-600">Exemplo:</p>
-                    <p class="text-sm text-gray-700 mt-1">FEM-23: Renováveis em 65% da meta</p>
+
+                <!-- INFO DO STATUS -->
+                <div style="padding: 1.5rem; background: linear-gradient(135deg, #FFFBEB, white); border-radius: 1rem; border: 3px solid #F59E0B; box-shadow: 0 8px 24px rgba(245, 158, 11, 0.15);">
+                    <h3 class="text-2xl font-black mb-0.5" style="color: #F59E0B; margin: 0;">🟡 ATENÇÃO</h3>
+                    <p class="text-xs font-bold text-gray-600 mb-2" style="margin: 0;">REQUER AJUSTES</p>
+
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 2px solid #F59E0B;">
+                        <p class="text-xs font-bold text-gray-700 mb-2" style="margin: 0;">⚠️ Critérios:</p>
+                        <ul style="font-size: 0.8rem; color: #4A5568; line-height: 1.5; list-style: none; padding: 0; margin: 0;">
+                            <li>⚠ Indicador 50-99% meta</li>
+                            <li>⚠ Atrasos observados</li>
+                            <li>⚠ Ação corretiva simples</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 1rem; padding: 0.75rem; background: #FFFBEB; border-radius: 0.5rem; border-left: 3px solid #F59E0B;">
+                        <p class="text-xs font-bold text-gray-700" style="margin: 0;">📊 Ex: FEM-23</p>
+                        <p class="text-xs text-gray-600" style="margin: 0;">Renováveis 65% da meta ⚠</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Status 3: NÃO ATENDE -->
-            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 1.5rem; border: 3px solid #EF4444; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #EF4444, #DC2626); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(239, 68, 68, 0.3);">
-                    <svg class="w-14 h-14 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+            <!-- COLUNA 3: VERMELHO - NÃO ATENDE -->
+            <div style="display: flex; flex-direction: column;">
+                <!-- ESPAÇO GIGANTE PARA FOTO VERMELHA (PLACEHOLDER MUITO VISÍVEL) -->
+                <div style="flex: 1; background: linear-gradient(135deg, #FECACA, #FCA5A5); border-radius: 1.5rem; border: 4px dashed #EF4444; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 1rem; overflow: hidden; position: relative; min-height: 300px; box-shadow: inset 0 0 20px rgba(239, 68, 68, 0.2);">
+                    <!-- ÍCONE PLACEHOLDER GRANDE -->
+                    <svg style="width: 100px; height: 100px; color: #EF4444; opacity: 0.3; margin-bottom: 1rem;" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
                     </svg>
+                    <p style="font-size: 1.2rem; font-weight: 800; color: #EF4444; text-align: center; line-height: 1.4;">📸<br>COLE AQUI<br>SEMÁFORO<br>VERMELHO</p>
                 </div>
-                <h3 class="text-2xl font-bold mb-1" style="color: #EF4444;">NÃO ATENDE</h3>
-                <p class="text-xs font-semibold text-gray-600 mb-3">🔴 META NÃO CUMPRIDA</p>
-                <div style="text-align: left; width: 100%;">
-                    <p class="text-sm text-gray-700 mb-2"><strong>Critérios:</strong></p>
-                    <ul style="text-align: left; font-size: 0.875rem; color: #4A5568; line-height: 1.6;">
-                        <li>✗ Indicador abaixo de 50% da meta</li>
-                        <li>✗ Atraso significativo no cronograma</li>
-                        <li>✗ Requer revisão extraordinária</li>
-                    </ul>
-                </div>
-                <div style="margin-top: 1.5rem; padding: 1rem; background: white; border-radius: 0.75rem; width: 100%; border: 1px solid #EF4444;">
-                    <p class="text-xs font-semibold text-gray-600">Exemplo:</p>
-                    <p class="text-sm text-gray-700 mt-1">FEM-18: Intensidade em 35% do alvo</p>
+
+                <!-- INFO DO STATUS -->
+                <div style="padding: 1.5rem; background: linear-gradient(135deg, #FEF2F2, white); border-radius: 1rem; border: 3px solid #EF4444; box-shadow: 0 8px 24px rgba(239, 68, 68, 0.15);">
+                    <h3 class="text-2xl font-black mb-0.5" style="color: #EF4444; margin: 0;">🔴 NÃO ATENDE</h3>
+                    <p class="text-xs font-bold text-gray-600 mb-2" style="margin: 0;">META NÃO CUMPRIDA</p>
+
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 2px solid #EF4444;">
+                        <p class="text-xs font-bold text-gray-700 mb-2" style="margin: 0;">❌ Critérios:</p>
+                        <ul style="font-size: 0.8rem; color: #4A5568; line-height: 1.5; list-style: none; padding: 0; margin: 0;">
+                            <li>✗ Indicador &lt; 50% meta</li>
+                            <li>✗ Atraso significativo</li>
+                            <li>✗ Revisão extraordinária</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 1rem; padding: 0.75rem; background: #FEF2F2; border-radius: 0.5rem; border-left: 3px solid #EF4444;">
+                        <p class="text-xs font-bold text-gray-700" style="margin: 0;">📊 Ex: FEM-18</p>
+                        <p class="text-xs text-gray-600" style="margin: 0;">Intensidade 35% alvo ✗</p>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div style="margin-top: 2.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.08), white); border-radius: 1rem; border-left: 4px solid var(--color-primary);">
-            <p class="text-sm text-gray-700">
-                <strong>📊 Aplicação:</strong> Cada ação, meta e indicador do PLANTE recebe uma classificação semafórica anual, permitindo uma visão rápida e objetiva do progresso no Painel PLANTE ABERTO e nas apresentações ao CNPE e FONTE.
-            </p>
         </div>
     </div>
 
@@ -866,6 +984,41 @@
             <div style="flex: 1;">
                 <p class="text-white text-xl font-black mb-1">⭐ PRIORIDADE #3 DO E-MAIL DA CHEFIA</p>
                 <p class="text-white text-sm opacity-95 font-semibold">Indicadores-chave propostos pela CGII considerando referências FEM e OBEPE (3 slides: Pilares 1, 2 e 3)</p>
+            </div>
+        </div>
+
+        <!-- SEÇÃO DE GRÁFICOS SOFISTICADOS -->
+        <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+
+            <!-- GRÁFICO 1: Composição da Matriz Elétrica 2024 -->
+            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.05), white); border-radius: 1.5rem; border: 2px solid var(--color-primary); box-shadow: 0 8px 24px rgba(0, 82, 46, 0.1);">
+                <h3 class="text-lg font-bold mb-3" style="color: var(--color-primary);">📊 Composição da Matriz Elétrica Brasileira 2024</h3>
+                <p class="text-xs text-gray-600 mb-4">Distribuição das fontes de geração (OIEE 2024: 762,9 TWh)</p>
+
+                <canvas id="matrizEletricaChart" style="max-height: 300px;"></canvas>
+
+                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(0, 82, 46, 0.05); border-radius: 0.75rem; border-left: 4px solid var(--color-primary);">
+                    <p class="text-xs font-bold text-gray-700 mb-2">Destaques 2024:</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.75rem;">
+                        <div><span style="color: #00522E;">●</span> Hidro: <strong>55,3%</strong></div>
+                        <div><span style="color: #10B981;">●</span> Eólica: <strong>8,1%</strong></div>
+                        <div><span style="color: #FFC72C;">●</span> Solar: <strong>9,3%</strong></div>
+                        <div><span style="color: #8B5CF6;">●</span> Biomassa: <strong>6,3%</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GRÁFICO 2: Benchmarking Renovável -->
+            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(0, 39, 118, 0.05), white); border-radius: 1.5rem; border: 2px solid var(--color-blue); box-shadow: 0 8px 24px rgba(0, 39, 118, 0.1);">
+                <h3 class="text-lg font-bold mb-3" style="color: var(--color-blue);">🌍 Participação Renovável - Comparativo Internacional</h3>
+                <p class="text-xs text-gray-600 mb-4">Brasil vs OCDE vs Mundo (% de fontes renováveis)</p>
+
+                <canvas id="benchmarkingChart" style="max-height: 300px;"></canvas>
+
+                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(0, 39, 118, 0.05); border-radius: 0.75rem; border-left: 4px solid var(--color-blue);">
+                    <p class="text-xs font-bold text-gray-700 mb-2">Análise Comparativa:</p>
+                    <p class="text-xs text-gray-700">Brasil mantém <strong>88,2%</strong> de matriz renovável, superando <strong>2,6x</strong> a média da OCDE (34%) e <strong>2,9x</strong> a média mundial (30%)</p>
+                </div>
             </div>
         </div>
 
@@ -1086,77 +1239,173 @@
             </div>
         </div>
 
-        <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: start;">
-            <!-- Timeline Esquerda -->
+        <!-- LAYOUT 60/40: Ordinárias (Esquerda) vs Extraordinárias (Direita) -->
+        <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 3fr 2fr; gap: 2rem; align-items: start;">
+
+            <!-- SEÇÃO ESQUERDA: REVISÕES ORDINÁRIAS -->
             <div style="background: linear-gradient(135deg, rgba(0, 82, 46, 0.08), white); padding: 2rem; border-radius: 1.5rem; border: 2px solid var(--color-primary);">
-                <h3 class="text-xl font-bold mb-4" style="color: var(--color-primary);">Revisão Ordinária - Ciclo Quadrienal</h3>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <i class="fas fa-calendar-check" style="font-size: 2rem; color: var(--color-primary);"></i>
+                    <h3 class="text-xl font-bold" style="color: var(--color-primary);">Revisão Ordinária - Ciclo Quadrienal</h3>
+                </div>
 
-                <div style="position: relative; padding-left: 3rem;">
-                    <!-- Year 2025 -->
-                    <div style="margin-bottom: 3rem; position: relative;">
-                        <div style="position: absolute; left: -3.5rem; top: 0; width: 35px; height: 35px; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.875rem; box-shadow: 0 4px 12px rgba(0, 82, 46, 0.3);">1</div>
-                        <p class="text-lg font-bold text-gray-800">2025-2026</p>
-                        <p class="text-sm text-gray-700 mt-1"><strong>Implementação:</strong> PLANTE entra em vigência plena</p>
-                    </div>
+                <!-- GRÁFICO: Timeline Horizontal -->
+                <div style="background: white; padding: 1.5rem; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0, 82, 46, 0.1);">
+                    <canvas id="timelineChart" style="max-height: 200px;"></canvas>
+                </div>
 
-                    <!-- Year 2029 -->
-                    <div style="margin-bottom: 3rem; position: relative;">
-                        <div style="position: absolute; left: -3.5rem; top: 0; width: 35px; height: 35px; background: linear-gradient(135deg, var(--color-secondary), var(--color-primary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.875rem; box-shadow: 0 4px 12px rgba(0, 155, 72, 0.3);">2</div>
-                        <p class="text-lg font-bold text-gray-800">2029-2030</p>
-                        <p class="text-sm text-gray-700 mt-1"><strong>1ª Revisão Ordinária:</strong> Consolidação de 4 anos de dados</p>
-                        <p class="text-xs text-gray-600 mt-2">• Análise de monitoramento anual (4 ciclos)</p>
-                        <p class="text-xs text-gray-600">• Integração de 2 ciclos de avaliação bienal</p>
-                        <p class="text-xs text-gray-600">• Revisão de metas inatingíveis e indicadores</p>
-                    </div>
-
-                    <!-- Year 2033 -->
-                    <div style="position: relative;">
-                        <div style="position: absolute; left: -3.5rem; top: 0; width: 35px; height: 35px; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.875rem; box-shadow: 0 4px 12px rgba(0, 82, 46, 0.3);">3</div>
-                        <p class="text-lg font-bold text-gray-800">2033-2034</p>
-                        <p class="text-sm text-gray-700 mt-1"><strong>2ª Revisão Ordinária:</strong> Reajustes estratégicos (próximo ciclo)</p>
+                <!-- BOX: O que entra em cada revisão -->
+                <div style="background: white; padding: 1.5rem; border-radius: 1rem; border-left: 4px solid var(--color-primary);">
+                    <p class="text-sm font-bold text-gray-800 mb-3">📦 O que é analisado em cada Revisão Ordinária:</p>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                        <div style="padding: 1rem; background: linear-gradient(135deg, rgba(0, 82, 46, 0.1), white); border-radius: 0.75rem; text-align: center;">
+                            <i class="fas fa-chart-bar" style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: 0.5rem;"></i>
+                            <p class="text-xs font-bold text-gray-800">4 Ciclos</p>
+                            <p class="text-xs text-gray-600">Monitoramento Anual</p>
+                        </div>
+                        <div style="padding: 1rem; background: linear-gradient(135deg, rgba(255, 199, 44, 0.1), white); border-radius: 0.75rem; text-align: center;">
+                            <i class="fas fa-magnifying-glass-chart" style="font-size: 1.5rem; color: #FFC72C; margin-bottom: 0.5rem;"></i>
+                            <p class="text-xs font-bold text-gray-800">2 Ciclos</p>
+                            <p class="text-xs text-gray-600">Avaliação Bienal</p>
+                        </div>
+                        <div style="padding: 1rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); border-radius: 0.75rem; text-align: center;">
+                            <i class="fas fa-bullseye" style="font-size: 1.5rem; color: #EF4444; margin-bottom: 0.5rem;"></i>
+                            <p class="text-xs font-bold text-gray-800">Revisão</p>
+                            <p class="text-xs text-gray-600">Metas Inatingíveis</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Gatilhos de Revisão Extraordinária (Direita) -->
+            <!-- SEÇÃO DIREITA: REVISÕES EXTRAORDINÁRIAS -->
             <div style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), white); padding: 2rem; border-radius: 1.5rem; border: 2px solid #EF4444;">
-                <h3 class="text-lg font-bold mb-3" style="color: #EF4444;">⚠️ Revisão Extraordinária</h3>
-                <p class="text-xs text-gray-700 mb-3">Acionada por gatilhos especiais:</p>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <i class="fas fa-triangle-exclamation" style="font-size: 2rem; color: #EF4444;"></i>
+                    <h3 class="text-lg font-bold" style="color: #EF4444;">⚠️ Revisão Extraordinária</h3>
+                </div>
 
-                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <!-- GRÁFICO: Doughnut de Gatilhos Ativados -->
+                <div style="background: white; padding: 1rem; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);">
+                    <p class="text-xs font-bold text-gray-800 mb-2 text-center">Gatilhos Acionados (2020-2024 - Simulado)</p>
+                    <canvas id="gatilhosChart" style="max-height: 180px;"></canvas>
+                </div>
+
+                <!-- 5 GATILHOS COM ÍCONES GRANDES -->
+                <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem;">
                     <!-- Gatilho 1 -->
-                    <div style="padding: 0.75rem; background: white; border-radius: 0.5rem; border-left: 3px solid #EF4444;">
-                        <p class="text-xs font-bold text-gray-800">1. Mudanças Energéticas</p>
-                        <p class="text-xs text-gray-600 mt-0.5">Cenário nacional/internacional significativo</p>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border-radius: 0.75rem; border-left: 4px solid #F59E0B;">
+                        <i class="fas fa-bolt" style="font-size: 2rem; color: #F59E0B; min-width: 40px; text-align: center;"></i>
+                        <div>
+                            <p class="text-xs font-bold text-gray-800">1. Mudanças Energéticas</p>
+                            <p class="text-xs text-gray-600">Cenário nacional/internacional</p>
+                        </div>
                     </div>
 
                     <!-- Gatilho 2 -->
-                    <div style="padding: 0.75rem; background: white; border-radius: 0.5rem; border-left: 3px solid #EF4444;">
-                        <p class="text-xs font-bold text-gray-800">2. Mudanças Legislativas</p>
-                        <p class="text-xs text-gray-600 mt-0.5">Alteração em leis que impactam objetivos</p>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border-radius: 0.75rem; border-left: 4px solid #8B5CF6;">
+                        <i class="fas fa-gavel" style="font-size: 2rem; color: #8B5CF6; min-width: 40px; text-align: center;"></i>
+                        <div>
+                            <p class="text-xs font-bold text-gray-800">2. Mudanças Legislativas</p>
+                            <p class="text-xs text-gray-600">Leis que impactam objetivos</p>
+                        </div>
                     </div>
 
                     <!-- Gatilho 3 -->
-                    <div style="padding: 0.75rem; background: white; border-radius: 0.5rem; border-left: 3px solid #EF4444;">
-                        <p class="text-xs font-bold text-gray-800">3. Emergências Energéticas</p>
-                        <p class="text-xs text-gray-600 mt-0.5">Crises que demandem adaptação urgente</p>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border-radius: 0.75rem; border-left: 4px solid #EF4444;">
+                        <i class="fas fa-house-fire" style="font-size: 2rem; color: #EF4444; min-width: 40px; text-align: center;"></i>
+                        <div>
+                            <p class="text-xs font-bold text-gray-800">3. Emergências Energéticas</p>
+                            <p class="text-xs text-gray-600">Crises urgentes</p>
+                        </div>
                     </div>
 
                     <!-- Gatilho 4 -->
-                    <div style="padding: 0.75rem; background: white; border-radius: 0.5rem; border-left: 3px solid #EF4444;">
-                        <p class="text-xs font-bold text-gray-800">4. Oportunidades Estratégicas</p>
-                        <p class="text-xs text-gray-600 mt-0.5">Modificação rápida necessária</p>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border-radius: 0.75rem; border-left: 4px solid #FFC72C;">
+                        <i class="fas fa-lightbulb" style="font-size: 2rem; color: #FFC72C; min-width: 40px; text-align: center;"></i>
+                        <div>
+                            <p class="text-xs font-bold text-gray-800">4. Oportunidades Estratégicas</p>
+                            <p class="text-xs text-gray-600">Janelas de modificação</p>
+                        </div>
                     </div>
 
                     <!-- Gatilho 5 -->
-                    <div style="padding: 0.75rem; background: white; border-radius: 0.5rem; border-left: 3px solid #EF4444;">
-                        <p class="text-xs font-bold text-gray-800">5. Desvios Críticos</p>
-                        <p class="text-xs text-gray-600 mt-0.5">Monitoramento indica necessidade urgente</p>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border-radius: 0.75rem; border-left: 4px solid #DC2626;">
+                        <i class="fas fa-gauge-high" style="font-size: 2rem; color: #DC2626; min-width: 40px; text-align: center;"></i>
+                        <div>
+                            <p class="text-xs font-bold text-gray-800">5. Desvios Críticos</p>
+                            <p class="text-xs text-gray-600">Monitoramento urgente</p>
+                        </div>
                     </div>
                 </div>
 
-                <div style="margin-top: 1rem; padding: 0.75rem; background: #FECACA; border-radius: 0.5rem; border-left: 3px solid #DC2626;">
-                    <p class="text-xs font-bold text-gray-800">Fluxo: Acelerado (sem aguardar ciclo quadrienal)</p>
+                <!-- BADGE: Tempo de Resposta -->
+                <div style="padding: 1rem; background: linear-gradient(135deg, #DC2626, #EF4444); border-radius: 0.75rem; text-align: center;">
+                    <p class="text-xs font-bold text-white mb-1">🚨 TEMPO DE RESPOSTA MÉDIO</p>
+                    <p class="text-2xl font-black text-white">45 dias</p>
+                    <p class="text-xs text-white opacity-90">Gatilho → Publicação</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- INFOGRÁFICO: Fluxo de Decisão -->
+        <div style="margin-top: 2rem; padding: 2rem; background: linear-gradient(135deg, rgba(0, 39, 118, 0.08), white); border-radius: 1.5rem; border: 2px solid var(--color-blue); position: relative; overflow: hidden;">
+            <!-- Imagem de fundo decorativa (Unsplash) -->
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&h=300&fit=crop'); background-size: cover; background-position: center; opacity: 0.08; z-index: 0;"></div>
+
+            <div style="position: relative; z-index: 1;">
+                <h3 class="text-lg font-bold mb-4 text-center" style="color: var(--color-blue);">🔄 Fluxo de Decisão: Do Gatilho à Publicação</h3>
+
+                <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 1rem; align-items: center;">
+                    <!-- Etapa 1 -->
+                    <div style="text-align: center;">
+                        <div style="width: 70px; height: 70px; margin: 0 auto 1rem; background: linear-gradient(135deg, #EF4444, #DC2626); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3);">
+                            <i class="fas fa-bell" style="font-size: 1.5rem; color: white;"></i>
+                        </div>
+                        <p class="text-xs font-bold text-gray-800">GATILHO</p>
+                        <p class="text-xs text-gray-600">Dia 0</p>
+                    </div>
+
+                    <!-- Seta 1→2 -->
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-arrow-right" style="font-size: 1.5rem; color: var(--color-blue);"></i>
+                    </div>
+
+                    <!-- Etapa 2 -->
+                    <div style="text-align: center;">
+                        <div style="width: 70px; height: 70px; margin: 0 auto 1rem; background: linear-gradient(135deg, #F59E0B, #D97706); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);">
+                            <i class="fas fa-microscope" style="font-size: 1.5rem; color: white;"></i>
+                        </div>
+                        <p class="text-xs font-bold text-gray-800">ANÁLISE</p>
+                        <p class="text-xs text-gray-600">0-15 dias</p>
+                    </div>
+
+                    <!-- Seta 2→3 -->
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-arrow-right" style="font-size: 1.5rem; color: var(--color-blue);"></i>
+                    </div>
+
+                    <!-- Etapa 3 -->
+                    <div style="text-align: center;">
+                        <div style="width: 70px; height: 70px; margin: 0 auto 1rem; background: linear-gradient(135deg, #8B5CF6, #7C3AED); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(139, 92, 246, 0.3);">
+                            <i class="fas fa-stamp" style="font-size: 1.5rem; color: white;"></i>
+                        </div>
+                        <p class="text-xs font-bold text-gray-800">APROVAÇÃO</p>
+                        <p class="text-xs text-gray-600">15-35 dias</p>
+                    </div>
+
+                    <!-- Seta 3→4 -->
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-arrow-right" style="font-size: 1.5rem; color: var(--color-blue);"></i>
+                    </div>
+
+                    <!-- Etapa 4 -->
+                    <div style="text-align: center;">
+                        <div style="width: 70px; height: 70px; margin: 0 auto 1rem; background: linear-gradient(135deg, #10B981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);">
+                            <i class="fas fa-globe" style="font-size: 1.5rem; color: white;"></i>
+                        </div>
+                        <p class="text-xs font-bold text-gray-800">PUBLICAÇÃO</p>
+                        <p class="text-xs text-gray-600">35-45 dias</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1221,6 +1470,251 @@
                         y: {
                             ticks: { color: '#2D3748', font: { weight: 'bold' } },
                             grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        // GRÁFICO 1: Composição da Matriz Elétrica 2024
+        const matrizCtx = document.getElementById('matrizEletricaChart');
+        if (matrizCtx) {
+            new Chart(matrizCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Hidro', 'Eólica', 'Solar', 'Biomassa', 'Gás Natural', 'Derivados', 'Outros'],
+                    datasets: [{
+                        label: 'Participação (%)',
+                        data: [55.3, 8.1, 9.3, 6.3, 5.3, 1.5, 14.2],
+                        backgroundColor: [
+                            '#00522E',   // Hidro - Verde escuro
+                            '#10B981',   // Eólica - Verde claro
+                            '#FFC72C',   // Solar - Amarelo
+                            '#8B5CF6',   // Biomassa - Roxo
+                            '#EF4444',   // Gás - Vermelho
+                            '#94A3B8',   // Derivados - Cinza
+                            '#6B7280'    // Outros - Cinza escuro
+                        ],
+                        borderColor: [
+                            '#00522E',
+                            '#059669',
+                            '#F59E0B',
+                            '#7C3AED',
+                            '#DC2626',
+                            '#64748B',
+                            '#4B5563'
+                        ],
+                        borderWidth: 2,
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return context.label + ': ' + context.parsed.y + '%';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 60,
+                            ticks: {
+                                color: '#4A5568',
+                                callback: function (value) {
+                                    return value + '%';
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 82, 46, 0.1)'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: '#2D3748',
+                                font: { size: 10, weight: 'bold' }
+                            },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        // GRÁFICO 2: Benchmarking Renovável
+        const benchmarkCtx = document.getElementById('benchmarkingChart');
+        if (benchmarkCtx) {
+            new Chart(benchmarkCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Brasil 2024', 'Brasil 2023', 'OCDE 2023', 'Mundo 2022'],
+                    datasets: [{
+                        label: 'Renovável (%)',
+                        data: [88.2, 89.2, 34.0, 29.9],
+                        backgroundColor: [
+                            'rgba(0, 82, 46, 0.8)',
+                            'rgba(0, 155, 72, 0.8)',
+                            'rgba(0, 39, 118, 0.8)',
+                            'rgba(107, 114, 128, 0.8)'
+                        ],
+                        borderColor: [
+                            '#00522E',
+                            '#009B48',
+                            '#002776',
+                            '#6B7280'
+                        ],
+                        borderWidth: 2,
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return 'Renováveis: ' + context.parsed.x + '%';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                color: '#4A5568',
+                                callback: function (value) {
+                                    return value + '%';
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 39, 118, 0.1)'
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                color: '#2D3748',
+                                font: { size: 11, weight: 'bold' }
+                            },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        // GRÁFICO 3: Timeline de Revisões Ordinárias (Slide 13)
+        const timelineCtx = document.getElementById('timelineChart');
+        if (timelineCtx) {
+            new Chart(timelineCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['2025-2026', '2029-2030', '2033-2034', '2037-2038', '2041-2042'],
+                    datasets: [{
+                        label: 'Ciclo de Revisões',
+                        data: [1, 2, 3, 4, 5],
+                        backgroundColor: [
+                            'rgba(16, 185, 129, 0.8)',  // Implementação - Verde
+                            'rgba(0, 82, 46, 0.8)',     // 1ª Revisão - Verde escuro
+                            'rgba(255, 199, 44, 0.8)',  // 2ª Revisão - Amarelo
+                            'rgba(0, 155, 72, 0.8)',    // 3ª Revisão - Verde médio
+                            'rgba(245, 158, 11, 0.8)'   // 4ª Revisão - Laranja
+                        ],
+                        borderColor: [
+                            '#10B981',
+                            '#00522E',
+                            '#FFC72C',
+                            '#009B48',
+                            '#F59E0B'
+                        ],
+                        borderWidth: 2,
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    const labels = ['Implementação', '1ª Revisão Ordinária', '2ª Revisão Ordinária', '3ª Revisão Ordinária', '4ª Revisão Ordinária'];
+                                    return labels[context.dataIndex];
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            display: false
+                        },
+                        y: {
+                            ticks: {
+                                color: '#2D3748',
+                                font: { size: 11, weight: 'bold' }
+                            },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        // GRÁFICO 4: Gatilhos Extraordinários Acionados (Slide 13)
+        const gatilhosCtx = document.getElementById('gatilhosChart');
+        if (gatilhosCtx) {
+            new Chart(gatilhosCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Legislativas', 'Emergências', 'Oportunidades', 'Energéticas', 'Desvios'],
+                    datasets: [{
+                        data: [3, 2, 2, 1, 1],
+                        backgroundColor: [
+                            '#8B5CF6',  // Roxo
+                            '#EF4444',  // Vermelho
+                            '#FFC72C',  // Amarelo
+                            '#F59E0B',  // Laranja
+                            '#DC2626'   // Vermelho escuro
+                        ],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#4A5568',
+                                font: { size: 10 },
+                                padding: 10,
+                                boxWidth: 12
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return context.label + ': ' + context.parsed + ' vezes';
+                                }
+                            }
                         }
                     }
                 }
@@ -2262,4 +2756,5 @@
 <script src="js/app.js"></script>
 
 </body>
+
 </html>
