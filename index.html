@@ -392,164 +392,185 @@
     <!-- ========================================
          SLIDE 4: Mudança dos Atores (High Fidelity) - VERSÃO COMPACTA
          ======================================== -->
-    <div class="slide slide-compact" style="padding: 1.5rem 2.5rem;">
-        <h1
-            style="font-family: 'Montserrat', sans-serif; font-size: 1.9rem; font-weight: 800; text-align: center; color: #333; margin-bottom: 0.2rem; letter-spacing: -0.02em; line-height: 1.2;">
-            Evolução dos Atores: Do Duopólio ao "Centrão"
-        </h1>
-        <p style="text-align: center; font-size: 1.05rem; color: #444; margin-bottom: 0.6rem; font-weight: 400;">
-            A mudança do eixo de governabilidade (1994–Presente)
-        </p>
+    <!-- ========================================
+         SLIDE 4: Mudança dos Atores (Redesign Premium)
+         ======================================== -->
+    <div class="slide slide-compact slide-actors" style="padding: 2rem 3rem; background: #FAFAFA;">
 
-        <div style="display: flex; flex: 1; border-top: 1px solid #EEE; padding-top: 1rem; position: relative;">
-            <!-- Linha Divisória Vertical -->
-            <div style="position: absolute; left: 50%; top: 5%; bottom: 5%; width: 1px; background: #DDD;"></div>
+        <!-- Header -->
+        <header style="text-align: center; margin-bottom: 1.5rem;">
+            <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40; 
+                       margin: 0; letter-spacing: -0.03em; line-height: 1.1;">
+                Evolução dos Atores: Do Duopólio ao "Centrão"
+            </h1>
+            <p
+                style="font-family: 'Open Sans', sans-serif; font-size: 1.1rem; color: #546E7A; font-weight: 600; margin-top: 0.5rem;">
+                A mudança do eixo de governabilidade (1994–Presente)
+            </p>
+        </header>
 
-            <!-- Coluna Esquerda: Cenário Histórico -->
-            <div style="flex: 1; padding: 0 1.5rem; text-align: center;">
-                <h3
-                    style="font-family: 'Montserrat', sans-serif; font-size: 1.05rem; color: #555; margin-bottom: 0.5rem; font-weight: 700;">
-                    Cenário Histórico (1994-2014): Duopólio
-                </h3>
+        <!-- Main Comparative Content -->
+        <div style="display: flex; gap: 2rem; height: 480px; align-items: stretch;">
 
-                <svg viewBox="0 0 400 280" style="width: 100%; max-height: 200px;">
-                    <defs>
-                        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-                            <feDropShadow dx="2" dy="4" stdDeviation="3" flood-opacity="0.2" />
-                        </filter>
-                    </defs>
+            <!-- Left Panel: The Past (Order) -->
+            <div
+                style="flex: 1; background: #ECEFF1; border-radius: 12px; padding: 1.5rem; position: relative; box-shadow: inset 0 0 20px rgba(0,0,0,0.03);">
+                <div style="text-align: center; margin-bottom: 1rem;">
+                    <span
+                        style="background: #CFD8DC; color: #455A64; padding: 4px 12px; border-radius: 4px; font-weight: 700; font-size: 0.8rem; font-family: 'Montserrat', sans-serif;">1994
+                        - 2014</span>
+                    <h3
+                        style="color: #37474F; margin: 0.5rem 0 0; font-family: 'Montserrat', sans-serif; font-weight: 700;">
+                        Duopólio Estável</h3>
+                </div>
 
-                    <!-- Arrows -->
-                    <!-- PT <-> PSDB -->
-                    <path d="M160 95 L240 95" stroke="#BBB" stroke-width="10" marker-start="url(#arrowhead)"
-                        marker-end="url(#arrowhead)" fill="none" />
-                    <!-- PT <-> MDB -->
-                    <path d="M125 140 L170 200" stroke="#BBB" stroke-width="10" marker-start="url(#arrowhead)"
-                        marker-end="url(#arrowhead)" fill="none" />
-                    <!-- PSDB <-> MDB -->
-                    <path d="M275 140 L230 200" stroke="#BBB" stroke-width="10" marker-start="url(#arrowhead)"
-                        marker-end="url(#arrowhead)" fill="none" />
+                <!-- SVG Triangle Structure -->
+                <div style="display: flex; justify-content: center; height: 280px; align-items: center;">
+                    <svg viewBox="0 0 300 260" style="width: 100%; height: 100%; overflow: visible;">
+                        <defs>
+                            <filter id="shadowSolid" x="-20%" y="-20%" width="140%" height="140%">
+                                <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.15" />
+                            </filter>
+                        </defs>
 
-                    <!-- Arrow Markers -->
-                    <defs>
-                        <marker id="arrowhead" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto">
-                            <polygon points="0 0, 5 2.5, 0 5" fill="#BBB" />
-                        </marker>
-                    </defs>
+                        <!-- Connecting Beams (Architecture) -->
+                        <path d="M70 70 L230 70" stroke="#B0BEC5" stroke-width="12" stroke-linecap="round" />
+                        <path d="M70 70 L150 200" stroke="#B0BEC5" stroke-width="12" stroke-linecap="round" />
+                        <path d="M230 70 L150 200" stroke="#B0BEC5" stroke-width="12" stroke-linecap="round" />
 
-                    <!-- Nodes -->
-                    <!-- PT -->
-                    <g filter="url(#shadow)">
-                        <circle cx="120" cy="95" r="38" fill="white" stroke="#f44336" stroke-width="6" />
-                        <text x="120" y="102" font-family="Montserrat" font-weight="800" font-size="22"
-                            text-anchor="middle" fill="#333">PT</text>
-                    </g>
+                        <!-- Nodes -->
+                        <!-- PT -->
+                        <g transform="translate(70, 70)">
+                            <circle r="35" fill="#FFF" stroke="#E57373" stroke-width="6" filter="url(#shadowSolid)" />
+                            <text dy="6" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="800"
+                                font-size="20" fill="#D32F2F">PT</text>
+                        </g>
+                        <!-- PSDB -->
+                        <g transform="translate(230, 70)">
+                            <circle r="35" fill="#FFF" stroke="#64B5F6" stroke-width="6" filter="url(#shadowSolid)" />
+                            <text dy="6" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="800"
+                                font-size="18" fill="#1976D2">PSDB</text>
+                        </g>
+                        <!-- MDB (Base) -->
+                        <g transform="translate(150, 200)">
+                            <circle r="40" fill="#FFF" stroke="#78909c" stroke-width="6" filter="url(#shadowSolid)" />
+                            <text dy="6" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="800"
+                                font-size="22" fill="#455A64">MDB</text>
+                        </g>
 
-                    <!-- PSDB -->
-                    <g filter="url(#shadow)">
-                        <circle cx="280" cy="95" r="38" fill="white" stroke="#2196f3" stroke-width="6" />
-                        <text x="280" y="102" font-family="Montserrat" font-weight="800" font-size="20"
-                            text-anchor="middle" fill="#333">PSDB</text>
-                    </g>
+                        <!-- Label -->
+                        <text x="150" y="255" text-anchor="middle" font-size="12" fill="#666"
+                            font-family="'Open Sans', sans-serif" font-style="italic">
+                            MDB como "Fiador"
+                        </text>
+                    </svg>
+                </div>
+                <p style="text-align: center; color: #666; font-size: 0.85rem; margin-top: 0.5rem; line-height: 1.4;">
+                    Competição estruturada.<br>Apoio programático e previsível.
+                </p>
+            </div>
 
-                    <!-- MDB -->
-                    <g filter="url(#shadow)">
-                        <circle cx="200" cy="220" r="38" fill="white" stroke="#757575" stroke-width="6" />
-                        <text x="200" y="227" font-family="Montserrat" font-weight="800" font-size="20"
-                            text-anchor="middle" fill="#333">MDB</text>
-                    </g>
-                </svg>
-
-                <div style="margin-top: 0.5rem;">
-                    <p style="font-weight: 700; color: #444; font-size: 0.9rem; margin-bottom: 0.3rem;">(Pivô de Apoio)
-                    </p>
-                    <p style="color: #666; font-size: 0.85rem; line-height: 1.3;">Competição PT vs. Anti-PT; MDB como
-                        Fiel da Balança</p>
+            <!-- Divider Arrow -->
+            <div style="display: flex; align-items: center; justify-content: center; width: 40px; position: relative;">
+                <div style="background: #E0E0E0; width: 2px; height: 80%;"></div>
+                <div
+                    style="position: absolute; background: white; border: 2px solid #E0E0E0; color: #999; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-arrow-right"></i>
                 </div>
             </div>
 
-            <!-- Coluna Direita: Cenário Recent -->
-            <div style="flex: 1; padding: 0 1.5rem; text-align: center;">
-                <h3
-                    style="font-family: 'Montserrat', sans-serif; font-size: 1.05rem; color: #555; margin-bottom: 0.5rem; font-weight: 700;">
-                    Cenário Recente (Pós-2016): Hegemonia do Centrão
-                </h3>
-
-                <svg viewBox="0 0 450 260" style="width: 100%; max-height: 200px;">
-                    <!-- Executivo Node -->
-                    <g filter="url(#shadow)">
-                        <circle cx="225" cy="60" r="42" fill="white" stroke="#333" stroke-width="2" />
-                        <text x="225" y="65" font-family="Montserrat" font-weight="700" font-size="12"
-                            text-anchor="middle" fill="#333">EXECUTIVO</text>
-                    </g>
-
-                    <!-- Arrows from Centrão to Executivo -->
-                    <path d="M100 175 L175 105" stroke="#BBB" stroke-width="6" marker-end="url(#arrowhead-small)"
-                        fill="none" />
-                    <path d="M165 175 L205 105" stroke="#BBB" stroke-width="6" marker-end="url(#arrowhead-small)"
-                        fill="none" />
-                    <path d="M225 175 L225 110" stroke="#BBB" stroke-width="6" marker-end="url(#arrowhead-small)"
-                        fill="none" />
-                    <path d="M285 175 L245 105" stroke="#BBB" stroke-width="6" marker-end="url(#arrowhead-small)"
-                        fill="none" />
-                    <path d="M350 175 L275 105" stroke="#BBB" stroke-width="6" marker-end="url(#arrowhead-small)"
-                        fill="none" />
-
-                    <defs>
-                        <marker id="arrowhead-small" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5"
-                            orient="auto">
-                            <polygon points="0 0, 5 2.5, 0 5" fill="#BBB" />
-                        </marker>
-                    </defs>
-
-                    <!-- Centrão Nodes -->
-                    <!-- PP -->
-                    <g filter="url(#shadow)">
-                        <circle cx="100" cy="195" r="28" fill="white" stroke="#cddc39" stroke-width="8" />
-                        <text x="100" y="200" font-family="Montserrat" font-weight="700" font-size="12"
-                            text-anchor="middle" fill="#333">PP</text>
-                    </g>
-                    <!-- PL -->
-                    <g filter="url(#shadow)">
-                        <circle cx="165" cy="195" r="28" fill="white" stroke="#cddc39" stroke-width="8" />
-                        <text x="165" y="200" font-family="Montserrat" font-weight="700" font-size="12"
-                            text-anchor="middle" fill="#333">PL</text>
-                    </g>
-                    <!-- Rep. -->
-                    <g filter="url(#shadow)">
-                        <circle cx="225" cy="195" r="28" fill="white" stroke="#cddc39" stroke-width="8" />
-                        <text x="225" y="200" font-family="Montserrat" font-weight="700" font-size="12"
-                            text-anchor="middle" fill="#333">Rep.</text>
-                    </g>
-                    <!-- PSD -->
-                    <g filter="url(#shadow)">
-                        <circle cx="285" cy="195" r="28" fill="white" stroke="#cddc39" stroke-width="8" />
-                        <text x="285" y="200" font-family="Montserrat" font-weight="700" font-size="12"
-                            text-anchor="middle" fill="#333">PSD</text>
-                    </g>
-                    <!-- União -->
-                    <g filter="url(#shadow)">
-                        <circle cx="350" cy="195" r="28" fill="white" stroke="#cddc39" stroke-width="8" />
-                        <text x="350" y="200" font-family="Montserrat" font-weight="700" font-size="12"
-                            text-anchor="middle" fill="#333">União</text>
-                    </g>
-                </svg>
-
-                <div style="margin-top: 0.5rem;">
-                    <p style="font-weight: 700; color: #444; font-size: 0.9rem; margin-bottom: 0.3rem;">CENTRÃO
-                        (Partidos de Apoio)</p>
-                    <p style="color: #666; font-size: 0.8rem; line-height: 1.3;">Múltiplos atores; Renúncia ao
-                        protagonismo para ganhos legislativos ('Zona de Conforto')</p>
+            <!-- Right Panel: The Present (Chaos/Pragmatism) -->
+            <div
+                style="flex: 1; background: #F1F8E9; border-radius: 12px; padding: 1.5rem; position: relative; border: 1px solid #DCEDC8;">
+                <div style="text-align: center; margin-bottom: 1rem;">
+                    <span
+                        style="background: #C5E1A5; color: #33691E; padding: 4px 12px; border-radius: 4px; font-weight: 700; font-size: 0.8rem; font-family: 'Montserrat', sans-serif;">Pós-2016</span>
+                    <h3
+                        style="color: #33691E; margin: 0.5rem 0 0; font-family: 'Montserrat', sans-serif; font-weight: 700;">
+                        Hegemonia do Centrão</h3>
                 </div>
+
+                <!-- SVG Cloud Structure -->
+                <div style="display: flex; justify-content: center; height: 280px; align-items: center;">
+                    <svg viewBox="0 0 320 280" style="width: 100%; height: 100%; overflow: visible;">
+                        <defs>
+                            <filter id="glass" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="0" />
+                                <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" />
+                            </filter>
+                            <linearGradient id="gradPressure" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#9CCC65;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#AED581;stop-opacity:0" />
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Central Node (Executivo) Under Pressure -->
+                        <circle cx="160" cy="140" r="45" fill="#FFF" stroke="#333" stroke-width="2"
+                            stroke-dasharray="4 2" />
+                        <text x="160" y="145" text-anchor="middle" font-family="'Montserrat', sans-serif"
+                            font-weight="700" font-size="12" fill="#333">EXECUTIVO</text>
+
+                        <!-- Orbiting Particles (Centrão) -->
+                        <!-- Using paths to show "swarming" -->
+                        <g>
+                            <!-- PP -->
+                            <circle cx="160" cy="60" r="28" fill="rgba(255,255,255,0.9)" stroke="#8BC34A"
+                                stroke-width="3" filter="url(#shadowSolid)" />
+                            <text x="160" y="65" text-anchor="middle" font-weight="700" font-size="14" fill="#33691E"
+                                font-family="'Montserrat', sans-serif">PP</text>
+                            <path d="M160 88 L160 95" stroke="#8BC34A" stroke-width="2"
+                                marker-end="url(#arrowSimple)" />
+
+                            <!-- PL -->
+                            <circle cx="240" cy="100" r="26" fill="rgba(255,255,255,0.9)" stroke="#8BC34A"
+                                stroke-width="3" filter="url(#shadowSolid)" />
+                            <text x="240" y="105" text-anchor="middle" font-weight="700" font-size="14" fill="#33691E"
+                                font-family="'Montserrat', sans-serif">PL</text>
+                            <path d="M214 110 L200 120" stroke="#8BC34A" stroke-width="2"
+                                marker-end="url(#arrowSimple)" />
+
+                            <!-- UNIÃO -->
+                            <circle cx="230" cy="190" r="28" fill="rgba(255,255,255,0.9)" stroke="#8BC34A"
+                                stroke-width="3" filter="url(#shadowSolid)" />
+                            <text x="230" y="195" text-anchor="middle" font-weight="700" font-size="12" fill="#33691E"
+                                font-family="'Montserrat', sans-serif">UNIÃO</text>
+                            <path d="M208 175 L190 160" stroke="#8BC34A" stroke-width="2"
+                                marker-end="url(#arrowSimple)" />
+
+                            <!-- REBUBLICANOS -->
+                            <circle cx="90" cy="190" r="28" fill="rgba(255,255,255,0.9)" stroke="#8BC34A"
+                                stroke-width="3" filter="url(#shadowSolid)" />
+                            <text x="90" y="195" text-anchor="middle" font-weight="700" font-size="14" fill="#33691E"
+                                font-family="'Montserrat', sans-serif">REP</text>
+                            <path d="M112 175 L130 160" stroke="#8BC34A" stroke-width="2"
+                                marker-end="url(#arrowSimple)" />
+
+                            <!-- PSD -->
+                            <circle cx="80" cy="100" r="26" fill="rgba(255,255,255,0.9)" stroke="#8BC34A"
+                                stroke-width="3" filter="url(#shadowSolid)" />
+                            <text x="80" y="105" text-anchor="middle" font-weight="700" font-size="14" fill="#33691E"
+                                font-family="'Montserrat', sans-serif">PSD</text>
+                            <path d="M106 110 L120 120" stroke="#8BC34A" stroke-width="2"
+                                marker-end="url(#arrowSimple)" />
+                        </g>
+
+                        <defs>
+                            <marker id="arrowSimple" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                                <path d="M0,0 L6,3 L0,6" fill="#8BC34A" />
+                            </marker>
+                        </defs>
+
+                    </svg>
+                </div>
+                <p
+                    style="text-align: center; color: #558B2F; font-size: 0.85rem; margin-top: 0.5rem; line-height: 1.4;">
+                    Fragmentação e Pragmatismo.<br>Apoio condicionado (Varejo).
+                </p>
             </div>
         </div>
 
-        <!-- Rodapé do Slide -->
-        <div style="margin-top: auto; padding: 0.8rem; background: #F5F5F5; border-radius: 0.5rem; text-align: center;">
-            <p style="font-size: 0.88rem; color: #333; line-height: 1.3; font-weight: 500;">
-                <strong style="color: var(--color-primary);">Conclusão:</strong> O ‘Centrão’ substituiu o MDB como o
-                bloco fiador da estabilidade, operando por pragmatismo.ão por alinhamento ideológico.
-            </p>
+        <div style="margin-top: auto; padding-top: 0.5rem; text-align: center; font-size: 0.75rem; color: #90A4AE;">
+            Análise Institucional Comparada
         </div>
     </div>
 
@@ -557,171 +578,150 @@
     <!-- ========================================
          SLIDE 5: Anatomia e Função do NdG (High Fidelity)
          ======================================== -->
-    <div class="slide slide-compact" style="padding: 1.5rem 2.5rem;">
-        <h1
-            style="font-family: 'Montserrat', sans-serif; font-size: 2rem; line-height: 1.2; font-weight: 800; text-align: center; color: #333; margin-bottom: 0.2rem; letter-spacing: -0.02em;">
-            Anatomia e Função do Núcleo de Governo (NdG)
-        </h1>
-        <p style="text-align: center; font-size: 1.1rem; color: #444; margin-bottom: 0.6rem; font-weight: 400;">
-            O “Sistema Nervoso Central” e o “Equilíbrio Instável” da Esplanada
-        </p>
+    <!-- ========================================
+         SLIDE 5: Anatomia e Função do NdG (Redesign Premium)
+         ======================================== -->
+    <div class="slide slide-compact slide-ndg"
+        style="padding: 2rem 3rem; background: radial-gradient(circle at 50% 100%, #FAFAFA 0%, #EFF0F1 100%);">
 
-        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; flex: 1;">
+        <!-- Header -->
+        <header style="text-align: center; margin-bottom: 2rem;">
+            <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40; 
+                       margin: 0; letter-spacing: -0.03em; line-height: 1.1;">
+                Anatomia e Função do Núcleo de Governo (NdG)
+            </h1>
+            <p
+                style="font-family: 'Open Sans', sans-serif; font-size: 1.1rem; color: #546E7A; font-weight: 600; margin-top: 0.5rem;">
+                O "Sistema Nervoso Central" e o Equilíbrio da Esplanada
+            </p>
+        </header>
 
-            <!-- Bullets Left -->
-            <div style="flex: 1; padding-top: 3rem;">
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 1.2rem;">
-                        <span style="font-size: 1rem; color: #333; display: block; line-height: 1.3;">
-                            <span style="font-weight: 800; font-size: 1.15rem;">• Definição</span> (Alessandro et al.,
-                            2013): Apoio direto ao Chefe do Executivo;
-                        </span>
-                    </li>
-                    <li>
-                        <span style="font-size: 1rem; color: #333; display: block; line-height: 1.3;">
-                            <span style="font-weight: 800; font-size: 1.15rem;">• Funções Estratégicas:</span>
-                            Coordenação Política e Técnica, Planejamento Estratégico, Monitoramento de Resultados.
-                        </span>
-                    </li>
-                </ul>
-            </div>
+        <!-- Main Diagram: Hub & Spoke -->
+        <div style="flex: 1; display: flex; justify-content: center; align-items: center; position: relative;">
+            <svg viewBox="0 0 800 380" style="width: 100%; height: auto; overflow: visible;">
+                <defs>
+                    <filter id="hubShadow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#004D40" flood-opacity="0.25" />
+                    </filter>
+                    <linearGradient id="gradConnection" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#90A4AE;stop-opacity:0.2" />
+                        <stop offset="50%" style="stop-color:#90A4AE;stop-opacity:0.8" />
+                        <stop offset="100%" style="stop-color:#90A4AE;stop-opacity:0.2" />
+                    </linearGradient>
+                </defs>
 
-            <!-- Central Diagram SVG -->
-            <div style="flex: 1.5; position: relative; text-align: center;">
-                <svg viewBox="0 0 600 380" style="width: 100%; height: auto; max-height: 340px;">
-                    <defs>
-                        <filter id="nodeShadow5" x="-20%" y="-20%" width="140%" height="140%">
-                            <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.15" />
-                        </filter>
-                        <marker id="greenArrow5" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-                            <polygon points="0 0, 8 4, 0 8" fill="#8bc34a" />
-                        </marker>
-                        <marker id="greyArrow5" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-                            <polygon points="0 0, 8 4, 0 8" fill="#555" />
-                        </marker>
-                        <marker id="biArrow5" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                            <path d="M0 3 L3 0 L3 6 Z" fill="#004D40" />
-                        </marker>
-                    </defs>
+                <!-- Central Background Grid/Network Effect -->
+                <circle cx="400" cy="190" r="160" fill="none" stroke="#E0E0E0" stroke-width="1"
+                    stroke-dasharray="8 4" />
+                <circle cx="400" cy="190" r="110" fill="none" stroke="#E0E0E0" stroke-width="1"
+                    stroke-dasharray="4 4" />
 
-                    <!-- ORBITAL ICONS (Ministérios Setoriais) - Top Half Arc -->
-                    <g fill="none" stroke="#CCC" stroke-width="2">
-                        <circle cx="150" cy="160" r="20" filter="url(#nodeShadow5)" fill="white" />
-                        <circle cx="210" cy="105" r="20" filter="url(#nodeShadow5)" fill="white" />
-                        <circle cx="390" cy="105" r="20" filter="url(#nodeShadow5)" fill="white" />
-                        <circle cx="450" cy="160" r="20" filter="url(#nodeShadow5)" fill="white" />
-                        <circle cx="450" cy="240" r="20" filter="url(#nodeShadow5)" fill="white" />
-                        <circle cx="150" cy="240" r="20" filter="url(#nodeShadow5)" fill="white" />
-                    </g>
-                    <!-- Small Icons in orbits (simplified icons using emojis for speed and reliability, but keeping Fa look) -->
-                    <text x="150" y="167" font-size="20" text-anchor="middle" fill="#AAA">🩺</text>
-                    <text x="210" y="112" font-size="20" text-anchor="middle" fill="#AAA">❤️</text>
-                    <text x="390" y="112" font-size="20" text-anchor="middle" fill="#AAA">📖</text>
-                    <text x="450" y="167" font-size="20" text-anchor="middle" fill="#AAA">🎓</text>
-                    <text x="450" y="247" font-size="20" text-anchor="middle" fill="#AAA">🏛️</text>
-                    <text x="150" y="247" font-size="20" text-anchor="middle" fill="#AAA">🛡️</text>
+                <!-- CONNECTORS (Synapses) -->
+                <!-- Center to Top (Coordination) -->
+                <path d="M400 130 Q400 90 400 75" stroke="#AEEA00" stroke-width="4" fill="none" />
+                <!-- Center to Left (Planning) -->
+                <path d="M350 220 Q300 280 260 280" stroke="#78909C" stroke-width="3" fill="none"
+                    stroke-dasharray="4 2" />
+                <!-- Center to Right (Monitoring) -->
+                <path d="M450 220 Q500 280 540 280" stroke="#FF7043" stroke-width="3" fill="none"
+                    stroke-dasharray="4 2" />
 
-                    <!-- PRESIDENTE (Top Node) -->
-                    <g filter="url(#nodeShadow5)">
-                        <circle cx="300" cy="55" r="42" fill="white" stroke="#555" stroke-width="6" />
-                        <text x="300" y="60" font-family="Montserrat" font-weight="900" font-size="12"
-                            text-anchor="middle" fill="#333">PRESIDENTE</text>
-                    </g>
 
-                    <!-- NdG (Central Node) -->
-                    <circle cx="300" cy="195" r="52" fill="white" stroke="#8bc34a" stroke-width="2"
-                        filter="url(#nodeShadow5)" />
-                    <!-- Icon Cérebro/Engrenagem (Simulado com texto emoji por clareza estética rápida) -->
-                    <text x="300" y="205" font-size="45" text-anchor="middle">🧠</text>
-                    <text x="300" y="235" font-family="Montserrat" font-weight="900" font-size="18" text-anchor="middle"
-                        fill="#333">NdG</text>
-                    <text x="300" y="250" font-family="Montserrat" font-weight="600" font-size="10" text-anchor="middle"
-                        fill="#555">(Motor do Governo)</text>
+                <!-- 1. HUB: The Presidency/NdG -->
+                <g filter="url(#hubShadow)">
+                    <circle cx="400" cy="190" r="65" fill="#004D40" stroke="#FFF" stroke-width="4" />
+                    <!-- Inner Ring -->
+                    <circle cx="400" cy="190" r="55" fill="none" stroke="#FFFFFF" stroke-opacity="0.2"
+                        stroke-width="1" />
 
-                    <!-- Green Arrows radiating from NdG -->
-                    <line x1="240" y1="195" x2="185" y2="195" stroke="#8bc34a" stroke-width="10"
-                        marker-end="url(#greenArrow5)" />
-                    <line x1="260" y1="185" x2="228" y2="145" stroke="#8bc34a" stroke-width="10"
-                        marker-end="url(#greenArrow5)" />
-                    <line x1="340" y1="185" x2="372" y2="145" stroke="#8bc34a" stroke-width="10"
-                        marker-end="url(#greenArrow5)" />
-                    <line x1="352" y1="195" x2="430" y2="195" stroke="#8bc34a" stroke-width="10"
-                        marker-end="url(#greenArrow5)" />
-                    <line x1="345" y1="230" x2="415" y2="260" stroke="#8bc34a" stroke-width="10"
-                        marker-end="url(#greenArrow5)" />
-                    <line x1="255" y1="230" x2="185" y2="260" stroke="#8bc34a" stroke-width="10"
-                        marker-end="url(#greenArrow5)" />
-                    <line x1="255" y1="170" x2="185" y2="145" stroke="#8bc34a" stroke-width="10"
-                        marker-end="url(#greenArrow5)" />
+                    <text x="400" y="185" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="800"
+                        font-size="20" fill="#FFF">NdG</text>
+                    <text x="400" y="205" text-anchor="middle" font-family="'Open Sans', sans-serif" font-weight="600"
+                        font-size="10" fill="#A7FFEB">
+                        FILTRO ESTRATÉGICO
+                    </text>
+                </g>
 
-                    <!-- Grey Arrow from Presidente to NdG -->
-                    <line x1="300" y1="115" x2="300" y2="160" stroke="#555" stroke-width="12"
-                        marker-end="url(#greyArrow5)" />
 
-                    <!-- Sector Ministries Label -->
-                    <text x="390" y="65" font-family="Montserrat" font-weight="800" font-size="11" text-anchor="start"
-                        fill="#333">Ministérios</text>
-                    <text x="390" y="78" font-family="Montserrat" font-weight="800" font-size="11" text-anchor="start"
-                        fill="#333">Setoriais</text>
-                    <text x="390" y="90" font-family="Open Sans" font-size="9" text-anchor="start" fill="#666">(Saúde,
-                        Educação, etc.)</text>
+                <!-- 2. SATELLITE: Coordenação Política (Top) -->
+                <g transform="translate(400, 50)">
+                    <circle cx="0" cy="0" r="35" fill="#FFF" stroke="#AEEA00" stroke-width="4"
+                        filter="url(#hubShadow)" />
+                    <foreignObject x="-20" y="-22" width="40" height="40">
+                        <div
+                            style="display: flex; justify-content: center; align-items: center; height: 100%; color: #004D40; font-size: 20px;">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                    </foreignObject>
 
-                    <!-- Bidirectional Arrows to bottom institutions -->
-                    <line x1="220" y1="365" x2="265" y2="310" stroke="#004D40" stroke-width="3"
-                        marker-start="url(#biArrow5)" marker-end="url(#biArrow5)" />
-                    <line x1="300" y1="375" x2="300" y2="305" stroke="#004D40" stroke-width="3"
-                        marker-start="url(#biArrow5)" marker-end="url(#biArrow5)" />
-                    <line x1="380" y1="365" x2="335" y2="310" stroke="#004D40" stroke-width="3"
-                        marker-start="url(#biArrow5)" marker-end="url(#biArrow5)" />
-                </svg>
+                    <!-- Callout Label Left -->
+                    <text x="-50" y="-5" text-anchor="end" font-family="'Montserrat', sans-serif" font-weight="700"
+                        font-size="14" fill="#333">Coordenação Política</text>
+                    <text x="-50" y="10" text-anchor="end" font-family="'Open Sans', sans-serif" font-size="10"
+                        fill="#666">Negociação com Legislativo</text>
+                </g>
 
-                <!-- Bottom Institution Boxes -->
-                <div
-                    style="display: flex; justify-content: center; gap: 0.5rem; margin-top: -2.5rem; position: relative; z-index: 10;">
-                    <div
-                        style="border: 2px solid #004D40; border-radius: 8px; padding: 0.4rem 0.6rem; background: white; min-width: 110px; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.8rem; color: #004D40; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                        CASA CIVIL
-                    </div>
-                    <div
-                        style="border: 2px solid #004D40; border-radius: 8px; padding: 0.4rem 0.6rem; background: white; min-width: 140px; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.8rem; color: #004D40; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                        SECRETARIA-GERAL
-                    </div>
-                    <div
-                        style="border: 2px solid #004D40; border-radius: 8px; padding: 0.4rem 0.6rem; background: white; min-width: 120px; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.8rem; color: #004D40; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                        SRI / SEGOV
-                    </div>
-                </div>
-            </div>
+                <!-- 3. SATELLITE: Planejamento (Left Bottom) -->
+                <g transform="translate(220, 280)">
+                    <circle cx="0" cy="0" r="30" fill="#FFF" stroke="#78909C" stroke-width="4"
+                        filter="url(#hubShadow)" />
+                    <foreignObject x="-20" y="-22" width="40" height="40">
+                        <div
+                            style="display: flex; justify-content: center; align-items: center; height: 100%; color: #546E7A; font-size: 18px;">
+                            <i class="fas fa-compass"></i>
+                        </div>
+                    </foreignObject>
 
-            <!-- Bullets Right -->
-            <div style="flex: 1; padding-top: 3rem;">
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 1.2rem;">
-                        <span style="font-size: 1rem; color: #333; display: block; line-height: 1.3;">
-                            <span style="font-weight: 800; font-size: 1.15rem;">• No Brasil</span> (Castro, 1997):
-                            Mantém
-                            o “equilíbrio instável” da Esplanada;
-                        </span>
-                    </li>
-                    <li>
-                        <span style="font-size: 1rem; color: #333; display: block; line-height: 1.3;">
-                            <span style="font-weight: 800; font-size: 1.15rem;">• Gerenciamento:</span> Custo de
-                            governar
-                            e dinâmica de coalizão (Pereira & Melo, 2012).
-                        </span>
-                    </li>
-                </ul>
-            </div>
+                    <text x="0" y="50" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="700"
+                        font-size="13" fill="#333">Planejamento</text>
+                    <text x="0" y="65" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10"
+                        fill="#666">Agenda Estratégica</text>
+                </g>
+
+
+                <!-- 4. SATELLITE: Monitoramento (Right Bottom) -->
+                <g transform="translate(580, 280)">
+                    <circle cx="0" cy="0" r="30" fill="#FFF" stroke="#FF7043" stroke-width="4"
+                        filter="url(#hubShadow)" />
+                    <foreignObject x="-20" y="-22" width="40" height="40">
+                        <div
+                            style="display: flex; justify-content: center; align-items: center; height: 100%; color: #D84315; font-size: 18px;">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </foreignObject>
+
+                    <text x="0" y="50" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="700"
+                        font-size="13" fill="#333">Monitoramento</text>
+                    <text x="0" y="65" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10"
+                        fill="#666">Resultados / Entregas</text>
+                </g>
+
+                <!-- Flow Arrows -->
+                <defs>
+                    <marker id="arrowUp" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                        <path d="M0 6 L3 0 L6 6 Z" fill="#AAA" />
+                    </marker>
+                    <marker id="arrowDown" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                        <path d="M0 0 L3 6 L6 0 Z" fill="#AAA" />
+                    </marker>
+                </defs>
+
+                <!-- Information Flow Indication -->
+                <text x="400" y="360" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10"
+                    fill="#999" font-style="italic">
+                    <tspan x="400" dy="0">Fluxo Contínuo de Informação e Decisão</tspan>
+                </text>
+
+            </svg>
         </div>
 
-        <!-- Rodapé do Slide -->
-        <div style="margin-top: auto; border-top: 2px solid #333; padding-top: 0.6rem; text-align: center;">
-            <p style="font-size: 1rem; color: #333; font-weight: 500; line-height: 1.3;">
-                <strong style="color: var(--color-primary);">Conclusão:</strong> O NdG centraliza a coordenação e
-                articula políticas transversais, diferindo dos ministérios finalísticos.
-            </p>
+        <!-- Footer -->
+        <div
+            style="margin-top: auto; padding-top: 0.5rem; text-align: center; font-size: 0.75rem; color: #90A4AE; border-top: 1px solid #E0E0E0;">
+            Fonte: Adaptado de Alessandro et al. (2013)
         </div>
     </div>
+
 
     <!-- ========================================
          SLIDE 6: Hipótese Central (High Fidelity)
