@@ -726,158 +726,172 @@
     <!-- ========================================
          SLIDE 6: Hipótese Central (High Fidelity)
          ======================================== -->
-    <div class="slide slide-compact" style="padding: 1.8rem 3rem;">
+    <!-- ========================================
+         SLIDE 6: Hipótese Central (Redesign Premium - Fidedingo)
+         ======================================== -->
+    <div class="slide slide-compact"
+        style="padding: 1.5rem 3rem; background: linear-gradient(135deg, #F5F5F5 0%, #FFFFFF 100%);">
+
         <h1
             style="font-family: 'Montserrat', sans-serif; font-size: 2.1rem; line-height: 1.2; font-weight: 800; text-align: center; color: #333; margin-bottom: 0.2rem; letter-spacing: -0.02em;">
             Hipótese Central: O NdG como Mecanismo Compensatório
         </h1>
-        <p style="text-align: center; font-size: 1.15rem; color: #444; margin-bottom: 0.8rem; font-weight: 400;">
+        <p style="text-align: center; font-size: 1.1rem; color: #546E7A; margin-bottom: 0.5rem; font-weight: 600;">
             Superando a Fragmentação para Implementar a Agenda Legislativa
         </p>
 
         <div style="display: flex; align-items: center; justify-content: center; flex: 1; gap: 0;">
-            <svg viewBox="0 0 1000 380" style="width: 100%; height: auto; max-height: 380px;">
+            <svg viewBox="0 0 1000 420" style="width: 100%; height: auto; max-height: 420px; overflow: visible;">
                 <defs>
-                    <filter id="shadow6" x="-20%" y="-20%" width="140%" height="140%">
-                        <feDropShadow dx="2" dy="4" stdDeviation="3" flood-opacity="0.15" />
+                    <filter id="premiumShadow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feDropShadow dx="3" dy="3" stdDeviation="4" flood-opacity="0.15" />
                     </filter>
-                    <marker id="arrowhead6" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
-                        <polygon points="0 0, 10 5, 0 10" fill="#546E7A" />
+                    <marker id="arrowGrey" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                        <polygon points="0 0, 8 4, 0 8" fill="#546E7A" />
                     </marker>
-                    <marker id="greenArrowhead6" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
-                        <polygon points="0 0, 10 5, 0 10" fill="#8bc34a" />
+                    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+                        <polygon points="0 0, 10 5, 0 10" fill="#64DD17" />
+                    </marker>
+                    <marker id="arrowLime" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                        <polygon points="0 0, 8 4, 0 8" fill="#AEEA00" />
                     </marker>
                 </defs>
 
-                <!-- LEFT BLOCK: DESAFIOS DO SISTEMA -->
-                <g filter="url(#shadow6)">
-                    <!-- Stacked Paper Effect -->
-                    <rect x="52" y="75" width="180" height="210" fill="white" stroke="#546E7A" stroke-width="1" />
-                    <rect x="47" y="70" width="180" height="210" fill="white" stroke="#546E7A" stroke-width="1" />
-                    <rect x="42" y="65" width="180" height="210" fill="white" stroke="#546E7A" stroke-width="2" />
+                <!-- 1. ESQUERDA: DESAFIOS (Mantido x=60) -->
+                <g transform="translate(60, 70)" filter="url(#premiumShadow)">
+                    <rect x="5" y="5" width="220" height="260" rx="2" fill="white" stroke="#B0BEC5" stroke-width="1"
+                        transform="rotate(-3, 110, 130)" />
+                    <rect x="0" y="0" width="220" height="260" rx="2" fill="white" stroke="#546E7A" stroke-width="2" />
 
-                    <text x="50" y="95" font-family="Montserrat" font-weight="900" font-size="13" fill="#333">DESAFIOS
-                        DO SISTEMA</text>
+                    <text x="110" y="35" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="900"
+                        font-size="13" fill="#333">DESAFIOS DO SISTEMA</text>
+                    <line x1="20" y1="45" x2="200" y2="45" stroke="#ECEFF1" stroke-width="2" />
 
-                    <!-- Icons & Text -->
-                    <g transform="translate(55, 120)">
-                        <text y="0" font-family="FontAwesome" font-size="12" fill="#546E7A"></text>
-                        <text x="20" y="0" font-family="Open Sans" font-weight="700" font-size="11"
+                    <g transform="translate(20, 70)">
+                        <text x="0" y="0" font-family="FontAwesome" font-size="14" fill="#546E7A"></text>
+                        <text x="25" y="0" font-family="'Open Sans', sans-serif" font-weight="700" font-size="12"
                             fill="#333">Fragmentação</text>
-                        <text x="20" y="12" font-family="Open Sans" font-size="10" fill="#555">Partidária (Ames,
-                            2003)</text>
+                        <text x="25" y="14" font-family="'Open Sans', sans-serif" font-weight="700" font-size="12"
+                            fill="#333">Partidária</text>
+                        <text x="25" y="27" font-family="'Open Sans', sans-serif" font-size="10" fill="#78909C"
+                            font-style="italic">(Ames, 2003)</text>
 
-                        <text y="40" font-family="FontAwesome" font-size="12" fill="#546E7A"></text>
-                        <text x="20" y="40" font-family="Open Sans" font-weight="700" font-size="11"
+                        <text x="0" y="60" font-family="FontAwesome" font-size="14" fill="#546E7A"></text>
+                        <text x="25" y="60" font-family="'Open Sans', sans-serif" font-weight="700" font-size="12"
                             fill="#333">Federalismo Forte</text>
 
-                        <text y="75" font-family="FontAwesome" font-size="12" fill="#546E7A"></text>
-                        <text x="20" y="75" font-family="Open Sans" font-weight="700" font-size="11" fill="#333">Sistema
-                            Proporcional</text>
-                        <text x="20" y="87" font-family="Open Sans" font-size="10" fill="#555">de Lista Aberta</text>
-                        <text x="20" y="97" font-family="Open Sans" font-size="9" fill="#777">(Shugart & Carey,
-                            1992)</text>
+                        <text x="0" y="95" font-family="FontAwesome" font-size="14" fill="#546E7A"></text>
+                        <text x="25" y="95" font-family="'Open Sans', sans-serif" font-weight="700" font-size="12"
+                            fill="#333">Sistema Proporcional</text>
+                        <text x="25" y="109" font-family="'Open Sans', sans-serif" font-size="11" fill="#455A64">de
+                            Lista Aberta</text>
+                        <text x="25" y="122" font-family="'Open Sans', sans-serif" font-size="10" fill="#78909C"
+                            font-style="italic">(Shugart & Carey, 1992)</text>
 
-                        <text y="125" font-family="FontAwesome" font-size="12" fill="#546E7A"></text>
-                        <text x="20" y="125" font-family="Open Sans" font-weight="700" font-size="11"
+                        <text x="0" y="155" font-family="FontAwesome" font-size="14" fill="#546E7A"></text>
+                        <text x="25" y="155" font-family="'Open Sans', sans-serif" font-weight="700" font-size="12"
                             fill="#333">Distância Ideológica</text>
                     </g>
                 </g>
 
-                <!-- LEFT ARROW: Pressão Centrífuga -->
-                <path d="M250 200 Q320 200 375 250" fill="none" stroke="#546E7A" stroke-width="15"
-                    marker-end="url(#arrowhead6)" />
-                <text x="315" y="245" font-family="Montserrat" font-weight="900" font-size="16" text-anchor="middle"
-                    fill="#333">Pressão</text>
-                <text x="315" y="265" font-family="Montserrat" font-weight="900" font-size="16" text-anchor="middle"
-                    fill="#333">Centrífuga</text>
+                <!-- CONECTOR 1 (Encurtado para não colidir) -->
+                <path d="M290 270 Q350 310 400 270" fill="none" stroke="#546E7A" stroke-width="12"
+                    marker-end="url(#arrowGrey)" />
+                <text x="345" y="330" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="800"
+                    font-size="14" fill="#37474F">Pressão</text>
+                <text x="345" y="345" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="800"
+                    font-size="14" fill="#37474F">Centrífuga</text>
 
-                <!-- CENTER ELEMENT: NdG GEAR -->
-                <g filter="url(#shadow6)" transform="translate(480, 175)">
-                    <circle cx="0" cy="0" r="90" fill="white" stroke="#8bc34a" stroke-width="3" />
-                    <!-- Visual decoration for gear -->
-                    <g transform="scale(1.8) translate(-60, -60)">
-                        <path d="M60 10 L70 10 L70 20 L80 20 L80 30 L90 30 L90 40 L100 40 L100 50 L110 50 L110 60"
-                            stroke="#8bc34a" fill="none" opacity="0.1" />
+                <!-- 2. CENTRO: NDG (Ajustado para Esquerda: x=480 -> x=460) -->
+                <g transform="translate(460, 210)">
+                    <path
+                        d="M-63 -18 L-54 -18 L-54 -36 L-36 -36 L-36 -54 L-18 -54 L-18 -63 L18 -63 L18 -54 L36 -54 L36 -36 L54 -36 L54 -18 L63 -18 L63 18 L54 18 L54 36 L36 36 L36 54 L18 54 L18 63 L-18 63 L-18 54 L-36 54 L-36 36 L-54 36 L-54 18 L-63 18 Z"
+                        fill="#FFFFFF" stroke="#AEEA00" stroke-width="4" filter="url(#premiumShadow)"
+                        transform="scale(1.1)" />
+                    <circle cx="0" cy="0" r="50" fill="white" />
+
+                    <text x="0" y="-15" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="900"
+                        font-size="16" fill="#004D40">NÚCLEO DE</text>
+                    <text x="0" y="5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="900"
+                        font-size="16" fill="#004D40">GOVERNO (NdG)</text>
+                    <text x="0" y="25" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="600"
+                        font-size="10" fill="#444">Mecanismo</text>
+                    <text x="0" y="37" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="600"
+                        font-size="10" fill="#444">Compensatório</text>
+                    <text x="0" y="49" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="600"
+                        font-size="10" fill="#444">& Adaptativo</text>
+
+                    <!-- Satellites (Moves Up/Right to clear arrow path) -->
+                    <g transform="translate(60, -70)">
+                        <path d="M0 10 Q30 -20 60 -20" fill="none" stroke="#AEEA00" stroke-width="4"
+                            marker-end="url(#arrowLime)" />
+                        <rect x="65" y="-35" width="130" height="28" rx="4" fill="white" stroke="#9E9E9E"
+                            stroke-width="1" />
+                        <text x="130" y="-17" text-anchor="middle" font-family="'Open Sans', sans-serif"
+                            font-weight="700" font-size="11" fill="#333">Estilo Competitivo</text>
+                    </g>
+                    <g transform="translate(75, -10)">
+                        <path d="M-5 5 Q25 5 45 -5" fill="none" stroke="#AEEA00" stroke-width="4"
+                            marker-end="url(#arrowLime)" />
+                        <rect x="50" y="-20" width="120" height="28" rx="4" fill="white" stroke="#9E9E9E"
+                            stroke-width="1" />
+                        <text x="110" y="-2" text-anchor="middle" font-family="'Open Sans', sans-serif"
+                            font-weight="700" font-size="11" fill="#333">Estilo Colegiado</text>
+                    </g>
+                    <g transform="translate(60, 50)">
+                        <path d="M0 -5 Q30 25 60 25" fill="none" stroke="#AEEA00" stroke-width="4"
+                            marker-end="url(#arrowLime)" />
+                        <rect x="65" y="10" width="130" height="28" rx="4" fill="white" stroke="#9E9E9E"
+                            stroke-width="1" />
+                        <text x="130" y="28" text-anchor="middle" font-family="'Open Sans', sans-serif"
+                            font-weight="700" font-size="11" fill="#333">Estilo Hierárquico</text>
                     </g>
 
-                    <text x="0" y="-10" font-family="Montserrat" font-weight="900" font-size="18" text-anchor="middle"
-                        fill="#333">NÚCLEO DE</text>
-                    <text x="0" y="10" font-family="Montserrat" font-weight="900" font-size="18" text-anchor="middle"
-                        fill="#333">GOVERNO (NdG)</text>
-                    <text x="0" y="35" font-family="Montserrat" font-weight="600" font-size="12" text-anchor="middle"
-                        fill="#555">Mecanismo</text>
-                    <text x="0" y="50" font-family="Montserrat" font-weight="600" font-size="12" text-anchor="middle"
-                        fill="#555">Compensatório</text>
-                    <text x="0" y="65" font-family="Montserrat" font-weight="600" font-size="12" text-anchor="middle"
-                        fill="#555">& Adaptativo</text>
-
-                    <!-- Radiating Labels -->
-                    <g transform="translate(15, -100)">
-                        <path d="M0 40 Q20 0 80 -10" fill="none" stroke="#8bc34a" stroke-width="5"
-                            marker-end="url(#greenArrowhead6)" />
-                        <rect x="85" y="-30" width="150" height="30" rx="5" ry="5" fill="white" stroke="#cddc39"
-                            stroke-width="2" />
-                        <text x="100" y="-10" font-family="Montserrat" font-weight="700" font-size="13"
-                            fill="#333">Estilo Competitivo</text>
-
-                        <path d="M30 80 Q60 60 85 45" fill="none" stroke="#8bc34a" stroke-width="5"
-                            marker-end="url(#greenArrowhead6)" />
-                        <rect x="90" y="25" width="150" height="30" rx="5" ry="5" fill="white" stroke="#cddc39"
-                            stroke-width="2" />
-                        <text x="105" y="45" font-family="Montserrat" font-weight="700" font-size="13"
-                            fill="#333">Estilo Colegiado</text>
-
-                        <path d="M35 120 Q80 120 100 120" fill="none" stroke="#8bc34a" stroke-width="5"
-                            marker-end="url(#greenArrowhead6)" />
-                        <rect x="105" y="105" width="150" height="30" rx="5" ry="5" fill="white" stroke="#cddc39"
-                            stroke-width="2" />
-                        <text x="120" y="125" font-family="Montserrat" font-weight="700" font-size="13"
-                            fill="#333">Estilo Hierárquico</text>
+                    <!-- Action Box -->
+                    <g transform="translate(0, 100)">
+                        <rect x="-110" y="0" width="220" height="40" rx="6" fill="#FFF9C4" stroke="#AEEA00"
+                            stroke-width="2" filter="url(#premiumShadow)" />
+                        <text x="0" y="16" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="800"
+                            font-size="10" fill="#333">Ação: Suprimir Lacunas de</text>
+                        <text x="0" y="29" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="800"
+                            font-size="10" fill="#333">Coordenação & Equilibrar Poder</text>
                     </g>
-
-                    <!-- Ação Box -->
-                    <rect x="-115" y="140" width="230" height="40" rx="5" ry="5" fill="white" stroke="#cddc39"
-                        stroke-width="3" />
-                    <text x="0" y="158" font-family="Montserrat" font-weight="900" font-size="12" text-anchor="middle"
-                        fill="#333">Ação: Suprimir Lacunas de</text>
-                    <text x="0" y="173" font-family="Montserrat" font-weight="900" font-size="12" text-anchor="middle"
-                        fill="#333">Coordenação & Equilibrar Poder</text>
                 </g>
 
-                <!-- RIGHT ARROW: Força Compensatória -->
-                <path d="M600 250 Q680 250 740 180" fill="none" stroke="#8bc34a" stroke-width="15"
-                    marker-end="url(#greenArrowhead6)" />
-                <text x="680" y="245" font-family="Montserrat" font-weight="900" font-size="16" text-anchor="middle"
-                    fill="#333">Força</text>
-                <text x="680" y="265" font-family="Montserrat" font-weight="900" font-size="16" text-anchor="middle"
-                    fill="#333">Compensatória</text>
-                <text x="680" y="282" font-family="Montserrat" font-weight="600" font-size="11" text-anchor="middle"
-                    fill="#555">(Coordenação Centralizada)</text>
+                <!-- CONECTOR 2 (Curva ajustada para passar DEBAIXO dos estilos) -->
+                <path d="M630 280 Q730 300 780 200" fill="none" stroke="#64DD17" stroke-width="16"
+                    marker-end="url(#arrowGreen)" opacity="0.9" />
+                <text x="700" y="320" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="900"
+                    font-size="14" fill="#33691E">Força</text>
+                <text x="700" y="335" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="900"
+                    font-size="14" fill="#33691E">Compensatória</text>
+                <text x="700" y="350" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10"
+                    fill="#558B2F">(Coordenação Centralizada)</text>
 
-                <!-- RIGHT BLOCK: RESULTADO -->
-                <g filter="url(#shadow6)" transform="translate(750, 90)">
-                    <rect width="210" height="240" rx="10" ry="10" fill="white" stroke="#004D40" stroke-width="5" />
-                    <text x="105" y="35" font-family="Montserrat" font-weight="900" font-size="13" text-anchor="middle"
-                        fill="#333">RESULTADO:</text>
-                    <text x="105" y="55" font-family="Montserrat" font-weight="900" font-size="13" text-anchor="middle"
-                        fill="#333">SUCESSO LEGISLATIVO</text>
+                <!-- 3. DIREITA: RESULTADO (Empurrado para x=800) -->
+                <g transform="translate(800, 70)" filter="url(#premiumShadow)">
+                    <rect width="210" height="230" rx="10" fill="white" stroke="#004D40" stroke-width="4" />
+                    <text x="105" y="35" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="900"
+                        font-size="13" fill="#333">RESULTADO:</text>
+                    <text x="105" y="52" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="900"
+                        font-size="14" fill="#004D40">SUCESSO LEGISLATIVO</text>
+                    <line x1="20" y1="65" x2="190" y2="65" stroke="#EEE" stroke-width="2" />
 
-                    <g transform="translate(10, 85)">
-                        <text y="0" font-size="16" fill="#004D40"></text>
-                        <text x="22" y="0" font-family="Open Sans" font-weight="700" font-size="11" fill="#333">Maior
-                            Capacidade de</text>
-                        <text x="22" y="12" font-family="Open Sans" font-weight="700" font-size="11"
+                    <g transform="translate(15, 85)">
+                        <text x="0" y="5" font-family="FontAwesome" font-size="16" fill="#004D40"></text>
+                        <text x="25" y="0" font-family="'Open Sans', sans-serif" font-weight="700" font-size="11"
+                            fill="#333">Maior Capacidade de</text>
+                        <text x="25" y="14" font-family="'Open Sans', sans-serif" font-weight="700" font-size="11"
                             fill="#333">Implementação da Agenda</text>
 
-                        <text y="55" font-size="16" fill="#004D40"></text>
-                        <text x="22" y="55" font-family="Open Sans" font-weight="700" font-size="11"
+                        <text x="0" y="55" font-family="FontAwesome" font-size="16" fill="#004D40"></text>
+                        <text x="25" y="55" font-family="'Open Sans', sans-serif" font-weight="700" font-size="11"
                             fill="#333">Estabilidade da Coalizão</text>
 
-                        <text y="100" font-size="16" fill="#004D40"></text>
-                        <text x="22" y="100" font-family="Open Sans" font-weight="700" font-size="11"
+                        <text x="0" y="95" font-family="FontAwesome" font-size="16" fill="#004D40"></text>
+                        <text x="25" y="95" font-family="'Open Sans', sans-serif" font-weight="700" font-size="11"
                             fill="#333">Aprovação de Políticas</text>
-                        <text x="22" y="112" font-family="Open Sans" font-weight="700" font-size="11"
+                        <text x="25" y="108" font-family="'Open Sans', sans-serif" font-weight="700" font-size="11"
                             fill="#333">Públicas</text>
                     </g>
                 </g>
