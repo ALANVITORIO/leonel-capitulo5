@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 4 - Discussão dos Resultados</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Estilos Customizados -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <!-- ========================================
+         SLIDE 1: Abertura do Capítulo 4 (Tipo A - Impacto)
+         ======================================== -->
+  <div class="slide slide-type-a" style="background-image: url('img/congress_national_brazil_night.png');">
+    <div>
+      <h1 class="hero-title">DISCUSSÃO DOS RESULTADOS</h1>
+      <p class="hero-subtitle">O Núcleo de Governo como Mecanismo Compensatório no Presidencialismo de Coalizão</p>
+    </div>
+    <div class="footer-info">
+      <p><strong>Capítulo 4</strong></p>
+      <p>Pergunta: Como o tamanho do centro presidencial e o estilo de gestão influenciam a capacidade do Executivo?</p>
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 2: Metodologia – Regressão Linear Beta
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+        Regressão Linear Beta
+        <span style="display: block; font-size: 0.9rem; color: #78909c; font-weight: 600;">(Ferrari & Cribari-Neto, 2004)</span>
+      </h1>
+    </header>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; flex: 1;">
+      <div style="background: #f5f5f5; padding: 1.5rem; border-radius: 12px;">
+        <h3 style="color: #004D40; margin-bottom: 1rem;"><i class="fas fa-question-circle"></i> Por quê?</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li>• Variável resposta [0,1]</li>
+          <li>• Taxas e proporções</li>
+          <li>• Função logit: μ = e<sup>Xβ</sup>/(1+e<sup>Xβ</sup>)</li>
+        </ul>
+      </div>
+      <div style="background: #f5f5f5; padding: 1.5rem; border-radius: 12px;">
+        <h3 style="color: #004D40; margin-bottom: 1rem;"><i class="fas fa-chart-line"></i> Dependentes</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li>• Coalescência Governamental</li>
+          <li>• Taxa de Sucesso do Executivo</li>
+        </ul>
+      </div>
+      <div style="background: #f5f5f5; padding: 1.5rem; border-radius: 12px;">
+        <h3 style="color: #004D40; margin-bottom: 1rem;"><i class="fas fa-cogs"></i> Independentes</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li>• Tamanho Centro Presidencial (TCP)</li>
+          <li>• Estilo de Gestão (Hierárquico, Colegiado, Competitivo)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 3: Validação dos Dados
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+        Confirmação da Distribuição Beta
+        <span style="display: block; font-size: 0.9rem; color: #78909c;">Gráficos de Cullen e Frey</span>
+      </h1>
+    </header>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; flex: 1;">
+      <div style="background: #f5f5f5; padding: 2rem; border-radius: 12px; text-align: center;">
+        <h3>Coalescência Governamental</h3>
+        <div style="height: 300px; background: #e0e0e0; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+          [Gráfico Cullen-Frey]
+        </div>
+      </div>
+      <div style="background: #f5f5f5; padding: 2rem; border-radius: 12px; text-align: center;">
+        <h3>Taxa de Sucesso</h3>
+        <div style="height: 300px; background: #e0e0e0; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+          [Gráfico Cullen-Frey]
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 1rem; color: #4CAF50; font-weight: 600;">
+      ✓ Ambas seguem distribuição Beta → Modelo adequado
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 4: Modelo 1 – Coalescência Governamental
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+        Resultados: Coalescência Governamental
+        <span style="display: block; font-size: 1rem; color: #FF9800;">Pseudo R² = 0.42</span>
+      </h1>
+    </header>
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;">
+      <thead>
+        <tr style="background: #004D40; color: white;">
+          <th style="padding: 1rem; text-align: left;">Variável</th>
+          <th style="padding: 1rem;">Estimativa</th>
+          <th style="padding: 1rem;">Significância</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: #E8F5E9;">
+          <td style="padding: 1rem;">Tamanho Centro Presidencial</td>
+          <td style="padding: 1rem; text-align: center;">+0.11</td>
+          <td style="padding: 1rem; text-align: center;">p < 0.01 ***</td>
+        </tr>
+        <tr style="background: #ECEFF1;">
+          <td style="padding: 1rem;">Estilo Colegiada</td>
+          <td style="padding: 1rem; text-align: center;">-0.44</td>
+          <td style="padding: 1rem; text-align: center; color: #999;">p = 0.11</td>
+        </tr>
+        <tr style="background: #E8F5E9;">
+          <td style="padding: 1rem;">Estilo Competitiva</td>
+          <td style="padding: 1rem; text-align: center;">-1.10</td>
+          <td style="padding: 1rem; text-align: center;">p < 0.01 ***</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="background: #FFF9C4; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+      <strong>Interpretação:</strong> +11,79% de chance de coalescência por unidade adicional no centro | Estilo competitivo reduz coalescência em 66,7%
+    </div>
+    <div style="background: #ECEFF1; padding: 0.8rem; border-radius: 8px; margin-top: 0.5rem; font-size: 0.85rem; text-align: center;">
+      <strong>Fórmula Rose:</strong> C<sub>f</sub> = 1 - ½Σ|S<sub>i</sub> - M<sub>i</sub>| (Amorim Neto, 2006) | S = % cadeiras, M = % ministérios
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 5: Diagnóstico do Modelo de Coalescência
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+        Diagnóstico: Observações Influentes
+      </h1>
+    </header>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; flex: 1;">
+      <div style="background: #FFF3E0; padding: 2rem; border-radius: 12px; text-align: center;">
+        <h3>Distância de Cook</h3>
+        <div style="height: 250px; background: #FFE0B2; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+          [Gráfico Cook] ⚠ Observações 34, 35
+        </div>
+      </div>
+      <div style="background: #E8F5E9; padding: 2rem; border-radius: 12px; text-align: center;">
+        <h3>Resíduos</h3>
+        <div style="height: 250px; background: #C8E6C9; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+          [Gráfico Resíduos] ✓ Bem distribuídos
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 6: Modelo 2 – Taxa de Sucesso do Executivo
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+        Resultados: Taxa de Sucesso Legislativo
+        <span style="display: inline-block; background: #4CAF50; color: white; padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-left: 1rem;">✓ ROBUSTO</span>
+        <span style="display: block; font-size: 1rem; color: #4CAF50;">Pseudo R² = 0.70</span>
+      </h1>
+    </header>
+    <table style="width: 100%; border-collapse: collapse;">
+      <thead>
+        <tr style="background: #004D40; color: white;">
+          <th style="padding: 1rem; text-align: left;">Variável</th>
+          <th style="padding: 1rem;">Estimativa</th>
+          <th style="padding: 1rem;">Significância</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: #E8F5E9;">
+          <td style="padding: 1rem;">Tamanho Centro Presidencial</td>
+          <td style="padding: 1rem; text-align: center;">+0.18</td>
+          <td style="padding: 1rem; text-align: center;">p < 0.01 ***</td>
+        </tr>
+        <tr style="background: #E8F5E9;">
+          <td style="padding: 1rem;">Estilo Colegiada</td>
+          <td style="padding: 1rem; text-align: center;">-0.67</td>
+          <td style="padding: 1rem; text-align: center;">p = 0.01 *</td>
+        </tr>
+        <tr style="background: #E8F5E9;">
+          <td style="padding: 1rem;">Estilo Competitiva</td>
+          <td style="padding: 1rem; text-align: center;">-2.21</td>
+          <td style="padding: 1rem; text-align: center;">p < 0.01 ***</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="background: #E8F5E9; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+      <strong>Interpretação:</strong> +19,46% de sucesso por unidade adicional | Hierárquico = melhor | Colegiado = -49% | Competitivo = -89%
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 7: Predição por Estilo de Gestão
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+        Impacto na Taxa de Sucesso
+        <span style="display: block; font-size: 0.9rem; color: #78909c;">Predição pelo Tamanho do Centro Presidencial</span>
+      </h1>
+    </header>
+    <div style="flex: 1; background: #f5f5f5; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+      <div style="text-align: center;">
+        [Gráfico de Linhas - 3 curvas]<br><br>
+        🟢 Hierárquico (topo)<br>
+        🟡 Colegiado (meio)<br>
+        🔴 Competitivo (base)
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 8: Comparação dos Modelos
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+        O Contraste: Dois Modelos, Dois Destinos
+      </h1>
+    </header>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; flex: 1;">
+      <div style="background: #FFF3E0; padding: 2rem; border-radius: 12px; border-left: 5px solid #FF9800;">
+        <h3 style="color: #E65100;">⚠ Coalescência</h3>
+        <ul>
+          <li>R² = 0.42</li>
+          <li>Frágil</li>
+          <li>Outliers (Temer)</li>
+          <li>Lógica Informal</li>
+        </ul>
+      </div>
+      <div style="background: #E8F5E9; padding: 2rem; border-radius: 12px; border-left: 5px solid #4CAF50;">
+        <h3 style="color: #2E7D32;">✓ Taxa de Sucesso</h3>
+        <ul>
+          <li>R² = 0.70</li>
+          <li>Robusto</li>
+          <li>Sem outliers</li>
+          <li>Lógica Formal</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 9: Testes de Robustez – Síntese
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 1rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: #004D40;">
+        Robustez: 5 Variáveis de Controle Testadas
+      </h1>
+    </header>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; flex: 1;">
+      <div style="background: #FFF3E0; padding: 1rem; border-radius: 12px;">
+        <h3 style="margin-bottom: 0.5rem;">⚠ Coalescência (Frágil)</h3>
+        <table style="width: 100%; font-size: 0.8rem; border-collapse: collapse;">
+          <tr style="border-bottom: 1px solid #ddd;">
+            <td>Popularidade</td>
+            <td style="color: #999;">Sem Efeito</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ddd;">
+            <td>Heterogeneidade</td>
+            <td style="color: #D32F2F;">✗ Perdeu</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ddd;">
+            <td>Tam. Coalizão</td>
+            <td style="color: #999;">Sem Efeito</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ddd;">
+            <td>Índ. Necessidade</td>
+            <td style="color: #D32F2F;">✗ Ambas</td>
+          </tr>
+          <tr>
+            <td>Dist. Ideológica</td>
+            <td style="color: #4CAF50;">✓ OK</td>
+          </tr>
+        </table>
+      </div>
+      <div style="background: #E8F5E9; padding: 1rem; border-radius: 12px;">
+        <h3 style="margin-bottom: 0.5rem;">✓ Taxa Sucesso (Robusto)</h3>
+        <table style="width: 100%; font-size: 0.8rem; border-collapse: collapse;">
+          <tr style="border-bottom: 1px solid #ddd;">
+            <td>Popularidade</td>
+            <td style="color: #4CAF50;">✓ Confirmado</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ddd;">
+            <td>Heterogeneidade</td>
+            <td style="color: #4CAF50;">✓ +Forte</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ddd;">
+            <td>Tam. Coalizão</td>
+            <td style="color: #4CAF50;">✓ +Forte</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ddd;">
+            <td>Índ. Necessidade</td>
+            <td style="color: #FF9800;">⚠ Negativo</td>
+          </tr>
+          <tr>
+            <td>Dist. Ideológica</td>
+            <td style="color: #4CAF50;"><strong>✓ Mais Forte</strong></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div style="background: #FFF9C4; padding: 0.8rem; border-radius: 8px; margin-top: 1rem; font-size: 0.85rem; text-align: center;">
+      <strong>Achado:</strong> Dist. Ideológica = preditor mais forte | Coalescência = lógica informal
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 10: Hipótese da Dualidade Funcional
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+        A Dualidade Funcional do Executivo
+      </h1>
+    </header>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; flex: 1;">
+      <div style="background: #E3F2FD; padding: 2rem; border-radius: 12px;">
+        <h3 style="color: #1565C0;">PRESIDÊNCIA-ORGANIZADORA</h3>
+        <ul>
+          <li>Organização do sistema político</li>
+          <li>Lógica: Politics</li>
+          <li>Fenômeno: Coalescência</li>
+          <li>Natureza: Informal</li>
+          <li>Modelo: Frágil ✓</li>
+        </ul>
+      </div>
+      <div style="background: #E8F5E9; padding: 2rem; border-radius: 12px;">
+        <h3 style="color: #2E7D32;">PRESIDÊNCIA-DECISORA</h3>
+        <ul>
+          <li>Decisão e implementação</li>
+          <li>Lógica: Policy</li>
+          <li>Fenômeno: Sucesso Legislativo</li>
+          <li>Natureza: Formal</li>
+          <li>Modelo: Robusto ✓</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 11: Evidência Empírica da Dualidade
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+        Quem tem a "Caneta"?
+        <span style="display: block; font-size: 0.9rem; color: #78909c;">Frequência decisória dos órgãos centrais (1995-2011) | Lameirão, 2019</span>
+      </h1>
+    </header>
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 1rem;">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span style="width: 150px;">Casa Civil</span>
+        <div style="flex: 1; height: 30px; background: #e0e0e0; border-radius: 4px;">
+          <div style="width: 4%; height: 100%; background: #9E9E9E; border-radius: 4px;"></div>
+        </div>
+        <span>4%</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span style="width: 150px;">Min. Fazenda</span>
+        <div style="flex: 1; height: 30px; background: #e0e0e0; border-radius: 4px;">
+          <div style="width: 35%; height: 100%; background: #4CAF50; border-radius: 4px;"></div>
+        </div>
+        <span>35%</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span style="width: 150px;">Min. Planejamento</span>
+        <div style="flex: 1; height: 30px; background: #e0e0e0; border-radius: 4px;">
+          <div style="width: 42%; height: 100%; background: #4CAF50; border-radius: 4px;"></div>
+        </div>
+        <span>42%</span>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
+      <div style="background: #ECEFF1; padding: 0.6rem; border-radius: 8px; text-align: center; font-size: 0.9rem;">
+        <strong>Casa Civil</strong> = Filtro (Presidência-Organizadora)
+      </div>
+      <div style="background: #E8F5E9; padding: 0.6rem; border-radius: 8px; text-align: center; font-size: 0.9rem;">
+        <strong>MF + MP</strong> = "Caneta" (Presidência-Decisora)
+      </div>
+    </div>
+    <div style="background: #FFCDD2; padding: 0.6rem; border-radius: 8px; margin-top: 0.5rem; text-align: center; font-size: 0.85rem;">
+      <strong>→ Por isso o modelo de Coalescência falhou:</strong> a Casa Civil (NdG) não controla orçamento
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 12: Análise Bayesiana – Confirmação
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+        Validação Bayesiana dos Resultados
+        <span style="display: block; font-size: 0.9rem; color: #78909c;">2000 iterações | 1000 burning | Semente: 9180 | Rhat = 1 (convergência perfeita)</span>
+      </h1>
+    </header>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; flex: 1;">
+      <div style="background: #FFF3E0; padding: 1.5rem; border-radius: 12px;">
+        <h3>Coalescência (R² = 0.25)</h3>
+        <table style="width: 100%; font-size: 0.9rem;">
+          <tr>
+            <td>TCP</td>
+            <td>-0.03</td>
+            <td>[-0.05, -0.01]</td>
+          </tr>
+          <tr>
+            <td>Colegiada</td>
+            <td>+0.26</td>
+            <td>[0.06, 0.47]</td>
+          </tr>
+          <tr>
+            <td>Competitiva</td>
+            <td>+0.27</td>
+            <td>[0.09, 0.45]</td>
+          </tr>
+        </table>
+      </div>
+      <div style="background: #E8F5E9; padding: 1.5rem; border-radius: 12px;">
+        <h3>Taxa Sucesso (R² = 0.76)</h3>
+        <table style="width: 100%; font-size: 0.9rem;">
+          <tr>
+            <td>TCP</td>
+            <td>+0.18</td>
+            <td>[0.12, 0.24]</td>
+          </tr>
+          <tr>
+            <td>Colegiada</td>
+            <td>-0.68</td>
+            <td>[-1.27, -0.13]</td>
+          </tr>
+          <tr>
+            <td>Competitiva</td>
+            <td>-2.22</td>
+            <td>[-2.74, -1.69]</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 13: Modelos Bayesianos Expandidos
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+        Comparação dos Modelos Bayesianos
+      </h1>
+    </header>
+    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+      <thead>
+        <tr style="background: #004D40; color: white;">
+          <th style="padding: 0.8rem;">Modelo</th>
+          <th style="padding: 0.8rem;">Controle</th>
+          <th style="padding: 0.8rem;">R² Bayesiano</th>
+          <th style="padding: 0.8rem;">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: #E8F5E9;">
+          <td style="padding: 0.8rem;">1</td>
+          <td>Base</td>
+          <td>0.754</td>
+          <td>✓ Robusto</td>
+        </tr>
+        <tr style="background: #FFF3E0;">
+          <td style="padding: 0.8rem;">2</td>
+          <td>Coalescência</td>
+          <td>0.252</td>
+          <td>⚠ Frágil</td>
+        </tr>
+        <tr style="background: #E8F5E9;">
+          <td style="padding: 0.8rem;">3</td>
+          <td>Popularidade</td>
+          <td>0.756</td>
+          <td>✓ Robusto</td>
+        </tr>
+        <tr style="background: #C8E6C9;">
+          <td style="padding: 0.8rem;"><strong>4</strong></td>
+          <td><strong>Heterogeneidade</strong></td>
+          <td><strong>0.807</strong></td>
+          <td><strong>✓ MELHOR</strong></td>
+        </tr>
+        <tr style="background: #E8F5E9;">
+          <td style="padding: 0.8rem;">5</td>
+          <td>Tamanho Coalizão</td>
+          <td>0.787</td>
+          <td>✓ Robusto</td>
+        </tr>
+        <tr style="background: #FFCDD2;">
+          <td style="padding: 0.8rem;">6</td>
+          <td>Índice Necessidade</td>
+          <td>0.949</td>
+          <td>✗ Convergência</td>
+        </tr>
+        <tr style="background: #FFCDD2;">
+          <td style="padding: 0.8rem;">7</td>
+          <td>Distância Ideológica</td>
+          <td>0.949</td>
+          <td>✗ Convergência</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ========================================
+         SLIDE 14: Evolução do NdG – FHC e Lula
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+        Evolução do Núcleo de Governo
+        <span style="display: block; font-size: 0.9rem; color: #78909c;">FHC (1995-2002) → Lula (2003-2010)</span>
+      </h1>
+    </header>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; flex: 1;">
+      <div style="background: #ECEFF1; padding: 2rem; border-radius: 12px;">
+        <h3>FHC (1995-2002)</h3>
+        <ul>
+          <li><strong>Perfil:</strong> Técnico-gerencial</li>
+          <li><strong>Ministros CC:</strong> Clóvis Carvalho, Pedro Parente</li>
+          <li><strong>Foco:</strong> Estabilização econômica</li>
+          <li><strong>Ministérios:</strong> 24-27</li>
+          <li><strong>ICG:</strong> 14 → 37</li>
+          <li><strong>Coalescência:</strong> 55-61%</li>
+          <li><strong>Heterogeneidade:</strong> 30-31</li>
+        </ul>
+      </div>
+      <div style="background: #E8F5E9; padding: 2rem; border-radius: 12px;">
+        <h3>Lula (2003-2010)</h3>
+        <ul>
+          <li><strong>Perfil:</strong> Político-expandido</li>
+          <li><strong>Ministros CC:</strong> José Dirceu, Dilma Rousseff</li>
+          <li><strong>Foco:</strong> PAC, políticas sociais</li>
+          <li><strong>Ministérios:</strong> 33-37</li>
+          <li><strong>ICG:</strong> 63 → 69</li>
+          <li><strong>Coalescência:</strong> 49-50%</li>
+          <li><strong>Heterogeneidade:</strong> 42-48</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 15: Evolução do NdG – Dilma a Bolsonaro
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+        A Inflexão e a Ruptura
+      </h1>
+    </header>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; flex: 1;">
+      <div style="background: #FFCDD2; padding: 1.5rem; border-radius: 12px;">
+        <h3>Dilma (2011-2016)</h3>
+        <ul style="font-size: 0.9rem;">
+          <li>Tecnocrático</li>
+          <li>ICG: 76 (máximo)</li>
+          <li>Coalescência: 35-43%</li>
+          <li>→ Impeachment</li>
+        </ul>
+      </div>
+      <div style="background: #E3F2FD; padding: 1.5rem; border-radius: 12px;">
+        <h3>Temer (2016-2018)</h3>
+        <ul style="font-size: 0.9rem;">
+          <li>Articulador</li>
+          <li>ICG: 62</li>
+          <li>Coalescência: 60%</li>
+          <li>→ Reformas</li>
+        </ul>
+      </div>
+      <div style="background: #FFF3E0; padding: 1.5rem; border-radius: 12px;">
+        <h3>Bolsonaro (2019-2022)</h3>
+        <ul style="font-size: 0.9rem;">
+          <li>Personalista</li>
+          <li>ICG: 58</li>
+          <li>Coalescência: 40%</li>
+          <li>→ NdG fragmentado</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 16: Índice de Custo do Governo (ICG)
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+        O Custo Crescente de Governar
+        <span style="display: block; font-size: 0.9rem; color: #78909c;">(Bertholini & Pereira, 2017)</span>
+      </h1>
+    </header>
+    <div style="flex: 1; display: flex; align-items: center; justify-content: space-around; gap: 2rem;">
+      <div style="text-align: center;">
+        <h3>Evolução do ICG</h3>
+        <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px;">
+          FHC I: <strong>14</strong> → FHC II: <strong>37</strong> → Lula I: <strong>63</strong> → Lula II: <strong>69</strong> → <strong style="color: #D32F2F;">Dilma I: 76</strong>
+        </div>
+      </div>
+      <div>
+        <h3>Emendas Parlamentares (R$ milhões)</h3>
+        <table style="border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr style="background: #004D40; color: white;">
+              <th style="padding: 0.5rem 1rem;">Mandato</th>
+              <th style="padding: 0.5rem 1rem;">Emendas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background: #E8F5E9;">
+              <td style="padding: 0.5rem 1rem;">FHC I</td>
+              <td style="padding: 0.5rem 1rem; text-align: right;">R$ 160</td>
+            </tr>
+            <tr style="background: #FFF9C4;">
+              <td style="padding: 0.5rem 1rem;">Lula I</td>
+              <td style="padding: 0.5rem 1rem; text-align: right;">R$ 2.601</td>
+            </tr>
+            <tr style="background: #FFCDD2;">
+              <td style="padding: 0.5rem 1rem;">Bolsonaro</td>
+              <td style="padding: 0.5rem 1rem; text-align: right;"><strong>R$ 21.000</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 17: Mudanças Institucionais
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+        Mudanças que Enfraqueceram o Executivo
+      </h1>
+    </header>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; flex: 1;">
+      <div style="background: #E8F5E9; padding: 1.5rem; border-radius: 12px;">
+        <h3><i class="fas fa-file-alt"></i> EC 32/2001</h3>
+        <p>MPs limitadas a 60 dias + 1 reedição</p>
+      </div>
+      <div style="background: #FFF9C4; padding: 1.5rem; border-radius: 12px;">
+        <h3><i class="fas fa-coins"></i> EC 86/2015</h3>
+        <p>Emendas de execução obrigatória</p>
+      </div>
+      <div style="background: #FFCDD2; padding: 1.5rem; border-radius: 12px;">
+        <h3><i class="fas fa-eye-slash"></i> Orçamento Secreto</h3>
+        <p>Emendas RP-9 sem identificação</p>
+      </div>
+      <div style="background: #FFF3E0; padding: 1.5rem; border-radius: 12px;">
+        <h3><i class="fas fa-ban"></i> Veto Fragilizado</h3>
+        <p>Legislativo amplia poder de derrubar</p>
+      </div>
+    </div>
+    <div style="background: #FFCDD2; padding: 0.8rem; border-radius: 8px; margin-top: 1rem; text-align: center; font-size: 0.9rem;">
+      <strong>→ Resultado:</strong> Perda dessas ferramentas forçou o Executivo a <strong>pagar mais caro</strong> pelo apoio (ICG: 14 → 76)
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 18: NdG como Mecanismo Compensatório
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+        O NdG como Mecanismo Compensatório
+      </h1>
+    </header>
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+      <div style="text-align: center; max-width: 600px;">
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="background: #E8F5E9; padding: 1rem; border-radius: 8px;">1. Ambiente político hostil</div>
+          <div style="text-align: center;">↓</div>
+          <div style="background: #FFF9C4; padding: 1rem; border-radius: 8px;">2. Presidente expande NdG</div>
+          <div style="text-align: center;">↓</div>
+          <div style="background: #FFF3E0; padding: 1rem; border-radius: 8px;">3. Sucesso mantido (curto prazo)</div>
+          <div style="text-align: center;">↓</div>
+          <div style="background: #FFCDD2; padding: 1rem; border-radius: 8px;">4. Custos acumulam</div>
+          <div style="text-align: center;">↓</div>
+          <div style="background: #B71C1C; color: white; padding: 1rem; border-radius: 8px;">5. Limite → Ruptura</div>
+        </div>
+        <div style="background: #E3F2FD; padding: 1rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid #1976D2;">
+          <strong>Insight:</strong> NdG hierárquico = modelo para <strong>TEMPOS DIFÍCEIS</strong><br>
+          Não é causa do sucesso, é <strong>RESPOSTA</strong> ao ambiente adverso
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 19: Novo Equilíbrio de Poder
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+        O Congresso Fortalecido
+        <span style="display: block; font-size: 0.9rem; color: #78909c;">Um novo regime de poder | Faria (2023), Rey (2023)</span>
+      </h1>
+    </header>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; flex: 1;">
+      <div style="background: #E8F5E9; padding: 2rem; border-radius: 12px;">
+        <h3>ANTES (1989-2012)</h3>
+        <ul>
+          <li>Domínio Executivo</li>
+          <li>Emendas = moeda de troca</li>
+          <li>MPs = agenda forçada</li>
+          <li>Veto = última palavra</li>
+          <li>Discricionariedade orçamentária</li>
+        </ul>
+      </div>
+      <div style="background: #E3F2FD; padding: 2rem; border-radius: 12px;">
+        <h3>DEPOIS (2013+)</h3>
+        <ul>
+          <li>Domínio Legislativo</li>
+          <li>Emendas obrigatórias</li>
+          <li>MPs limitadas</li>
+          <li>Veto = negociação</li>
+          <li><strong>Orçamento impositivo</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div style="background: #FFF9C4; padding: 1rem; border-radius: 8px; margin-top: 1rem; text-align: center;">
+      <strong>Conclusão:</strong> O presidencialismo de coalizão não morreu — tornou-se mais complexo e custoso.
+    </div>
+  </div>
+
+  <!-- ========================================
+         SLIDE 20: Síntese dos Achados
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2rem 3rem; background: linear-gradient(135deg, #004D40 0%, #00695C 100%); color: white;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: white;">
+        Capítulo 4: Síntese dos Achados
+      </h1>
+    </header>
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 1rem; font-size: 1.1rem;">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span style="background: #AEEA00; color: #004D40; padding: 0.5rem 1rem; border-radius: 50%;">1</span>
+        NdG hierárquico + grande = maior sucesso legislativo (R² = 0.70)
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span style="background: #AEEA00; color: #004D40; padding: 0.5rem 1rem; border-radius: 50%;">2</span>
+        Coalescência é governada por lógica informal (R² = 0.42)
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span style="background: #AEEA00; color: #004D40; padding: 0.5rem 1rem; border-radius: 50%;">3</span>
+        Dualidade Funcional: Organizadora vs. Decisora
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span style="background: #AEEA00; color: #004D40; padding: 0.5rem 1rem; border-radius: 50%;">4</span>
+        Custos de governar: ICG 14 → 76
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span style="background: #AEEA00; color: #004D40; padding: 0.5rem 1rem; border-radius: 50%;">5</span>
+        NdG = mecanismo compensatório (não causa, mas resposta)
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span style="background: #AEEA00; color: #004D40; padding: 0.5rem 1rem; border-radius: 50%;">6</span>
+        Poder migrou para o Legislativo (pós-2013)
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span style="background: #AEEA00; color: #004D40; padding: 0.5rem 1rem; border-radius: 50%;">7</span>
+        Modelo 4 = mais robusto (R² Bayesiano = 0.807)
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="index.html" style="color: #AEEA00;">← Voltar aos Capítulos 1-3</a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
