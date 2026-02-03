@@ -540,91 +540,90 @@
   <!-- ========================================
          SLIDE 9: Testes de Robustez – Síntese
          ======================================== -->
-  <div class="slide slide-compact" style="padding: 2rem 3rem;">
-    <header style="text-align: center; margin-bottom: 1rem;">
-      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: #004D40;">
-        Robustez: 5 Variáveis de Controle Testadas
+  <!-- ========================================
+         SLIDE 9: Testes de Robustez – Síntese
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 3rem 4rem; display: flex; flex-direction: column; background: #FFFFFF;">
+    <!-- Cabeçalho Bicromia -->
+    <header style="text-align: left; margin-bottom: 2rem; border-bottom: 3px solid #002776; padding-bottom: 1rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 800; color: #002776; letter-spacing: -1px; margin-bottom: 0.2rem; display: flex; justify-content: space-between; align-items: center;">
+        Robustez dos Modelos
+        <span style="font-size: 1.1rem; color: #78909c; font-weight: 500;">5 Variáveis de Controle Testadas</span>
       </h1>
     </header>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; flex: 1;">
-      <div style="background: #FFF3E0; padding: 1rem; border-radius: 12px;">
-        <h3 style="margin-bottom: 0.5rem;">⚠ Coalescência (Frágil)</h3>
-        <table style="width: 100%; font-size: 0.8rem; border-collapse: collapse;">
-          <tr style="border-bottom: 1px solid #ddd;">
-            <td>Popularidade</td>
-            <td style="color: #999;">Sem Efeito</td>
+
+    <!-- Tabela Comparativa (Esquerda: Frágil | Direita: Robusto) -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+
+      <!-- Lado Frágil (Neutro/Cinza) -->
+      <div style="background: #FAFAFA; border-radius: 12px; border: 1px solid #E0E0E0; overflow: hidden;">
+        <div style="background: #ECEFF1; padding: 0.8rem; border-bottom: 1px solid #CFD8DC; text-align: center;">
+          <h3 style="margin: 0; color: #546E7A; font-size: 1rem; font-weight: 700; text-transform: uppercase;">Coalescência (Frágil)</h3>
+        </div>
+        <table style="width: 100%; font-size: 0.9rem; border-collapse: collapse;">
+          <tr style="border-bottom: 1px solid #EEE;">
+            <td style="padding: 0.8rem; color: #546E7A;">Popularidade</td>
+            <td style="padding: 0.8rem; text-align: right; color: #90A4AE;">Sem Efeito</td>
           </tr>
-          <tr style="border-bottom: 1px solid #ddd;">
-            <td>Heterogeneidade</td>
-            <td style="color: #D32F2F;">✗ Perdeu</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #ddd;">
-            <td>Tam. Coalizão</td>
-            <td style="color: #999;">Sem Efeito</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #ddd;">
-            <td>Índ. Necessidade</td>
-            <td style="color: #D32F2F;">✗ Ambas</td>
+          <tr style="border-bottom: 1px solid #EEE;">
+            <td style="padding: 0.8rem; color: #546E7A;">Heterogeneidade</td>
+            <td style="padding: 0.8rem; text-align: right; color: #546E7A; font-weight: 600;">✗ Perdeu</td>
           </tr>
           <tr>
-            <td>Dist. Ideológica</td>
-            <td style="color: #4CAF50;">✓ OK</td>
+            <td style="padding: 0.8rem; color: #546E7A;">Índ. Necessidade</td>
+            <td style="padding: 0.8rem; text-align: right; color: #546E7A; font-weight: 600;">✗ Ambas</td>
           </tr>
         </table>
       </div>
-      <div style="background: #E8F5E9; padding: 1rem; border-radius: 12px;">
-        <h3 style="margin-bottom: 0.5rem;">✓ Taxa Sucesso (Robusto)</h3>
-        <table style="width: 100%; font-size: 0.8rem; border-collapse: collapse;">
-          <tr style="border-bottom: 1px solid #ddd;">
-            <td>Popularidade</td>
-            <td style="color: #4CAF50;">✓ Confirmado</td>
+
+      <!-- Lado Robusto (Verde/Heroico) -->
+      <div style="background: #FFFFFF; border-radius: 12px; border: 2px solid #009C3B; overflow: hidden; box-shadow: 0 4px 15px rgba(0,156,59,0.1);">
+        <div style="background: #E8F5E9; padding: 0.8rem; border-bottom: 1px solid #C8E6C9; text-align: center;">
+          <h3 style="margin: 0; color: #009C3B; font-size: 1rem; font-weight: 800; text-transform: uppercase;">Taxa de Sucesso (Robusto)</h3>
+        </div>
+        <table style="width: 100%; font-size: 0.9rem; border-collapse: collapse;">
+          <tr style="border-bottom: 1px solid #F1F8E9;">
+            <td style="padding: 0.8rem; color: #2E7D32; font-weight: 600;">Popularidade</td>
+            <td style="padding: 0.8rem; text-align: right; color: #009C3B; font-weight: 700;">✓ Confirmado</td>
           </tr>
-          <tr style="border-bottom: 1px solid #ddd;">
-            <td>Heterogeneidade</td>
-            <td style="color: #4CAF50;">✓ +Forte</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #ddd;">
-            <td>Tam. Coalizão</td>
-            <td style="color: #4CAF50;">✓ +Forte</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #ddd;">
-            <td>Índ. Necessidade</td>
-            <td style="color: #FF9800;">⚠ Negativo</td>
+          <tr style="border-bottom: 1px solid #F1F8E9;">
+            <td style="padding: 0.8rem; color: #2E7D32; font-weight: 600;">Heterogeneidade</td>
+            <td style="padding: 0.8rem; text-align: right; color: #009C3B; font-weight: 700;">✓ +Forte</td>
           </tr>
           <tr>
-            <td>Dist. Ideológica</td>
-            <td style="color: #4CAF50;"><strong>✓ Mais Forte</strong></td>
+            <td style="padding: 0.8rem; color: #2E7D32; font-weight: 600;">Dist. Ideológica</td>
+            <td style="padding: 0.8rem; text-align: right; background: #C8E6C9; color: #1B5E20; font-weight: 800;">✓ Mais Forte</td>
           </tr>
         </table>
       </div>
     </div>
-    <div style="background: #FFF9C4; padding: 0.8rem; border-radius: 8px; margin-top: 1rem; font-size: 0.85rem; text-align: center;">
-      <strong>Achado:</strong> Dist. Ideológica = preditor mais forte | Coalescência = lógica informal
+
+    <!-- Achado Principal -->
+    <div style="text-align: center; margin-bottom: 1.5rem; color: #002776; font-size: 0.95rem; background: #E3F2FD; padding: 0.6rem; border-radius: 50px; display: inline-block; align-self: center; padding-left: 2rem; padding-right: 2rem;">
+      <strong>Achado:</strong> Distância Ideológica é o preditor mais forte.
     </div>
-    <!-- GALERIA DE GRÁFICOS DE ROBUSTEZ -->
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem;">
-      <div style="background: white; padding: 0.8rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-        <h4 style="font-size: 0.75rem; color: #004D40; text-align: center; margin-bottom: 0.5rem;">Modelo 4: Heterogeneidade</h4>
-        <div style="height: 120px; overflow: hidden; border-radius: 4px;">
-          <img src="imagens_pdf/SLIDE_09_robustez_heterogeneidade_sucesso_coef.png" alt="Robustez Heterogeneidade" style="width: 100%; height: 100%; object-fit: contain; background: #f8f9fa;">
+
+    <!-- GALERIA DE GRÁFICOS (3 Colunas) -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; flex: 1;">
+      <!-- Gráfico 1 -->
+      <div style="background: white; padding: 0.5rem; border-radius: 8px; border: 1px solid #E0E0E0; display: flex; flex-direction: column; align-items: center;">
+        <h4 style="font-size: 0.75rem; color: #546E7A; margin-bottom: 0.3rem;">Heterogeneidade</h4>
+        <div style="width: 100%; height: 90px; overflow: hidden;">
+          <img src="imagens_pdf/SLIDE_09_robustez_heterogeneidade_sucesso_coef.png" alt="Robustez Heterogeneidade" style="width: 100%; height: 100%; object-fit: contain;">
         </div>
       </div>
-      <div style="background: white; padding: 0.8rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-        <h4 style="font-size: 0.75rem; color: #004D40; text-align: center; margin-bottom: 0.5rem;">Distância Ideológica</h4>
-        <div style="height: 120px; overflow: hidden; border-radius: 4px;">
-          <img src="imagens_pdf/SLIDE_09_robustez_distancia_sucesso_coef.png" alt="Robustez Distância" style="width: 100%; height: 100%; object-fit: contain; background: #f8f9fa;">
+      <!-- Gráfico 2 (Destaque) -->
+      <div style="background: white; padding: 0.5rem; border-radius: 8px; border: 2px solid #009C3B; display: flex; flex-direction: column; align-items: center; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <h4 style="font-size: 0.75rem; color: #009C3B; margin-bottom: 0.3rem; font-weight: 700;">Distância Ideológica</h4>
+        <div style="width: 100%; height: 90px; overflow: hidden;">
+          <img src="imagens_pdf/SLIDE_09_robustez_distancia_sucesso_coef.png" alt="Robustez Distância" style="width: 100%; height: 100%; object-fit: contain;">
         </div>
       </div>
-      <div style="background: white; padding: 0.8rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-        <h4 style="font-size: 0.75rem; color: #004D40; text-align: center; margin-bottom: 0.5rem;">Popularidade</h4>
-        <div style="height: 120px; overflow: hidden; border-radius: 4px;">
-          <img src="imagens_pdf/SLIDE_09_robustez_popularidade_sucesso_coef.png" alt="Robustez Popularidade" style="width: 100%; height: 100%; object-fit: contain; background: #f8f9fa;">
-        </div>
-      </div>
-      <div style="background: white; padding: 0.8rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-        <h4 style="font-size: 0.75rem; color: #004D40; text-align: center; margin-bottom: 0.5rem;">Síntese Comparativa</h4>
-        <div style="height: 120px; overflow: hidden; border-radius: 4px;">
-          <img src="imagens_pdf/SLIDE_09_robustez_sintese_comparativo.png" alt="Síntese Robustez" style="width: 100%; height: 100%; object-fit: contain; background: #f8f9fa;">
+      <!-- Gráfico 3 -->
+      <div style="background: white; padding: 0.5rem; border-radius: 8px; border: 1px solid #E0E0E0; display: flex; flex-direction: column; align-items: center;">
+        <h4 style="font-size: 0.75rem; color: #546E7A; margin-bottom: 0.3rem;">Popularidade</h4>
+        <div style="width: 100%; height: 90px; overflow: hidden;">
+          <img src="imagens_pdf/SLIDE_09_robustez_popularidade_sucesso_coef.png" alt="Robustez Popularidade" style="width: 100%; height: 100%; object-fit: contain;">
         </div>
       </div>
     </div>
@@ -633,224 +632,389 @@
   <!-- ========================================
          SLIDE 10: Hipótese da Dualidade Funcional
          ======================================== -->
-  <div class="slide slide-compact" style="padding: 2rem 3rem;">
-    <header style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+  <div class="slide slide-compact" style="padding: 3rem 4rem; display: flex; flex-direction: column; background: #FFFFFF;">
+    <header style="text-align: center; margin-bottom: 3rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.5rem; font-weight: 800; color: #002776; letter-spacing: -1px; margin-bottom: 0.5rem;">
         A Dualidade Funcional do Executivo
       </h1>
+      <div style="width: 60px; height: 4px; background: #002776; margin: 1rem auto 0; border-radius: 2px;"></div>
     </header>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; flex: 1;">
-      <div style="background: #E3F2FD; padding: 2rem; border-radius: 12px;">
-        <h3 style="color: #1565C0;">PRESIDÊNCIA-ORGANIZADORA</h3>
-        <ul>
-          <li>Organização do sistema político</li>
-          <li>Lógica: Politics</li>
-          <li>Fenômeno: Coalescência</li>
-          <li>Natureza: Informal</li>
-          <li>Modelo: Frágil ✓</li>
-        </ul>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; flex: 1; align-items: stretch;">
+
+      <!-- Pilar 1: Organizadora (Azul - Política) -->
+      <div style="background: linear-gradient(135deg, #E3F2FD 0%, #FFFFFF 100%); border-radius: 16px; border: 1px solid #BBDEFB; padding: 2.5rem; display: flex; flex-direction: column; text-align: center; box-shadow: 0 10px 30px rgba(33,150,243,0.1);">
+        <div style="margin-bottom: 1.5rem; display: inline-flex; justify-content: center; align-items: center; width: 80px; height: 80px; background: #1976D2; border-radius: 50%; color: white; margin: 0 auto 1.5rem; box-shadow: 0 4px 15px rgba(25,118,210,0.3);">
+          <i class="fas fa-handshake" style="font-size: 2.5rem;"></i>
+        </div>
+        <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: #1565C0; margin-bottom: 0.5rem; text-transform: uppercase;">
+          Presidência<br>Organizadora
+        </h3>
+        <p style="font-size: 0.9rem; color: #546E7A; margin-bottom: 2rem; font-style: italic;">Organização do Sistema Político</p>
+
+        <div style="text-align: left; padding: 0 1rem;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; border-bottom: 1px solid #BBDEFB; padding-bottom: 0.5rem;">
+            <span style="color: #78909c;">Lógica</span> <strong style="color: #1565C0;">Politics</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; border-bottom: 1px solid #BBDEFB; padding-bottom: 0.5rem;">
+            <span style="color: #78909c;">Fenômeno</span> <strong style="color: #1565C0;">Coalescência</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; border-bottom: 1px solid #BBDEFB; padding-bottom: 0.5rem;">
+            <span style="color: #78909c;">Natureza</span> <strong style="color: #1565C0;">Informal</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-top: 1.5rem; background: #E1F5FE; padding: 0.8rem; border-radius: 8px;">
+            <span style="color: #0277BD; font-weight: 600;">Modelo</span> <strong style="color: #0277BD;">Frágil (Instável)</strong>
+          </div>
+        </div>
       </div>
-      <div style="background: #E8F5E9; padding: 2rem; border-radius: 12px;">
-        <h3 style="color: #2E7D32;">PRESIDÊNCIA-DECISORA</h3>
-        <ul>
-          <li>Decisão e implementação</li>
-          <li>Lógica: Policy</li>
-          <li>Fenômeno: Sucesso Legislativo</li>
-          <li>Natureza: Formal</li>
-          <li>Modelo: Robusto ✓</li>
-        </ul>
+
+      <!-- Pilar 2: Decisora (Verde - Policy/Sucesso) -->
+      <div style="background: linear-gradient(135deg, #E8F5E9 0%, #FFFFFF 100%); border-radius: 16px; border: 1px solid #C8E6C9; padding: 2.5rem; display: flex; flex-direction: column; text-align: center; box-shadow: 0 10px 30px rgba(76,175,80,0.1);">
+        <div style="margin-bottom: 1.5rem; display: inline-flex; justify-content: center; align-items: center; width: 80px; height: 80px; background: #2E7D32; border-radius: 50%; color: white; margin: 0 auto 1.5rem; box-shadow: 0 4px 15px rgba(46,125,50,0.3);">
+          <i class="fas fa-gavel" style="font-size: 2.5rem;"></i>
+        </div>
+        <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: #2E7D32; margin-bottom: 0.5rem; text-transform: uppercase;">
+          Presidência<br>Decisora
+        </h3>
+        <p style="font-size: 0.9rem; color: #558B2F; margin-bottom: 2rem; font-style: italic;">Decisão e Implementação</p>
+
+        <div style="text-align: left; padding: 0 1rem;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; border-bottom: 1px solid #C8E6C9; padding-bottom: 0.5rem;">
+            <span style="color: #689F38;">Lógica</span> <strong style="color: #2E7D32;">Policy</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; border-bottom: 1px solid #C8E6C9; padding-bottom: 0.5rem;">
+            <span style="color: #689F38;">Fenômeno</span> <strong style="color: #2E7D32;">Sucesso Legislativo</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; border-bottom: 1px solid #C8E6C9; padding-bottom: 0.5rem;">
+            <span style="color: #689F38;">Natureza</span> <strong style="color: #2E7D32;">Formal</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-top: 1.5rem; background: #E8F5E9; padding: 0.8rem; border-radius: 8px; border: 1px solid #A5D6A7;">
+            <span style="color: #1B5E20; font-weight: 600;">Modelo</span> <strong style="color: #1B5E20;">Robusto (Confirmado)</strong>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 
   <!-- ========================================
          SLIDE 11: Evidência Empírica da Dualidade
          ======================================== -->
-  <div class="slide slide-compact" style="padding: 2rem 3rem;">
-    <header style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+  <!-- ========================================
+         SLIDE 11: Evidência Empírica da Dualidade
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 3rem 4rem; display: flex; flex-direction: column; background: #FFFFFF;">
+    <header style="text-align: left; margin-bottom: 2rem; border-bottom: 3px solid #002776; padding-bottom: 1rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 800; color: #002776; letter-spacing: -1px; margin-bottom: 0.2rem; display: flex; justify-content: space-between; align-items: center;">
         Quem tem a "Caneta"?
-        <span style="display: block; font-size: 0.9rem; color: #78909c;">Frequência decisória dos órgãos centrais (1995-2011) | Lameirão, 2019</span>
+        <span style="font-size: 1.1rem; color: #78909c; font-weight: 500;">Frequência decisória dos órgãos centrais (1995-2011)</span>
       </h1>
     </header>
-    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1rem;">
-      <div style="width: 100%; max-width: 800px; height: 350px; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.1); padding: 1rem;">
+
+    <!-- Layout Assimétrico: Gráfico + Insights -->
+    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; flex: 1; align-items: center;">
+
+      <!-- Gráfico Central -->
+      <div style="background: white; border-radius: 12px; padding: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; justify-content: center; height: 350px;">
         <img src="imagens_pdf/SLIDE_11_frequencia_decisoria_lameirao.png" alt="Frequência Decisória - Lameirão (2019)" style="width: 100%; height: 100%; object-fit: contain;">
       </div>
-      <!-- Mini legenda visual abaixo da imagem -->
-      <div style="display: flex; gap: 2rem; font-size: 0.9rem; margin-top: 0.5rem;">
-        <span><span style="color: #9E9E9E; font-weight: bold;">■</span> Casa Civil: 4%</span>
-        <span><span style="color: #4CAF50; font-weight: bold;">■</span> Min. Fazenda: 35%</span>
-        <span><span style="color: #2E7D32; font-weight: bold;">■</span> Min. Planejamento: 42%</span>
+
+      <!-- Insights de Poder -->
+      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+        <!-- Casa Civil (Filtro - Frágil/Cinza) -->
+        <div style="background: #FAFAFA; border-left: 5px solid #90A4AE; padding: 1.5rem; border-radius: 0 8px 8px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <h3 style="margin: 0; font-size: 1.1rem; color: #546E7A; font-weight: 700;">Casa Civil</h3>
+            <span style="font-size: 1.2rem; font-weight: 800; color: #78909c;">4%</span>
+          </div>
+          <p style="margin: 0; font-size: 0.9rem; color: #607D8B;">"Filtro Político" (Sem Orçamento)</p>
+          <span style="display: block; font-size: 0.8rem; margin-top: 0.5rem; color: #B0BEC5;">Presidência-Organizadora</span>
+        </div>
+
+        <!-- MF + MP (Caneta - Robusto/Verde) -->
+        <div style="background: #E8F5E9; border-left: 5px solid #009C3B; padding: 1.5rem; border-radius: 0 8px 8px 0; box-shadow: 0 10px 20px rgba(76,175,80,0.15); transform: scale(1.05);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <h3 style="margin: 0; font-size: 1.2rem; color: #2E7D32; font-weight: 800;">Fazenda + Plan.</h3>
+            <span style="font-size: 1.5rem; font-weight: 800; color: #1B5E20;">77%</span>
+          </div>
+          <p style="margin: 0; font-size: 0.95rem; color: #2E7D32;"><strong>"A Caneta"</strong> (Controle Real)</p>
+          <span style="display: block; font-size: 0.8rem; margin-top: 0.5rem; color: #4CAF50; font-weight: 600;">Presidência-Decisora</span>
+        </div>
+
+        <!-- Conclusão -->
+        <div style="background: #E3F2FD; color: #1565C0; padding: 1rem; border-radius: 8px; font-size: 0.9rem; text-align: center; border: 1px solid #BBDEFB;">
+          <i class="fas fa-arrow-right" style="margin-right: 0.5rem;"></i> <strong>Falha da Coalescência:</strong><br>A Casa Civil negocia, mas não paga.
+        </div>
       </div>
-    </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
-      <div style="background: #ECEFF1; padding: 0.6rem; border-radius: 8px; text-align: center; font-size: 0.9rem;">
-        <strong>Casa Civil</strong> = Filtro (Presidência-Organizadora)
-      </div>
-      <div style="background: #E8F5E9; padding: 0.6rem; border-radius: 8px; text-align: center; font-size: 0.9rem;">
-        <strong>MF + MP</strong> = "Caneta" (Presidência-Decisora)
-      </div>
-    </div>
-    <div style="background: #FFCDD2; padding: 0.6rem; border-radius: 8px; margin-top: 0.5rem; text-align: center; font-size: 0.85rem;">
-      <strong>→ Por isso o modelo de Coalescência falhou:</strong> a Casa Civil (NdG) não controla orçamento
     </div>
   </div>
 
   <!-- ========================================
          SLIDE 12: Análise Bayesiana – Confirmação
          ======================================== -->
-  <div class="slide slide-compact" style="padding: 2rem 3rem;">
-    <header style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
-        Validação Bayesiana dos Resultados
-        <span style="display: block; font-size: 0.9rem; color: #78909c;">2000 iterações | 1000 burning | Semente: 9180 | Rhat = 1 (convergência perfeita)</span>
+  <div class="slide slide-compact" style="padding: 3rem 4rem; display: flex; flex-direction: column; background: #FFFFFF;">
+    <header style="text-align: left; margin-bottom: 2rem; border-bottom: 3px solid #002776; padding-bottom: 1rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 800; color: #002776; letter-spacing: -1px; margin-bottom: 0.2rem; display: flex; justify-content: space-between; align-items: center;">
+        Validação Bayesiana
+        <span style="font-size: 1rem; background: #ECEFF1; color: #546E7A; padding: 0.4rem 1rem; border-radius: 5px; font-weight: 600; font-family: 'Open Sans', sans-serif; border: 1px solid #CFD8DC;">
+          <i class="fas fa-microscope"></i> Rhat = 1 (Convergência Perfeita)
+        </span>
       </h1>
+      <span style="display: block; font-size: 0.9rem; color: #78909c; margin-top: 0.5rem;">Simulação com 2000 iterações | Semente: 9180</span>
     </header>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; flex: 1;">
-      <div style="background: #FFF3E0; padding: 1.5rem; border-radius: 12px;">
-        <h3>Coalescência (R² = 0.25)</h3>
-        <table style="width: 100%; font-size: 0.9rem;">
-          <tr>
-            <td>TCP</td>
-            <td>-0.03</td>
-            <td>[-0.05, -0.01]</td>
-          </tr>
-          <tr>
-            <td>Colegiada</td>
-            <td>+0.26</td>
-            <td>[0.06, 0.47]</td>
-          </tr>
-          <tr>
-            <td>Competitiva</td>
-            <td>+0.27</td>
-            <td>[0.09, 0.45]</td>
-          </tr>
-        </table>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; flex: 1;">
+
+      <!-- Modelo Frágil (Neutro) -->
+      <div style="background: #FAFAFA; border-radius: 12px; border: 1px solid #E0E0E0; overflow: hidden; display: flex; flex-direction: column;">
+        <div style="background: #ECEFF1; padding: 1rem; border-bottom: 1px solid #CFD8DC; display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="margin: 0; color: #546E7A; font-size: 1.1rem; font-weight: 700;">Coalescência</h3>
+          <span style="font-size: 0.9rem; color: #78909c;">R² = 0.25</span>
+        </div>
+        <div style="padding: 1.5rem; flex: 1;">
+          <table style="width: 100%; font-size: 0.95rem; border-collapse: separate; border-spacing: 0 0.8rem;">
+            <tr style="color: #78909c;">
+              <td style="border-bottom: 1px solid #EEE;">TCP</td>
+              <td style="text-align: center; border-bottom: 1px solid #EEE;">-0.03</td>
+              <td style="text-align: right; font-family: monospace; font-size: 0.85rem; border-bottom: 1px solid #EEE;">[-0.05, -0.01]</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #EEE; color: #37474F; font-weight: 600;">Colegiada</td>
+              <td style="text-align: center; border-bottom: 1px solid #EEE; color: #37474F;">+0.26</td>
+              <td style="text-align: right; font-family: monospace; font-size: 0.85rem; border-bottom: 1px solid #EEE;">[0.06, 0.47]</td>
+            </tr>
+            <tr>
+              <td style="color: #37474F; font-weight: 600;">Competitiva</td>
+              <td style="text-align: center; color: #37474F;">+0.27</td>
+              <td style="text-align: right; font-family: monospace; font-size: 0.85rem;">[0.09, 0.45]</td>
+            </tr>
+          </table>
+        </div>
       </div>
-      <div style="background: #E8F5E9; padding: 1.5rem; border-radius: 12px;">
-        <h3>Taxa Sucesso (R² = 0.76)</h3>
-        <table style="width: 100%; font-size: 0.9rem;">
-          <tr>
-            <td>TCP</td>
-            <td>+0.18</td>
-            <td>[0.12, 0.24]</td>
-          </tr>
-          <tr>
-            <td>Colegiada</td>
-            <td>-0.68</td>
-            <td>[-1.27, -0.13]</td>
-          </tr>
-          <tr>
-            <td>Competitiva</td>
-            <td>-2.22</td>
-            <td>[-2.74, -1.69]</td>
-          </tr>
-        </table>
+
+      <!-- Modelo Robusto (Verde) -->
+      <div style="background: white; border-radius: 12px; border: 2px solid #009C3B; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,156,59,0.1);">
+        <div style="background: #009C3B; padding: 1rem; color: white; display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="margin: 0; font-size: 1.1rem; font-weight: 800;">Taxa de Sucesso</h3>
+          <span style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: 700;">R² = 0.76</span>
+        </div>
+        <div style="padding: 1.5rem; flex: 1;">
+          <table style="width: 100%; font-size: 0.95rem; border-collapse: separate; border-spacing: 0 0.8rem;">
+            <tr style="color: #1B5E20; background: #E8F5E9;">
+              <td style="padding: 0.5rem; border-radius: 4px 0 0 4px;"><strong>TCP</strong></td>
+              <td style="text-align: center; padding: 0.5rem;"><strong>+0.18</strong></td>
+              <td style="text-align: right; font-family: monospace; font-size: 0.85rem; padding: 0.5rem; border-radius: 0 4px 4px 0;">[0.12, 0.24]</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.5rem; border-bottom: 1px solid #E8F5E9;">Colegiada</td>
+              <td style="text-align: center; padding: 0.5rem; border-bottom: 1px solid #E8F5E9; color: #546E7A;">-0.68</td>
+              <td style="text-align: right; font-family: monospace; font-size: 0.85rem; padding: 0.5rem; border-bottom: 1px solid #E8F5E9; color: #78909c;">[-1.27, -0.13]</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.5rem; color: #D32F2F; font-weight: 600;">Competitiva</td>
+              <td style="text-align: center; padding: 0.5rem; color: #D32F2F; font-weight: 700;">-2.22</td>
+              <td style="text-align: right; font-family: monospace; font-size: 0.85rem; padding: 0.5rem; color: #D32F2F;">[-2.74, -1.69]</td>
+            </tr>
+          </table>
+          <div style="margin-top: 1rem; text-align: center; font-size: 0.85rem; color: #009C3B; font-weight: 600;">
+            <i class="fas fa-check-circle"></i> Modelo Altamente Preditivo
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 
   <!-- ========================================
          SLIDE 13: Modelos Bayesianos Expandidos
          ======================================== -->
-  <div class="slide slide-compact" style="padding: 2rem 3rem;">
-    <header style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
-        Comparação dos Modelos Bayesianos
+  <!-- ========================================
+         SLIDE 13: Comparação dos Modelos Bayesianos
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 3rem 4rem; display: flex; flex-direction: column; background: #FFFFFF;">
+    <header style="text-align: left; margin-bottom: 2rem; border-bottom: 3px solid #002776; padding-bottom: 1rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 800; color: #002776; letter-spacing: -1px; margin-bottom: 0.2rem;">
+        Comparação dos Modelos
+        <span style="font-size: 1.1rem; color: #78909c; font-weight: 500; display: block;">Ranqueamento por R² Bayesiano e Convergência</span>
       </h1>
     </header>
-    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
-      <thead>
-        <tr style="background: #004D40; color: white;">
-          <th style="padding: 0.8rem;">Modelo</th>
-          <th style="padding: 0.8rem;">Controle</th>
-          <th style="padding: 0.8rem;">R² Bayesiano</th>
-          <th style="padding: 0.8rem;">Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="background: #E8F5E9;">
-          <td style="padding: 0.8rem;">1</td>
-          <td>Base</td>
-          <td>0.754</td>
-          <td>✓ Robusto</td>
-        </tr>
-        <tr style="background: #FFF3E0;">
-          <td style="padding: 0.8rem;">2</td>
-          <td>Coalescência</td>
-          <td>0.252</td>
-          <td>⚠ Frágil</td>
-        </tr>
-        <tr style="background: #E8F5E9;">
-          <td style="padding: 0.8rem;">3</td>
-          <td>Popularidade</td>
-          <td>0.756</td>
-          <td>✓ Robusto</td>
-        </tr>
-        <tr style="background: #C8E6C9;">
-          <td style="padding: 0.8rem;"><strong>4</strong></td>
-          <td><strong>Heterogeneidade</strong></td>
-          <td><strong>0.807</strong></td>
-          <td><strong>✓ MELHOR</strong></td>
-        </tr>
-        <tr style="background: #E8F5E9;">
-          <td style="padding: 0.8rem;">5</td>
-          <td>Tamanho Coalizão</td>
-          <td>0.787</td>
-          <td>✓ Robusto</td>
-        </tr>
-        <tr style="background: #FFCDD2;">
-          <td style="padding: 0.8rem;">6</td>
-          <td>Índice Necessidade</td>
-          <td>0.949</td>
-          <td>✗ Convergência</td>
-        </tr>
-        <tr style="background: #FFCDD2;">
-          <td style="padding: 0.8rem;">7</td>
-          <td>Distância Ideológica</td>
-          <td>0.949</td>
-          <td>✗ Convergência</td>
-        </tr>
-      </tbody>
-    </table>
+
+    <div style="flex: 1; overflow: hidden; border-radius: 12px; border: 1px solid #E0E0E0; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+        <thead>
+          <tr style="background: #ECEFF1; color: #546E7A; text-align: left;">
+            <th style="padding: 1rem; font-weight: 700;">#</th>
+            <th style="padding: 1rem; font-weight: 700;">Variável de Controle</th>
+            <th style="padding: 1rem; font-weight: 700; text-align: center;">R² Bayesiano</th>
+            <th style="padding: 1rem; font-weight: 700; text-align: right;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 1. Base -->
+          <tr style="border-bottom: 1px solid #EEE;">
+            <td style="padding: 0.8rem 1rem; color: #90A4AE;">1</td>
+            <td style="padding: 0.8rem 1rem; color: #37474F;">Base</td>
+            <td style="padding: 0.8rem 1rem; text-align: center; font-family: monospace;">0.754</td>
+            <td style="padding: 0.8rem 1rem; text-align: right; color: #2E7D32; font-weight: 600;">✓ Robusto</td>
+          </tr>
+          <!-- 2. Coalescência (Frágil) -->
+          <tr style="border-bottom: 1px solid #EEE; background: #FAFAFA;">
+            <td style="padding: 0.8rem 1rem; color: #90A4AE;">2</td>
+            <td style="padding: 0.8rem 1rem; color: #546E7A;">Coalescência</td>
+            <td style="padding: 0.8rem 1rem; text-align: center; font-family: monospace; color: #78909c;">0.252</td>
+            <td style="padding: 0.8rem 1rem; text-align: right; color: #78909c;">⚠ Frágil</td>
+          </tr>
+          <!-- 3. Popularidade -->
+          <tr style="border-bottom: 1px solid #EEE;">
+            <td style="padding: 0.8rem 1rem; color: #90A4AE;">3</td>
+            <td style="padding: 0.8rem 1rem; color: #37474F;">Popularidade</td>
+            <td style="padding: 0.8rem 1rem; text-align: center; font-family: monospace;">0.756</td>
+            <td style="padding: 0.8rem 1rem; text-align: right; color: #2E7D32; font-weight: 600;">✓ Robusto</td>
+          </tr>
+          <!-- 4. Heterogeneidade (MELHOR) -->
+          <tr style="border-bottom: 2px solid #009C3B; background: #E8F5E9; transform: scale(1.01); box-shadow: 0 4px 10px rgba(0,0,0,0.05); z-index: 10; position: relative;">
+            <td style="padding: 1rem; color: #1B5E20; font-weight: 800;">4</td>
+            <td style="padding: 1rem; color: #1B5E20; font-weight: 800;">Heterogeneidade</td>
+            <td style="padding: 1rem; text-align: center; font-family: monospace; font-weight: 800; font-size: 1.1rem; color: #1B5E20;">0.807</td>
+            <td style="padding: 1rem; text-align: right; color: #009C3B; font-weight: 800;">
+              <i class="fas fa-trophy"></i> MELHOR
+            </td>
+          </tr>
+          <!-- 5. Tamanho Coalizão -->
+          <tr style="border-bottom: 1px solid #EEE;">
+            <td style="padding: 0.8rem 1rem; color: #90A4AE;">5</td>
+            <td style="padding: 0.8rem 1rem; color: #37474F;">Tamanho Coalizão</td>
+            <td style="padding: 0.8rem 1rem; text-align: center; font-family: monospace;">0.787</td>
+            <td style="padding: 0.8rem 1rem; text-align: right; color: #2E7D32; font-weight: 600;">✓ Robusto</td>
+          </tr>
+          <!-- 6. Índice Necessidade (Falha) -->
+          <tr style="border-bottom: 1px solid #EEE; color: #B0BEC5;">
+            <td style="padding: 0.8rem 1rem;">6</td>
+            <td style="padding: 0.8rem 1rem;">Índice Necessidade</td>
+            <td style="padding: 0.8rem 1rem; text-align: center; font-family: monospace; text-decoration: line-through;">0.949</td>
+            <td style="padding: 0.8rem 1rem; text-align: right; color: #90A4AE; font-style: italic;">✗ Convergência</td>
+          </tr>
+          <!-- 7. Distância Ideológica (Falha) -->
+          <tr style="color: #B0BEC5;">
+            <td style="padding: 0.8rem 1rem;">7</td>
+            <td style="padding: 0.8rem 1rem;">Distância Ideológica</td>
+            <td style="padding: 0.8rem 1rem; text-align: center; font-family: monospace; text-decoration: line-through;">0.949</td>
+            <td style="padding: 0.8rem 1rem; text-align: right; color: #90A4AE; font-style: italic;">✗ Convergência</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <!-- ========================================
-         SLIDE 14: Evolução do NdG – FHC e Lula
+         SLIDE 14: Evolução do Núcleo de Governo (FHC vs Lula)
          ======================================== -->
-  <div class="slide slide-compact" style="padding: 2rem 3rem;">
-    <header style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+  <div class="slide slide-compact" style="padding: 1.5rem 2.5rem; display: flex; flex-direction: column; background: #FFFFFF; height: 100%; box-sizing: border-box; overflow: hidden;">
+    <header style="text-align: center; margin-bottom: 1rem; flex-shrink: 0;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #002776; letter-spacing: -1px; margin: 0;">
         Evolução do Núcleo de Governo
-        <span style="display: block; font-size: 0.9rem; color: #78909c;">FHC (1995-2002) → Lula (2003-2010)</span>
       </h1>
+      <span style="font-size: 0.95rem; color: #78909c; display: block; margin-top: 0.2rem; font-weight: 600;">FHC (1995-2002) ➔ Lula (2003-2010)</span>
+      <div style="width: 50px; height: 3px; background: #002776; margin: 0.5rem auto 0; border-radius: 2px;"></div>
     </header>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; flex: 1;">
-      <div style="background: #ECEFF1; padding: 2rem; border-radius: 12px;">
-        <h3>FHC (1995-2002)</h3>
-        <ul>
-          <li><strong>Perfil:</strong> Técnico-gerencial</li>
-          <li><strong>Ministros CC:</strong> Clóvis Carvalho, Pedro Parente</li>
-          <li><strong>Foco:</strong> Estabilização econômica</li>
-          <li><strong>Ministérios:</strong> 24-27</li>
-          <li><strong>ICG:</strong> 14 → 37</li>
-          <li><strong>Coalescência:</strong> 55-61%</li>
-          <li><strong>Heterogeneidade:</strong> 30-31</li>
-        </ul>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; flex: 1; align-items: stretch; min-height: 0;">
+
+      <!-- FHC: Técnico-Gerencial (Azul) -->
+      <div style="background: white; border-radius: 10px; border: 1px solid #BBDEFB; box-shadow: 0 4px 10px rgba(33,150,243,0.1); display: flex; flex-direction: column; overflow: hidden;">
+        <!-- Faixa Topo Compacta -->
+        <div style="background: #1565C0; padding: 0.8rem; display: flex; align-items: center; gap: 0.8rem; color: white;">
+          <div style="width: 50px; height: 50px; background: #E3F2FD; border-radius: 50%; border: 2px solid white; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <i class="fas fa-user-tie" style="font-size: 1.6rem; color: #1565C0;"></i>
+          </div>
+          <div style="line-height: 1.1;">
+            <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 0;">FHC</h2>
+            <span style="font-size: 0.8rem; opacity: 0.9;">1995 - 2002</span>
+          </div>
+        </div>
+
+        <div style="padding: 0.8rem; flex: 1; display: flex; flex-direction: column; gap: 0.8rem; justify-content: space-between;">
+          <!-- Perfil e Detalhes -->
+          <div style="background: #F5F9FF; padding: 0.6rem 0.8rem; border-radius: 6px; border-left: 3px solid #1565C0;">
+            <div style="margin-bottom: 0.4rem;">
+              <span style="color: #1565C0; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Perfil: Técnico-Gerencial</span>
+            </div>
+            <div style="font-size: 0.85rem; color: #455A64; line-height: 1.35;">
+              <div style="margin-bottom: 0.2rem;"><strong style="color: #37474F;">Ministros CC:</strong><br> Clóvis Carvalho, Pedro Parente</div>
+              <div><strong style="color: #37474F;">Foco:</strong> Estabilização econômica</div>
+            </div>
+          </div>
+
+          <!-- Stats Grid Compacto -->
+          <div style="background: #FAFAFA; padding: 0.6rem; border-radius: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;">
+            <div style="text-align: center; border-bottom: 1px solid #EEE; padding-bottom: 0.4rem;">
+              <span style="display: block; font-size: 0.65rem; color: #90A4AE; text-transform: uppercase; font-weight: 700;">Ministérios</span>
+              <strong style="color: #1565C0; font-size: 1rem; font-family: 'Montserrat';">24 ➔ 27</strong>
+            </div>
+            <div style="text-align: center; border-bottom: 1px solid #EEE; padding-bottom: 0.4rem;">
+              <span style="display: block; font-size: 0.65rem; color: #90A4AE; text-transform: uppercase; font-weight: 700;">ICG</span>
+              <strong style="color: #1565C0; font-size: 1rem; font-family: 'Montserrat';">14 ➔ 37</strong>
+            </div>
+            <div style="text-align: center;">
+              <span style="display: block; font-size: 0.65rem; color: #90A4AE; text-transform: uppercase; font-weight: 700;">Coalescência</span>
+              <strong style="color: #455A64; font-size: 0.95rem; font-family: 'Montserrat';">55-61%</strong>
+            </div>
+            <div style="text-align: center;">
+              <span style="display: block; font-size: 0.65rem; color: #90A4AE; text-transform: uppercase; font-weight: 700;">Heterogeneidade</span>
+              <strong style="color: #455A64; font-size: 0.95rem; font-family: 'Montserrat';">30-31</strong>
+            </div>
+          </div>
+        </div>
       </div>
-      <div style="background: #E8F5E9; padding: 2rem; border-radius: 12px;">
-        <h3>Lula (2003-2010)</h3>
-        <ul>
-          <li><strong>Perfil:</strong> Político-expandido</li>
-          <li><strong>Ministros CC:</strong> José Dirceu, Dilma Rousseff</li>
-          <li><strong>Foco:</strong> PAC, políticas sociais</li>
-          <li><strong>Ministérios:</strong> 33-37</li>
-          <li><strong>ICG:</strong> 63 → 69</li>
-          <li><strong>Coalescência:</strong> 49-50%</li>
-          <li><strong>Heterogeneidade:</strong> 42-48</li>
-        </ul>
+
+      <!-- Lula: Político-Expandido (Verde) -->
+      <div style="background: white; border-radius: 10px; border: 1px solid #C8E6C9; box-shadow: 0 4px 10px rgba(76,175,80,0.1); display: flex; flex-direction: column; overflow: hidden;">
+        <!-- Faixa Topo Compacta -->
+        <div style="background: #2E7D32; padding: 0.8rem; display: flex; align-items: center; gap: 0.8rem; color: white;">
+          <div style="width: 50px; height: 50px; background: #E8F5E9; border-radius: 50%; border: 2px solid white; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <i class="fas fa-users" style="font-size: 1.6rem; color: #2E7D32;"></i>
+          </div>
+          <div style="line-height: 1.1;">
+            <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 0;">Lula</h2>
+            <span style="font-size: 0.8rem; opacity: 0.9;">2003 - 2010</span>
+          </div>
+        </div>
+
+        <div style="padding: 0.8rem; flex: 1; display: flex; flex-direction: column; gap: 0.8rem; justify-content: space-between;">
+          <!-- Perfil e Detalhes -->
+          <div style="background: #F1F8E9; padding: 0.6rem 0.8rem; border-radius: 6px; border-left: 3px solid #2E7D32;">
+            <div style="margin-bottom: 0.4rem;">
+              <span style="color: #2E7D32; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Perfil: Político-Expandido</span>
+            </div>
+            <div style="font-size: 0.85rem; color: #455A64; line-height: 1.35;">
+              <div style="margin-bottom: 0.2rem;"><strong style="color: #37474F;">Ministros CC:</strong><br> José Dirceu, Dilma Rousseff</div>
+              <div><strong style="color: #37474F;">Foco:</strong> PAC, políticas sociais</div>
+            </div>
+          </div>
+
+          <!-- Stats Grid Compacto -->
+          <div style="background: #FAFAFA; padding: 0.6rem; border-radius: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;">
+            <div style="text-align: center; border-bottom: 1px solid #EEE; padding-bottom: 0.4rem;">
+              <span style="display: block; font-size: 0.65rem; color: #90A4AE; text-transform: uppercase; font-weight: 700;">Ministérios</span>
+              <strong style="color: #2E7D32; font-size: 1rem; font-family: 'Montserrat';">⬆ 33 ➔ 37</strong>
+            </div>
+            <div style="text-align: center; border-bottom: 1px solid #EEE; padding-bottom: 0.4rem;">
+              <span style="display: block; font-size: 0.65rem; color: #90A4AE; text-transform: uppercase; font-weight: 700;">ICG</span>
+              <strong style="color: #2E7D32; font-size: 1rem; font-family: 'Montserrat';">⬆ 63 ➔ 69</strong>
+            </div>
+            <div style="text-align: center;">
+              <span style="display: block; font-size: 0.65rem; color: #90A4AE; text-transform: uppercase; font-weight: 700;">Coalescência</span>
+              <strong style="color: #546E7A; font-size: 0.95rem; font-family: 'Montserrat';">49-50%</strong>
+            </div>
+            <div style="text-align: center;">
+              <span style="display: block; font-size: 0.65rem; color: #90A4AE; text-transform: uppercase; font-weight: 700;">Heterogeneidade</span>
+              <strong style="color: #2E7D32; font-size: 0.95rem; font-family: 'Montserrat';">⬆ 42 ➔ 48</strong>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 
