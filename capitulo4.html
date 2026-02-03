@@ -413,21 +413,47 @@
   <!-- ========================================
          SLIDE 7: Predição por Estilo de Gestão
          ======================================== -->
-  <div class="slide slide-compact" style="padding: 2rem 3rem;">
-    <header style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
-        Impacto na Taxa de Sucesso
-        <span style="display: block; font-size: 0.9rem; color: #78909c;">Predição pelo Tamanho do Centro Presidencial</span>
+  <!-- ========================================
+         SLIDE 7: Predição por Estilo de Gestão
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 3rem 4rem; display: flex; flex-direction: column; background: #FFFFFF;">
+    <!-- Cabeçalho (Azul) -->
+    <header style="text-align: left; margin-bottom: 2rem; border-bottom: 3px solid #002776; padding-bottom: 1rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 800; color: #002776; letter-spacing: -1px; margin-bottom: 0.2rem; display: flex; justify-content: space-between; align-items: center;">
+        Predição: Impacto do Estilo
+        <span style="font-size: 1.1rem; color: #78909c; font-weight: 500;">Variável: Tamanho do Centro</span>
       </h1>
     </header>
-    <div style="flex: 1; background: #f5f5f5; border-radius: 12px; padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-      <div style="width: 100%; max-width: 900px; height: 400px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
-        <img src="imagens_pdf/SLIDE_07_predicao_taxa_sucesso_estilo.png" alt="Predição da Taxa de Sucesso por Estilo de Gestão" style="width: 100%; height: 100%; object-fit: contain;">
+
+    <!-- Gráfico Centralizado Maximizad -->
+    <div style="flex: 1; background: white; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #E0E0E0;">
+
+      <!-- Container da Imagem (60% da altura) -->
+      <div style="width: 100%; height: 350px; overflow: hidden; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center;">
+        <img src="imagens_pdf/SLIDE_07_predicao_taxa_sucesso_estilo.png" alt="Predição Taxa Sucesso" style="width: 100%; height: 100%; object-fit: contain;">
       </div>
-      <div style="display: flex; gap: 2rem; margin-top: 1.5rem; font-size: 0.9rem; font-weight: 600;">
-        <span><span style="color: #4CAF50; font-size: 1.2rem;">●</span> Hierárquico (maior sucesso)</span>
-        <span><span style="color: #FFC107; font-size: 1.2rem;">●</span> Colegiado</span>
-        <span><span style="color: #F44336; font-size: 1.2rem;">●</span> Competitivo (menor sucesso)</span>
+
+      <!-- Legenda Customizada (Bicromia Hierárquica) -->
+      <div style="display: flex; gap: 3rem; font-size: 1rem; font-weight: 600; padding-top: 1rem; border-top: 1px solid #EEE; width: 100%; justify-content: center;">
+        <!-- Item 1: Hierárquico (Destaque Positivo) -->
+        <span style="display: flex; align-items: center; gap: 0.5rem; color: #002776;">
+          <span style="display: inline-block; width: 12px; height: 12px; background: #002776; border-radius: 50%;"></span>
+          Hierárquico
+          <span style="font-size: 0.8rem; background: #E8F5E9; color: #009C3B; padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: 700; text-transform: uppercase;">Maior Sucesso</span>
+        </span>
+
+        <!-- Item 2: Colegiado (Neutro) -->
+        <span style="display: flex; align-items: center; gap: 0.5rem; color: #546E7A;">
+          <span style="display: inline-block; width: 12px; height: 12px; background: #78909c; border-radius: 50%;"></span>
+          Colegiado
+        </span>
+
+        <!-- Item 3: Competitivo (Negativo/Neutro) -->
+        <span style="display: flex; align-items: center; gap: 0.5rem; color: #90A4AE;">
+          <span style="display: inline-block; width: 12px; height: 12px; background: #B0BEC5; border-radius: 50%;"></span>
+          Competitivo
+          <span style="font-size: 0.8rem; background: #ECEFF1; color: #78909c; padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: 600; text-transform: uppercase;">Menor Sucesso</span>
+        </span>
       </div>
     </div>
   </div>
@@ -435,31 +461,79 @@
   <!-- ========================================
          SLIDE 8: Comparação dos Modelos
          ======================================== -->
-  <div class="slide slide-compact" style="padding: 2rem 3rem;">
-    <header style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
-        O Contraste: Dois Modelos, Dois Destinos
+  <div class="slide slide-compact" style="padding: 3rem 4rem; display: flex; flex-direction: column; background: #FFFFFF;">
+    <header style="text-align: center; margin-bottom: 3rem; position: relative;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.5rem; font-weight: 800; color: #002776; letter-spacing: -1px; margin-bottom: 0.5rem; z-index: 1;">
+        O Contraste
       </h1>
+      <span style="display: block; font-family: 'Open Sans', sans-serif; font-size: 1.2rem; color: #546E7A; font-weight: 400; letter-spacing: 2px; text-transform: uppercase;">
+        Dois Modelos, Dois Destinos
+      </span>
+      <!-- Linha decorativa -->
+      <div style="width: 60px; height: 4px; background: #009C3B; margin: 1.5rem auto 0; border-radius: 2px;"></div>
     </header>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; flex: 1;">
-      <div style="background: #FFF3E0; padding: 2rem; border-radius: 12px; border-left: 5px solid #FF9800;">
-        <h3 style="color: #E65100;">⚠ Coalescência</h3>
-        <ul>
-          <li>R² = 0.42</li>
-          <li>Frágil</li>
-          <li>Outliers (Temer)</li>
-          <li>Lógica Informal</li>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; flex: 1; align-items: stretch;">
+
+      <!-- Card Frágil (Neutro/Cinza - Sem Alerta de Erro) -->
+      <div style="background: #FAFAFA; border-radius: 16px; border: 2px solid #E0E0E0; padding: 2.5rem; display: flex; flex-direction: column; position: relative;">
+        <!-- Cabeçalho Frágil -->
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <div style="display: inline-flex; justify-content: center; align-items: center; width: 60px; height: 60px; background: #ECEFF1; border-radius: 50%; margin-bottom: 1rem;">
+            <i class="fas fa-exclamation" style="font-size: 1.8rem; color: #78909c;"></i>
+          </div>
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 700; color: #546E7A; margin: 0;">Coalescência</h3>
+          <span style="display: block; font-size: 0.9rem; color: #90A4AE; text-transform: uppercase; font-weight: 600; margin-top: 0.5rem;">Resultado Frágil</span>
+        </div>
+
+        <ul style="list-style: none; padding: 0; color: #546E7A; font-size: 1.1rem; line-height: 2;">
+          <li style="border-bottom: 1px dashed #E0E0E0; padding-bottom: 0.5rem; margin-bottom: 0.5rem; display: flex; justify-content: space-between;">
+            <span>Pseudo R²</span> <strong>0.42</strong>
+          </li>
+          <li style="border-bottom: 1px dashed #E0E0E0; padding-bottom: 0.5rem; margin-bottom: 0.5rem; display: flex; justify-content: space-between;">
+            <span>Robustez</span> <span style="color: #78909c;">Instável</span>
+          </li>
+          <li style="border-bottom: 1px dashed #E0E0E0; padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+            <i class="fas fa-search" style="margin-right: 0.5rem; color: #B0BEC5;"></i> Outliers (Temer)
+          </li>
+          <li>
+            <i class="fas fa-comment-dots" style="margin-right: 0.5rem; color: #B0BEC5;"></i> Lógica Informal
+          </li>
         </ul>
       </div>
-      <div style="background: #E8F5E9; padding: 2rem; border-radius: 12px; border-left: 5px solid #4CAF50;">
-        <h3 style="color: #2E7D32;">✓ Taxa de Sucesso</h3>
-        <ul>
-          <li>R² = 0.70</li>
-          <li>Robusto</li>
-          <li>Sem outliers</li>
-          <li>Lógica Formal</li>
+
+      <!-- Card Robusto (Verde/Azul - Destaque Heroico) -->
+      <div style="background: white; border-radius: 16px; border: 2px solid #009C3B; padding: 2.5rem; display: flex; flex-direction: column; position: relative; box-shadow: 0 15px 40px rgba(0,156,59,0.15); transform: translateY(-10px);">
+        <!-- Tag de Campeão -->
+        <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #009C3B; color: white; padding: 0.4rem 1.2rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(0,156,59,0.3);">
+          Modelo Superior
+        </div>
+
+        <!-- Cabeçalho Robusto -->
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <div style="display: inline-flex; justify-content: center; align-items: center; width: 60px; height: 60px; background: #E8F5E9; border-radius: 50%; margin-bottom: 1rem;">
+            <i class="fas fa-trophy" style="font-size: 1.8rem; color: #009C3B;"></i>
+          </div>
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 700; color: #002776; margin: 0;">Taxa de Sucesso</h3>
+          <span style="display: block; font-size: 0.9rem; color: #009C3B; text-transform: uppercase; font-weight: 700; margin-top: 0.5rem;">Resultado Robusto</span>
+        </div>
+
+        <ul style="list-style: none; padding: 0; color: #002776; font-size: 1.1rem; line-height: 2;">
+          <li style="border-bottom: 1px solid #E3F2FD; padding-bottom: 0.5rem; margin-bottom: 0.5rem; display: flex; justify-content: space-between;">
+            <span>Pseudo R²</span> <strong style="color: #009C3B; font-size: 1.2rem;">0.70</strong>
+          </li>
+          <li style="border-bottom: 1px solid #E3F2FD; padding-bottom: 0.5rem; margin-bottom: 0.5rem; display: flex; justify-content: space-between;">
+            <span>Robustez</span> <strong style="color: #009C3B;">Confirmada</strong>
+          </li>
+          <li style="border-bottom: 1px solid #E3F2FD; padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+            <i class="fas fa-check" style="margin-right: 0.5rem; color: #009C3B;"></i> Sem Outliers
+          </li>
+          <li>
+            <i class="fas fa-file-signature" style="margin-right: 0.5rem; color: #009C3B;"></i> Lógica Formal
+          </li>
         </ul>
       </div>
+
     </div>
   </div>
 
