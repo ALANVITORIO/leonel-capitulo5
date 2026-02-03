@@ -15,6 +15,8 @@
 
   <!-- Estilos Customizados -->
   <link rel="stylesheet" href="css/styles.css" />
+
+
 </head>
 
 <body>
@@ -34,37 +36,109 @@
   </div>
 
   <!-- ========================================
+  <!-- ========================================
          SLIDE 2: Metodologia – Regressão Linear Beta
          ======================================== -->
-  <div class="slide slide-compact" style="padding: 2rem 3rem;">
-    <header style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
-        Regressão Linear Beta
-        <span style="display: block; font-size: 0.9rem; color: #78909c; font-weight: 600;">(Ferrari & Cribari-Neto, 2004)</span>
-      </h1>
+  <div class="slide slide-compact" style="padding: 3rem 4rem; display: flex; flex-direction: column; background: #FFFFFF;">
+    <!-- Cabeçalho Patriótico -->
+    <header style="text-align: left; margin-bottom: 2.5rem; border-bottom: 3px solid #002776; padding-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: flex-end;">
+      <div>
+        <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.8rem; font-weight: 800; color: #002776; letter-spacing: -1px; margin-bottom: 0.2rem; line-height: 1;">
+          Regressão Linear Beta
+        </h1>
+        <span style="display: block; font-family: 'Open Sans', sans-serif; font-size: 1.1rem; color: #009C3B; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">
+          Metodologia Estatística
+        </span>
+      </div>
+      <div style="font-family: 'Times New Roman', serif; font-size: 1.1rem; color: #78909c; font-style: italic;">
+        (Ferrari & Cribari-Neto, 2004)
+      </div>
     </header>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; flex: 1;">
-      <div style="background: #f5f5f5; padding: 1.5rem; border-radius: 12px;">
-        <h3 style="color: #004D40; margin-bottom: 1rem;"><i class="fas fa-question-circle"></i> Por quê?</h3>
-        <ul style="list-style: none; padding: 0;">
-          <li>• Variável resposta [0,1]</li>
+
+    <!-- Grid Assimétrico: Editorial Style -->
+    <div style="display: grid; grid-template-columns: 1fr 1.8fr; gap: 3rem; flex: 1;">
+
+      <!-- Coluna Esquerda: Conceito + Fórmula Visual -->
+      <div style="display: flex; flex-direction: column; position: relative;">
+        <h3 style="color: #002776; margin-bottom: 1.5rem; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.6rem; display: flex; align-items: center; gap: 0.8rem;">
+          <i class="fas fa-question-circle" style="color: #009C3B;"></i> Por quê?
+        </h3>
+
+        <ul style="list-style: none; padding: 0; color: #37474F; font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+          <li style="margin-bottom: 0.5rem;">• Variável resposta [0,1]</li>
           <li>• Taxas e proporções</li>
-          <li>• Função logit: μ = e<sup>Xβ</sup>/(1+e<sup>Xβ</sup>)</li>
         </ul>
+
+        <!-- PHOTO SLOT VERTICAL (Tall) -->
+        <div class="photo-slot" style="flex: 1; background: #E3F2FD; border-radius: 12px; border: 2px dashed #90CAF9; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 250px; position: relative; overflow: hidden;">
+          <i class="fas fa-image" style="font-size: 3rem; color: #BBDEFB; margin-bottom: 1rem;"></i>
+          <span style="color: #1976D2; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Imagem Conceitual</span>
+
+          <!-- FÓRMULA VISUAL (HTML/CSS - Sem MathJax) -->
+          <div style="position: absolute; bottom: 20px; left: 10px; right: 10px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); padding: 1.2rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,39,118,0.15); border: 2px solid #002776;">
+            <div style="font-family: 'Times New Roman', serif; font-size: 1.8rem; font-style: italic; color: #333; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+              <span style="color: #002776; font-weight: bold;">μ</span>
+              <span style="color: #999;">=</span>
+              <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <div style="border-bottom: 2px solid #333; padding-bottom: 2px; margin-bottom: 2px; color: #009C3B;">
+                  e<sup style="font-size: 0.6em; color: #009C3B;">Xβ</sup>
+                </div>
+                <div style="color: #002776;">
+                  1 <span style="font-size: 0.8em; margin: 0 2px;">+</span> e<sup style="font-size: 0.6em; color: #002776;">Xβ</sup>
+                </div>
+              </div>
+            </div>
+            <div style="font-size: 0.75rem; text-transform: uppercase; margin-top: 0.8rem; letter-spacing: 1px; color: #002776; font-weight: 700;">Função de Ligação Logit</div>
+          </div>
+        </div>
       </div>
-      <div style="background: #f5f5f5; padding: 1.5rem; border-radius: 12px;">
-        <h3 style="color: #004D40; margin-bottom: 1rem;"><i class="fas fa-chart-line"></i> Dependentes</h3>
-        <ul style="list-style: none; padding: 0;">
-          <li>• Coalescência Governamental</li>
-          <li>• Taxa de Sucesso do Executivo</li>
-        </ul>
-      </div>
-      <div style="background: #f5f5f5; padding: 1.5rem; border-radius: 12px;">
-        <h3 style="color: #004D40; margin-bottom: 1rem;"><i class="fas fa-cogs"></i> Independentes</h3>
-        <ul style="list-style: none; padding: 0;">
-          <li>• Tamanho Centro Presidencial (TCP)</li>
-          <li>• Estilo de Gestão (Hierárquico, Colegiado, Competitivo)</li>
-        </ul>
+
+      <!-- Coluna Direita: Variáveis em Zigue-Zague -->
+      <div style="display: flex; flex-direction: column; gap: 2rem; justify-content: space-between;">
+
+        <!-- Bloco Dependentes (Verde) -->
+        <div style="display: flex; gap: 1.5rem; align-items: stretch; background: white; padding: 1.5rem; border-radius: 16px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 6px solid #009C3B;">
+          <div style="flex: 1.2;">
+            <h3 style="color: #009C3B; margin-bottom: 1rem; font-family: 'Montserrat', sans-serif; font-weight: 700;">
+              Dependentes (Y)
+            </h3>
+            <ul style="list-style: none; padding: 0; color: #37474F; font-size: 1.1rem; line-height: 1.6;">
+              <li style="margin-bottom: 0.8rem;">
+                <strong>Coalescência</strong><br>Governamental
+              </li>
+              <li>
+                <strong>Taxa de Sucesso</strong><br>do Executivo
+              </li>
+            </ul>
+          </div>
+          <!-- PHOTO SLOT -->
+          <div class="photo-slot" style="flex: 0.8; background: #E8F5E9; border-radius: 10px; border: 2px dashed #A5D6A7; display: flex; align-items: center; justify-content: center; min-height: 140px;">
+            <i class="fas fa-bullseye" style="font-size: 2rem; color: #C8E6C9;"></i>
+          </div>
+        </div>
+
+        <!-- Bloco Independentes (Azul - Substituindo Amarelo) -->
+        <div style="display: flex; gap: 1.5rem; align-items: stretch; background: white; padding: 1.5rem; border-radius: 16px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-right: 6px solid #002776;">
+          <!-- PHOTO SLOT -->
+          <div class="photo-slot" style="flex: 0.8; background: #E3F2FD; border-radius: 10px; border: 2px dashed #90CAF9; display: flex; align-items: center; justify-content: center; min-height: 140px;">
+            <i class="fas fa-cogs" style="font-size: 2rem; color: #BBDEFB;"></i>
+          </div>
+          <div style="flex: 1.2; text-align: right;">
+            <h3 style="color: #002776; margin-bottom: 1rem; font-family: 'Montserrat', sans-serif; font-weight: 700;">
+              Independentes (X)
+            </h3>
+            <ul style="list-style: none; padding: 0; color: #37474F; font-size: 1.1rem; line-height: 1.6;">
+              <li style="margin-bottom: 0.8rem;">
+                <strong>Tamanho Centro (TCP)</strong>
+              </li>
+              <li>
+                <strong>Estilo de Gestão:</strong><br>
+                <span style="font-size: 0.9rem; color: #002776; font-weight: 600;">Hierárquico • Colegiado • Competitivo</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -72,73 +146,136 @@
   <!-- ========================================
          SLIDE 3: Validação dos Dados
          ======================================== -->
-  <div class="slide slide-compact" style="padding: 2rem 3rem;">
-    <header style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
-        Confirmação da Distribuição Beta
-        <span style="display: block; font-size: 0.9rem; color: #78909c;">Gráficos de Cullen e Frey</span>
-      </h1>
+  <!-- ========================================
+         SLIDE 3: Validação dos Dados
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 3rem 4rem; display: flex; flex-direction: column; background: #FFFFFF;">
+    <header style="text-align: left; margin-bottom: 2.5rem; border-bottom: 3px solid #002776; padding-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: flex-end;">
+      <div>
+        <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.5rem; font-weight: 800; color: #002776; letter-spacing: -1px; margin-bottom: 0.2rem; line-height: 1;">
+          Confirmação da Distribuição Beta
+        </h1>
+        <span style="display: block; font-family: 'Open Sans', sans-serif; font-size: 1.1rem; color: #009C3B; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">
+          Validação de Pressupostos
+        </span>
+      </div>
+      <div style="font-family: 'Times New Roman', serif; font-size: 1.1rem; color: #78909c; font-style: italic;">
+        Gráficos de Cullen e Frey
+      </div>
     </header>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; flex: 1;">
-      <div style="background: #f5f5f5; padding: 2rem; border-radius: 12px; text-align: center;">
-        <h3>Coalescência Governamental</h3>
-        <div style="height: 300px; background: #e0e0e0; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-          [Gráfico Cullen-Frey]
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; flex: 1;">
+      <!-- Card Coalescência -->
+      <div style="background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 2rem; display: flex; flex-direction: column; border-top: 5px solid #002776;">
+        <h3 style="font-family: 'Montserrat', sans-serif; color: #002776; margin-bottom: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 0.8rem;">
+          <i class="fas fa-chart-pie" style="color: #002776; opacity: 0.7;"></i> Coalescência Governamental
+        </h3>
+        <div style="flex: 1; border-radius: 8px; overflow: hidden; border: 1px solid #E0E0E0; padding: 0.5rem;">
+          <img src="imagens_pdf/SLIDE_03_cullen_frey_coalescencia.jpeg" alt="Gráfico Cullen-Frey - Coalescência" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div style="margin-top: 1.5rem; background: #E8F5E9; color: #009C3B; padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 700; text-align: center; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+          <i class="fas fa-check-circle"></i> Distribuição Beta Confirmada
         </div>
       </div>
-      <div style="background: #f5f5f5; padding: 2rem; border-radius: 12px; text-align: center;">
-        <h3>Taxa de Sucesso</h3>
-        <div style="height: 300px; background: #e0e0e0; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-          [Gráfico Cullen-Frey]
+
+      <!-- Card Taxa de Sucesso -->
+      <div style="background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 2rem; display: flex; flex-direction: column; border-top: 5px solid #002776;">
+        <h3 style="font-family: 'Montserrat', sans-serif; color: #002776; margin-bottom: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 0.8rem;">
+          <i class="fas fa-chart-line" style="color: #002776; opacity: 0.7;"></i> Taxa de Sucesso
+        </h3>
+        <div style="flex: 1; border-radius: 8px; overflow: hidden; border: 1px solid #E0E0E0; padding: 0.5rem;">
+          <img src="imagens_pdf/SLIDE_03_cullen_frey_taxa_sucesso.jpeg" alt="Gráfico Cullen-Frey - Taxa de Sucesso" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div style="margin-top: 1.5rem; background: #E8F5E9; color: #009C3B; padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 700; text-align: center; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+          <i class="fas fa-check-circle"></i> Distribuição Beta Confirmada
         </div>
       </div>
     </div>
-    <div style="text-align: center; margin-top: 1rem; color: #4CAF50; font-weight: 600;">
-      ✓ Ambas seguem distribuição Beta → Modelo adequado
+
+    <!-- Conclusão Rodapé -->
+    <div style="text-align: center; margin-top: 2.5rem; border-top: 1px solid #E0E0E0; padding-top: 1.5rem;">
+      <span style="color: #002776; font-size: 1.1rem; font-weight: 600;">
+        Conclusão: Ambas as variáveis dependentes seguem a distribuição Beta
+        <i class="fas fa-arrow-right" style="margin: 0 0.8rem; color: #B0BEC5;"></i>
+        <strong style="color: #009C3B; border-bottom: 2px solid #009C3B;">MODELO ESTATÍSTICO ADEQUADO</strong>
+      </span>
     </div>
   </div>
 
   <!-- ========================================
          SLIDE 4: Modelo 1 – Coalescência Governamental
          ======================================== -->
-  <div class="slide slide-compact" style="padding: 2rem 3rem;">
-    <header style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
-        Resultados: Coalescência Governamental
-        <span style="display: block; font-size: 1rem; color: #FF9800;">Pseudo R² = 0.42</span>
+  <!-- ========================================
+         SLIDE 4: Modelo 1 – Coalescência Governamental
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 3rem 4rem; display: flex; flex-direction: column; background: #FFFFFF;">
+    <!-- Cabeçalho Bicromia -->
+    <header style="text-align: left; margin-bottom: 2rem; border-bottom: 3px solid #002776; padding-bottom: 1rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 800; color: #002776; letter-spacing: -1px; margin-bottom: 0.2rem; display: flex; justify-content: space-between; align-items: center;">
+        Resultados: Coalescência
+        <span style="font-size: 1.2rem; background: #E3F2FD; color: #002776; padding: 0.3rem 1rem; border-radius: 50px; border: 1px solid #BBDEFB;">
+          Pseudo R² = <strong style="color: #009C3B;">0.42</strong>
+        </span>
       </h1>
     </header>
-    <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;">
-      <thead>
-        <tr style="background: #004D40; color: white;">
-          <th style="padding: 1rem; text-align: left;">Variável</th>
-          <th style="padding: 1rem;">Estimativa</th>
-          <th style="padding: 1rem;">Significância</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="background: #E8F5E9;">
-          <td style="padding: 1rem;">Tamanho Centro Presidencial</td>
-          <td style="padding: 1rem; text-align: center;">+0.11</td>
-          <td style="padding: 1rem; text-align: center;">p < 0.01 ***</td>
-        </tr>
-        <tr style="background: #ECEFF1;">
-          <td style="padding: 1rem;">Estilo Colegiada</td>
-          <td style="padding: 1rem; text-align: center;">-0.44</td>
-          <td style="padding: 1rem; text-align: center; color: #999;">p = 0.11</td>
-        </tr>
-        <tr style="background: #E8F5E9;">
-          <td style="padding: 1rem;">Estilo Competitiva</td>
-          <td style="padding: 1rem; text-align: center;">-1.10</td>
-          <td style="padding: 1rem; text-align: center;">p < 0.01 ***</td>
-        </tr>
-      </tbody>
-    </table>
-    <div style="background: #FFF9C4; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
-      <strong>Interpretação:</strong> +11,79% de chance de coalescência por unidade adicional no centro | Estilo competitivo reduz coalescência em 66,7%
-    </div>
-    <div style="background: #ECEFF1; padding: 0.8rem; border-radius: 8px; margin-top: 0.5rem; font-size: 0.85rem; text-align: center;">
-      <strong>Fórmula Rose:</strong> C<sub>f</sub> = 1 - ½Σ|S<sub>i</sub> - M<sub>i</sub>| (Amorim Neto, 2006) | S = % cadeiras, M = % ministérios
+
+    <!-- Grid Layout Horizontal (50/50) -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; flex: 1; align-items: stretch; overflow: hidden;">
+
+      <!-- Coluna Esquerda: Dados Estatísticos -->
+      <div style="display: flex; flex-direction: column; justify-content: center;">
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.95rem;">
+          <thead>
+            <tr style="border-bottom: 2px solid #002776; color: #002776;">
+              <th style="padding: 0.8rem; text-align: left;">Variável Independente</th>
+              <th style="padding: 0.8rem; text-align: center;">Coef.</th>
+              <th style="padding: 0.8rem; text-align: center;">Sig.</th>
+            </tr>
+          </thead>
+          <tbody style="font-family: 'Open Sans', sans-serif;">
+            <tr style="background: #E3F2FD; border-radius: 8px;">
+              <td style="padding: 0.8rem; font-weight: 600;">Tamanho Centro (TCP)</td>
+              <td style="padding: 0.8rem; text-align: center; color: #002776;">+0.11</td>
+              <td style="padding: 0.8rem; text-align: center; color: #009C3B; font-weight: 700;">p < 0.01 ***</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.8rem; color: #546E7A;">Estilo Colegiada</td>
+              <td style="padding: 0.8rem; text-align: center; color: #546E7A;">-0.44</td>
+              <td style="padding: 0.8rem; text-align: center; color: #90A4AE;">p = 0.11</td>
+            </tr>
+            <tr style="background: #E3F2FD;">
+              <td style="padding: 0.8rem; font-weight: 600;">Estilo Competitiva</td>
+              <td style="padding: 0.8rem; text-align: center; color: #002776;">-1.10</td>
+              <td style="padding: 0.8rem; text-align: center; color: #009C3B; font-weight: 700;">p < 0.01 ***</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Box Interpretação -->
+        <div style="background: white; border-left: 5px solid #009C3B; padding: 1.2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 1.5rem;">
+          <h4 style="color: #009C3B; margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase;">Interpretação</h4>
+          <p style="color: #37474F; line-height: 1.6;">
+            <strong>+11,79%</strong> de chance de coalescência por unidade adicional no centro.<br>
+            Estilo competitivo <strong>reduz coalescência em 66,7%</strong>.
+          </p>
+        </div>
+
+        <!-- Fórmula Rodapé -->
+        <div style="margin-top: auto; font-size: 0.8rem; color: #78909c; border-top: 1px solid #EEE; padding-top: 0.8rem;">
+          <strong>Fórmula Rose:</strong> C<sub>f</sub> = 1 - ½Σ|S<sub>i</sub> - M<sub>i</sub>| (Amorim Neto, 2006)
+        </div>
+      </div>
+
+      <!-- Coluna Direita: Evidência Visual (Imagens Empilhadas) -->
+      <div style="display: flex; flex-direction: column; gap: 1rem; height: 100%;">
+        <div style="flex: 1; background: white; padding: 0.5rem; border-radius: 8px; border: 1px solid #E0E0E0; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <img src="imagens_pdf/SLIDE_04_boxplot_coalescencia.png" alt="Boxplot Coalescência" style="width: 100%; height: 100%; object-fit: contain; max-height: 220px;">
+        </div>
+        <div style="flex: 1; background: white; padding: 0.5rem; border-radius: 8px; border: 1px solid #E0E0E0; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <img src="imagens_pdf/SLIDE_04_estimacao_parametros_coalescencia.png" alt="Estimação Parâmetros" style="width: 100%; height: 100%; object-fit: contain; max-height: 220px;">
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -152,17 +289,27 @@
       </h1>
     </header>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; flex: 1;">
-      <div style="background: #FFF3E0; padding: 2rem; border-radius: 12px; text-align: center;">
-        <h3>Distância de Cook</h3>
-        <div style="height: 250px; background: #FFE0B2; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-          [Gráfico Cook] ⚠ Observações 34, 35
+      <div style="background: #FFF3E0; padding: 1.5rem; border-radius: 12px; text-align: center;">
+        <h3 style="color: #E65100; margin-bottom: 1rem;">
+          <i class="fas fa-exclamation-triangle"></i> Distância de Cook
+        </h3>
+        <div style="height: 260px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+          <img src="imagens_pdf/SLIDE_05_distancia_cook_coalescencia.png" alt="Distância de Cook" style="width: 100%; height: 100%; object-fit: contain;">
         </div>
+        <p style="margin-top: 0.8rem; font-size: 0.85rem; color: #666;">
+          ⚠️ Observações 34 e 35 (Gabinetes Temer)
+        </p>
       </div>
-      <div style="background: #E8F5E9; padding: 2rem; border-radius: 12px; text-align: center;">
-        <h3>Resíduos</h3>
-        <div style="height: 250px; background: #C8E6C9; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-          [Gráfico Resíduos] ✓ Bem distribuídos
+      <div style="background: #E8F5E9; padding: 1.5rem; border-radius: 12px; text-align: center;">
+        <h3 style="color: #2E7D32; margin-bottom: 1rem;">
+          <i class="fas fa-check-circle"></i> Análise de Resíduos
+        </h3>
+        <div style="height: 260px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+          <img src="imagens_pdf/SLIDE_05_analise_residuos_coalescencia.png" alt="Análise de Resíduos" style="width: 100%; height: 100%; object-fit: contain;">
         </div>
+        <p style="margin-top: 0.8rem; font-size: 0.85rem; color: #666;">
+          ✓ Distribuídos aleatoriamente ao redor de zero
+        </p>
       </div>
     </div>
   </div>
@@ -207,6 +354,21 @@
     <div style="background: #E8F5E9; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
       <strong>Interpretação:</strong> +19,46% de sucesso por unidade adicional | Hierárquico = melhor | Colegiado = -49% | Competitivo = -89%
     </div>
+    <!-- IMAGENS DE SUPORTE -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+      <div style="background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <h4 style="margin-bottom: 0.5rem; color: #004D40; font-size: 0.9rem; text-align: center;">Distribuição Taxa de Sucesso</h4>
+        <div style="height: 180px; overflow: hidden; border-radius: 4px;">
+          <img src="imagens_pdf/SLIDE_06_boxplot_taxa_sucesso.png" alt="Boxplot Taxa Sucesso" style="width: 100%; height: 100%; object-fit: contain; background: #f8f9fa;">
+        </div>
+      </div>
+      <div style="background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <h4 style="margin-bottom: 0.5rem; color: #004D40; font-size: 0.9rem; text-align: center;">Estimação dos Parâmetros</h4>
+        <div style="height: 180px; overflow: hidden; border-radius: 4px;">
+          <img src="imagens_pdf/SLIDE_06_estimacao_parametros_sucesso.png" alt="Estimação Parâmetros Sucesso" style="width: 100%; height: 100%; object-fit: contain; background: #f8f9fa;">
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- ========================================
@@ -219,12 +381,14 @@
         <span style="display: block; font-size: 0.9rem; color: #78909c;">Predição pelo Tamanho do Centro Presidencial</span>
       </h1>
     </header>
-    <div style="flex: 1; background: #f5f5f5; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-      <div style="text-align: center;">
-        [Gráfico de Linhas - 3 curvas]<br><br>
-        🟢 Hierárquico (topo)<br>
-        🟡 Colegiado (meio)<br>
-        🔴 Competitivo (base)
+    <div style="flex: 1; background: #f5f5f5; border-radius: 12px; padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <div style="width: 100%; max-width: 900px; height: 400px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+        <img src="imagens_pdf/SLIDE_07_predicao_taxa_sucesso_estilo.png" alt="Predição da Taxa de Sucesso por Estilo de Gestão" style="width: 100%; height: 100%; object-fit: contain;">
+      </div>
+      <div style="display: flex; gap: 2rem; margin-top: 1.5rem; font-size: 0.9rem; font-weight: 600;">
+        <span><span style="color: #4CAF50; font-size: 1.2rem;">●</span> Hierárquico (maior sucesso)</span>
+        <span><span style="color: #FFC107; font-size: 1.2rem;">●</span> Colegiado</span>
+        <span><span style="color: #F44336; font-size: 1.2rem;">●</span> Competitivo (menor sucesso)</span>
       </div>
     </div>
   </div>
@@ -324,6 +488,33 @@
     <div style="background: #FFF9C4; padding: 0.8rem; border-radius: 8px; margin-top: 1rem; font-size: 0.85rem; text-align: center;">
       <strong>Achado:</strong> Dist. Ideológica = preditor mais forte | Coalescência = lógica informal
     </div>
+    <!-- GALERIA DE GRÁFICOS DE ROBUSTEZ -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem;">
+      <div style="background: white; padding: 0.8rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+        <h4 style="font-size: 0.75rem; color: #004D40; text-align: center; margin-bottom: 0.5rem;">Modelo 4: Heterogeneidade</h4>
+        <div style="height: 120px; overflow: hidden; border-radius: 4px;">
+          <img src="imagens_pdf/SLIDE_09_robustez_heterogeneidade_sucesso_coef.png" alt="Robustez Heterogeneidade" style="width: 100%; height: 100%; object-fit: contain; background: #f8f9fa;">
+        </div>
+      </div>
+      <div style="background: white; padding: 0.8rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+        <h4 style="font-size: 0.75rem; color: #004D40; text-align: center; margin-bottom: 0.5rem;">Distância Ideológica</h4>
+        <div style="height: 120px; overflow: hidden; border-radius: 4px;">
+          <img src="imagens_pdf/SLIDE_09_robustez_distancia_sucesso_coef.png" alt="Robustez Distância" style="width: 100%; height: 100%; object-fit: contain; background: #f8f9fa;">
+        </div>
+      </div>
+      <div style="background: white; padding: 0.8rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+        <h4 style="font-size: 0.75rem; color: #004D40; text-align: center; margin-bottom: 0.5rem;">Popularidade</h4>
+        <div style="height: 120px; overflow: hidden; border-radius: 4px;">
+          <img src="imagens_pdf/SLIDE_09_robustez_popularidade_sucesso_coef.png" alt="Robustez Popularidade" style="width: 100%; height: 100%; object-fit: contain; background: #f8f9fa;">
+        </div>
+      </div>
+      <div style="background: white; padding: 0.8rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+        <h4 style="font-size: 0.75rem; color: #004D40; text-align: center; margin-bottom: 0.5rem;">Síntese Comparativa</h4>
+        <div style="height: 120px; overflow: hidden; border-radius: 4px;">
+          <img src="imagens_pdf/SLIDE_09_robustez_sintese_comparativo.png" alt="Síntese Robustez" style="width: 100%; height: 100%; object-fit: contain; background: #f8f9fa;">
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- ========================================
@@ -369,27 +560,15 @@
         <span style="display: block; font-size: 0.9rem; color: #78909c;">Frequência decisória dos órgãos centrais (1995-2011) | Lameirão, 2019</span>
       </h1>
     </header>
-    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 1rem;">
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <span style="width: 150px;">Casa Civil</span>
-        <div style="flex: 1; height: 30px; background: #e0e0e0; border-radius: 4px;">
-          <div style="width: 4%; height: 100%; background: #9E9E9E; border-radius: 4px;"></div>
-        </div>
-        <span>4%</span>
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1rem;">
+      <div style="width: 100%; max-width: 800px; height: 350px; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.1); padding: 1rem;">
+        <img src="imagens_pdf/SLIDE_11_frequencia_decisoria_lameirao.png" alt="Frequência Decisória - Lameirão (2019)" style="width: 100%; height: 100%; object-fit: contain;">
       </div>
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <span style="width: 150px;">Min. Fazenda</span>
-        <div style="flex: 1; height: 30px; background: #e0e0e0; border-radius: 4px;">
-          <div style="width: 35%; height: 100%; background: #4CAF50; border-radius: 4px;"></div>
-        </div>
-        <span>35%</span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <span style="width: 150px;">Min. Planejamento</span>
-        <div style="flex: 1; height: 30px; background: #e0e0e0; border-radius: 4px;">
-          <div style="width: 42%; height: 100%; background: #4CAF50; border-radius: 4px;"></div>
-        </div>
-        <span>42%</span>
+      <!-- Mini legenda visual abaixo da imagem -->
+      <div style="display: flex; gap: 2rem; font-size: 0.9rem; margin-top: 0.5rem;">
+        <span><span style="color: #9E9E9E; font-weight: bold;">■</span> Casa Civil: 4%</span>
+        <span><span style="color: #4CAF50; font-weight: bold;">■</span> Min. Fazenda: 35%</span>
+        <span><span style="color: #2E7D32; font-weight: bold;">■</span> Min. Planejamento: 42%</span>
       </div>
     </div>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
