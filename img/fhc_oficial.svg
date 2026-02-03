@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="gradFHC" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1565C0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0D47A1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="url(#gradFHC)"/>
+  <text x="100" y="115" font-family="Montserrat, Arial, sans-serif" font-size="60" font-weight="700" fill="white" text-anchor="middle">FHC</text>
+  <text x="100" y="145" font-family="Open Sans, Arial, sans-serif" font-size="14" fill="rgba(255,255,255,0.8)" text-anchor="middle">1995-2002</text>
+</svg>

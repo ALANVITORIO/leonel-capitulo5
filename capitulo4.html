@@ -925,8 +925,8 @@
       <div style="background: white; border-radius: 10px; border: 1px solid #BBDEFB; box-shadow: 0 4px 10px rgba(33,150,243,0.1); display: flex; flex-direction: column; overflow: hidden;">
         <!-- Faixa Topo Compacta -->
         <div style="background: #1565C0; padding: 0.8rem; display: flex; align-items: center; gap: 0.8rem; color: white;">
-          <div style="width: 50px; height: 50px; background: #E3F2FD; border-radius: 50%; border: 2px solid white; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <i class="fas fa-user-tie" style="font-size: 1.6rem; color: #1565C0;"></i>
+          <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid white; overflow: hidden; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.2); background: white;">
+            <img src="img/fhc_oficial.svg" alt="Fernando Henrique Cardoso" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div style="line-height: 1.1;">
             <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 0;">FHC</h2>
@@ -972,8 +972,8 @@
       <div style="background: white; border-radius: 10px; border: 1px solid #C8E6C9; box-shadow: 0 4px 10px rgba(76,175,80,0.1); display: flex; flex-direction: column; overflow: hidden;">
         <!-- Faixa Topo Compacta -->
         <div style="background: #2E7D32; padding: 0.8rem; display: flex; align-items: center; gap: 0.8rem; color: white;">
-          <div style="width: 50px; height: 50px; background: #E8F5E9; border-radius: 50%; border: 2px solid white; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <i class="fas fa-users" style="font-size: 1.6rem; color: #2E7D32;"></i>
+          <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid white; overflow: hidden; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.2); background: white;">
+            <img src="img/lula_oficial.svg" alt="Luiz Inácio Lula da Silva" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div style="line-height: 1.1;">
             <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 0;">Lula</h2>
@@ -1110,106 +1110,262 @@
   <!-- ========================================
          SLIDE 16: Índice de Custo do Governo (ICG)
          ======================================== -->
-  <div class="slide slide-compact" style="padding: 2rem 3rem;">
-    <header style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+  <div class="slide slide-compact" style="padding: 2.5rem 3.5rem; background: white;">
+    <header style="text-align: center; margin-bottom: 2.5rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 800; color: #002776; margin-bottom: 0.5rem;">
         O Custo Crescente de Governar
-        <span style="display: block; font-size: 0.9rem; color: #78909c;">(Bertholini & Pereira, 2017)</span>
       </h1>
+      <span style="display: block; font-size: 1rem; color: #78909c;">De FHC a Bolsonaro | Fonte: Bertholini & Pereira (2017)</span>
     </header>
-    <div style="flex: 1; display: flex; align-items: center; justify-content: space-around; gap: 2rem;">
-      <div style="text-align: center;">
-        <h3>Evolução do ICG</h3>
-        <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px;">
-          FHC I: <strong>14</strong> → FHC II: <strong>37</strong> → Lula I: <strong>63</strong> → Lula II: <strong>69</strong> → <strong style="color: #D32F2F;">Dilma I: 76</strong>
+
+    <div style="display: grid; grid-template-columns: 4fr 6fr; gap: 3.5rem; flex: 1; align-items: stretch;">
+
+      <!-- Lado Esquerdo: A Escalada do ICG -->
+      <div style="display: flex; flex-direction: column;">
+        <h3 style="color: #004D40; font-family: 'Montserrat'; font-weight: 700; font-size: 1.3rem; margin-bottom: 1.5rem; border-bottom: 2px solid #E0E0E0; padding-bottom: 0.5rem;">
+          <i class="fas fa-chart-line" style="margin-right: 0.5rem; color: #009C3B;"></i> Escalada do ICG
+        </h3>
+
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 0.8rem;">
+
+          <!-- Item ICG 1 -->
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 80px; font-weight: 600; color: #546E7A; font-size: 0.9rem;">FHC I</div>
+            <div style="flex: 1; height: 1.2rem; background: #E3F2FD; border-radius: 4px; position: relative;">
+              <div style="width: 18%; height: 100%; background: #BBDEFB; border-radius: 4px;"></div>
+            </div>
+            <strong style="color: #1565C0; font-size: 1.1rem; width: 30px;">14</strong>
+          </div>
+
+          <!-- Item ICG 2 -->
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 80px; font-weight: 600; color: #546E7A; font-size: 0.9rem;">FHC II</div>
+            <div style="flex: 1; height: 1.2rem; background: #E3F2FD; border-radius: 4px; position: relative;">
+              <div style="width: 48%; height: 100%; background: #64B5F6; border-radius: 4px;"></div>
+            </div>
+            <strong style="color: #1976D2; font-size: 1.1rem; width: 30px;">37</strong>
+          </div>
+
+          <!-- Item ICG 3 -->
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 80px; font-weight: 600; color: #546E7A; font-size: 0.9rem;">Lula I</div>
+            <div style="flex: 1; height: 1.2rem; background: #E8F5E9; border-radius: 4px; position: relative;">
+              <div style="width: 82%; height: 100%; background: #81C784; border-radius: 4px;"></div>
+            </div>
+            <strong style="color: #43A047; font-size: 1.1rem; width: 30px;">63</strong>
+          </div>
+
+          <!-- Item ICG 4 -->
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 80px; font-weight: 600; color: #546E7A; font-size: 0.9rem;">Lula II</div>
+            <div style="flex: 1; height: 1.2rem; background: #E8F5E9; border-radius: 4px; position: relative;">
+              <div style="width: 90%; height: 100%; background: #4CAF50; border-radius: 4px;"></div>
+            </div>
+            <strong style="color: #2E7D32; font-size: 1.1rem; width: 30px;">69</strong>
+          </div>
+
+          <!-- Item ICG 5 -->
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 80px; font-weight: 700; color: #2E7D32; font-size: 0.9rem;">Dilma I</div>
+            <div style="flex: 1; height: 1.2rem; background: #E8F5E9; border-radius: 4px; position: relative;">
+              <div style="width: 100%; height: 100%; background: #1B5E20; border-radius: 4px;"></div>
+            </div>
+            <strong style="color: #1B5E20; font-size: 1.2rem; width: 30px;">76</strong>
+          </div>
+
         </div>
       </div>
-      <div>
-        <h3>Emendas Parlamentares (R$ milhões)</h3>
-        <table style="border-collapse: collapse; font-size: 0.9rem;">
-          <thead>
-            <tr style="background: #004D40; color: white;">
-              <th style="padding: 0.5rem 1rem;">Mandato</th>
-              <th style="padding: 0.5rem 1rem;">Emendas</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="background: #E8F5E9;">
-              <td style="padding: 0.5rem 1rem;">FHC I</td>
-              <td style="padding: 0.5rem 1rem; text-align: right;">R$ 160</td>
-            </tr>
-            <tr style="background: #E8F5E9;">
-              <td style="padding: 0.5rem 1rem;">Lula I</td>
-              <td style="padding: 0.5rem 1rem; text-align: right;">R$ 2.601</td>
-            </tr>
-            <tr style="background: #E3F2FD;">
-              <td style="padding: 0.5rem 1rem;">Bolsonaro</td>
-              <td style="padding: 0.5rem 1rem; text-align: right;"><strong>R$ 21.000</strong></td>
-            </tr>
-          </tbody>
-        </table>
+
+      <!-- Lado Direito: Explosão de Emendas -->
+      <div style="display: flex; flex-direction: column;">
+        <h3 style="color: #004D40; font-family: 'Montserrat'; font-weight: 700; font-size: 1.3rem; margin-bottom: 1.5rem; border-bottom: 2px solid #E0E0E0; padding-bottom: 0.5rem;">
+          <i class="fas fa-money-bill-wave" style="margin-right: 0.5rem; color: #009C3B;"></i> Explosão das Emendas
+        </h3>
+
+        <div style="flex: 1; display: flex; align-items: flex-end; justify-content: space-around; padding-bottom: 1rem; border-bottom: 1px solid #CFD8DC;">
+
+          <!-- Bar FHC -->
+          <div style="display: flex; flex-direction: column; align-items: center; width: 25%;">
+            <span style="font-size: 0.9rem; font-weight: 700; color: #78909c; margin-bottom: 0.5rem;">R$ 160 mi</span>
+            <div style="width: 100%; height: 4px; background: #B0BEC5; border-radius: 4px 4px 0 0;"></div> <!-- Escala visual mínima -->
+            <span style="margin-top: 0.8rem; font-size: 0.8rem; text-transform: uppercase; font-weight: 600; color: #546E7A;">FHC I</span>
+          </div>
+
+          <!-- Bar Lula -->
+          <div style="display: flex; flex-direction: column; align-items: center; width: 25%;">
+            <span style="font-size: 0.9rem; font-weight: 700; color: #78909c; margin-bottom: 0.5rem;">R$ 2.6 bi</span>
+            <div style="width: 100%; height: 35px; background: #90A4AE; border-radius: 4px 4px 0 0;"></div> <!-- Escala ~12% da maior -->
+            <span style="margin-top: 0.8rem; font-size: 0.8rem; text-transform: uppercase; font-weight: 600; color: #546E7A;">Lula I</span>
+          </div>
+
+          <!-- Bar Bolsonaro -->
+          <div style="display: flex; flex-direction: column; align-items: center; width: 25%;">
+            <strong style="font-size: 1.1rem; font-weight: 800; color: #002776; margin-bottom: 0.5rem;">R$ 21 bi</strong>
+            <div style="width: 100%; height: 280px; background: linear-gradient(180deg, #1565C0 0%, #0D47A1 100%); border-radius: 4px 4px 0 0; box-shadow: 0 -4px 10px rgba(21,101,192,0.2);"></div>
+            <span style="margin-top: 0.8rem; font-size: 0.9rem; text-transform: uppercase; font-weight: 800; color: #1565C0;">Bolsonaro</span>
+          </div>
+
+        </div>
+        <div style="text-align: right; font-size: 0.8rem; color: #78909c; margin-top: 0.5rem;">
+          *Emendas de Relator (RP-9) inclusas
+        </div>
       </div>
+
     </div>
   </div>
 
   <!-- ========================================
          SLIDE 17: Mudanças Institucionais
          ======================================== -->
-  <div class="slide slide-compact" style="padding: 2rem 3rem;">
+  <div class="slide slide-compact" style="padding: 2.5rem 3.5rem; background: white; display: flex; flex-direction: column;">
     <header style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 800; color: #002776;">
         Mudanças que Enfraqueceram o Executivo
       </h1>
+      <span style="font-size: 1rem; color: #78909c;">A erosão das ferramentas de governabilidade</span>
     </header>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; flex: 1;">
-      <div style="background: #E8F5E9; padding: 1.5rem; border-radius: 12px;">
-        <h3><i class="fas fa-file-alt"></i> EC 32/2001</h3>
-        <p>MPs limitadas a 60 dias + 1 reedição</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; flex: 1; margin-bottom: 2rem;">
+
+      <!-- Card 1: MPs -->
+      <div style="background: #E3F2FD; border: 1px solid #BBDEFB; padding: 1.5rem; border-radius: 12px; display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="background: white; padding: 0.8rem; border-radius: 50%; color: #1565C0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+          <i class="fas fa-hourglass-half" style="font-size: 1.5rem;"></i>
+        </div>
+        <div>
+          <h3 style="margin: 0 0 0.5rem 0; color: #0D47A1; font-family: 'Montserrat'; font-size: 1.1rem;">EC 32/2001 (MPs)</h3>
+          <p style="margin: 0; font-size: 0.9rem; color: #546E7A; line-height: 1.4;">
+            MPs limitadas a <strong>60 dias</strong>. Fim das reedições infinitas.<br>
+            <strong style="color: #D32F2F; font-size: 0.85rem;"><i class="fas fa-chevron-down"></i> Agenda Travada</strong>
+          </p>
+        </div>
       </div>
-      <div style="background: #E3F2FD; padding: 1.5rem; border-radius: 12px;">
-        <h3><i class="fas fa-coins"></i> EC 86/2015</h3>
-        <p>Emendas de execução obrigatória</p>
+
+      <!-- Card 2: Emendas -->
+      <div style="background: #E8F5E9; border: 1px solid #C8E6C9; padding: 1.5rem; border-radius: 12px; display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="background: white; padding: 0.8rem; border-radius: 50%; color: #2E7D32; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+          <i class="fas fa-lock" style="font-size: 1.5rem;"></i>
+        </div>
+        <div>
+          <h3 style="margin: 0 0 0.5rem 0; color: #1B5E20; font-family: 'Montserrat'; font-size: 1.1rem;">EC 86/2015 (Emendas)</h3>
+          <p style="margin: 0; font-size: 0.9rem; color: #546E7A; line-height: 1.4;">
+            Execução <strong>obrigatória</strong>. Fim da barganha simples.<br>
+            <strong style="color: #D32F2F; font-size: 0.85rem;"><i class="fas fa-chevron-down"></i> Perda de Controle</strong>
+          </p>
+        </div>
       </div>
-      <div style="background: #ECEFF1; padding: 1.5rem; border-radius: 12px;">
-        <h3><i class="fas fa-eye-slash"></i> Orçamento Secreto</h3>
-        <p>Emendas RP-9 sem identificação</p>
+
+      <!-- Card 3: Veto -->
+      <div style="background: #ECEFF1; border: 1px solid #CFD8DC; padding: 1.5rem; border-radius: 12px; display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="background: white; padding: 0.8rem; border-radius: 50%; color: #546E7A; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+          <i class="fas fa-ban" style="font-size: 1.5rem;"></i>
+        </div>
+        <div>
+          <h3 style="margin: 0 0 0.5rem 0; color: #37474F; font-family: 'Montserrat'; font-size: 1.1rem;">Veto Fragilizado</h3>
+          <p style="margin: 0; font-size: 0.9rem; color: #546E7A; line-height: 1.4;">
+            Legislativo derruba vetos com facilidade.<br>
+            <strong style="color: #D32F2F; font-size: 0.85rem;"><i class="fas fa-chevron-down"></i> Escudo Quebrado</strong>
+          </p>
+        </div>
       </div>
-      <div style="background: #CFD8DC; padding: 1.5rem; border-radius: 12px;">
-        <h3><i class="fas fa-ban"></i> Veto Fragilizado</h3>
-        <p>Legislativo amplia poder de derrubar</p>
+
+      <!-- Card 4: Orçamento Secreto -->
+      <div style="background: #FAFAFA; border: 1px solid #B0BEC5; padding: 1.5rem; border-radius: 12px; display: flex; gap: 1rem; align-items: flex-start; opacity: 0.9;">
+        <div style="background: white; padding: 0.8rem; border-radius: 50%; color: #455A64; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+          <i class="fas fa-mask" style="font-size: 1.5rem;"></i>
+        </div>
+        <div>
+          <h3 style="margin: 0 0 0.5rem 0; color: #263238; font-family: 'Montserrat'; font-size: 1.1rem;">Orçamento Secreto (RP-9)</h3>
+          <p style="margin: 0; font-size: 0.9rem; color: #546E7A; line-height: 1.4;">
+            Recursos sem identificação ou digital do Executivo.<br>
+            <strong style="color: #D32F2F; font-size: 0.85rem;"><i class="fas fa-chevron-down"></i> Cooptação Autônoma</strong>
+          </p>
+        </div>
       </div>
+
     </div>
-    <div style="background: #F5F5F5; border: 1px solid #CFD8DC; padding: 0.8rem; border-radius: 8px; margin-top: 1rem; text-align: center; font-size: 0.9rem;">
-      <strong>→ Resultado:</strong> Perda dessas ferramentas forçou o Executivo a <strong>pagar mais caro</strong> pelo apoio (ICG: 14 → 76)
+
+    <!-- Conclusão Banner -->
+    <div style="background: #002776; padding: 1.5rem; border-radius: 12px; color: white; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,39,118,0.2);">
+      <div style="font-size: 1.1rem; max-width: 70%;">
+        <strong>Resultado:</strong> A perda dessas ferramentas forçou o Executivo a pagar <u>muito mais caro</u> pelo apoio político.
+      </div>
+      <div style="text-align: right;">
+        <span style="display: block; font-size: 0.8rem; opacity: 0.8; text-transform: uppercase;">Custo (ICG)</span>
+        <strong style="font-size: 2rem; font-family: 'Montserrat'; line-height: 1;">14 <i class="fas fa-arrow-right" style="font-size: 1.2rem; margin: 0 0.5rem;"></i> 76</strong>
+      </div>
     </div>
   </div>
 
   <!-- ========================================
          SLIDE 18: NdG como Mecanismo Compensatório
          ======================================== -->
-  <div class="slide slide-compact" style="padding: 2rem 3rem;">
-    <header style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
+  <!-- ========================================
+         SLIDE 18: NdG como Mecanismo Compensatório
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 2.5rem 3.5rem; background: white; display: flex; flex-direction: column;">
+    <header style="text-align: center; margin-bottom: 2rem; flex-shrink: 0;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 800; color: #002776;">
         O NdG como Mecanismo Compensatório
       </h1>
+      <span style="font-size: 1rem; color: #78909c;">O ciclo de sobrecarga do presidencialismo de coalizão</span>
     </header>
-    <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
-      <div style="text-align: center; max-width: 600px;">
-        <div style="display: flex; flex-direction: column; gap: 1rem;">
-          <div style="background: #E8F5E9; padding: 1rem; border-radius: 8px;">1. Ambiente político hostil</div>
-          <div style="text-align: center;">↓</div>
-          <div style="background: #E8F5E9; padding: 1rem; border-radius: 8px;">2. Presidente expande NdG</div>
-          <div style="text-align: center;">↓</div>
-          <div style="background: #E3F2FD; padding: 1rem; border-radius: 8px;">3. Sucesso mantido (curto prazo)</div>
-          <div style="text-align: center;">↓</div>
-          <div style="background: #ECEFF1; padding: 1rem; border-radius: 8px;">4. Custos acumulam</div>
-          <div style="text-align: center;">↓</div>
-          <div style="background: #37474F; color: white; padding: 1rem; border-radius: 8px;">5. Limite → Ruptura</div>
+
+    <!-- Fluxo Horizontal (Pressure Cooker) -->
+    <div style="display: flex; align-items: stretch; justify-content: space-between; gap: 0.5rem; flex: 1; margin-bottom: 2rem;">
+
+      <!-- Passo 1: Ambiente Hostil -->
+      <div style="flex: 1; background: #ECEFF1; border: 1px solid #CFD8DC; border-radius: 8px; padding: 1rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+        <i class="fas fa-cloud-showers-heavy" style="font-size: 2rem; color: #546E7A; margin-bottom: 0.8rem;"></i>
+        <h3 style="font-size: 0.9rem; font-weight: 700; color: #455A64; margin: 0; line-height: 1.2;">1. Ambiente<br>Hostil</h3>
+        <!-- Seta -->
+        <div style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); z-index: 2; color: #B0BEC5;">
+          <i class="fas fa-chevron-right"></i>
         </div>
-        <div style="background: #E3F2FD; padding: 1rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid #1976D2;">
-          <strong>Insight:</strong> NdG hierárquico = modelo para <strong>TEMPOS DIFÍCEIS</strong><br>
-          Não é causa do sucesso, é <strong>RESPOSTA</strong> ao ambiente adverso
+      </div>
+
+      <!-- Passo 2: Expansão -->
+      <div style="flex: 1; background: #E3F2FD; border: 1px solid #BBDEFB; border-radius: 8px; padding: 1rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+        <i class="fas fa-expand-arrows-alt" style="font-size: 2rem; color: #1565C0; margin-bottom: 0.8rem;"></i>
+        <h3 style="font-size: 0.9rem; font-weight: 700; color: #0D47A1; margin: 0; line-height: 1.2;">2. Expansão<br>do NdG</h3>
+        <div style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); z-index: 2; color: #90CAF9;">
+          <i class="fas fa-chevron-right"></i>
         </div>
+      </div>
+
+      <!-- Passo 3: Sucesso -->
+      <div style="flex: 1; background: #E8F5E9; border: 1px solid #C8E6C9; border-radius: 8px; padding: 1rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+        <i class="fas fa-check-circle" style="font-size: 2rem; color: #2E7D32; margin-bottom: 0.8rem;"></i>
+        <h3 style="font-size: 0.9rem; font-weight: 700; color: #1B5E20; margin: 0; line-height: 1.2;">3. Sucesso<br>(Curto Prazo)</h3>
+        <div style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); z-index: 2; color: #A5D6A7;">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+
+      <!-- Passo 4: Custos -->
+      <div style="flex: 1; background: #F1F8E9; border: 1px solid #AED581; border-radius: 8px; padding: 1rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+        <i class="fas fa-coins" style="font-size: 2rem; color: #558B2F; margin-bottom: 0.8rem;"></i>
+        <h3 style="font-size: 0.9rem; font-weight: 700; color: #33691E; margin: 0; line-height: 1.2;">4. Custos<br>Acumulam</h3>
+        <div style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); z-index: 2; color: #C5E1A5;">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+
+      <!-- Passo 5: Ruptura -->
+      <div style="flex: 1; background: #263238; border: 1px solid #37474F; border-radius: 8px; padding: 1rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <i class="fas fa-bolt" style="font-size: 2rem; color: #FFEB3B; margin-bottom: 0.8rem;"></i> <!-- Amarelo sutil para destaque no escuro, ok -->
+        <h3 style="font-size: 0.9rem; font-weight: 700; color: #ECEFF1; margin: 0; line-height: 1.2;">5. Limite<br>➜ Ruptura</h3>
+      </div>
+
+    </div>
+
+    <!-- Insight Banner -->
+    <div style="background: white; border: 2px solid #002776; padding: 1.2rem; border-radius: 12px; display: flex; align-items: center; gap: 1.5rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,39,118,0.1);">
+      <div style="background: #E3F2FD; padding: 0.8rem; border-radius: 50%; color: #002776; flex-shrink: 0;">
+        <i class="fas fa-lightbulb" style="font-size: 1.5rem;"></i>
+      </div>
+      <div style="font-size: 1.1rem; color: #37474F; line-height: 1.4;">
+        <strong>Insight:</strong> O NdG hierárquico não é a causa do sucesso, mas a resposta de adaptação para <strong>TEMPOS DIFÍCEIS</strong>.
       </div>
     </div>
   </div>
