@@ -282,34 +282,51 @@
   <!-- ========================================
          SLIDE 5: Diagnóstico do Modelo de Coalescência
          ======================================== -->
-  <div class="slide slide-compact" style="padding: 2rem 3rem;">
-    <header style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
-        Diagnóstico: Observações Influentes
-      </h1>
+  <!-- ========================================
+         SLIDE 5: Diagnóstico do Modelo de Coalescência
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 3rem 4rem; display: flex; flex-direction: column; background: #FFFFFF;">
+    <!-- Cabeçalho Bicromia -->
+    <header style="text-align: left; margin-bottom: 2.5rem; border-bottom: 3px solid #002776; padding-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: flex-end;">
+      <div>
+        <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.5rem; font-weight: 800; color: #002776; letter-spacing: -1px; margin-bottom: 0.2rem; line-height: 1;">
+          Diagnóstico do Modelo
+        </h1>
+        <span style="display: block; font-family: 'Open Sans', sans-serif; font-size: 1.1rem; color: #009C3B; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">
+          Observações Influentes
+        </span>
+      </div>
     </header>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; flex: 1;">
-      <div style="background: #FFF3E0; padding: 1.5rem; border-radius: 12px; text-align: center;">
-        <h3 style="color: #E65100; margin-bottom: 1rem;">
-          <i class="fas fa-exclamation-triangle"></i> Distância de Cook
+
+    <!-- Grid Layout Horizontal (50/50) -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; flex: 1;">
+
+      <!-- Coluna Esquerda: Distância de Cook (Azul - Atenção Técnica) -->
+      <div style="background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 2rem; display: flex; flex-direction: column; border-top: 5px solid #002776;">
+        <h3 style="font-family: 'Montserrat', sans-serif; color: #002776; margin-bottom: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 0.8rem;">
+          <i class="fas fa-search" style="color: #002776; opacity: 0.7;"></i> Distância de Cook
         </h3>
-        <div style="height: 260px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+        <div style="flex: 1; border-radius: 8px; overflow: hidden; border: 1px solid #E0E0E0; padding: 0.5rem;">
           <img src="imagens_pdf/SLIDE_05_distancia_cook_coalescencia.png" alt="Distância de Cook" style="width: 100%; height: 100%; object-fit: contain;">
         </div>
-        <p style="margin-top: 0.8rem; font-size: 0.85rem; color: #666;">
-          ⚠️ Observações 34 e 35 (Gabinetes Temer)
-        </p>
+        <!-- Nota de Observação (Sóbria em Azul, não Alerta) -->
+        <div style="margin-top: 1.5rem; background: #E3F2FD; color: #002776; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600; text-align: center; font-size: 0.9rem; border: 1px solid #BBDEFB;">
+          <i class="fas fa-info-circle" style="margin-right: 0.5rem;"></i> Observações 34 e 35 (Gabinetes Temer)
+        </div>
       </div>
-      <div style="background: #E8F5E9; padding: 1.5rem; border-radius: 12px; text-align: center;">
-        <h3 style="color: #2E7D32; margin-bottom: 1rem;">
-          <i class="fas fa-check-circle"></i> Análise de Resíduos
+
+      <!-- Coluna Direita: Análise de Resíduos (Verde - Confirmação) -->
+      <div style="background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 2rem; display: flex; flex-direction: column; border-top: 5px solid #002776;">
+        <h3 style="font-family: 'Montserrat', sans-serif; color: #002776; margin-bottom: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 0.8rem;">
+          <i class="fas fa-check-circle" style="color: #009C3B;"></i> Análise de Resíduos
         </h3>
-        <div style="height: 260px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+        <div style="flex: 1; border-radius: 8px; overflow: hidden; border: 1px solid #E0E0E0; padding: 0.5rem;">
           <img src="imagens_pdf/SLIDE_05_analise_residuos_coalescencia.png" alt="Análise de Resíduos" style="width: 100%; height: 100%; object-fit: contain;">
         </div>
-        <p style="margin-top: 0.8rem; font-size: 0.85rem; color: #666;">
-          ✓ Distribuídos aleatoriamente ao redor de zero
-        </p>
+        <!-- Nota de Sucesso -->
+        <div style="margin-top: 1.5rem; background: #E8F5E9; color: #009C3B; padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 700; text-align: center; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+          <i class="fas fa-check"></i> Distribuição Aleatória (Zero)
+        </div>
       </div>
     </div>
   </div>
@@ -317,57 +334,79 @@
   <!-- ========================================
          SLIDE 6: Modelo 2 – Taxa de Sucesso do Executivo
          ======================================== -->
-  <div class="slide slide-compact" style="padding: 2rem 3rem;">
-    <header style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #004D40;">
-        Resultados: Taxa de Sucesso Legislativo
-        <span style="display: inline-block; background: #4CAF50; color: white; padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-left: 1rem;">✓ ROBUSTO</span>
-        <span style="display: block; font-size: 1rem; color: #4CAF50;">Pseudo R² = 0.70</span>
+  <!-- ========================================
+         SLIDE 6: Modelo 2 – Taxa de Sucesso do Executivo
+         ======================================== -->
+  <div class="slide slide-compact" style="padding: 3rem 4rem; display: flex; flex-direction: column; background: #FFFFFF;">
+    <!-- Cabeçalho Bicromia -->
+    <header style="text-align: left; margin-bottom: 2rem; border-bottom: 3px solid #002776; padding-bottom: 1rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 800; color: #002776; letter-spacing: -1px; margin-bottom: 0.2rem; display: flex; justify-content: space-between; align-items: center;">
+        Resultados: Sucesso Legislativo
+        <!-- Destaque "SELO DE OURO" para R² -->
+        <span style="display: flex; align-items: center; gap: 1rem;">
+          <span style="font-size: 1rem; background: #E8F5E9; color: #009C3B; padding: 0.3rem 0.8rem; border-radius: 5px; font-weight: 700; text-transform: uppercase; border: 1px solid #C8E6C9;">
+            <i class="fas fa-check-circle"></i> ROBUSTO
+          </span>
+          <span style="font-size: 1.2rem; background: #E3F2FD; color: #002776; padding: 0.3rem 1rem; border-radius: 50px; border: 1px solid #BBDEFB;">
+            Pseudo R² = <strong style="color: #009C3B;">0.70</strong>
+          </span>
+        </span>
       </h1>
     </header>
-    <table style="width: 100%; border-collapse: collapse;">
-      <thead>
-        <tr style="background: #004D40; color: white;">
-          <th style="padding: 1rem; text-align: left;">Variável</th>
-          <th style="padding: 1rem;">Estimativa</th>
-          <th style="padding: 1rem;">Significância</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="background: #E8F5E9;">
-          <td style="padding: 1rem;">Tamanho Centro Presidencial</td>
-          <td style="padding: 1rem; text-align: center;">+0.18</td>
-          <td style="padding: 1rem; text-align: center;">p < 0.01 ***</td>
-        </tr>
-        <tr style="background: #E8F5E9;">
-          <td style="padding: 1rem;">Estilo Colegiada</td>
-          <td style="padding: 1rem; text-align: center;">-0.67</td>
-          <td style="padding: 1rem; text-align: center;">p = 0.01 *</td>
-        </tr>
-        <tr style="background: #E8F5E9;">
-          <td style="padding: 1rem;">Estilo Competitiva</td>
-          <td style="padding: 1rem; text-align: center;">-2.21</td>
-          <td style="padding: 1rem; text-align: center;">p < 0.01 ***</td>
-        </tr>
-      </tbody>
-    </table>
-    <div style="background: #E8F5E9; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
-      <strong>Interpretação:</strong> +19,46% de sucesso por unidade adicional | Hierárquico = melhor | Colegiado = -49% | Competitivo = -89%
-    </div>
-    <!-- IMAGENS DE SUPORTE -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
-      <div style="background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-        <h4 style="margin-bottom: 0.5rem; color: #004D40; font-size: 0.9rem; text-align: center;">Distribuição Taxa de Sucesso</h4>
-        <div style="height: 180px; overflow: hidden; border-radius: 4px;">
-          <img src="imagens_pdf/SLIDE_06_boxplot_taxa_sucesso.png" alt="Boxplot Taxa Sucesso" style="width: 100%; height: 100%; object-fit: contain; background: #f8f9fa;">
+
+    <!-- Grid Assimétrico (40% Texto / 60% Imagem) -->
+    <div style="display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 3rem; flex: 1; align-items: stretch; overflow: hidden;">
+
+      <!-- Coluna Esquerda: Dados Estatísticos (Compacta) -->
+      <div style="display: flex; flex-direction: column; justify-content: flex-start;">
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.9rem;">
+          <thead>
+            <tr style="border-bottom: 2px solid #002776; color: #002776;">
+              <th style="padding: 0.6rem; text-align: left;">Variável</th>
+              <th style="padding: 0.6rem; text-align: center;">Coef.</th>
+              <th style="padding: 0.6rem; text-align: center;">Sig.</th>
+            </tr>
+          </thead>
+          <tbody style="font-family: 'Open Sans', sans-serif;">
+            <tr style="background: #E8F5E9; border-radius: 8px;">
+              <td style="padding: 0.6rem; font-weight: 600;">Centro Presidencial</td>
+              <td style="padding: 0.6rem; text-align: center; color: #002776;">+0.18</td>
+              <td style="padding: 0.6rem; text-align: center; color: #009C3B; font-weight: 700;">p < 0.01 ***</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.6rem; color: #546E7A;">Estilo Colegiada</td>
+              <td style="padding: 0.6rem; text-align: center; color: #546E7A;">-0.67</td>
+              <td style="padding: 0.6rem; text-align: center; color: #546E7A;">p = 0.01 *</td>
+            </tr>
+            <tr style="background: #E3F2FD;">
+              <td style="padding: 0.6rem; font-weight: 600;">Estilo Competitiva</td>
+              <td style="padding: 0.6rem; text-align: center; color: #002776;">-2.21</td>
+              <td style="padding: 0.6rem; text-align: center; color: #009C3B; font-weight: 700;">p < 0.01 ***</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Box Interpretação -->
+        <div style="background: white; border-left: 5px solid #002776; padding: 1.2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 1.5rem;">
+          <h4 style="color: #002776; margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase;">Interpretação</h4>
+          <ul style="padding-left: 1.2rem; margin: 0; color: #37474F; line-height: 1.6; list-style-type: square;">
+            <li><strong>+19,5%</strong> sucesso/unidade.</li>
+            <li><strong style="color: #009C3B;">Hierárquico = Melhor.</strong></li>
+            <li>Competitivo derruba em <strong>89%</strong>.</li>
+          </ul>
         </div>
       </div>
-      <div style="background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-        <h4 style="margin-bottom: 0.5rem; color: #004D40; font-size: 0.9rem; text-align: center;">Estimação dos Parâmetros</h4>
-        <div style="height: 180px; overflow: hidden; border-radius: 4px;">
-          <img src="imagens_pdf/SLIDE_06_estimacao_parametros_sucesso.png" alt="Estimação Parâmetros Sucesso" style="width: 100%; height: 100%; object-fit: contain; background: #f8f9fa;">
+
+      <!-- Coluna Direita: Evidência Visual Maximizada -->
+      <div style="display: flex; flex-direction: column; gap: 1rem; height: 100%;">
+        <div style="flex: 1; background: white; padding: 0.5rem; border-radius: 8px; border: 1px solid #E0E0E0; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+          <img src="imagens_pdf/SLIDE_06_boxplot_taxa_sucesso.png" alt="Boxplot Taxa Sucesso" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div style="flex: 1; background: white; padding: 0.5rem; border-radius: 8px; border: 1px solid #E0E0E0; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+          <img src="imagens_pdf/SLIDE_06_estimacao_parametros_sucesso.png" alt="Estimação Parâmetros Sucesso" style="width: 100%; height: 100%; object-fit: contain;">
         </div>
       </div>
+
     </div>
   </div>
 
