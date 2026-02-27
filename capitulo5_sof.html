@@ -430,41 +430,57 @@
     <div style="flex: 1; padding: 3rem 3rem 3rem 3rem; display: flex; flex-direction: column; justify-content: space-between;">
 
       <!-- 3 Stat Cards empilhados verticalmente -->
-      <div style="display: flex; flex-direction: column; gap: 1.4rem; flex: 1; justify-content: center;">
+      <div style="display: flex; flex-direction: column; gap: 1rem; flex: 1; justify-content: center;">
 
-        <!-- Card 1: Cargos -->
-        <div style="background: white; border-radius: 14px; padding: 1.2rem 1.8rem; box-shadow: 0 6px 20px rgba(0,0,0,0.07); border-left: 6px solid #002776; display: flex; align-items: center; gap: 1.5rem;">
-          <div style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #002776, #2563A0); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: white; flex-shrink: 0;">
-            <i class="fas fa-sitemap"></i>
+        <!-- Card 1: APOs -->
+        <div style="background: white; border-radius: 12px; padding: 1rem 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-left: 6px solid #002776; display: flex; align-items: center; gap: 1.5rem;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #002776, #2563A0); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: white; flex-shrink: 0;">
+            <i class="fas fa-user-tie"></i>
           </div>
-          <div>
-            <div style="font-family: 'Montserrat', sans-serif; font-size: 2.8rem; font-weight: 900; color: #002776; line-height: 1;">715</div>
-            <div style="font-size: 0.9rem; color: #666666; font-weight: 600;">Cargos Totais Criados</div>
-            <div style="font-size: 0.75rem; color: #D9D9D9; font-style: italic;">Decreto-Lei 2.347/1987</div>
+          <div style="flex: 1;">
+            <div style="font-size: 1rem; color: #002776; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.5px;">APOs — Analistas de Planej. e Orçamento</div>
+            <div style="display: flex; gap: 2rem;">
+              <div>
+                <div style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 900; color: #002776; line-height: 1;">611</div>
+                <div style="font-size: 0.8rem; color: #000000; font-weight: 700; text-transform: uppercase; margin-top: 0.2rem;">Ativos</div>
+              </div>
+              <div style="border-left: 2px solid #E0E0E0; padding-left: 2rem;">
+                <div style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 900; color: #000000; line-height: 1;">246</div>
+                <div style="font-size: 0.8rem; color: #000000; font-weight: 700; text-transform: uppercase; margin-top: 0.2rem;">Inativos</div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Card 2: APOs Ativos -->
-        <div style="background: white; border-radius: 14px; padding: 1.2rem 1.8rem; box-shadow: 0 6px 20px rgba(0,0,0,0.07); border-left: 6px solid #00A000; display: flex; align-items: center; gap: 1.5rem;">
-          <div style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #00A000, #40916C); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: white; flex-shrink: 0;">
-            <i class="fas fa-user-tie"></i>
+        <!-- Card 2: TPOs -->
+        <div style="background: white; border-radius: 12px; padding: 1rem 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-left: 6px solid #00A000; display: flex; align-items: center; gap: 1.5rem;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #00A000, #40916C); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: white; flex-shrink: 0;">
+            <i class="fas fa-users-cog"></i>
           </div>
-          <div>
-            <div style="font-family: 'Montserrat', sans-serif; font-size: 2.8rem; font-weight: 900; color: #00A000; line-height: 1;">~506</div>
-            <div style="font-size: 0.9rem; color: #666666; font-weight: 600;">APOs Ativos no Executivo Federal</div>
-            <div style="font-size: 0.75rem; color: #D9D9D9; font-style: italic;">Distribuídos em 50+ órgãos</div>
+          <div style="flex: 1;">
+            <div style="font-size: 1rem; color: #00A000; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.5px;">TPOs — Técnicos de Planej. e Orçamento</div>
+            <div style="display: flex; gap: 2rem;">
+              <div>
+                <div style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 900; color: #00A000; line-height: 1;">53</div>
+                <div style="font-size: 0.8rem; color: #000000; font-weight: 700; text-transform: uppercase; margin-top: 0.2rem;">Ativos</div>
+              </div>
+              <div style="border-left: 2px solid #E0E0E0; padding-left: 2rem;">
+                <div style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 900; color: #000000; line-height: 1;">181</div>
+                <div style="font-size: 0.8rem; color: #000000; font-weight: 700; text-transform: uppercase; margin-top: 0.2rem;">Inativos</div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Card 3: Novos -->
-        <div style="background: white; border-radius: 14px; padding: 1.2rem 1.8rem; box-shadow: 0 6px 20px rgba(0,0,0,0.07); border-left: 6px solid #2563A0; display: flex; align-items: center; gap: 1.5rem;">
-          <div style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #2563A0, #2563A0); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: white; flex-shrink: 0;">
+        <div style="background: white; border-radius: 12px; padding: 1rem 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-left: 6px solid #2563A0; display: flex; align-items: center; gap: 1.5rem;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #2563A0, #2563A0); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: white; flex-shrink: 0;">
             <i class="fas fa-door-open"></i>
           </div>
           <div>
-            <div style="font-family: 'Montserrat', sans-serif; font-size: 2.8rem; font-weight: 900; color: #2563A0; line-height: 1;">100</div>
-            <div style="font-size: 0.9rem; color: #666666; font-weight: 600;">Novos Servidores Ingressando</div>
-            <div style="font-size: 0.75rem; color: #D9D9D9; font-style: italic;">Concurso 2024 — primeiro desde 2015</div>
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 900; color: #2563A0; line-height: 1;">100</div>
+            <div style="font-size: 0.9rem; color: #000000; font-weight: 700; margin-top: 0.2rem;">Novos Servidores Ingressando</div>
+            <div style="font-size: 0.75rem; color: #000000; font-style: italic; margin-top: 0.1rem;">Concurso 2024 — primeiro desde 2015</div>
           </div>
         </div>
 
@@ -527,28 +543,28 @@
       </h3>
 
       <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
-        <div style="background: #FFFFFF; border-left: 5px solid #C0392B; padding: 1rem 1.5rem; border-radius: 0 8px 8px 0;">
-          <p style="margin: 0; color: #666666; font-size: 1rem; font-weight: 600;">
+        <div style="background: #FFFFFF; border-left: 5px solid #C0392B; padding: 1.2rem 1.5rem; border-radius: 0 8px 8px 0;">
+          <p style="margin: 0; color: #666666; font-size: 1.3rem; font-weight: 600; line-height: 1.4;">
             <i class="fas fa-map-marker-alt" style="color: #C0392B; margin-right: 0.5rem;"></i>
             "Onde está lotado o servidor X hoje?"
           </p>
         </div>
-        <div style="background: #FFFFFF; border-left: 5px solid #C0392B; padding: 1rem 1.5rem; border-radius: 0 8px 8px 0;">
-          <p style="margin: 0; color: #666666; font-size: 1rem; font-weight: 600;">
+        <div style="background: #FFFFFF; border-left: 5px solid #C0392B; padding: 1.2rem 1.5rem; border-radius: 0 8px 8px 0;">
+          <p style="margin: 0; color: #666666; font-size: 1.3rem; font-weight: 600; line-height: 1.4;">
             <i class="fas fa-route" style="color: #C0392B; margin-right: 0.5rem;"></i>
             "Por quais órgãos ele já passou?"
           </p>
         </div>
-        <div style="background: #FFFFFF; border-left: 5px solid #C0392B; padding: 1rem 1.5rem; border-radius: 0 8px 8px 0;">
-          <p style="margin: 0; color: #666666; font-size: 1rem; font-weight: 600;">
+        <div style="background: #FFFFFF; border-left: 5px solid #C0392B; padding: 1.2rem 1.5rem; border-radius: 0 8px 8px 0;">
+          <p style="margin: 0; color: #666666; font-size: 1.3rem; font-weight: 600; line-height: 1.4;">
             <i class="fas fa-user-shield" style="color: #C0392B; margin-right: 0.5rem;"></i>
             "Quantos APOs ocupam DAS/FCE fora da SOF?"
           </p>
         </div>
       </div>
 
-      <div style="background: #D9D9D9; padding: 1rem 1.2rem; border-radius: 8px;">
-        <p style="margin: 0; color: #666666; font-size: 0.9rem; line-height: 1.5;">
+      <div style="background: #D9D9D9; padding: 1.2rem 1.5rem; border-radius: 8px;">
+        <p style="margin: 0; color: #666666; font-size: 1.15rem; line-height: 1.6;">
           <i class="fas fa-info-circle" style="margin-right: 0.5rem; color: #002776;"></i>
           Cada pergunta exige <strong>consulta manual</strong> a bases distintas —
           <strong style="color: #2563A0;">SIAPE</strong>,
@@ -605,42 +621,8 @@
     <!-- COLUNA ESQUERDA: Imagem 3D de Integração -->
     <div style="width: 42%; position: relative; flex-shrink: 0; overflow: hidden;">
       <img src="img/slide4_integracao.png" alt="Integração de Dados SOF" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;">
-      <!-- Overlay com informação das fontes sobre a imagem -->
-      <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(11,30,50,0.2) 0%, rgba(11,30,50,0.45) 100%);"></div>
-
-      <!-- Badges das fontes sobre a imagem -->
-      <div style="position: absolute; top: 1.8rem; left: 1.5rem; right: 1.5rem; display: flex; flex-direction: column; gap: 0.7rem;">
-        <div style="background: rgba(21,101,192,0.9); backdrop-filter: blur(4px); border-radius: 10px; padding: 0.6rem 1rem; display: flex; align-items: center; gap: 0.7rem; border-left: 4px solid #BFDE5A;">
-          <i class="fas fa-database" style="color: #BFDE5A; font-size: 1.1rem;"></i>
-          <div>
-            <div style="color: white; font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 0.85rem;">SIAPE / SIGEPE</div>
-            <div style="color: rgba(255,255,255,0.75); font-size: 0.7rem;">Vínculos, lotação, cargo efetivo</div>
-          </div>
-        </div>
-        <div style="background: rgba(27,67,50,0.9); backdrop-filter: blur(4px); border-radius: 10px; padding: 0.6rem 1rem; display: flex; align-items: center; gap: 0.7rem; border-left: 4px solid #BFDE5A;">
-          <i class="fas fa-newspaper" style="color: #BFDE5A; font-size: 1.1rem;"></i>
-          <div>
-            <div style="color: white; font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 0.85rem;">DOU — Diário Oficial</div>
-            <div style="color: rgba(255,255,255,0.75); font-size: 0.7rem;">Portarias, designações, histórico</div>
-          </div>
-        </div>
-        <div style="background: rgba(55,71,79,0.9); backdrop-filter: blur(4px); border-radius: 10px; padding: 0.6rem 1rem; display: flex; align-items: center; gap: 0.7rem; border-left: 4px solid #BFDE5A;">
-          <i class="fas fa-folder-open" style="color: #BFDE5A; font-size: 1.1rem;"></i>
-          <div>
-            <div style="color: white; font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 0.85rem;">Registros SOF</div>
-            <div style="color: rgba(255,255,255,0.75); font-size: 0.7rem;">Dados internos da secretaria</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Hub central na base da imagem -->
-      <div style="position: absolute; bottom: 1.8rem; left: 1.5rem; right: 1.5rem;">
-        <div style="background: rgba(0,160,0,0.92); backdrop-filter: blur(6px); border-radius: 12px; padding: 0.8rem 1.2rem; text-align: center; border: 2px solid #BFDE5A;">
-          <i class="fas fa-desktop" style="color: #BFDE5A; font-size: 1.2rem; margin-bottom: 0.3rem; display: block;"></i>
-          <div style="font-family: 'Montserrat',sans-serif; font-weight: 900; color: white; font-size: 0.95rem; line-height: 1.2;">Sistema de Acompanhamento</div>
-          <div style="color: rgba(255,255,255,0.8); font-size: 0.7rem; margin-top: 0.2rem;">Painel Unificado de Trajetória</div>
-        </div>
-      </div>
+      <!-- Imagem limpa, sem box-shadow ou overlays -->
+      <img src="img/slide4_integracao.png" alt="Espaço para Foto da Integração" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;">
     </div>
 
     <!-- COLUNA DIREITA: Conteúdo estruturado -->
@@ -737,41 +719,8 @@
     <!-- COLUNA ESQUERDA: Imagem 3D Chave SIAPE -->
     <div style="width: 42%; position: relative; flex-shrink: 0; overflow: hidden;">
       <img src="img/slide5_siape.png" alt="Matrícula SIAPE como Chave Primária" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;">
-      <!-- Overlay -->
-      <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(11,20,60,0.15) 0%, rgba(11,20,60,0.5) 100%);"></div>
-
-      <!-- Conceito: Matrícula = Chave -->
-      <div style="position: absolute; top: 1.8rem; left: 1.5rem; right: 1.5rem;">
-        <div style="background: rgba(27,67,50,0.92); backdrop-filter: blur(4px); border-radius: 12px; padding: 1rem 1.2rem; border: 2px solid #BFDE5A;">
-          <div style="font-family: 'Montserrat',sans-serif; font-size: 0.7rem; font-weight: 800; color: #BFDE5A; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem;">
-            <i class="fas fa-key" style="margin-right: 0.4rem;"></i>Identificador Único
-          </div>
-          <div style="font-family: 'Montserrat',sans-serif; font-size: 1.8rem; font-weight: 900; color: white; letter-spacing: 2px; font-variant-numeric: tabular-nums;">
-            1 2 3 4 5 6 7
-          </div>
-          <div style="font-size: 0.7rem; color: rgba(255,255,255,0.75); margin-top: 0.3rem;">Matrícula SIAPE — Chave Primária</div>
-        </div>
-      </div>
-
-      <!-- Fluxo simplificado na base -->
-      <div style="position: absolute; bottom: 1.8rem; left: 1.5rem; right: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
-        <div style="background: rgba(21,101,192,0.88); backdrop-filter: blur(4px); border-radius: 8px; padding: 0.5rem 0.9rem; display: flex; align-items: center; gap: 0.6rem; border-left: 3px solid #BFDE5A;">
-          <i class="fas fa-database" style="color: #BFDE5A; font-size: 0.95rem;"></i>
-          <div style="flex: 1;">
-            <div style="color: white; font-size: 0.78rem; font-weight: 700;">Matrícula → SIAPE/SIGEPE</div>
-            <div style="color: rgba(255,255,255,0.7); font-size: 0.65rem;">Lotação + Cargo + Vínculo</div>
-          </div>
-          <i class="fas fa-check-circle" style="color: #BFDE5A; font-size: 0.9rem;"></i>
-        </div>
-        <div style="background: rgba(27,67,50,0.88); backdrop-filter: blur(4px); border-radius: 8px; padding: 0.5rem 0.9rem; display: flex; align-items: center; gap: 0.6rem; border-left: 3px solid #BFDE5A;">
-          <i class="fas fa-newspaper" style="color: #BFDE5A; font-size: 0.95rem;"></i>
-          <div style="flex: 1;">
-            <div style="color: white; font-size: 0.78rem; font-weight: 700;">Matrícula → Varredura DOU</div>
-            <div style="color: rgba(255,255,255,0.7); font-size: 0.65rem;">Histórico de Portarias</div>
-          </div>
-          <i class="fas fa-check-circle" style="color: #BFDE5A; font-size: 0.9rem;"></i>
-        </div>
-      </div>
+      <!-- Imagem limpa, sem box-shadow ou overlays -->
+      <img src="img/slide5_siape.png" alt="Espaço para Foto da Estratégia" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;">
     </div>
 
     <!-- COLUNA DIREITA: Conteúdo -->
@@ -790,70 +739,93 @@
 
         <!-- Mini tabela SIAPE estilizada -->
         <div>
-          <h3 style="font-family:'Montserrat',sans-serif; color:#1B4332; font-weight:700; font-size:0.88rem; margin:0 0 0.6rem 0;">
+          <h3 style="font-family:'Montserrat',sans-serif; color:#1B4332; font-weight:700; font-size:1.2rem; margin:0 0 0.8rem 0;">
             <i class="fas fa-desktop" style="color:#2563A0; margin-right:0.4rem;"></i>
             Vínculos Vigentes — Sistema SIAPE
           </h3>
-          <div style="background:#FFFFFF; border:1px solid #D9D9D9; border-radius:8px; overflow:hidden;">
-            <div style="background:#2563A0; padding:0.35rem 0.8rem; color:white; font-size:0.72rem; font-weight:700; display:flex; align-items:center; gap:0.5rem;">
+          <div style="background:#FFFFFF; border:1px solid #D9D9D9; border-radius:8px; overflow:hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+            <div style="background:#2563A0; padding:0.6rem 1rem; color:white; font-size:1rem; font-weight:700; display:flex; align-items:center; gap:0.5rem;">
               <i class="fas fa-id-card"></i> SIAPE — Vínculos do Servidor
             </div>
-            <table style="width:100%; font-size:0.73rem; border-collapse:collapse; background:white;">
+            <table style="width:100%; font-size:1rem; border-collapse:collapse; background:white;">
               <thead>
                 <tr style="background:#F0F4F0; color:#2563A0; font-weight:700; font-family:'Montserrat',sans-serif;">
-                  <th style="padding:0.35rem 0.6rem; border:1px solid #D9D9D9; text-align:left;">Matrícula</th>
-                  <th style="padding:0.35rem 0.6rem; border:1px solid #D9D9D9;">Cargo</th>
-                  <th style="padding:0.35rem 0.6rem; border:1px solid #D9D9D9;">Função</th>
-                  <th style="padding:0.35rem 0.6rem; border:1px solid #D9D9D9;">Órgão</th>
+                  <th style="padding:0.6rem 0.8rem; border:1px solid #D9D9D9; text-align:left;">Matrícula</th>
+                  <th style="padding:0.6rem 0.8rem; border:1px solid #D9D9D9;">Cargo</th>
+                  <th style="padding:0.6rem 0.8rem; border:1px solid #D9D9D9;">Função</th>
+                  <th style="padding:0.6rem 0.8rem; border:1px solid #D9D9D9;">Órgão</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="padding:0.35rem 0.6rem; border:1px solid #D9D9D9; font-family:monospace; color:#2563A0; font-weight:700; background:#FFFFFF;">1234567</td>
-                  <td style="padding:0.35rem 0.6rem; border:1px solid #D9D9D9; text-align:center;">APO</td>
-                  <td style="padding:0.35rem 0.6rem; border:1px solid #D9D9D9; text-align:center;">DAS-4</td>
-                  <td style="padding:0.35rem 0.6rem; border:1px solid #D9D9D9; text-align:center; font-weight:600; color:#1B4332;">SOF/MPO</td>
+                  <td style="padding:0.6rem 0.8rem; border:1px solid #D9D9D9; font-family:monospace; color:#2563A0; font-weight:700; background:#FFFFFF;">1234567</td>
+                  <td style="padding:0.6rem 0.8rem; border:1px solid #D9D9D9; text-align:center; color: #000000;">APO</td>
+                  <td style="padding:0.6rem 0.8rem; border:1px solid #D9D9D9; text-align:center; color: #000000;">DAS-4</td>
+                  <td style="padding:0.6rem 0.8rem; border:1px solid #D9D9D9; text-align:center; font-weight:700; color:#1B4332;">SOF/MPO</td>
                 </tr>
-                <tr style="background:#FFFFFF;">
-                  <td style="padding:0.35rem 0.6rem; border:1px solid #D9D9D9; font-family:monospace; color:#2563A0; font-weight:700; background:#FFFFFF;">2345678</td>
-                  <td style="padding:0.35rem 0.6rem; border:1px solid #D9D9D9; text-align:center;">APO</td>
-                  <td style="padding:0.35rem 0.6rem; border:1px solid #D9D9D9; text-align:center;">FCE-3</td>
-                  <td style="padding:0.35rem 0.6rem; border:1px solid #D9D9D9; text-align:center; font-weight:600; color:#1B4332;">ME</td>
+                <tr style="background:#FAFAFA;">
+                  <td style="padding:0.6rem 0.8rem; border:1px solid #D9D9D9; font-family:monospace; color:#2563A0; font-weight:700;">2345678</td>
+                  <td style="padding:0.6rem 0.8rem; border:1px solid #D9D9D9; text-align:center; color: #000000;">APO</td>
+                  <td style="padding:0.6rem 0.8rem; border:1px solid #D9D9D9; text-align:center; color: #000000;">FCE-3</td>
+                  <td style="padding:0.6rem 0.8rem; border:1px solid #D9D9D9; text-align:center; font-weight:700; color:#1B4332;">ME</td>
                 </tr>
                 <tr>
-                  <td style="padding:0.35rem 0.6rem; border:1px solid #D9D9D9; font-family:monospace; color:#2563A0; font-weight:700; background:#FFFFFF;">3456789</td>
-                  <td style="padding:0.35rem 0.6rem; border:1px solid #D9D9D9; text-align:center;">APO</td>
-                  <td style="padding:0.35rem 0.6rem; border:1px solid #D9D9D9; text-align:center;">—</td>
-                  <td style="padding:0.35rem 0.6rem; border:1px solid #D9D9D9; text-align:center; font-weight:600; color:#1B4332;">TCU</td>
+                  <td style="padding:0.6rem 0.8rem; border:1px solid #D9D9D9; font-family:monospace; color:#2563A0; font-weight:700; background:#FFFFFF;">3456789</td>
+                  <td style="padding:0.6rem 0.8rem; border:1px solid #D9D9D9; text-align:center; color: #000000;">APO</td>
+                  <td style="padding:0.6rem 0.8rem; border:1px solid #D9D9D9; text-align:center; color: #000000;">—</td>
+                  <td style="padding:0.6rem 0.8rem; border:1px solid #D9D9D9; text-align:center; font-weight:700; color:#1B4332;">TCU</td>
                 </tr>
               </tbody>
             </table>
-            <div style="padding:0.4rem 0.8rem; display:flex; gap:0.5rem; background:#FFFFFF;">
-              <span style="background:#FFFFFF; border:1px solid #C0392B; padding:0.15rem 0.5rem; border-radius:4px; font-size:0.67rem; font-weight:700; color:#C0392B;">
-                <i class="fas fa-key"></i> Matrícula = Chave Primária
-              </span>
-              <span style="background:#F0F4F0; border:1px solid #D9D9D9; padding:0.15rem 0.5rem; border-radius:4px; font-size:0.67rem; font-weight:600; color:#2563A0;">
-                Cargo + Função + Órgão
-              </span>
+
+            <div style="padding:1rem; display:flex; flex-direction:column; gap:0.8rem; background:#FAFAFA; border-top: 1px solid #D9D9D9;">
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap: wrap;">
+                <span style="background:#FFFFFF; border:1px solid #C0392B; padding:0.4rem 0.8rem; border-radius:4px; font-size:1rem; font-weight:700; color:#C0392B;">
+                  <i class="fas fa-key"></i> Matrícula = Chave Primária
+                </span>
+                <span style="background:#FFFFFF; border:1px solid #2563A0; padding:0.4rem 0.8rem; border-radius:4px; font-size:1rem; font-weight:700; color:#2563A0;">
+                  Cargo <i class="fas fa-plus" style="font-size:0.8rem; color:#A0A0A0; margin: 0 0.3rem;"></i> Função <i class="fas fa-plus" style="font-size:0.8rem; color:#A0A0A0; margin: 0 0.3rem;"></i> Órgão
+                </span>
+              </div>
+
+              <div style="background:#FFF5F5; border-left:4px solid #C0392B; padding:0.8rem 1rem; border-radius:4px;">
+                <div style="font-size:0.85rem; color:#C0392B; font-weight:800; text-transform:uppercase; margin-bottom:0.4rem;">
+                  <i class="fas fa-eye-slash" style="margin-right:0.3rem;"></i>O Vínculo que o SIAPE Não Mostra
+                </div>
+                <div style="font-size:1rem; color:#000000; font-weight:700; display:flex; align-items:center; flex-wrap:wrap; gap:0.4rem;">
+                  <span style="color:#002776;">Órgão</span>
+                  <i class="fas fa-arrow-right" style="font-size:0.8rem; color:#C0392B;"></i>
+                  <span style="color:#000000;">Secretaria</span>
+                  <i class="fas fa-arrow-right" style="font-size:0.8rem; color:#C0392B;"></i>
+                  <span style="color:#000000;">Diretoria</span>
+                  <i class="fas fa-arrow-right" style="font-size:0.8rem; color:#C0392B;"></i>
+                  <span style="color:#00A000;">Coordenação-Geral</span>
+                  <i class="fas fa-arrow-right" style="font-size:0.8rem; color:#C0392B;"></i>
+                  <span style="color:#2D6A4F;">Coordenação</span>
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
 
         <!-- Nota técnica + resultado cards -->
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.8rem; margin-top:auto;">
-          <div style="background:#FFFFFF; border:1px solid #C0392B; border-left:4px solid #C0392B; padding:0.8rem 1rem; border-radius:0 8px 8px 0;">
-            <div style="font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:800; color:#C0392B; text-transform:uppercase; margin-bottom:0.3rem;">
-              <i class="fas fa-exclamation-triangle" style="margin-right:0.3rem;"></i>Nota Técnica
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:auto;">
+          <div style="background:#FFFFFF; border:1px solid #E0E0E0; border-left:5px solid #2563A0; padding:1.2rem 1.5rem; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+            <div style="font-family:'Montserrat',sans-serif; font-size:0.95rem; font-weight:800; color:#2563A0; text-transform:uppercase; margin-bottom:0.5rem;">
+              <i class="fas fa-file-alt" style="margin-right:0.4rem;"></i>Problema do DOU
             </div>
-            <p style="margin:0; color:#666666; font-size:0.75rem; line-height:1.4;">
-              DOU é texto não-estruturado — exige <strong>parsing</strong> para extração automática de matrículas.
+            <p style="margin:0; color:#000000; font-size:1.1rem; line-height:1.5; font-weight: 500;">
+              O texto é aberto. Exige <strong>parsing semântico</strong> para inferir a lotação interna.
             </p>
           </div>
-          <div style="background:#1B4332; border-radius:8px; padding:0.8rem 1rem; display:flex; align-items:center; gap:0.7rem;">
-            <i class="fas fa-link" style="color:#BFDE5A; font-size:1.3rem; flex-shrink:0;"></i>
+          <div style="background:linear-gradient(135deg, #1B4332, #2D6A4F); border-radius:6px; padding:1.2rem 1.5rem; display:flex; align-items:center; gap:1.2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <div style="width: 45px; height: 45px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; flex-shrink:0;">
+              <i class="fas fa-bullseye" style="color:#BFDE5A; font-size:1.5rem;"></i>
+            </div>
             <div>
-              <div style="font-family:'Montserrat',sans-serif; font-size:0.7rem; font-weight:800; color:#BFDE5A; text-transform:uppercase;">Resultado</div>
-              <div style="font-size:0.78rem; color:rgba(255,255,255,0.9); line-height:1.3;">Trajetória completa por matrícula única</div>
+              <div style="font-family:'Montserrat',sans-serif; font-size:0.95rem; font-weight:800; color:#BFDE5A; text-transform:uppercase; margin-bottom:0.3rem;">Objetivo Final</div>
+              <div style="font-size:1.1rem; color:#FFFFFF; line-height:1.3; font-weight: 700;">Reconstruir a trajetória estrutural exata</div>
             </div>
           </div>
         </div>
@@ -872,14 +844,14 @@
     <!-- Barra verde superior — Modo Limpo SOF/MPO -->
     <div class="barra-verde-topo">
       <div>
-        <h1>Estratégia 2 — Fallback: Nome + Ano de Entrada</h1>
+        <h1>Estratégia 2 — Chave Primária : Nome + Ano de Entrada</h1>
         <span class="subt">Cobertura para Registros Antigos</span>
       </div>
     </div>
     <!-- Número de página -->
     <div class="num-pagina">6</div>
     <div class="conteudo-limpo" style="padding: 1rem 2.5rem 1rem;">
-      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1.2rem; flex: 1; overflow: hidden; min-height: 0;">
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1.5rem; flex: 1; overflow: hidden; min-height: 0;">
 
         <!-- Coluna Esquerda: Gráfico Pareto — imagem -->
         <div style="display: flex; flex-direction: column; overflow: hidden; min-height: 0; max-height: 100%;">
@@ -890,50 +862,50 @@
         </div>
 
         <!-- Coluna Direita: Explicação e Chave Composta -->
-        <div style="display: flex; flex-direction: column; gap: 0.6rem; justify-content: center;">
+        <div style="display: flex; flex-direction: column; gap: 0.8rem; justify-content: center;">
 
           <!-- Quando usar -->
-          <div style="background: #F0F4F0; padding: 0.7rem; border-radius: 8px; border-left: 4px solid #002776;">
-            <h4 style="color: #002776; margin: 0 0 0.2rem; font-size: 0.8rem; text-transform: uppercase;">Quando Usar</h4>
-            <p style="margin: 0; color: #666666; font-size: 0.8rem; line-height: 1.4;">
-              Registros antigos onde a matrícula é <strong>inconsistente ou ausente</strong> nas publicações do DOU.
+          <div style="background: #F0F4F0; padding: 1rem 1.2rem; border-radius: 8px; border-left: 5px solid #002776;">
+            <h4 style="color: #002776; margin: 0 0 0.4rem; font-size: 0.95rem; text-transform: uppercase;">Quando Usar</h4>
+            <p style="margin: 0; color: #000000; font-size: 1rem; line-height: 1.4; font-weight: 500;">
+              Registros antigos onde a matrícula é <strong style="color: #002776;">inconsistente ou ausente</strong> nas publicações do DOU.
             </p>
           </div>
 
           <!-- Chave Composta -->
-          <div style="background: white; border: 2px solid #002776; padding: 0.8rem; border-radius: 12px; text-align: center;">
-            <div style="display: flex; align-items: center; justify-content: center; gap: 0.6rem; flex-wrap: wrap;">
-              <span style="background: #002776; color: white; padding: 0.35rem 0.8rem; border-radius: 6px; font-weight: 700; font-size: 0.8rem;">Nome Completo</span>
-              <span style="color: #002776; font-weight: 800; font-size: 1rem;">+</span>
-              <span style="background: #002776; color: white; padding: 0.35rem 0.8rem; border-radius: 6px; font-weight: 700; font-size: 0.8rem;">Ano Ingresso</span>
+          <div style="background: white; border: 2px solid #002776; padding: 1.2rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 0.8rem; flex-wrap: wrap;">
+              <span style="background: #002776; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-weight: 700; font-size: 1rem;">Nome Completo</span>
+              <span style="color: #002776; font-weight: 900; font-size: 1.5rem;">+</span>
+              <span style="background: #002776; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-weight: 700; font-size: 1rem;">Ano Ingresso</span>
             </div>
-            <div style="margin-top: 0.4rem;">
-              <i class="fas fa-arrow-down" style="color: #00A000; font-size: 1rem;"></i>
+            <div style="margin-top: 0.8rem;">
+              <i class="fas fa-arrow-down" style="color: #00A000; font-size: 1.4rem;"></i>
             </div>
-            <div style="margin-top: 0.3rem; background: #F0F4F0; padding: 0.4rem 0.8rem; border-radius: 6px; display: inline-block;">
-              <span style="color: #00A000; font-weight: 700; font-size: 0.8rem;">
-                <i class="fas fa-check-circle" style="margin-right: 0.3rem;"></i> Match → Registro Identificado
+            <div style="margin-top: 0.6rem; background: #F0F4F0; padding: 0.6rem 1.2rem; border-radius: 6px; display: inline-block;">
+              <span style="color: #00A000; font-weight: 800; font-size: 1.1rem; text-transform: uppercase;">
+                <i class="fas fa-check-circle" style="margin-right: 0.4rem;"></i> Match → Registro Identificado
               </span>
             </div>
           </div>
 
           <!-- Hipótese Pareto -->
-          <div style="background: #F0F4F0; border: 2px solid #00A000; padding: 0.7rem; border-radius: 8px;">
-            <h4 style="color: #00A000; margin: 0 0 0.2rem; font-size: 0.8rem; display: flex; align-items: center; gap: 0.3rem;">
+          <div style="background: #F0F4F0; border: 2px solid #00A000; padding: 1rem 1.2rem; border-radius: 8px;">
+            <h4 style="color: #00A000; margin: 0 0 0.4rem; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem;">
               <i class="fas fa-chart-pie"></i> HIPÓTESE PARETO
             </h4>
-            <p style="margin: 0; color: #666666; font-size: 0.8rem; line-height: 1.4;">
-              Estimativa: <strong>~80% das inconsistências</strong> concentram-se nos <strong>~20% de registros mais antigos</strong> (pré-digitalização). <em>Validar na PoC.</em>
+            <p style="margin: 0; color: #000000; font-size: 0.95rem; line-height: 1.4;">
+              Estimativa: <strong>~80% das inconsistências</strong> concentram-se nos <strong>~20% de registros mais antigos</strong> (pré-digitalização). <em style="color: #2D6A4F;">Validar na Prova de Conceito (Piloto).</em>
             </p>
           </div>
 
           <!-- Limitação -->
-          <div style="background: #FFFFFF; padding: 0.5rem 0.8rem; border-radius: 8px; border-left: 4px solid #C0392B; display: flex; align-items: flex-start; gap: 0.5rem;">
-            <span style="font-size: 1.2rem;">⚠️</span>
+          <div style="background: #FFFFFF; padding: 0.8rem 1rem; border-radius: 8px; border-left: 5px solid #C0392B; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; align-items: flex-start; gap: 0.8rem;">
+            <span style="font-size: 1.5rem;">⚠️</span>
             <div>
-              <strong style="color: #C0392B; font-size: 0.8rem;">Limitação: Risco de Homônimos</strong>
-              <p style="margin: 0.2rem 0 0; color: #666666; font-size: 0.8rem;">
-                Mitigação via cruzamento complementar (CPF, órgão de origem).
+              <strong style="color: #C0392B; font-size: 0.95rem; text-transform: uppercase;">Limitação: Risco de Homônimos</strong>
+              <p style="margin: 0.3rem 0 0; color: #000000; font-size: 0.95rem; line-height: 1.3;">
+                Mitigação via cruzamento complementar (ex: cruzando CPF ou órgão de origem).
               </p>
             </div>
           </div>
@@ -978,7 +950,7 @@
             <i class="fas fa-cogs"></i>
           </div>
           <span style="background: #2563A0; color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">FASE 2</span>
-          <div class="phase-label">PoC — Extração<br>Piloto</div>
+          <div class="phase-label">Prova de<br>Conceito</div>
           <div class="phase-sub">SIAPE/SIGEPE + varredura DOU</div>
         </div>
 
