@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAC/PO — Levantamento de Escopo</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Estilos base -->
+  <link rel="stylesheet" href="../../../compartilhado/web/styles.css" />
+
+  <style>
+    :root {
+      --verde-escuro: #1B4332;
+      --verde-institucional: #2D6A4F;
+      --verde-sof: #00A000;
+      --verde-coalizao: #40916C;
+      --azul-institucional: #2563A0;
+      --amarelo-verde: #BFDE5A;
+      --vermelho-alerta: #C0392B;
+      --amarelo-bandeira: #FFD700;
+      --verde-brasil: #009739;
+      --azul-brasil: #002776;
+      --vermelho-brasil: #CC0000;
+      --cinza-fundo: #D9D9D9;
+      --cinza-texto: #666666;
+    }
+
+    /* MODO RICO */
+    .modo-rico {
+      position: relative;
+      background-color: #FFFFFF;
+      background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 18px, rgba(180,180,180,0.07) 18px, rgba(180,180,180,0.07) 19px),
+        repeating-linear-gradient(-45deg, transparent, transparent 18px, rgba(180,180,180,0.07) 18px, rgba(180,180,180,0.07) 19px);
+      padding-bottom: 52px !important;
+    }
+
+    .mosaico-brasil {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 48px; overflow: hidden; display: flex; z-index: 10;
+    }
+    .mosaico-brasil span { flex: 1; height: 100%; }
+    .mosaico-brasil span:nth-child(odd) { clip-path: polygon(0 0, 100% 100%, 0 100%); }
+    .mosaico-brasil span:nth-child(even) { clip-path: polygon(0 100%, 100% 0, 100% 100%); }
+
+    /* MODO LIMPO */
+    .modo-limpo {
+      background: var(--cinza-fundo) !important;
+      position: relative;
+      padding: 0 !important;
+    }
+
+    .barra-verde-topo {
+      background: var(--verde-sof);
+      padding: 0.75rem 3rem;
+      display: flex; align-items: center; gap: 1rem; flex-shrink: 0;
+    }
+    .barra-verde-topo h1 {
+      font-family: 'Montserrat', sans-serif; font-size: 1.4rem;
+      font-weight: 800; color: white; margin: 0; letter-spacing: -0.5px; line-height: 1.2;
+    }
+    .barra-verde-topo .subt {
+      font-family: 'Open Sans', sans-serif; font-size: 0.8rem;
+      font-weight: 700; color: rgba(255,255,255,0.8);
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+
+    .conteudo-limpo {
+      padding: 2rem 3.5rem; flex: 1;
+      display: flex; flex-direction: column;
+    }
+
+    .num-pagina {
+      position: absolute; bottom: 1.2rem; right: 1.5rem;
+      width: 32px; height: 32px; background: #222; color: white;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 700; z-index: 10;
+    }
+
+    /* CAPA */
+    .slide-capa-sof {
+      justify-content: center; align-items: center; text-align: center;
+      background: linear-gradient(135deg, #1B4332 0%, #1B4332 100%);
+      color: white; padding: 4rem 6rem 5rem; position: relative; overflow: hidden;
+    }
+    .slide-capa-sof::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(255,255,255,0.025) 30px, rgba(255,255,255,0.025) 31px),
+        repeating-linear-gradient(-45deg, transparent, transparent 30px, rgba(255,255,255,0.025) 30px, rgba(255,255,255,0.025) 31px);
+      z-index: 1;
+    }
+    .slide-capa-sof > * { position: relative; z-index: 2; }
+
+    /* PLACEHOLDER FOTO */
+    .foto-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 0.8rem;
+      color: #bbb; background: #f0f0f0;
+      border: 2px dashed #ccc; border-radius: 0;
+    }
+    .foto-placeholder i { font-size: 2.5rem; opacity: 0.4; }
+    .foto-placeholder span {
+      font-family: 'Open Sans', sans-serif; font-size: 0.75rem;
+      font-weight: 600; opacity: 0.5; text-transform: uppercase; letter-spacing: 1px;
+    }
+
+    /* MOCKUP PLACEHOLDER */
+    .mockup-placeholder {
+      border: 3px dashed var(--azul-institucional);
+      border-radius: 12px; background: rgba(37,99,160,0.04);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 1rem; color: var(--azul-institucional);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========================================
+       SLIDE 1: CAPA
+       ======================================== -->
+  <div class="slide slide-capa-sof" style="height: 720px; max-height: 720px; overflow: hidden;">
+    <div style="position: absolute; top: 2.5rem; right: 3rem; z-index: 3;">
+      <img src="../../../compartilhado/marca/logo_gov_br.png" alt="SOF/MPO" style="height: 60px; opacity: 0.9; filter: brightness(1.1);">
+    </div>
+
+    <div style="max-width: 900px;">
+      <div style="font-family: 'Open Sans', sans-serif; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; opacity: 0.7; margin-bottom: 1.5rem;">
+        SOF/MPO — Secretaria de Orçamento Federal
+      </div>
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.6rem; font-weight: 900; letter-spacing: -1.5px; line-height: 1.15; margin-bottom: 0.8rem; text-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+        Sistema de Acompanhamento da Carreira<br>de Planejamento e Orçamento
+      </h1>
+      <div style="width: 120px; height: 4px; background: #BFDE5A; margin: 0 auto 1.5rem; border-radius: 2px;"></div>
+      <p style="font-family: 'Open Sans', sans-serif; font-size: 1.2rem; font-weight: 400; opacity: 0.85; letter-spacing: 0.5px;">
+        SAC/PO — Levantamento de Escopo Inicial
+      </p>
+    </div>
+
+    <div style="position: absolute; bottom: 3.5rem; left: 0; right: 0; z-index: 2; display: flex; justify-content: center; gap: 3rem; font-family: 'Open Sans', sans-serif; font-size: 0.95rem; opacity: 0.8;">
+      <span><i class="fas fa-user" style="margin-right: 0.5rem;"></i> <strong>Leonel</strong></span>
+      <span><i class="fas fa-building-columns" style="margin-right: 0.5rem;"></i> SOF/MPO</span>
+      <span><i class="fas fa-calendar" style="margin-right: 0.5rem;"></i> 2025</span>
+    </div>
+
+    <div class="mosaico-brasil">
+      <span style="background:#009739;"></span><span style="background:#FFD700;"></span>
+      <span style="background:#009739;"></span><span style="background:#002776;"></span>
+      <span style="background:#FFD700;"></span><span style="background:#CC0000;"></span>
+      <span style="background:#009739;"></span><span style="background:#FFD700;"></span>
+      <span style="background:#002776;"></span><span style="background:#009739;"></span>
+      <span style="background:#CC0000;"></span><span style="background:#FFD700;"></span>
+      <span style="background:#009739;"></span><span style="background:#002776;"></span>
+      <span style="background:#FFD700;"></span><span style="background:#CC0000;"></span>
+      <span style="background:#009739;"></span><span style="background:#FFD700;"></span>
+      <span style="background:#002776;"></span><span style="background:#009739;"></span>
+    </div>
+  </div>
+
+  <!-- ========================================
+       SLIDE 2: O PROBLEMA
+       ======================================== -->
+  <div class="slide modo-rico" style="height: 720px; max-height: 720px; overflow: hidden; padding: 0; display: flex; flex-direction: row;">
+
+    <!-- Coluna foto -->
+    <div style="width: 42%; flex-shrink: 0; overflow: hidden; position: relative;">
+      <div class="foto-placeholder">
+        <i class="fas fa-image"></i>
+        <span>Foto / Ilustração</span>
+      </div>
+    </div>
+
+    <!-- Coluna conteúdo -->
+    <div style="flex: 1; padding: 3rem 3.5rem; display: flex; flex-direction: column; justify-content: center;">
+      <span style="font-family: 'Open Sans', sans-serif; font-size: 0.75rem; font-weight: 700; color: var(--verde-sof); text-transform: uppercase; letter-spacing: 1.5px;">
+        O Cenário Atual
+      </span>
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: var(--azul-brasil); letter-spacing: -1px; line-height: 1.15; margin: 0.3rem 0 0.8rem;">
+        Gestão da Carreira<br>Sem Sistema Unificado
+      </h1>
+      <div style="width: 60px; height: 4px; background: var(--vermelho-alerta); border-radius: 2px; margin-bottom: 1.5rem;"></div>
+
+      <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.8rem;">
+          <i class="fas fa-puzzle-piece" style="color: var(--vermelho-alerta); font-size: 1.1rem; width: 24px; text-align: center;"></i>
+          <span style="font-size: 0.95rem; font-weight: 600; color: #333;">Dados dispersos entre SIAPE, SEI e DOU</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.8rem;">
+          <i class="fas fa-map-marker-alt" style="color: var(--vermelho-alerta); font-size: 1.1rem; width: 24px; text-align: center;"></i>
+          <span style="font-size: 0.95rem; font-weight: 600; color: #333;">Sem forma rápida de localizar servidores</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.8rem;">
+          <i class="fas fa-exchange-alt" style="color: var(--vermelho-alerta); font-size: 1.1rem; width: 24px; text-align: center;"></i>
+          <span style="font-size: 0.95rem; font-weight: 600; color: #333;">Movimentações acompanhadas manualmente</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.8rem;">
+          <i class="fas fa-user-clock" style="color: var(--vermelho-alerta); font-size: 1.1rem; width: 24px; text-align: center;"></i>
+          <span style="font-size: 0.95rem; font-weight: 600; color: #333;">Afastamentos e GSISTE em planilhas separadas</span>
+        </div>
+      </div>
+
+      <div style="background: var(--azul-brasil); color: white; padding: 0.9rem 1.2rem; border-radius: 8px; display: flex; align-items: center; gap: 0.8rem;">
+        <i class="fas fa-bullhorn" style="font-size: 1.2rem; color: var(--amarelo-verde);"></i>
+        <span style="font-size: 0.88rem; font-weight: 600;">A SOF precisa de um <strong>sistema único</strong> para a carreira.</span>
+      </div>
+    </div>
+
+    <div class="mosaico-brasil">
+      <span style="background:#009739;"></span><span style="background:#FFD700;"></span>
+      <span style="background:#009739;"></span><span style="background:#002776;"></span>
+      <span style="background:#FFD700;"></span><span style="background:#CC0000;"></span>
+      <span style="background:#009739;"></span><span style="background:#FFD700;"></span>
+      <span style="background:#002776;"></span><span style="background:#009739;"></span>
+      <span style="background:#CC0000;"></span><span style="background:#FFD700;"></span>
+      <span style="background:#009739;"></span><span style="background:#002776;"></span>
+      <span style="background:#FFD700;"></span><span style="background:#CC0000;"></span>
+      <span style="background:#009739;"></span><span style="background:#FFD700;"></span>
+      <span style="background:#002776;"></span><span style="background:#009739;"></span>
+    </div>
+  </div>
+
+  <!-- ========================================
+       SLIDE 3: A SOLUÇÃO — SAC/PO
+       ======================================== -->
+  <div class="slide modo-limpo" style="height: 720px; max-height: 720px; overflow: hidden; display: flex; flex-direction: column;">
+    <div class="barra-verde-topo">
+      <div>
+        <h1>A Solução: SAC/PO</h1>
+        <span class="subt">Módulos do Sistema</span>
+      </div>
+    </div>
+    <div class="num-pagina">3</div>
+
+    <div class="conteudo-limpo" style="padding: 1.5rem 3rem;">
+
+      <!-- Grid 2x4 — só ícone + nome -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; flex: 1; align-content: center;">
+
+        <div style="background: white; border-radius: 12px; padding: 1.5rem 1rem; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--azul-brasil); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem;"><i class="fas fa-id-card"></i></div>
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--verde-escuro); margin: 0;">Cadastro de<br>Servidores</h4>
+        </div>
+
+        <div style="background: white; border-radius: 12px; padding: 1.5rem 1rem; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--verde-sof); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem;"><i class="fas fa-search"></i></div>
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--verde-escuro); margin: 0;">Pesquisa e<br>Consulta</h4>
+        </div>
+
+        <div style="background: white; border-radius: 12px; padding: 1.5rem 1rem; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--verde-institucional); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem;"><i class="fas fa-history"></i></div>
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--verde-escuro); margin: 0;">Histórico de<br>Atuação</h4>
+        </div>
+
+        <div style="background: white; border-radius: 12px; padding: 1.5rem 1rem; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--verde-coalizao); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem;"><i class="fas fa-arrows-alt-h"></i></div>
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--verde-escuro); margin: 0;">Movimentações</h4>
+        </div>
+
+        <div style="background: white; border-radius: 12px; padding: 1.5rem 1rem; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--azul-institucional); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem;"><i class="fas fa-calendar-minus"></i></div>
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--verde-escuro); margin: 0;">Afastamentos<br>e Licenças</h4>
+        </div>
+
+        <div style="background: white; border-radius: 12px; padding: 1.5rem 1rem; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--azul-brasil); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem;"><i class="fas fa-graduation-cap"></i></div>
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--verde-escuro); margin: 0;">Capacitação e<br>Formação</h4>
+        </div>
+
+        <div style="background: white; border-radius: 12px; padding: 1.5rem 1rem; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--verde-escuro); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem;"><i class="fas fa-award"></i></div>
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--verde-escuro); margin: 0;">Controle de<br>GSISTE</h4>
+        </div>
+
+        <div style="background: white; border-radius: 12px; padding: 1.5rem 1rem; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; align-items: center; gap: 0.8rem; border: 2px dashed #ccc; opacity: 0.6;">
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: #bbb; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem;"><i class="fas fa-clock"></i></div>
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 700; color: #999; margin: 0;">Aposentados e<br>Pensionistas</h4>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       SLIDE 4: MAPA FUNCIONAL
+       ======================================== -->
+  <div class="slide modo-limpo" style="height: 720px; max-height: 720px; overflow: hidden; display: flex; flex-direction: column;">
+    <div class="barra-verde-topo">
+      <div>
+        <h1>Mapa Funcional do SAC/PO</h1>
+        <span class="subt">Visão integrada ao redor do servidor</span>
+      </div>
+    </div>
+    <div class="num-pagina">4</div>
+
+    <div class="conteudo-limpo" style="padding: 1.5rem 3rem; position: relative;">
+      <div style="position: relative; width: 100%; flex: 1; min-height: 460px;">
+
+        <!-- Centro -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 5; text-align: center;">
+          <div style="width: 130px; height: 130px; border-radius: 50%; background: linear-gradient(135deg, var(--verde-escuro), var(--verde-institucional)); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; box-shadow: 0 8px 30px rgba(27,67,50,0.35);">
+            <i class="fas fa-user-tie" style="font-size: 2rem; margin-bottom: 0.3rem;"></i>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase;">Servidor<br>da Carreira</span>
+          </div>
+        </div>
+
+        <!-- Cadastro -->
+        <div style="position: absolute; top: 2%; left: 8%; width: 150px; text-align: center;">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--azul-brasil); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; margin: 0 auto 0.3rem; box-shadow: 0 3px 10px rgba(0,0,0,0.15);"><i class="fas fa-id-card"></i></div>
+          <span style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.75rem; color: var(--verde-escuro);">Cadastro</span>
+        </div>
+
+        <!-- Pesquisa -->
+        <div style="position: absolute; top: 0%; left: 50%; transform: translateX(-50%); width: 150px; text-align: center;">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--verde-sof); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; margin: 0 auto 0.3rem; box-shadow: 0 3px 10px rgba(0,0,0,0.15);"><i class="fas fa-search"></i></div>
+          <span style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.75rem; color: var(--verde-escuro);">Pesquisa</span>
+        </div>
+
+        <!-- Histórico -->
+        <div style="position: absolute; top: 2%; right: 8%; width: 150px; text-align: center;">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--verde-institucional); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; margin: 0 auto 0.3rem; box-shadow: 0 3px 10px rgba(0,0,0,0.15);"><i class="fas fa-history"></i></div>
+          <span style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.75rem; color: var(--verde-escuro);">Histórico</span>
+        </div>
+
+        <!-- Movimentações -->
+        <div style="position: absolute; top: 50%; left: 2%; transform: translateY(-50%); width: 140px; text-align: center;">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--verde-coalizao); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; margin: 0 auto 0.3rem; box-shadow: 0 3px 10px rgba(0,0,0,0.15);"><i class="fas fa-arrows-alt-h"></i></div>
+          <span style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.75rem; color: var(--verde-escuro);">Movimentações</span>
+        </div>
+
+        <!-- GSISTE -->
+        <div style="position: absolute; top: 50%; right: 2%; transform: translateY(-50%); width: 140px; text-align: center;">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--verde-escuro); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; margin: 0 auto 0.3rem; box-shadow: 0 3px 10px rgba(0,0,0,0.15);"><i class="fas fa-award"></i></div>
+          <span style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.75rem; color: var(--verde-escuro);">GSISTE</span>
+        </div>
+
+        <!-- Afastamentos -->
+        <div style="position: absolute; bottom: 2%; left: 12%; width: 150px; text-align: center;">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--azul-institucional); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; margin: 0 auto 0.3rem; box-shadow: 0 3px 10px rgba(0,0,0,0.15);"><i class="fas fa-calendar-minus"></i></div>
+          <span style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.75rem; color: var(--verde-escuro);">Afastamentos</span>
+        </div>
+
+        <!-- Capacitação -->
+        <div style="position: absolute; bottom: 2%; right: 12%; width: 150px; text-align: center;">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--azul-brasil); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; margin: 0 auto 0.3rem; box-shadow: 0 3px 10px rgba(0,0,0,0.15);"><i class="fas fa-graduation-cap"></i></div>
+          <span style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.75rem; color: var(--verde-escuro);">Capacitação</span>
+        </div>
+
+        <!-- Linhas conectoras -->
+        <svg style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;">
+          <line x1="15%" y1="18%" x2="44%" y2="44%" stroke="#D9D9D9" stroke-width="2" stroke-dasharray="6,4"/>
+          <line x1="50%" y1="16%" x2="50%" y2="42%" stroke="#D9D9D9" stroke-width="2" stroke-dasharray="6,4"/>
+          <line x1="85%" y1="18%" x2="56%" y2="44%" stroke="#D9D9D9" stroke-width="2" stroke-dasharray="6,4"/>
+          <line x1="14%" y1="50%" x2="42%" y2="50%" stroke="#D9D9D9" stroke-width="2" stroke-dasharray="6,4"/>
+          <line x1="86%" y1="50%" x2="58%" y2="50%" stroke="#D9D9D9" stroke-width="2" stroke-dasharray="6,4"/>
+          <line x1="20%" y1="82%" x2="44%" y2="56%" stroke="#D9D9D9" stroke-width="2" stroke-dasharray="6,4"/>
+          <line x1="80%" y1="82%" x2="56%" y2="56%" stroke="#D9D9D9" stroke-width="2" stroke-dasharray="6,4"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       SLIDE 5: CADASTRO DE SERVIDORES
+       ======================================== -->
+  <div class="slide modo-limpo" style="height: 720px; max-height: 720px; overflow: hidden; display: flex; flex-direction: column;">
+    <div class="barra-verde-topo">
+      <div>
+        <h1>Módulo: Cadastro de Servidores</h1>
+        <span class="subt">Base central de dados da carreira</span>
+      </div>
+    </div>
+    <div class="num-pagina">5</div>
+
+    <div style="flex: 1; display: flex; flex-direction: row; overflow: hidden;">
+      <!-- Foto -->
+      <div style="width: 40%; flex-shrink: 0; overflow: hidden;">
+        <div class="foto-placeholder">
+          <i class="fas fa-image"></i>
+          <span>Foto / Ilustração</span>
+        </div>
+      </div>
+
+      <!-- Conteúdo -->
+      <div style="flex: 1; padding: 2rem 2.5rem; display: flex; flex-direction: column; justify-content: center; gap: 1.2rem;">
+
+        <div style="background: white; border-radius: 10px; padding: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--azul-brasil); margin: 0 0 0.8rem; text-transform: uppercase;">
+            <i class="fas fa-list-check" style="margin-right: 0.4rem;"></i> Seções do Cadastro</h4>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.6rem;">
+              <div style="width: 28px; height: 28px; background: var(--azul-brasil); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.65rem; flex-shrink: 0;"><i class="fas fa-user"></i></div>
+              <span style="font-size: 0.82rem; font-weight: 600; color: #333;">Identificação — nome, matrícula, cargo</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.6rem;">
+              <div style="width: 28px; height: 28px; background: var(--verde-sof); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.65rem; flex-shrink: 0;"><i class="fas fa-building"></i></div>
+              <span style="font-size: 0.82rem; font-weight: 600; color: #333;">Vínculo — órgão, unidade, função</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.6rem;">
+              <div style="width: 28px; height: 28px; background: var(--verde-institucional); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.65rem; flex-shrink: 0;"><i class="fas fa-briefcase"></i></div>
+              <span style="font-size: 0.82rem; font-weight: 600; color: #333;">Dados Funcionais — ingresso, carreira</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.6rem;">
+              <div style="width: 28px; height: 28px; background: var(--azul-institucional); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.65rem; flex-shrink: 0;"><i class="fas fa-chart-bar"></i></div>
+              <span style="font-size: 0.82rem; font-weight: 600; color: #333;">Acompanhamento — afastamentos, GSISTE</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: white; border-radius: 10px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--verde-escuro); margin: 0 0 0.6rem; text-transform: uppercase;">
+            <i class="fas fa-columns" style="margin-right: 0.4rem; color: var(--verde-sof);"></i> Navegação por abas</h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+            <span style="background: var(--verde-escuro); color: white; padding: 0.35rem 0.7rem; border-radius: 5px; font-size: 0.72rem; font-weight: 700;">Dados Gerais</span>
+            <span style="background: #eee; color: #555; padding: 0.35rem 0.7rem; border-radius: 5px; font-size: 0.72rem; font-weight: 600;">Histórico</span>
+            <span style="background: #eee; color: #555; padding: 0.35rem 0.7rem; border-radius: 5px; font-size: 0.72rem; font-weight: 600;">Movimentações</span>
+            <span style="background: #eee; color: #555; padding: 0.35rem 0.7rem; border-radius: 5px; font-size: 0.72rem; font-weight: 600;">Afastamentos</span>
+            <span style="background: #eee; color: #555; padding: 0.35rem 0.7rem; border-radius: 5px; font-size: 0.72rem; font-weight: 600;">Capacitações</span>
+            <span style="background: #eee; color: #555; padding: 0.35rem 0.7rem; border-radius: 5px; font-size: 0.72rem; font-weight: 600;">GSISTE</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       SLIDE 6: PESQUISA E HISTÓRICO — EXPLICAÇÃO
+       ======================================== -->
+  <div class="slide modo-limpo" style="height: 720px; max-height: 720px; overflow: hidden; display: flex; flex-direction: column;">
+    <div class="barra-verde-topo">
+      <div>
+        <h1>Módulo: Pesquisa e Histórico</h1>
+        <span class="subt">Localizar o servidor e sua trajetória</span>
+      </div>
+    </div>
+    <div class="num-pagina">6</div>
+
+    <div style="flex: 1; display: flex; flex-direction: row; overflow: hidden;">
+      <!-- Foto -->
+      <div style="width: 40%; flex-shrink: 0; overflow: hidden;">
+        <div class="foto-placeholder">
+          <i class="fas fa-image"></i>
+          <span>Foto / Ilustração</span>
+        </div>
+      </div>
+
+      <!-- Conteúdo -->
+      <div style="flex: 1; padding: 2rem 2.5rem; display: flex; flex-direction: column; justify-content: center; gap: 1.2rem;">
+
+        <!-- Busca -->
+        <div style="background: white; border-radius: 10px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--verde-sof); margin: 0 0 0.5rem; text-transform: uppercase;">
+            <i class="fas fa-search" style="margin-right: 0.4rem;"></i> Busca por</h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+            <span style="background: #F0F4F0; padding: 0.35rem 0.6rem; border-radius: 5px; font-size: 0.75rem; font-weight: 600; color: #333;">Nome</span>
+            <span style="background: #F0F4F0; padding: 0.35rem 0.6rem; border-radius: 5px; font-size: 0.75rem; font-weight: 600; color: #333;">Matrícula</span>
+            <span style="background: #F0F4F0; padding: 0.35rem 0.6rem; border-radius: 5px; font-size: 0.75rem; font-weight: 600; color: #333;">Cargo</span>
+            <span style="background: #F0F4F0; padding: 0.35rem 0.6rem; border-radius: 5px; font-size: 0.75rem; font-weight: 600; color: #333;">Órgão</span>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div style="background: white; border-radius: 10px; padding: 1rem 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--verde-institucional); margin: 0 0 0.8rem; text-transform: uppercase;">
+            <i class="fas fa-history" style="margin-right: 0.4rem;"></i> Trajetória do Servidor</h4>
+          <div style="display: flex; flex-direction: column; position: relative; padding-left: 1.5rem;">
+            <div style="position: absolute; left: 0.45rem; top: 0.3rem; bottom: 0.3rem; width: 2px; background: linear-gradient(to bottom, #D9D9D9, var(--verde-sof));"></div>
+
+            <div style="padding-bottom: 0.7rem; position: relative;">
+              <div style="width: 10px; height: 10px; border-radius: 50%; background: #D9D9D9; border: 2px solid #bbb; position: absolute; left: -1.15rem; top: 0.15rem;"></div>
+              <span style="font-size: 0.68rem; color: var(--cinza-texto); font-weight: 600;">2014–2017</span>
+              <div style="font-size: 0.78rem; font-weight: 700; color: #333;">SOF/MPO</div>
+            </div>
+            <div style="padding-bottom: 0.7rem; position: relative;">
+              <div style="width: 10px; height: 10px; border-radius: 50%; background: #D9D9D9; border: 2px solid #bbb; position: absolute; left: -1.15rem; top: 0.15rem;"></div>
+              <span style="font-size: 0.68rem; color: var(--cinza-texto); font-weight: 600;">2018–2021</span>
+              <div style="font-size: 0.78rem; font-weight: 700; color: #333;">Ministério da Economia</div>
+            </div>
+            <div style="padding-bottom: 0.7rem; position: relative;">
+              <div style="width: 10px; height: 10px; border-radius: 50%; background: #D9D9D9; border: 2px solid #bbb; position: absolute; left: -1.15rem; top: 0.15rem;"></div>
+              <span style="font-size: 0.68rem; color: var(--cinza-texto); font-weight: 600;">2022–2024</span>
+              <div style="font-size: 0.78rem; font-weight: 700; color: #333;">Secretaria de Governo</div>
+            </div>
+            <div style="position: relative;">
+              <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--verde-sof); border: 2px solid var(--verde-escuro); position: absolute; left: -1.2rem; top: 0.1rem;"></div>
+              <span style="font-size: 0.68rem; color: var(--verde-sof); font-weight: 700;">2025–Atual</span>
+              <div style="font-size: 0.78rem; font-weight: 800; color: var(--verde-escuro);">SOF/MPO <span style="background: var(--verde-sof); color: white; padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.55rem; margin-left: 0.2rem;">ATUAL</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       SLIDE 7: MOCKUP PLACEHOLDER
+       ======================================== -->
+  <div class="slide modo-limpo" style="height: 720px; max-height: 720px; overflow: hidden; display: flex; flex-direction: column;">
+    <div class="barra-verde-topo">
+      <div>
+        <h1>Tela: Pesquisa e Histórico</h1>
+        <span class="subt">Espaço reservado para mockup</span>
+      </div>
+    </div>
+    <div class="num-pagina">7</div>
+
+    <div class="conteudo-limpo" style="padding: 1.5rem 3rem; display: flex; flex-direction: column;">
+      <div class="mockup-placeholder" style="flex: 1;">
+        <i class="fas fa-desktop" style="font-size: 3rem; opacity: 0.4;"></i>
+        <p style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 700; opacity: 0.6;">
+          Espaço para Mockup da Tela de Pesquisa</p>
+        <p style="margin: 0; font-size: 0.85rem; opacity: 0.5; max-width: 500px; text-align: center; line-height: 1.5;">
+          Protótipo será inserido após validação do escopo.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       SLIDE 8: MOVIMENTAÇÕES
+       ======================================== -->
+  <div class="slide modo-limpo" style="height: 720px; max-height: 720px; overflow: hidden; display: flex; flex-direction: column;">
+    <div class="barra-verde-topo">
+      <div>
+        <h1>Módulo: Movimentações</h1>
+        <span class="subt">Cessão, requisição e redistribuição</span>
+      </div>
+    </div>
+    <div class="num-pagina">8</div>
+
+    <div style="flex: 1; display: flex; flex-direction: row; overflow: hidden;">
+      <!-- Foto -->
+      <div style="width: 40%; flex-shrink: 0; overflow: hidden;">
+        <div class="foto-placeholder">
+          <i class="fas fa-image"></i>
+          <span>Foto / Ilustração</span>
+        </div>
+      </div>
+
+      <!-- Conteúdo -->
+      <div style="flex: 1; padding: 2rem 2.5rem; display: flex; flex-direction: column; justify-content: center; gap: 1.2rem;">
+
+        <div style="background: white; border-radius: 10px; padding: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--verde-coalizao); margin: 0 0 0.8rem; text-transform: uppercase;">
+            <i class="fas fa-exchange-alt" style="margin-right: 0.4rem;"></i> Tipos</h4>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem; background: #F0F4F0; border-radius: 6px; border-left: 4px solid var(--verde-coalizao);">
+              <i class="fas fa-paper-plane" style="color: var(--verde-coalizao);"></i>
+              <span style="font-size: 0.82rem; font-weight: 600; color: #333;">Cessão</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem; background: #F0F4F0; border-radius: 6px; border-left: 4px solid var(--verde-coalizao);">
+              <i class="fas fa-hand-holding" style="color: var(--verde-coalizao);"></i>
+              <span style="font-size: 0.82rem; font-weight: 600; color: #333;">Requisição</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem; background: #F0F4F0; border-radius: 6px; border-left: 4px solid var(--verde-coalizao);">
+              <i class="fas fa-random" style="color: var(--verde-coalizao);"></i>
+              <span style="font-size: 0.82rem; font-weight: 600; color: #333;">Redistribuição</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fluxo -->
+        <div style="background: white; border-radius: 10px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="background: var(--azul-brasil); color: white; padding: 0.4rem 0.7rem; border-radius: 6px; font-size: 0.72rem; font-weight: 700;">Pedido</span>
+          <i class="fas fa-arrow-right" style="color: #ccc; font-size: 0.65rem;"></i>
+          <span style="background: var(--verde-coalizao); color: white; padding: 0.4rem 0.7rem; border-radius: 6px; font-size: 0.72rem; font-weight: 700;">Análise</span>
+          <i class="fas fa-arrow-right" style="color: #ccc; font-size: 0.65rem;"></i>
+          <span style="background: var(--verde-sof); color: white; padding: 0.4rem 0.7rem; border-radius: 6px; font-size: 0.72rem; font-weight: 700;">Aprovação</span>
+          <i class="fas fa-arrow-right" style="color: #ccc; font-size: 0.65rem;"></i>
+          <span style="background: var(--verde-escuro); color: white; padding: 0.4rem 0.7rem; border-radius: 6px; font-size: 0.72rem; font-weight: 700;">Efetivação</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       SLIDE 9: AFASTAMENTOS, CAPACITAÇÃO E GSISTE
+       ======================================== -->
+  <div class="slide modo-limpo" style="height: 720px; max-height: 720px; overflow: hidden; display: flex; flex-direction: column;">
+    <div class="barra-verde-topo">
+      <div>
+        <h1>Módulos Complementares</h1>
+        <span class="subt">Afastamentos, Capacitação e GSISTE</span>
+      </div>
+    </div>
+    <div class="num-pagina">9</div>
+
+    <div class="conteudo-limpo" style="padding: 1.5rem 3rem;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; flex: 1; align-content: center;">
+
+        <!-- Afastamentos -->
+        <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; border-top: 5px solid var(--azul-institucional);">
+          <div style="width: 52px; height: 52px; border-radius: 50%; background: var(--azul-institucional); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; margin: 0 auto 0.8rem;"><i class="fas fa-calendar-minus"></i></div>
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 800; color: var(--azul-institucional); margin: 0 0 0.6rem;">Afastamentos e Licenças</h4>
+          <p style="font-size: 0.78rem; color: var(--cinza-texto); margin: 0; line-height: 1.5;">Registro, monitoramento e alertas de retorno</p>
+        </div>
+
+        <!-- Capacitação -->
+        <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; border-top: 5px solid var(--azul-brasil);">
+          <div style="width: 52px; height: 52px; border-radius: 50%; background: var(--azul-brasil); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; margin: 0 auto 0.8rem;"><i class="fas fa-graduation-cap"></i></div>
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 800; color: var(--azul-brasil); margin: 0 0 0.6rem;">Capacitação e Formação</h4>
+          <p style="font-size: 0.78rem; color: var(--cinza-texto); margin: 0; line-height: 1.5;">Cursos, especializações e qualificações</p>
+        </div>
+
+        <!-- GSISTE -->
+        <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; border-top: 5px solid var(--verde-escuro);">
+          <div style="width: 52px; height: 52px; border-radius: 50%; background: var(--verde-escuro); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; margin: 0 auto 0.8rem;"><i class="fas fa-award"></i></div>
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 800; color: var(--verde-escuro); margin: 0 0 0.6rem;">Controle de GSISTE</h4>
+          <p style="font-size: 0.78rem; color: var(--cinza-texto); margin: 0; line-height: 1.5;">Ocupantes, vagas e relatórios de ocupação</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       SLIDE 10: FONTES DE DADOS
+       ======================================== -->
+  <div class="slide modo-limpo" style="height: 720px; max-height: 720px; overflow: hidden; display: flex; flex-direction: column;">
+    <div class="barra-verde-topo">
+      <div>
+        <h1>Fontes de Dados</h1>
+        <span class="subt">Bases que alimentam o SAC/PO</span>
+      </div>
+    </div>
+    <div class="num-pagina">10</div>
+
+    <div style="flex: 1; display: flex; flex-direction: row; overflow: hidden;">
+      <!-- Foto -->
+      <div style="width: 40%; flex-shrink: 0; overflow: hidden;">
+        <div class="foto-placeholder">
+          <i class="fas fa-image"></i>
+          <span>Foto / Ilustração</span>
+        </div>
+      </div>
+
+      <!-- Conteúdo -->
+      <div style="flex: 1; padding: 2rem 2.5rem; display: flex; flex-direction: column; justify-content: center; gap: 1rem;">
+
+        <div style="background: white; border-radius: 10px; padding: 1rem 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 1rem; border-left: 5px solid var(--azul-brasil);">
+          <div style="width: 42px; height: 42px; border-radius: 8px; background: var(--azul-brasil); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; flex-shrink: 0;"><i class="fas fa-server"></i></div>
+          <div><strong style="font-size: 0.9rem; color: var(--azul-brasil);">SIAPE</strong><span style="font-size: 0.78rem; color: var(--cinza-texto); display: block;">Cadastro funcional, vínculos e lotação</span></div>
+        </div>
+
+        <div style="background: white; border-radius: 10px; padding: 1rem 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 1rem; border-left: 5px solid var(--verde-sof);">
+          <div style="width: 42px; height: 42px; border-radius: 8px; background: var(--verde-sof); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; flex-shrink: 0;"><i class="fas fa-file-signature"></i></div>
+          <div><strong style="font-size: 0.9rem; color: var(--verde-sof);">SEI</strong><span style="font-size: 0.78rem; color: var(--cinza-texto); display: block;">Processos e portarias de movimentação</span></div>
+        </div>
+
+        <div style="background: white; border-radius: 10px; padding: 1rem 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 1rem; border-left: 5px solid var(--verde-institucional);">
+          <div style="width: 42px; height: 42px; border-radius: 8px; background: var(--verde-institucional); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; flex-shrink: 0;"><i class="fas fa-newspaper"></i></div>
+          <div><strong style="font-size: 0.9rem; color: var(--verde-institucional);">DOU</strong><span style="font-size: 0.78rem; color: var(--cinza-texto); display: block;">Publicações de nomeação e exoneração</span></div>
+        </div>
+
+        <div style="background: white; border-radius: 10px; padding: 1rem 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 1rem; border-left: 5px solid var(--cinza-texto);">
+          <div style="width: 42px; height: 42px; border-radius: 8px; background: var(--cinza-texto); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; flex-shrink: 0;"><i class="fas fa-folder-open"></i></div>
+          <div><strong style="font-size: 0.9rem; color: #555;">AFD e Documentos</strong><span style="font-size: 0.78rem; color: var(--cinza-texto); display: block;">Registros históricos e pastas físicas</span></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       SLIDE 11: ESCOPO ATUAL VS. PREVISTO
+       ======================================== -->
+  <div class="slide modo-rico" style="height: 720px; max-height: 720px; overflow: hidden; padding: 3rem 4rem 4rem; display: flex; flex-direction: column;">
+    <header style="text-align: center; margin-bottom: 1.5rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--verde-escuro); letter-spacing: -1px; margin: 0 0 0.3rem;">
+        Escopo Atual vs. Previsto</h1>
+      <div style="width: 120px; height: 4px; background: var(--amarelo-verde); margin: 0 auto; border-radius: 2px;"></div>
+    </header>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; flex: 1;">
+      <!-- ATUAL -->
+      <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border-top: 5px solid var(--verde-sof);">
+        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem;">
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--verde-sof); display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;"><i class="fas fa-check"></i></div>
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 800; color: var(--verde-sof); margin: 0; text-transform: uppercase;">Escopo Atual</h3>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.6rem; background: #F0F9F0; border-radius: 5px;"><i class="fas fa-check-circle" style="color: var(--verde-sof); font-size: 0.75rem;"></i><span style="font-size: 0.82rem; font-weight: 600; color: #333;">Cadastro de Servidores</span></div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.6rem; background: #F0F9F0; border-radius: 5px;"><i class="fas fa-check-circle" style="color: var(--verde-sof); font-size: 0.75rem;"></i><span style="font-size: 0.82rem; font-weight: 600; color: #333;">Pesquisa e Consulta</span></div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.6rem; background: #F0F9F0; border-radius: 5px;"><i class="fas fa-check-circle" style="color: var(--verde-sof); font-size: 0.75rem;"></i><span style="font-size: 0.82rem; font-weight: 600; color: #333;">Histórico de Atuação</span></div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.6rem; background: #F0F9F0; border-radius: 5px;"><i class="fas fa-check-circle" style="color: var(--verde-sof); font-size: 0.75rem;"></i><span style="font-size: 0.82rem; font-weight: 600; color: #333;">Movimentações</span></div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.6rem; background: #F0F9F0; border-radius: 5px;"><i class="fas fa-check-circle" style="color: var(--verde-sof); font-size: 0.75rem;"></i><span style="font-size: 0.82rem; font-weight: 600; color: #333;">Afastamentos e Licenças</span></div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.6rem; background: #F0F9F0; border-radius: 5px;"><i class="fas fa-check-circle" style="color: var(--verde-sof); font-size: 0.75rem;"></i><span style="font-size: 0.82rem; font-weight: 600; color: #333;">Capacitação e Formação</span></div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.6rem; background: #F0F9F0; border-radius: 5px;"><i class="fas fa-check-circle" style="color: var(--verde-sof); font-size: 0.75rem;"></i><span style="font-size: 0.82rem; font-weight: 600; color: #333;">Controle de GSISTE</span></div>
+        </div>
+      </div>
+
+      <!-- PREVISTO -->
+      <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border-top: 5px solid var(--cinza-texto);">
+        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem;">
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--cinza-texto); display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;"><i class="fas fa-clock"></i></div>
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 800; color: var(--cinza-texto); margin: 0; text-transform: uppercase;">Fases Futuras</h3>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.6rem; background: #F5F5F5; border-radius: 5px;"><i class="fas fa-hourglass-half" style="color: #bbb; font-size: 0.75rem;"></i><span style="font-size: 0.82rem; font-weight: 600; color: #888;">Login e Autenticação</span></div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.6rem; background: #F5F5F5; border-radius: 5px;"><i class="fas fa-hourglass-half" style="color: #bbb; font-size: 0.75rem;"></i><span style="font-size: 0.82rem; font-weight: 600; color: #888;">Perfis de Acesso</span></div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.6rem; background: #F5F5F5; border-radius: 5px;"><i class="fas fa-hourglass-half" style="color: #bbb; font-size: 0.75rem;"></i><span style="font-size: 0.82rem; font-weight: 600; color: #888;">Fluxos de Aprovação</span></div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.6rem; background: #F5F5F5; border-radius: 5px;"><i class="fas fa-hourglass-half" style="color: #bbb; font-size: 0.75rem;"></i><span style="font-size: 0.82rem; font-weight: 600; color: #888;">Painéis Analíticos</span></div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.6rem; background: #F5F5F5; border-radius: 5px;"><i class="fas fa-hourglass-half" style="color: #bbb; font-size: 0.75rem;"></i><span style="font-size: 0.82rem; font-weight: 600; color: #888;">Aposentados e Pensionistas</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mosaico-brasil">
+      <span style="background:#009739;"></span><span style="background:#FFD700;"></span>
+      <span style="background:#009739;"></span><span style="background:#002776;"></span>
+      <span style="background:#FFD700;"></span><span style="background:#CC0000;"></span>
+      <span style="background:#009739;"></span><span style="background:#FFD700;"></span>
+      <span style="background:#002776;"></span><span style="background:#009739;"></span>
+      <span style="background:#CC0000;"></span><span style="background:#FFD700;"></span>
+      <span style="background:#009739;"></span><span style="background:#002776;"></span>
+      <span style="background:#FFD700;"></span><span style="background:#CC0000;"></span>
+      <span style="background:#009739;"></span><span style="background:#FFD700;"></span>
+      <span style="background:#002776;"></span><span style="background:#009739;"></span>
+    </div>
+  </div>
+
+  <!-- ========================================
+       SLIDE 12: PRÓXIMOS PASSOS
+       ======================================== -->
+  <div class="slide modo-rico" style="height: 720px; max-height: 720px; overflow: hidden; padding: 2.5rem 4rem 4rem; display: flex; flex-direction: column; position: relative;">
+    <div class="num-pagina" style="background: var(--verde-escuro);">12</div>
+
+    <header style="text-align: center; margin-bottom: 1.5rem;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: var(--verde-escuro); letter-spacing: -1px; margin-bottom: 0.3rem;">
+        Próximos Passos</h1>
+      <div style="width: 120px; height: 4px; background: var(--amarelo-verde); margin: 0 auto; border-radius: 2px;"></div>
+    </header>
+
+    <!-- Decisões -->
+    <div style="background: white; border: 3px solid var(--vermelho-alerta); border-radius: 16px; padding: 1.5rem 2rem; box-shadow: 0 8px 30px rgba(211,47,47,0.1); position: relative; margin-bottom: 1.5rem;">
+      <div style="position: absolute; top: -14px; left: 2rem; background: var(--vermelho-alerta); color: white; padding: 0.3rem 1.2rem; border-radius: 50px; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">
+        <i class="fas fa-exclamation-circle" style="margin-right: 0.3rem;"></i> Decisões para a SOF</div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 0.5rem;">
+        <div style="background: var(--cinza-fundo); padding: 1rem; border-radius: 10px; text-align: center;">
+          <div style="width: 40px; height: 40px; background: var(--azul-brasil); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; margin: 0 auto 0.5rem;"><i class="fas fa-clipboard-check"></i></div>
+          <span style="font-weight: 700; color: var(--cinza-texto); font-size: 0.82rem;">Validar escopo inicial</span>
+        </div>
+        <div style="background: var(--cinza-fundo); padding: 1rem; border-radius: 10px; text-align: center;">
+          <div style="width: 40px; height: 40px; background: var(--azul-brasil); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; margin: 0 auto 0.5rem;"><i class="fas fa-user-tag"></i></div>
+          <span style="font-weight: 700; color: var(--cinza-texto); font-size: 0.82rem;">Indicar ponto focal</span>
+        </div>
+        <div style="background: var(--cinza-fundo); padding: 1rem; border-radius: 10px; text-align: center;">
+          <div style="width: 40px; height: 40px; background: var(--azul-brasil); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; margin: 0 auto 0.5rem;"><i class="fas fa-sort-numeric-down"></i></div>
+          <span style="font-weight: 700; color: var(--cinza-texto); font-size: 0.82rem;">Priorizar módulos fase 1</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Etapas -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; flex: 1; align-content: center;">
+      <div style="background: white; border-radius: 12px; padding: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; border-top: 4px solid var(--azul-brasil);">
+        <span style="background: var(--azul-brasil); color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.8rem; margin-bottom: 0.4rem;">1</span>
+        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--azul-brasil); margin: 0;">Requisitos</h4>
+      </div>
+      <div style="background: white; border-radius: 12px; padding: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; border-top: 4px solid var(--azul-institucional);">
+        <span style="background: var(--azul-institucional); color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.8rem; margin-bottom: 0.4rem;">2</span>
+        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--azul-institucional); margin: 0;">Protótipo</h4>
+      </div>
+      <div style="background: white; border-radius: 12px; padding: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; border-top: 4px solid var(--verde-sof);">
+        <span style="background: var(--verde-sof); color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.8rem; margin-bottom: 0.4rem;">3</span>
+        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--verde-sof); margin: 0;">Integrações</h4>
+      </div>
+      <div style="background: white; border-radius: 12px; padding: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; border-top: 4px solid var(--verde-escuro);">
+        <span style="background: var(--verde-escuro); color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.8rem; margin-bottom: 0.4rem;">4</span>
+        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--verde-escuro); margin: 0;">Construção</h4>
+      </div>
+    </div>
+
+    <footer style="margin-top: 1rem; text-align: center; border-top: 1px solid rgba(27,67,50,0.15); padding-top: 0.5rem;">
+      <a href="../../../index.html" style="font-family: 'Montserrat', sans-serif; font-weight: 700; text-decoration: none; color: #999; font-size: 0.85rem;" onmouseover="this.style.color='#1B4332'" onmouseout="this.style.color='#999'">
+        <i class="fas fa-th-large" style="margin-right: 0.4rem;"></i> Painel Principal</a>
+    </footer>
+
+    <div class="mosaico-brasil">
+      <span style="background:#009739;"></span><span style="background:#FFD700;"></span>
+      <span style="background:#009739;"></span><span style="background:#002776;"></span>
+      <span style="background:#FFD700;"></span><span style="background:#CC0000;"></span>
+      <span style="background:#009739;"></span><span style="background:#FFD700;"></span>
+      <span style="background:#002776;"></span><span style="background:#009739;"></span>
+      <span style="background:#CC0000;"></span><span style="background:#FFD700;"></span>
+      <span style="background:#009739;"></span><span style="background:#002776;"></span>
+      <span style="background:#FFD700;"></span><span style="background:#CC0000;"></span>
+      <span style="background:#009739;"></span><span style="background:#FFD700;"></span>
+      <span style="background:#002776;"></span><span style="background:#009739;"></span>
+    </div>
+  </div>
+
+  <script src="../../../compartilhado/web/presentation-nav.js"></script>
+</body>
+</html>

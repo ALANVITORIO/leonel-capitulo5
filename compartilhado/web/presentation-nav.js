@@ -1,5 +1,5 @@
-// Sistema de Navegação para Apresentação PLANTE
-// Capítulo 5: Monitoramento, Avaliação e Revisão
+// Navegação compartilhada para as apresentações HTML do projeto.
+// Mantido genérico para servir às peças de tese/NdG e SAC/PO.
 
 document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.slide');

@@ -1,6 +1,6 @@
 # ESTRUTURA DOS SLIDES COM IMAGENS – CAPÍTULO 4
 
-Pasta de imagens: `imagens_pdf/`
+Pasta de imagens: `../assets/graficos-capitulo-4/`
 
 ---
 

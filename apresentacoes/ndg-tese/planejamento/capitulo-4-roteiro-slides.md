@@ -18,7 +18,7 @@ A expansão para 20 slides permite:
 
 ### Estrutura lógica baseada no texto
 
-O Capítulo 4 do texto-original.md está organizado em grandes seções. Segui essa mesma lógica:
+O Capítulo 4 do arquivo `../fontes/texto-original.md` está organizado em grandes seções. Segui essa mesma lógica:
 
 | Seção do Texto | Slides | Conteúdo |
 |----------------|--------|----------|
